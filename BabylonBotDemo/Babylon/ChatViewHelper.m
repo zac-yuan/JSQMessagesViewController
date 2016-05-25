@@ -1,8 +1,8 @@
 
 #import "ChatViewHelper.h"
-#import "BBHelpers.h"
-@import ios_maps;
+#import "BBConstants.h"
 #import "ApiManagerChatBot.h"
+@import ios_maps;
 
 @implementation ChatViewHelper
 
@@ -23,7 +23,7 @@
     self.inputToolbar.maximumHeight = 150;
     
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
-    self.userBubbleMsg = [bubbleFactory outgoingMessagesBubbleImageWithColor:BBPurpleColor];
+    self.userBubbleMsg = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor babylonPurple]];
     self.botBubbleMsg = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor groupTableViewBackgroundColor]];
     
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(customAction:)];

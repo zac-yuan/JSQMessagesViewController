@@ -1,12 +1,9 @@
 
 #import "ApiManagerChatBot.h"
 #import "BBWebSocketsClient.h"
+#import "BBConstants.h"
 
 typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoint;
-
-//dev-chatscript.babylontesting.co.uk/v1
-//staging-chatscript.babylontesting.co.uk/v1
-NSString *const chatBotApiUrlBase = @"http://dev-chatscript.babylontesting.co.uk/v1";
 
 @implementation ApiManagerChatBot
 
@@ -27,9 +24,6 @@ NSString *const chatBotApiUrlBase = @"http://dev-chatscript.babylontesting.co.uk
     _sharedConfiguration.authKey = @"73e40106b7bef08ae9a1888e35882a4b";
     _sharedConfiguration.speakerID = @"babybot";
     _sharedConfiguration.targetID = _sharedConfiguration.userID;
-    
-    //FIXME: MOVE IT
-    [_sharedConfiguration initWebSocketChannel:_sharedConfiguration.userID];
     
     return _sharedConfiguration;
 }

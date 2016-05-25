@@ -158,9 +158,11 @@
 		9F4A61C31CF5FBBC00A808A7 /* JSQMessagesToolbarContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A25F9F19D8E01A00924534 /* JSQMessagesToolbarContentView.xib */; };
 		9F4A61C41CF5FBBC00A808A7 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A25FA219D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib */; };
 		9F4A61C51CF5FC5D00A808A7 /* JSQMessagesAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8861666C19F492B70025B958 /* JSQMessagesAssets.bundle */; };
-		B4101CA01CF5C726005EF656 /* BBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101C9F1CF5C726005EF656 /* BBHelpers.m */; };
+		B4101CA01CF5C726005EF656 /* BBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101C9F1CF5C726005EF656 /* BBConstants.m */; };
 		B4101CA51CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */; };
-		B4101CA61CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA41CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m */; };
+		B47AA0FA1CF632F00025A5F6 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA41CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m */; };
+		B47AA0FB1CF632F60025A5F6 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA41CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m */; };
+		B47AA0FC1CF632FC0025A5F6 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */; };
 		B4DCC9651CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */; };
 		B4DCC9671CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */; };
 		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
@@ -363,8 +365,8 @@
 		88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
 		9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AD6E75315517DE46FE495B65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		B4101C9E1CF5C726005EF656 /* BBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHelpers.h; sourceTree = "<group>"; };
-		B4101C9F1CF5C726005EF656 /* BBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHelpers.m; sourceTree = "<group>"; };
+		B4101C9E1CF5C726005EF656 /* BBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstants.h; sourceTree = "<group>"; };
+		B4101C9F1CF5C726005EF656 /* BBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstants.m; sourceTree = "<group>"; };
 		B4101CA11CF5CBFB005EF656 /* BBChatBotDataModelDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelDispatch.h; sourceTree = "<group>"; };
 		B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelDispatch.m; sourceTree = "<group>"; };
 		B4101CA31CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelTalkChat.h; sourceTree = "<group>"; };
@@ -794,14 +796,21 @@
 			path = ViewTests;
 			sourceTree = "<group>";
 		};
+		B47AA0FD1CF6417F0025A5F6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B4101C9E1CF5C726005EF656 /* BBConstants.h */,
+				B4101C9F1CF5C726005EF656 /* BBConstants.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
 			isa = PBXGroup;
 			children = (
 				B4FA1C1A1CF5B91B0066D8B1 /* Api */,
-				B4FA1C171CF5B8C20066D8B1 /* Data Models */,
+				B47AA0FD1CF6417F0025A5F6 /* Categories */,
 				B4FA1C1B1CF5B9230066D8B1 /* Controllers */,
-				B4101C9E1CF5C726005EF656 /* BBHelpers.h */,
-				B4101C9F1CF5C726005EF656 /* BBHelpers.m */,
 				B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */,
 				B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */,
 				B4FA1C371CF5B9D20066D8B1 /* Main.storyboard */,
@@ -862,6 +871,7 @@
 		B4FA1C1A1CF5B91B0066D8B1 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				B4FA1C171CF5B8C20066D8B1 /* Data Models */,
 				B4FA1C301CF5B9D20066D8B1 /* ApiManagerChatBot.h */,
 				B4FA1C2E1CF5B9D20066D8B1 /* ApiManagerChatBot.m */,
 				B4FA1C1C1CF5B9350066D8B1 /* WebSockets */,
@@ -872,10 +882,10 @@
 		B4FA1C1B1CF5B9230066D8B1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B4FA1C2F1CF5B9D20066D8B1 /* ChatViewHelper.m */,
-				B4FA1C331CF5B9D20066D8B1 /* ChatViewController.m */,
 				B4FA1C341CF5B9D20066D8B1 /* ChatViewHelper.h */,
+				B4FA1C2F1CF5B9D20066D8B1 /* ChatViewHelper.m */,
 				B4FA1C381CF5B9D20066D8B1 /* ChatViewController.h */,
+				B4FA1C331CF5B9D20066D8B1 /* ChatViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1266,6 +1276,7 @@
 				88A25FCB19D8E01A00924534 /* JSQMessagesCollectionViewCell.m in Sources */,
 				88A25FBB19D8E01A00924534 /* JSQMessagesViewController.m in Sources */,
 				8885734D19DE55D000E89D20 /* NSUserDefaults+DemoSettings.m in Sources */,
+				B47AA0FC1CF632FC0025A5F6 /* BBChatBotDataModelDispatch.m in Sources */,
 				544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */,
 				B4DCC9651CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */,
 				883C11781A09FB100092A16D /* JSQMessagesCellTextView.m in Sources */,
@@ -1299,6 +1310,7 @@
 				88A25FB719D8E01A00924534 /* UIColor+JSQMessages.m in Sources */,
 				886C33FD19F4371E006B4997 /* JSQVideoMediaItem.m in Sources */,
 				88A25FBA19D8E01A00924534 /* JSQMessagesKeyboardController.m in Sources */,
+				B47AA0FA1CF632F00025A5F6 /* BBChatBotDataModelTalkChat.m in Sources */,
 				88A25FC019D8E01A00924534 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				88A25FC219D8E01A00924534 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				88A25FE119D8E0C400924534 /* TableViewController.m in Sources */,
@@ -1375,7 +1387,7 @@
 				9F4A619E1CF5F8A400A808A7 /* JSQMessagesTimestampFormatter.m in Sources */,
 				9F4A61A11CF5F91700A808A7 /* JSQAudioMediaViewAttributes.m in Sources */,
 				B4FA1C3C1CF5B9D20066D8B1 /* BBWebSocketsClient.m in Sources */,
-				B4101CA01CF5C726005EF656 /* BBHelpers.m in Sources */,
+				B4101CA01CF5C726005EF656 /* BBConstants.m in Sources */,
 				9F4A61A91CF5F93300A808A7 /* JSQMessage.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				9F4A619B1CF5F8A400A808A7 /* JSQMessagesAvatarImageFactory.m in Sources */,
@@ -1395,10 +1407,10 @@
 				9F4A61911CF5F88700A808A7 /* UIView+JSQMessages.m in Sources */,
 				9F4A61B31CF5F94600A808A7 /* JSQMessagesLabel.m in Sources */,
 				9F4A61A81CF5F93300A808A7 /* JSQMediaItem.m in Sources */,
-				B4101CA61CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m in Sources */,
 				9F4A61901CF5F88200A808A7 /* JSQMessagesKeyboardController.m in Sources */,
 				9F4A61A61CF5F93300A808A7 /* JSQAudioMediaItem.m in Sources */,
 				9F4A61AD1CF5F94600A808A7 /* JSQMessagesCellTextView.m in Sources */,
+				B47AA0FB1CF632F60025A5F6 /* BBChatBotDataModelTalkChat.m in Sources */,
 				B4FA1C3B1CF5B9D20066D8B1 /* BBWebSocketsChannel.m in Sources */,
 				B4101CA51CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m in Sources */,
 			);
