@@ -82,3 +82,16 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworkActivityLogger.framework"
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/JSQSystemSoundPlayer.framework"
+  install_framework "Pods/ios_maps.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworkActivityLogger.framework"
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/JSQSystemSoundPlayer.framework"
+  install_framework "Pods/ios_maps.framework"
+fi
