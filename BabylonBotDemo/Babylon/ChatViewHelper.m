@@ -189,15 +189,18 @@
     
     //TODO: It's not stable yet (Review it)
     BBLocationManager *locationManager = [BBLocationManager sharedInstance];
-    [locationManager startUpdatingLocation];
+    [locationManager startUpdatingLocationWithCompletionHandler:^(double latitude, double longitude, NSString * _Nonnull status, NSString * _Nonnull verboseMessage, NSString * _Nullable error) {
+        
+        JSQLocationMediaItem *locationItem = [[JSQLocationMediaItem alloc] init];
+        [locationItem setLocation:locationManager.locationManager.location withCompletionHandler:completion];
+        
+        JSQMessage *locationMessage = [JSQMessage messageWithSenderId:self.senderId
+                                                          displayName:self.senderDisplayName
+                                                                media:locationItem];
+        [self addChatMessageObject:locationMessage];
+        
+    }];
     
-    JSQLocationMediaItem *locationItem = [[JSQLocationMediaItem alloc] init];
-    [locationItem setLocation:locationManager.locationManager.location withCompletionHandler:completion];
-    
-    JSQMessage *locationMessage = [JSQMessage messageWithSenderId:self.senderId
-                                                      displayName:self.senderDisplayName
-                                                            media:locationItem];
-    [self addChatMessageObject:locationMessage];
 }
 
 - (void)addAudio:(NSString *)sample {
