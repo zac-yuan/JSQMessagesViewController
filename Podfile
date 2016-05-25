@@ -5,11 +5,6 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-pod 'JSQSystemSoundPlayer', '~> 2.0'
-pod 'AFNetworking', '~> 2.0'
-pod 'AFNetworkActivityLogger'
-pod 'ios-maps'
-
 target :BabylonBotDemo, :exclusive => true do
     pod 'JSQSystemSoundPlayer', '~> 2.0'
     pod 'AFNetworking', '~> 2.0'

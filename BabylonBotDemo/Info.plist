@@ -48,5 +48,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The map will be centered on the user&apos;s location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The map will be centered on the user&apos;s location.</string>
 </dict>
 </plist>
