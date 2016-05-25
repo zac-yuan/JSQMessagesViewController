@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019369FB07441EFF72FDE999 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC496DC8070EB88DD918AF6 /* Pods.framework */; };
 		1F0EFE0F1AC23D7E003FF3DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */; };
 		54271E3B1C90469100294290 /* jsq_messages_sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 54271E3A1C90469100294290 /* jsq_messages_sample.m4a */; };
 		54271E3E1C905B9200294290 /* JSQAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */; };
@@ -109,11 +110,26 @@
 		88C00A501A44D4D800B004B3 /* JSQPhotoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C00A4F1A44D4D800B004B3 /* JSQPhotoMediaItemTests.m */; };
 		88C00A521A44D4E500B004B3 /* JSQVideoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */; };
 		88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */; };
+		B4101CA01CF5C726005EF656 /* BBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101C9F1CF5C726005EF656 /* BBHelpers.m */; };
+		B4101CA51CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */; };
+		B4101CA61CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA41CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m */; };
 		B4DCC9651CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */; };
 		B4DCC9671CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */; };
-		BF6DA766BD3B8893A67FB2BD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F882AA48978C11F64DC2DF /* libPods.a */; };
+		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
+		B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */; };
+		B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */; };
+		B4FA1BF01CF5B3260066D8B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEE1CF5B3260066D8B1 /* LaunchScreen.storyboard */; };
+		B4FA1BFB1CF5B3260066D8B1 /* BabylonBotDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BFA1CF5B3260066D8B1 /* BabylonBotDemoTests.m */; };
+		B4FA1C061CF5B3260066D8B1 /* BabylonBotDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C051CF5B3260066D8B1 /* BabylonBotDemoUITests.m */; };
+		B4FA1C391CF5B9D20066D8B1 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C2E1CF5B9D20066D8B1 /* ApiManager.m */; };
+		B4FA1C3A1CF5B9D20066D8B1 /* ChatViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C2F1CF5B9D20066D8B1 /* ChatViewHelper.m */; };
+		B4FA1C3B1CF5B9D20066D8B1 /* BBWebSocketsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */; };
+		B4FA1C3C1CF5B9D20066D8B1 /* BBWebSocketsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */; };
+		B4FA1C3D1CF5B9D20066D8B1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C331CF5B9D20066D8B1 /* ChatViewController.m */; };
+		B4FA1C3E1CF5B9D20066D8B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1C371CF5B9D20066D8B1 /* Main.storyboard */; };
+		BF6DA766BD3B8893A67FB2BD /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		C8994EF7DDBE74B9E3F1A16C /* libPods-JSQMessagesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */; };
-		E8877F1947CE8050ECCD9539 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F882AA48978C11F64DC2DF /* libPods.a */; };
+		F07AC79157A78193BE7B0652 /* Pods_BabylonBotDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CD47608DF90C4B600DCDF9 /* Pods_BabylonBotDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,11 +140,26 @@
 			remoteGlobalIDString = 88A25F0119D8DEC400924534;
 			remoteInfo = JSQMessages;
 		};
+		B4FA1BF71CF5B3260066D8B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88A25EFA19D8DEC400924534 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FA1BDD1CF5B3250066D8B1;
+			remoteInfo = BabylonBotDemo;
+		};
+		B4FA1C021CF5B3260066D8B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88A25EFA19D8DEC400924534 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FA1BDD1CF5B3250066D8B1;
+			remoteInfo = BabylonBotDemo;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		242A2BCAF25E39CC1DAF654E /* Pods-JSQMessagesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessagesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessagesTests/Pods-JSQMessagesTests.release.xcconfig"; sourceTree = "<group>"; };
+		2BC496DC8070EB88DD918AF6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D257782A244F7688A2F6AA8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		54271E3A1C90469100294290 /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
 		54271E3C1C905B9200294290 /* JSQAudioMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaItem.h; sourceTree = "<group>"; };
@@ -136,6 +167,7 @@
 		54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItemTests.m; sourceTree = "<group>"; };
 		544A321F1CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaViewAttributes.h; sourceTree = "<group>"; };
 		544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaViewAttributes.m; sourceTree = "<group>"; };
+		64CD47608DF90C4B600DCDF9 /* Pods_BabylonBotDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88078A9B19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaPlaceholderView.h; sourceTree = "<group>"; };
 		88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaPlaceholderView.m; sourceTree = "<group>"; };
 		88324C3319F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMaskerTests.m; sourceTree = "<group>"; };
@@ -281,11 +313,42 @@
 		88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQVideoMediaItemTests.m; sourceTree = "<group>"; };
 		88C4582E19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaViewBubbleImageMasker.h; sourceTree = "<group>"; };
 		88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
+		9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.release.xcconfig"; sourceTree = "<group>"; };
 		AD6E75315517DE46FE495B65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B4101C9E1CF5C726005EF656 /* BBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHelpers.h; sourceTree = "<group>"; };
+		B4101C9F1CF5C726005EF656 /* BBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHelpers.m; sourceTree = "<group>"; };
+		B4101CA11CF5CBFB005EF656 /* BBChatBotDataModelDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelDispatch.h; sourceTree = "<group>"; };
+		B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelDispatch.m; sourceTree = "<group>"; };
+		B4101CA31CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelTalkChat.h; sourceTree = "<group>"; };
+		B4101CA41CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelTalkChat.m; sourceTree = "<group>"; };
 		B4DCC9631CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellMenuOptions.h; sourceTree = "<group>"; };
 		B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellMenuOptions.m; sourceTree = "<group>"; };
 		B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellMenuOptions.xib; sourceTree = "<group>"; };
-		C3F882AA48978C11F64DC2DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4FA1BEF1CF5B3260066D8B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B4FA1BF11CF5B3260066D8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4FA1BF61CF5B3260066D8B1 /* BabylonBotDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonBotDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FA1BFA1CF5B3260066D8B1 /* BabylonBotDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabylonBotDemoTests.m; sourceTree = "<group>"; };
+		B4FA1BFC1CF5B3260066D8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4FA1C011CF5B3260066D8B1 /* BabylonBotDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonBotDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FA1C051CF5B3260066D8B1 /* BabylonBotDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabylonBotDemoUITests.m; sourceTree = "<group>"; };
+		B4FA1C071CF5B3260066D8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4FA1C2E1CF5B9D20066D8B1 /* ApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiManager.m; path = Babylon/ApiManager.m; sourceTree = "<group>"; };
+		B4FA1C2F1CF5B9D20066D8B1 /* ChatViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewHelper.m; path = Babylon/ChatViewHelper.m; sourceTree = "<group>"; };
+		B4FA1C301CF5B9D20066D8B1 /* ApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiManager.h; path = Babylon/ApiManager.h; sourceTree = "<group>"; };
+		B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBWebSocketsChannel.m; path = Babylon/BBWebSocketsChannel.m; sourceTree = "<group>"; };
+		B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBWebSocketsClient.m; path = Babylon/BBWebSocketsClient.m; sourceTree = "<group>"; };
+		B4FA1C331CF5B9D20066D8B1 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = Babylon/ChatViewController.m; sourceTree = "<group>"; };
+		B4FA1C341CF5B9D20066D8B1 /* ChatViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewHelper.h; path = Babylon/ChatViewHelper.h; sourceTree = "<group>"; };
+		B4FA1C351CF5B9D20066D8B1 /* BBWebSocketsChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBWebSocketsChannel.h; path = Babylon/BBWebSocketsChannel.h; sourceTree = "<group>"; };
+		B4FA1C361CF5B9D20066D8B1 /* BBWebSocketsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBWebSocketsClient.h; path = Babylon/BBWebSocketsClient.h; sourceTree = "<group>"; };
+		B4FA1C371CF5B9D20066D8B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Babylon/Main.storyboard; sourceTree = "<group>"; };
+		B4FA1C381CF5B9D20066D8B1 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = Babylon/ChatViewController.h; sourceTree = "<group>"; };
+		CF460E772239EF6102694286 /* Pods-BabylonBotDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQMessagesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68D899A0AE7E8180C89579D /* Pods-JSQMessagesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessagesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessagesTests/Pods-JSQMessagesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,7 +365,7 @@
 				88445B3519E0AE4A0014F889 /* CoreGraphics.framework in Frameworks */,
 				88445B3319E0AE450014F889 /* Foundation.framework in Frameworks */,
 				88445B3119E0AE3F0014F889 /* UIKit.framework in Frameworks */,
-				E8877F1947CE8050ECCD9539 /* libPods.a in Frameworks */,
+				019369FB07441EFF72FDE999 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +381,29 @@
 				88445B3919E0C0AC0014F889 /* Foundation.framework in Frameworks */,
 				88445B3819E0C0A70014F889 /* UIKit.framework in Frameworks */,
 				C8994EF7DDBE74B9E3F1A16C /* libPods-JSQMessagesTests.a in Frameworks */,
-				BF6DA766BD3B8893A67FB2BD /* libPods.a in Frameworks */,
+				BF6DA766BD3B8893A67FB2BD /* (null) in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BDB1CF5B3250066D8B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F07AC79157A78193BE7B0652 /* Pods_BabylonBotDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BF31CF5B3260066D8B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BFE1CF5B3260066D8B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,8 +421,9 @@
 				88445B3619E0AE5C0014F889 /* QuartzCore.framework */,
 				88445B3019E0AE3F0014F889 /* UIKit.framework */,
 				88445B3A19E0C0B10014F889 /* XCTest.framework */,
-				C3F882AA48978C11F64DC2DF /* libPods.a */,
 				E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */,
+				2BC496DC8070EB88DD918AF6 /* Pods.framework */,
+				64CD47608DF90C4B600DCDF9 /* Pods_BabylonBotDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -349,6 +435,8 @@
 				4D257782A244F7688A2F6AA8 /* Pods.debug.xcconfig */,
 				F68D899A0AE7E8180C89579D /* Pods-JSQMessagesTests.debug.xcconfig */,
 				242A2BCAF25E39CC1DAF654E /* Pods-JSQMessagesTests.release.xcconfig */,
+				CF460E772239EF6102694286 /* Pods-BabylonBotDemo.debug.xcconfig */,
+				9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -358,6 +446,9 @@
 			children = (
 				886C33FE19F45E30006B4997 /* JSQMessagesViewController.podspec */,
 				88A25F3E19D8E01A00924534 /* JSQMessagesViewController */,
+				B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */,
+				B4FA1BF91CF5B3260066D8B1 /* BabylonBotDemoTests */,
+				B4FA1C041CF5B3260066D8B1 /* BabylonBotDemoUITests */,
 				636A8663AEEE5C37B65C515D /* Frameworks */,
 				88A25F2B19D8DF2500924534 /* JSQMessagesDemo */,
 				88A25F1E19D8DEC500924534 /* JSQMessagesTests */,
@@ -371,6 +462,9 @@
 			children = (
 				88A25F0219D8DEC400924534 /* JSQMessages.app */,
 				88A25F1B19D8DEC500924534 /* JSQMessagesTests.xctest */,
+				B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */,
+				B4FA1BF61CF5B3260066D8B1 /* BabylonBotDemoTests.xctest */,
+				B4FA1C011CF5B3260066D8B1 /* BabylonBotDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -652,6 +746,103 @@
 			path = ViewTests;
 			sourceTree = "<group>";
 		};
+		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C171CF5B8C20066D8B1 /* Data Models */,
+				B4101C9E1CF5C726005EF656 /* BBHelpers.h */,
+				B4101C9F1CF5C726005EF656 /* BBHelpers.m */,
+				B4FA1C1A1CF5B91B0066D8B1 /* Api */,
+				B4FA1C1B1CF5B9230066D8B1 /* Controllers */,
+				B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */,
+				B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */,
+				B4FA1C371CF5B9D20066D8B1 /* Main.storyboard */,
+				B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */,
+				B4FA1BEE1CF5B3260066D8B1 /* LaunchScreen.storyboard */,
+				B4FA1BF11CF5B3260066D8B1 /* Info.plist */,
+				B4FA1BE01CF5B3260066D8B1 /* Supporting Files */,
+			);
+			path = BabylonBotDemo;
+			sourceTree = "<group>";
+		};
+		B4FA1BE01CF5B3260066D8B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1BE11CF5B3260066D8B1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4FA1BF91CF5B3260066D8B1 /* BabylonBotDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1BFA1CF5B3260066D8B1 /* BabylonBotDemoTests.m */,
+				B4FA1BFC1CF5B3260066D8B1 /* Info.plist */,
+			);
+			path = BabylonBotDemoTests;
+			sourceTree = "<group>";
+		};
+		B4FA1C041CF5B3260066D8B1 /* BabylonBotDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C051CF5B3260066D8B1 /* BabylonBotDemoUITests.m */,
+				B4FA1C071CF5B3260066D8B1 /* Info.plist */,
+			);
+			path = BabylonBotDemoUITests;
+			sourceTree = "<group>";
+		};
+		B4FA1C171CF5B8C20066D8B1 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C181CF5B8D60066D8B1 /* Talk */,
+			);
+			name = "Data Models";
+			path = ../JSQMessagesViewController/Model;
+			sourceTree = "<group>";
+		};
+		B4FA1C181CF5B8D60066D8B1 /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+				B4101CA11CF5CBFB005EF656 /* BBChatBotDataModelDispatch.h */,
+				B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */,
+				B4101CA31CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.h */,
+				B4101CA41CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m */,
+			);
+			name = Talk;
+			sourceTree = "<group>";
+		};
+		B4FA1C1A1CF5B91B0066D8B1 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C301CF5B9D20066D8B1 /* ApiManager.h */,
+				B4FA1C2E1CF5B9D20066D8B1 /* ApiManager.m */,
+				B4FA1C1C1CF5B9350066D8B1 /* WebSockets */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		B4FA1C1B1CF5B9230066D8B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C2F1CF5B9D20066D8B1 /* ChatViewHelper.m */,
+				B4FA1C331CF5B9D20066D8B1 /* ChatViewController.m */,
+				B4FA1C341CF5B9D20066D8B1 /* ChatViewHelper.h */,
+				B4FA1C381CF5B9D20066D8B1 /* ChatViewController.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B4FA1C1C1CF5B9350066D8B1 /* WebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */,
+				B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */,
+				B4FA1C351CF5B9D20066D8B1 /* BBWebSocketsChannel.h */,
+				B4FA1C361CF5B9D20066D8B1 /* BBWebSocketsClient.h */,
+			);
+			name = WebSockets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -696,6 +887,62 @@
 			productReference = 88A25F1B19D8DEC500924534 /* JSQMessagesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B4FA1BDD1CF5B3250066D8B1 /* BabylonBotDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4FA1C0E1CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemo" */;
+			buildPhases = (
+				7EBC3FAB792CE725CFC29CE0 /* Check Pods Manifest.lock */,
+				B4FA1BDA1CF5B3250066D8B1 /* Sources */,
+				B4FA1BDB1CF5B3250066D8B1 /* Frameworks */,
+				B4FA1BDC1CF5B3250066D8B1 /* Resources */,
+				4EA7A7B0C0E7030B7FBB7808 /* Embed Pods Frameworks */,
+				7C0B8EDB67929ABEDA969C4F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BabylonBotDemo;
+			productName = BabylonBotDemo;
+			productReference = B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4FA1BF51CF5B3260066D8B1 /* BabylonBotDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4FA1C0F1CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemoTests" */;
+			buildPhases = (
+				B4FA1BF21CF5B3260066D8B1 /* Sources */,
+				B4FA1BF31CF5B3260066D8B1 /* Frameworks */,
+				B4FA1BF41CF5B3260066D8B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4FA1BF81CF5B3260066D8B1 /* PBXTargetDependency */,
+			);
+			name = BabylonBotDemoTests;
+			productName = BabylonBotDemoTests;
+			productReference = B4FA1BF61CF5B3260066D8B1 /* BabylonBotDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B4FA1C001CF5B3260066D8B1 /* BabylonBotDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4FA1C101CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemoUITests" */;
+			buildPhases = (
+				B4FA1BFD1CF5B3260066D8B1 /* Sources */,
+				B4FA1BFE1CF5B3260066D8B1 /* Frameworks */,
+				B4FA1BFF1CF5B3260066D8B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4FA1C031CF5B3260066D8B1 /* PBXTargetDependency */,
+			);
+			name = BabylonBotDemoUITests;
+			productName = BabylonBotDemoUITests;
+			productReference = B4FA1C011CF5B3260066D8B1 /* BabylonBotDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -711,6 +958,17 @@
 					88A25F1A19D8DEC400924534 = {
 						CreatedOnToolsVersion = 6.0.1;
 						TestTargetID = 88A25F0119D8DEC400924534;
+					};
+					B4FA1BDD1CF5B3250066D8B1 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					B4FA1BF51CF5B3260066D8B1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B4FA1BDD1CF5B3250066D8B1;
+					};
+					B4FA1C001CF5B3260066D8B1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B4FA1BDD1CF5B3250066D8B1;
 					};
 				};
 			};
@@ -742,6 +1000,9 @@
 			targets = (
 				88A25F0119D8DEC400924534 /* JSQMessages */,
 				88A25F1A19D8DEC400924534 /* JSQMessagesTests */,
+				B4FA1BDD1CF5B3250066D8B1 /* BabylonBotDemo */,
+				B4FA1BF51CF5B3260066D8B1 /* BabylonBotDemoTests */,
+				B4FA1C001CF5B3260066D8B1 /* BabylonBotDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -774,9 +1035,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4FA1BDC1CF5B3250066D8B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FA1C3E1CF5B9D20066D8B1 /* Main.storyboard in Resources */,
+				B4FA1BF01CF5B3260066D8B1 /* LaunchScreen.storyboard in Resources */,
+				B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BF41CF5B3260066D8B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BFF1CF5B3260066D8B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4EA7A7B0C0E7030B7FBB7808 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		78F522A7ECBD8D8774672696 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -790,6 +1090,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C0B8EDB67929ABEDA969C4F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EBC3FAB792CE725CFC29CE0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		908FA537E0B2FD4A94A60411 /* Copy Pods Resources */ = {
@@ -961,6 +1291,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B4FA1BDA1CF5B3250066D8B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FA1C391CF5B9D20066D8B1 /* ApiManager.m in Sources */,
+				B4FA1C3A1CF5B9D20066D8B1 /* ChatViewHelper.m in Sources */,
+				B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */,
+				B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */,
+				B4FA1C3C1CF5B9D20066D8B1 /* BBWebSocketsClient.m in Sources */,
+				B4101CA01CF5C726005EF656 /* BBHelpers.m in Sources */,
+				B4FA1C3D1CF5B9D20066D8B1 /* ChatViewController.m in Sources */,
+				B4101CA61CF5CBFB005EF656 /* BBChatBotDataModelTalkChat.m in Sources */,
+				B4FA1C3B1CF5B9D20066D8B1 /* BBWebSocketsChannel.m in Sources */,
+				B4101CA51CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BF21CF5B3260066D8B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FA1BFB1CF5B3260066D8B1 /* BabylonBotDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4FA1BFD1CF5B3260066D8B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FA1C061CF5B3260066D8B1 /* BabylonBotDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -968,6 +1331,16 @@
 			isa = PBXTargetDependency;
 			target = 88A25F0119D8DEC400924534 /* JSQMessages */;
 			targetProxy = 88A25F1C19D8DEC500924534 /* PBXContainerItemProxy */;
+		};
+		B4FA1BF81CF5B3260066D8B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4FA1BDD1CF5B3250066D8B1 /* BabylonBotDemo */;
+			targetProxy = B4FA1BF71CF5B3260066D8B1 /* PBXContainerItemProxy */;
+		};
+		B4FA1C031CF5B3260066D8B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4FA1BDD1CF5B3250066D8B1 /* BabylonBotDemo */;
+			targetProxy = B4FA1C021CF5B3260066D8B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -978,6 +1351,14 @@
 				88A25F3119D8DF2500924534 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B4FA1BEE1CF5B3260066D8B1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4FA1BEF1CF5B3260066D8B1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1134,6 +1515,103 @@
 			};
 			name = Release;
 		};
+		B4FA1C081CF5B3260066D8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF460E772239EF6102694286 /* Pods-BabylonBotDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BabylonBotDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B4FA1C091CF5B3260066D8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BabylonBotDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B4FA1C0A1CF5B3260066D8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BabylonBotDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabylonBotDemo.app/BabylonBotDemo";
+			};
+			name = Debug;
+		};
+		B4FA1C0B1CF5B3260066D8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BabylonBotDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabylonBotDemo.app/BabylonBotDemo";
+			};
+			name = Release;
+		};
+		B4FA1C0C1CF5B3260066D8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BabylonBotDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BabylonBotDemo;
+			};
+			name = Debug;
+		};
+		B4FA1C0D1CF5B3260066D8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BabylonBotDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BabylonBotDemo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1160,6 +1638,33 @@
 			buildConfigurations = (
 				88A25F2919D8DEC500924534 /* Debug */,
 				88A25F2A19D8DEC500924534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4FA1C0E1CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4FA1C081CF5B3260066D8B1 /* Debug */,
+				B4FA1C091CF5B3260066D8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4FA1C0F1CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4FA1C0A1CF5B3260066D8B1 /* Debug */,
+				B4FA1C0B1CF5B3260066D8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4FA1C101CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4FA1C0C1CF5B3260066D8B1 /* Debug */,
+				B4FA1C0D1CF5B3260066D8B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
