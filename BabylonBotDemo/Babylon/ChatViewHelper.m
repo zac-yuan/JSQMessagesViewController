@@ -2,7 +2,7 @@
 #import "ChatViewHelper.h"
 #import "BBHelpers.h"
 @import ios_maps;
-#import "ApiManager.h"
+#import "ApiManagerChatBot.h"
 
 @implementation ChatViewHelper
 
@@ -92,7 +92,7 @@
     [self scrollToBottomAnimated:YES];
     
     //TODO: Change it to apimanager postConversation method
-    [[ApiManager sharedConfiguration] getTalkChat:text success:^(AFHTTPRequestOperation *operation, id response) {
+    [[ApiManagerChatBot sharedConfiguration] getTalkChat:text success:^(AFHTTPRequestOperation *operation, id response) {
         BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
         
         [JSQSystemSoundPlayer jsq_playMessageReceivedSound];

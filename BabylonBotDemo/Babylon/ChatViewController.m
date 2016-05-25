@@ -1,6 +1,6 @@
 
 #import "ChatViewController.h"
-#import "ApiManager.h"
+#import "ApiManagerChatBot.h"
 
 @implementation ChatViewController
 
@@ -9,7 +9,7 @@
     
     // Start chatBot
     //TODO: Change it to apimanager getConversation
-    [[ApiManager sharedConfiguration] getTalkChat:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
+    [[ApiManagerChatBot sharedConfiguration] getTalkChat:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
         BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
 
         JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:chatDataModel.chat];

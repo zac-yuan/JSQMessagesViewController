@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 
-@interface ApiManager : NSObject
+@interface ApiManagerChatBot : NSObject
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *authKey;

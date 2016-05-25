@@ -1,7 +1,7 @@
 
 #import "BBChatBotDataModelTalkChat.h"
 #import "JSQMessages.h"
-#import "ApiManager.h"
+#import "ApiManagerChatBot.h"
 
 static NSString *kBabylonDoctorName = @"Dr. Babylon";
 static NSString *kBabylonDoctorId = @"babyBot";

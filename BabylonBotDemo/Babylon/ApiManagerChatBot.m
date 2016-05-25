@@ -1,5 +1,5 @@
 
-#import "ApiManager.h"
+#import "ApiManagerChatBot.h"
 #import "BBWebSocketsClient.h"
 
 typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoint;
@@ -8,10 +8,10 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 //staging-chatscript.babylontesting.co.uk/v1
 NSString *const chatBotApiUrlBase = @"http://dev-chatscript.babylontesting.co.uk/v1";
 
-@implementation ApiManager
+@implementation ApiManagerChatBot
 
 + (instancetype)sharedConfiguration {
-    static ApiManager *_sharedConfiguration = nil;
+    static ApiManagerChatBot *_sharedConfiguration = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedConfiguration = [[self alloc] init];
