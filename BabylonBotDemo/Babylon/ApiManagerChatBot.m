@@ -25,8 +25,8 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     //HARDCODE: DEMO ONLY
     _sharedConfiguration.userID = @"1077";
     _sharedConfiguration.authKey = @"73e40106b7bef08ae9a1888e35882a4b";
-    _sharedConfiguration.speakerID = @"babybot";
-    _sharedConfiguration.targetID = _sharedConfiguration.userID;
+    _sharedConfiguration.speakerID = _sharedConfiguration.userID;
+    _sharedConfiguration.targetID = @"babybot";
 
     return _sharedConfiguration;
 }

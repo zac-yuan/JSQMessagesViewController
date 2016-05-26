@@ -21,3 +21,20 @@ NSString *const chatBotApiUrlBase = @"http://dev-chatscript.babylontesting.co.uk
 + (UIFont *)babylonRegularFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Regular" size:fontSize];}
 + (UIFont *)babylonMediumFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Medium" size:fontSize];}
 @end
+
+// STRINGS
+@implementation NSString (Babylon)
++ (NSString *)babylonErrorMsg:(NSError *)error {
+    if ([error.localizedFailureReason length]>0) {
+        return error.localizedFailureReason;
+    } else if ([error.localizedDescription length]>0) {
+        return error.localizedDescription;
+    } else {
+        if ([error.description length]>0) {
+            return error.description;
+        } else {
+            return @"I don't get it. Sorry";
+        }
+    }
+}
+@end

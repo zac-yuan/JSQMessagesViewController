@@ -15,3 +15,8 @@ extern NSString *const chatBotApiUrlBase;
 + (UIFont *)babylonRegularFont:(float)fontSize;
 + (UIFont *)babylonMediumFont:(float)fontSize;
 @end
+
+// STRINGS
+@interface NSString (Babylon)
++ (NSString *)babylonErrorMsg:(NSError *)error;
+@end
