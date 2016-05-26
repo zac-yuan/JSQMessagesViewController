@@ -1,72 +1,60 @@
-//
-//  Created by Jesse Squires
-//  http://www.jessesquires.com
-//
-//
-//  Documentation
-//  http://cocoadocs.org/docsets/JSQMessagesViewController
-//
-//
-//  GitHub
-//  https://github.com/jessesquires/JSQMessagesViewController
-//
-//
-//  License
-//  Copyright (c) 2014 Jesse Squires
-//  Released under an MIT license: http://opensource.org/licenses/MIT
-//
 
-#import "JSQMessagesTypingIndicatorFooterView.h"
-
+#import "BBMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesBubbleImageFactory.h"
 
-#import "UIImage+JSQMessages.h"
+const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight = 46.0f;
 
-const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight2 = 46.0f;
-
-
-@interface JSQMessagesTypingIndicatorFooterView ()
+@interface BBMessagesTypingIndicatorFooterView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *bubbleImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bubbleImageViewRightHorizontalConstraint;
 
-@property (weak, nonatomic) IBOutlet UIImageView *typingIndicatorImageView;
+@property (weak, nonatomic) IBOutlet UIView *typingIndicatorView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *typingIndicatorImageViewRightHorizontalConstraint;
 
 @end
 
-
-
-@implementation JSQMessagesTypingIndicatorFooterView
+@implementation BBMessagesTypingIndicatorFooterView
 
 #pragma mark - Class methods
 
-+ (UINib *)nib
-{
-    return [UINib nibWithNibName:NSStringFromClass([JSQMessagesTypingIndicatorFooterView class])
-                          bundle:[NSBundle bundleForClass:[JSQMessagesTypingIndicatorFooterView class]]];
++ (UINib *)nib {
+    return [UINib nibWithNibName:NSStringFromClass([BBMessagesTypingIndicatorFooterView class])
+                          bundle:[NSBundle bundleForClass:[BBMessagesTypingIndicatorFooterView class]]];
 }
 
-+ (NSString *)footerReuseIdentifier
-{
-    return NSStringFromClass([JSQMessagesTypingIndicatorFooterView class]);
++ (NSString *)footerReuseIdentifier {
+    return NSStringFromClass([BBMessagesTypingIndicatorFooterView class]);
 }
 
 #pragma mark - Initialization
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.backgroundColor = [UIColor clearColor];
     self.userInteractionEnabled = NO;
-    self.typingIndicatorImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.typingIndicatorView.contentMode = UIViewContentModeScaleAspectFit;
+    self.dotActivityIndicatorView.dotParms = [self loadDotActivityIndicatorParms];
+}
+
+- (BBDotActivityIndicatorParms *)loadDotActivityIndicatorParms {
+    BBDotActivityIndicatorParms *dotParms = [BBDotActivityIndicatorParms new];
+    dotParms.activityViewWidth = self.dotActivityIndicatorView.frame.size.width;
+    dotParms.activityViewHeight = self.dotActivityIndicatorView.frame.size.height;
+    dotParms.numberOfCircles = 3;
+    dotParms.internalSpacing = 5;
+    dotParms.animationDelay = 0.2;
+    dotParms.animationDuration = 0.6;
+    dotParms.animationFromValue = 0.3;
+    dotParms.defaultColor = [UIColor purpleColor];
+    dotParms.isDataValidationEnabled = YES;
+    return dotParms;
 }
 
 #pragma mark - Reusable view
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor
-{
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
     [super setBackgroundColor:backgroundColor];
     self.bubbleImageView.backgroundColor = backgroundColor;
 }
@@ -76,8 +64,8 @@ const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight2 = 46.0f;
 - (void)configureWithEllipsisColor:(UIColor *)ellipsisColor
                 messageBubbleColor:(UIColor *)messageBubbleColor
                shouldDisplayOnLeft:(BOOL)shouldDisplayOnLeft
-                 forCollectionView:(UICollectionView *)collectionView
-{
+                 forCollectionView:(UICollectionView *)collectionView {
+    
     NSParameterAssert(ellipsisColor != nil);
     NSParameterAssert(messageBubbleColor != nil);
     NSParameterAssert(collectionView != nil);
@@ -88,28 +76,35 @@ const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight2 = 46.0f;
     JSQMessagesBubbleImageFactory *bubbleImageFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     
     if (shouldDisplayOnLeft) {
+        
         self.bubbleImageView.image = [bubbleImageFactory incomingMessagesBubbleImageWithColor:messageBubbleColor].messageBubbleImage;
         
         CGFloat collectionViewWidth = CGRectGetWidth(collectionView.frame);
         CGFloat bubbleWidth = CGRectGetWidth(self.bubbleImageView.frame);
-        CGFloat indicatorWidth = CGRectGetWidth(self.typingIndicatorImageView.frame);
+        CGFloat indicatorWidth = CGRectGetWidth(self.typingIndicatorView.frame);
         
         CGFloat bubbleMarginMaximumSpacing = collectionViewWidth - bubbleWidth - bubbleMarginMinimumSpacing;
         CGFloat indicatorMarginMaximumSpacing = collectionViewWidth - indicatorWidth - indicatorMarginMinimumSpacing;
         
         self.bubbleImageViewRightHorizontalConstraint.constant = bubbleMarginMaximumSpacing;
         self.typingIndicatorImageViewRightHorizontalConstraint.constant = indicatorMarginMaximumSpacing;
-    }
-    else {
+        
+    } else {
+        
         self.bubbleImageView.image = [bubbleImageFactory outgoingMessagesBubbleImageWithColor:messageBubbleColor].messageBubbleImage;
         
         self.bubbleImageViewRightHorizontalConstraint.constant = bubbleMarginMinimumSpacing;
         self.typingIndicatorImageViewRightHorizontalConstraint.constant = indicatorMarginMinimumSpacing;
+        
     }
     
     [self setNeedsUpdateConstraints];
     
-    self.typingIndicatorImageView.image = [[UIImage jsq_defaultTypingIndicatorImage] jsq_imageMaskedWithColor:ellipsisColor];
+    [self.dotActivityIndicatorView stopAnimating];
+    self.typingIndicatorView = self.dotActivityIndicatorView;
+    [self.dotActivityIndicatorView startAnimating];
+    
 }
+
 
 @end

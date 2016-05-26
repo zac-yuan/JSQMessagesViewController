@@ -23,9 +23,8 @@
 #import "JSQMessagesCollectionViewDataSource.h"
 #import "JSQMessagesCollectionViewCell.h"
 
-@class JSQMessagesTypingIndicatorFooterView;
 @class JSQMessagesLoadEarlierHeaderView;
-
+@class BBMessagesTypingIndicatorFooterView;
 
 /**
  *  The `JSQMessagesCollectionView` class manages an ordered collection of message data items and presents
@@ -86,7 +85,7 @@
  *
  *  @return A valid `JSQMessagesTypingIndicatorFooterView` object.
  */
-- (JSQMessagesTypingIndicatorFooterView *)dequeueTypingIndicatorFooterViewForIndexPath:(NSIndexPath *)indexPath;
+- (BBMessagesTypingIndicatorFooterView *)dequeueTypingIndicatorFooterViewForIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  Returns a `JSQMessagesLoadEarlierHeaderView` object for the specified index path

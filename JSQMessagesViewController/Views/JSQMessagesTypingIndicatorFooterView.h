@@ -22,7 +22,7 @@
 /**
  *  A constant defining the default height of a `JSQMessagesTypingIndicatorFooterView`.
  */
-FOUNDATION_EXPORT const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight;
+FOUNDATION_EXPORT const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight2;
 
 /**
  *  The `JSQMessagesTypingIndicatorFooterView` class implements a reusable view that can be placed
