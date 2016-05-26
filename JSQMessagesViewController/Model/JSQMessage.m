@@ -21,6 +21,17 @@
 
 @implementation JSQMessage
 
++(instancetype)messageWithSenderId:(NSString *)senderId
+                       displayName:(NSString *)displayName
+                              text:(NSString *)text
+                             media:(id<JSQMessageMediaData>)media {
+    return [[self alloc] initWithSenderId:senderId
+                        senderDisplayName:displayName
+                                     date:[NSDate date]
+                                     text:text
+                                    media:media];
+}
+
 #pragma mark - Initialization
 
 + (instancetype)messageWithSenderId:(NSString *)senderId
@@ -43,6 +54,23 @@
     self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO];
     if (self) {
         _text = [text copy];
+    }
+    return self;
+}
+
+- (instancetype)initWithSenderId:(NSString *)senderId
+               senderDisplayName:(NSString *)senderDisplayName
+                            date:(NSDate *)date
+                            text:(NSString *)text
+                           media:(id<JSQMessageMediaData>)media
+{
+    NSParameterAssert(text != nil);
+    NSParameterAssert(media != nil);
+    
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMixedMedia:YES];
+    if (self) {
+        _text = [text copy];
+        _media = media;
     }
     return self;
 }
@@ -86,6 +114,25 @@
         _senderDisplayName = [senderDisplayName copy];
         _date = [date copy];
         _isMediaMessage = isMedia;
+    }
+    return self;
+}
+
+- (instancetype)initWithSenderId:(NSString *)senderId
+               senderDisplayName:(NSString *)senderDisplayName
+                            date:(NSDate *)date
+                    isMixedMedia:(BOOL)isMixedMedia
+{
+    NSParameterAssert(senderId != nil);
+    NSParameterAssert(senderDisplayName != nil);
+    NSParameterAssert(date != nil);
+    
+    self = [super init];
+    if (self) {
+        _senderId = [senderId copy];
+        _senderDisplayName = [senderDisplayName copy];
+        _date = [date copy];
+        _isMixedMediaMessage = isMixedMedia;
     }
     return self;
 }
