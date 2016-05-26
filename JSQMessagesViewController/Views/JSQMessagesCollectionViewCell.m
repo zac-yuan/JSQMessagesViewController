@@ -337,6 +337,11 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 -(void)setBottomAttachmentView:(UIView *)bottomAttachmentView
 {
+    // because of cell re-use we must remove something if it aleady exists
+    if(self.bottomAttachmentView) {
+        [self.bottomAttachmentView removeFromSuperview];
+    }
+    
     _bottomAttachmentView = bottomAttachmentView;
     [bottomAttachmentView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.bottomAttachmentViewContainer addSubview:bottomAttachmentView];

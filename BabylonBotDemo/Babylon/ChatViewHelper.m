@@ -2,6 +2,9 @@
 #import "ChatViewHelper.h"
 #import "BBConstants.h"
 #import "ApiManagerChatBot.h"
+#import "JSQViewMediaItem.h"
+#import "JSQMessagesOptionsTableViewController.h"
+#import "JSQMessagesOption.h"
 @import ios_maps;
 
 @implementation ChatViewHelper
@@ -50,13 +53,13 @@
                                                                                  message:NSLocalizedString(chatDataModel.chat, nil)
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
     
-    
     for (int x=0; x<[chatDataModel.dispatch count]; x++) {
         NSString *optionTitle = [(BBChatBotDataModelDispatch *)[chatDataModel.dispatch objectAtIndex:x] title];
-        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil)
-                                                                 style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                                                                     [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date]];
-                                                                 }];
+        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] success:^{
+                [self selectedOption:chatDataModel.dispatch[x] inOptions:chatDataModel.dispatch forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+            }];
+        }];
         [alertViewController addAction:chatMenuOption];
     }
     
@@ -75,8 +78,34 @@
     
 }
 
-- (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text
-           senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
+- (void)selectedOption:(BBChatBotDataModelDispatch *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelTalkChat *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
+    NSMutableArray *dataSource = [NSMutableArray new];
+    
+    for(BBChatBotDataModelDispatch *option in options ) {
+        UIColor *textColor;
+        UIColor *backgroundColor;
+        if(option == selectedOption) {
+            backgroundColor = [UIColor babylonPurple];
+            textColor = [UIColor babylonWhite];
+        } else {
+            backgroundColor = [UIColor babylonWhite];
+            textColor = [UIColor babylonPurple];
+        }
+        
+        [dataSource addObject:[JSQMessagesOption optionWithText:option.title textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
+    }
+
+    JSQMessagesOptionsTableViewController *viewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
+    JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
+    JSQMessage *userMessage = [JSQMessage messageWithSenderId:senderId
+                                                  displayName:senderDisplayName
+                                                         text:question.chat
+                                                        media:item];
+    [self.chatMessagesArray addObject:userMessage];
+    [self finishSendingMessage];
+}
+
+- (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date success:(ChatViewHelperSendSuccess)success {
     
     JSQMessage *userMessage = [[JSQMessage alloc] initWithSenderId:senderId
                                                  senderDisplayName:senderDisplayName
@@ -93,6 +122,10 @@
     
     //TODO: Change it to apimanager postConversation method
     [[ApiManagerChatBot sharedConfiguration] getTalkChat:text success:^(AFHTTPRequestOperation *operation, id response) {
+        if(success) {
+            success();
+        }
+        
         BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
         
         [JSQSystemSoundPlayer jsq_playMessageReceivedSound];

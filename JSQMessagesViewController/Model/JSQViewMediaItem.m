@@ -8,10 +8,12 @@
 
 #import "JSQViewMediaItem.h"
 #import "JSQMessagesMediaViewBubbleImageMasker.h"
+#import "UIView+JSQMessages.h"
 
 @interface JSQViewMediaItem ()
 
 @property (strong, nonatomic) UIView *cachedMediaContainer;
+@property (strong, nonatomic) UIViewController *viewController;
 
 @end
 
@@ -29,6 +31,14 @@
     return self;
 }
 
+- (instancetype)initWithViewControllerMedia:(UIViewController *)media {
+    self = [self initWithViewMedia:media.view];
+    if (self) {
+        self.viewController = media;
+    }
+    return self;
+}
+
 - (void)clearCachedMediaViews
 {
     [super clearCachedMediaViews];
@@ -41,6 +51,7 @@
 {
     _media = media;
     _cachedMediaContainer = nil;
+    _viewController = nil;
 }
 
 - (void)setAppliesMediaViewMaskAsOutgoing:(BOOL)appliesMediaViewMaskAsOutgoing
@@ -58,13 +69,16 @@
 
 - (UIView *)mediaView
 {
-    if (_media == nil) {
+    if (self.media == nil) {
         return nil;
     }
     
     if (self.cachedMediaContainer == nil) {
-        UIView *view = _media;
-        //[JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:view isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        UIView *view = [[UIView alloc] initWithFrame:self.media.bounds];
+        view.backgroundColor = [UIColor clearColor];
+        self.media.translatesAutoresizingMaskIntoConstraints = NO;
+        [view addSubview:self.media];
+        [view jsq_pinAllEdgesOfSubview:self.media];
         self.cachedMediaContainer = view;
     }
     
@@ -74,11 +88,6 @@
 - (NSUInteger)mediaHash
 {
     return self.hash;
-}
-
-- (NSString *)mediaDataType
-{
-    return [NSString string];
 }
 
 - (id)mediaData

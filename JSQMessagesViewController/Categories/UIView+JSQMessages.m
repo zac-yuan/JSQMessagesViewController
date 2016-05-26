@@ -22,21 +22,30 @@
 
 - (void)jsq_pinSubview:(UIView *)subview toEdge:(NSLayoutAttribute)attribute
 {
+    [self jsq_pinSubview:subview toEdge:attribute padding:0.f];
+}
+
+- (void)jsq_pinSubview:(UIView *)subview toEdge:(NSLayoutAttribute)attribute padding:(CGFloat)padding
+{
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self
                                                      attribute:attribute
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:subview
                                                      attribute:attribute
                                                     multiplier:1.0f
-                                                      constant:0.0f]];
+                                                      constant:padding]];
 }
 
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview
 {
-    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeBottom];
-    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTop];
-    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeLeading];
-    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing];
+    [self jsq_pinAllEdgesOfSubview:subview withPadding:0.f];
+}
+
+- (void)jsq_pinAllEdgesOfSubview:(UIView *)subview withPadding:(CGFloat)padding {
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeBottom padding:padding];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTop padding:padding];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeLeading padding:-padding];
+    [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing padding:padding];
 }
 
 @end
