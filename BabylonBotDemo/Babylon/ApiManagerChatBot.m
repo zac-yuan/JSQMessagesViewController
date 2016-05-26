@@ -17,6 +17,9 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
         [_sharedConfiguration.manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
         [_sharedConfiguration.manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
         [_sharedConfiguration.manager.reachabilityManager startMonitoring];
+        
+        [_sharedConfiguration initWebSocketChannel:@"1077"];
+        
     });
     
     //HARDCODE: DEMO ONLY
@@ -24,7 +27,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     _sharedConfiguration.authKey = @"73e40106b7bef08ae9a1888e35882a4b";
     _sharedConfiguration.speakerID = @"babybot";
     _sharedConfiguration.targetID = _sharedConfiguration.userID;
-    
+
     return _sharedConfiguration;
 }
 
@@ -219,10 +222,23 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 - (void)initWebSocketChannel:(NSString *)channelName {
     
     BBWebSocketsClient *socketClient = [[BBWebSocketsClient alloc] initWithChannel:channelName];
+    [socketClient setDelegate:self];
     [socketClient connectWithCompletion:^{
         NSLog(@"websocket connect");
     }];
     
+}
+
+- (void)pubNubClient:(BBWebSocketsClient *)client presenceEvents:(NSArray *)presenceEvents {
+    NSLog(@"%@", presenceEvents);
+}
+
+- (void)pubNubClient:(BBWebSocketsClient *)client state:(BBWebSocketsChannelState)state {
+    NSLog(@"%@ / %lu", client, (unsigned long)state);
+}
+
+- (void)pubNubClient:(BBWebSocketsClient *)client messages:(NSArray *)messages receivedDate:(NSDate *)receivedDate {
+    NSLog(@"%@ %@ %@", client, messages, receivedDate);
 }
 
 #pragma mark - Api Utils

@@ -932,10 +932,10 @@
 		B4FA1C1C1CF5B9350066D8B1 /* WebSockets */ = {
 			isa = PBXGroup;
 			children = (
-				B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */,
-				B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */,
 				B4FA1C351CF5B9D20066D8B1 /* BBWebSocketsChannel.h */,
+				B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */,
 				B4FA1C361CF5B9D20066D8B1 /* BBWebSocketsClient.h */,
+				B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */,
 			);
 			name = WebSockets;
 			sourceTree = "<group>";

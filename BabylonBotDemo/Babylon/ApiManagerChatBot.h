@@ -1,8 +1,9 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import "BBWebSocketsClient.h"
 
-@interface ApiManagerChatBot : NSObject
+@interface ApiManagerChatBot : NSObject <BBWebSocketsClientDelegate>
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *authKey;

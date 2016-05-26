@@ -6,12 +6,12 @@
 
 static NSString *kPubNubProtocol = @"https";
 static NSString *kPubNubHost = @"pubsub.pubnub.com";
-static NSString *kPubNubSdkId = @"Babylon";
+static NSString *kPubNubSdkId = @"babybot-notifications";
 
 //TODO: UPGRADE API KEY BEFORE RELEASE
-static NSString *kPublishKey = @"pub-c-c34239b3-b6df-412d-be70-6cc41c5b70a3";
-static NSString *kSubscribeKey = @"sub-c-966ec2b0-1e9f-11e6-8bc8-0619f8945a4f";
-static NSString *kSecretKey = @"sec-c-NmU0M2JkNDktNTQyNy00Y2VkLWFjOTAtNTMwYjY4ZWZlZmE5";
+static NSString *kPublishKey = @"pub-c-63c4d0c1-0085-4719-962f-fbc211d4f90a";
+static NSString *kSubscribeKey = @"sub-c-67d2f8fe-20ed-11e6-b700-0619f8945a4f";
+static NSString *kSecretKey = @"sec-c-NmNkYTRlMTAtYTIwZC00YzgwLTllNjAtNzQzYTAwMzg4YjYw";
 
 static const NSTimeInterval kPubNubPollTimeoutSeconds = 20.0;
 static const NSTimeInterval kPubNubTimeoutSeconds = 5.0;
