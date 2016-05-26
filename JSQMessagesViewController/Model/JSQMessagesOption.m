@@ -12,11 +12,15 @@
 
 +(JSQMessagesOption *)optionWithText:(NSString *)text
                            textColor:(UIColor *)textColor
-                     backgroundColor:(UIColor *)backgroundColor {
+                                font:(UIFont *)font
+                     backgroundColor:(UIColor *)backgroundColor
+                              height:(CGFloat)height {
     JSQMessagesOption *option = [JSQMessagesOption new];
     option.text = text;
     option.textColor = textColor;
+    option.font = font;
     option.backgroundColor = backgroundColor;
+    option.height = height;
     return option;
 }
 

@@ -22,5 +22,6 @@
 @property (strong, nonatomic) UIView *media;
 
 - (instancetype)initWithViewMedia:(UIView *)media;
+- (instancetype)initWithViewControllerMedia:(UIViewController *)media;
 
 @end

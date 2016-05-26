@@ -35,4 +35,12 @@
  */
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview;
 
+/**
+ *  Pins all edges of the specified subview to the receiver.
+ *
+ *  @param subview The subview to which the receiver will be pinned.
+ *  @param padding The padding around the edge.
+ */
+- (void)jsq_pinAllEdgesOfSubview:(UIView *)subview withPadding:(CGFloat)padding;
+
 @end

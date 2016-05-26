@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		019369FB07441EFF72FDE999 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC496DC8070EB88DD918AF6 /* Pods.framework */; };
 		1F0EFE0F1AC23D7E003FF3DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */; };
+		47A39A1A23D4A5E1B30F8107 /* Pods_JSQMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBCA988909DA629F3496145 /* Pods_JSQMessages.framework */; };
 		54271E3B1C90469100294290 /* jsq_messages_sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 54271E3A1C90469100294290 /* jsq_messages_sample.m4a */; };
 		54271E3E1C905B9200294290 /* JSQAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */; };
 		54271E401C905D1600294290 /* JSQAudioMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */; };
 		544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */; };
+		7F3062E61CF73D1E0026909D /* JSQMessagesOptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24A961CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.m */; };
+		7F3062E71CF73D230026909D /* JSQMessagesOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24A9B1CF6F96200025AFA /* JSQMessagesOptionsTableViewController.m */; };
+		7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24AA11CF6F99200025AFA /* JSQViewMediaItem.m */; };
+		7F3062E91CF73D2D0026909D /* JSQMessagesOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9574171CF72447009F92D2 /* JSQMessagesOption.m */; };
+		7F3062EA1CF744160026909D /* JSQMessagesOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF24A971CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.xib */; };
 		7F9574181CF72447009F92D2 /* JSQMessagesOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9574171CF72447009F92D2 /* JSQMessagesOption.m */; };
 		7FF24A981CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24A961CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.m */; };
 		7FF24A991CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF24A971CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.xib */; };
@@ -163,6 +168,7 @@
 		9F4A61C31CF5FBBC00A808A7 /* JSQMessagesToolbarContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A25F9F19D8E01A00924534 /* JSQMessagesToolbarContentView.xib */; };
 		9F4A61C41CF5FBBC00A808A7 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A25FA219D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib */; };
 		9F4A61C51CF5FC5D00A808A7 /* JSQMessagesAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8861666C19F492B70025B958 /* JSQMessagesAssets.bundle */; };
+		B1163EEEFF6F935CD944D53E /* Pods_BabylonBotDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9801C12C6F50269FDAE98DDF /* Pods_BabylonBotDemo.framework */; };
 		B4101CA01CF5C726005EF656 /* BBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101C9F1CF5C726005EF656 /* BBConstants.m */; };
 		B4101CA51CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */; };
 		B4101CAD1CF6F8D7005EF656 /* BBMessagesTypingIndicatorFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CAC1CF6F8D7005EF656 /* BBMessagesTypingIndicatorFooterView.m */; };
@@ -191,9 +197,6 @@
 		B4FA1C3D1CF5B9D20066D8B1 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1C331CF5B9D20066D8B1 /* ChatViewController.m */; };
 		B4FA1C3E1CF5B9D20066D8B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1C371CF5B9D20066D8B1 /* Main.storyboard */; };
 		B4FEDD9A1CF70AA80047FB35 /* BBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101C9F1CF5C726005EF656 /* BBConstants.m */; };
-		BF6DA766BD3B8893A67FB2BD /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		C8994EF7DDBE74B9E3F1A16C /* libPods-JSQMessagesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */; };
-		F07AC79157A78193BE7B0652 /* Pods_BabylonBotDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CD47608DF90C4B600DCDF9 /* Pods_BabylonBotDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,10 +224,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		242A2BCAF25E39CC1DAF654E /* Pods-JSQMessagesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessagesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessagesTests/Pods-JSQMessagesTests.release.xcconfig"; sourceTree = "<group>"; };
 		2BC496DC8070EB88DD918AF6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D257782A244F7688A2F6AA8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		54271E3A1C90469100294290 /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
 		54271E3C1C905B9200294290 /* JSQAudioMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaItem.h; sourceTree = "<group>"; };
 		54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItem.m; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 		7FF24A9B1CF6F96200025AFA /* JSQMessagesOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesOptionsTableViewController.m; sourceTree = "<group>"; };
 		7FF24AA01CF6F99200025AFA /* JSQViewMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQViewMediaItem.h; sourceTree = "<group>"; };
 		7FF24AA11CF6F99200025AFA /* JSQViewMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQViewMediaItem.m; sourceTree = "<group>"; };
-		64CD47608DF90C4B600DCDF9 /* Pods_BabylonBotDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81FA18F80777B64DDB611BD3 /* Pods-BabylonBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.release.xcconfig"; sourceTree = "<group>"; };
 		88078A9B19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaPlaceholderView.h; sourceTree = "<group>"; };
 		88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaPlaceholderView.m; sourceTree = "<group>"; };
 		88324C3319F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMaskerTests.m; sourceTree = "<group>"; };
@@ -386,8 +388,7 @@
 		88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQVideoMediaItemTests.m; sourceTree = "<group>"; };
 		88C4582E19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaViewBubbleImageMasker.h; sourceTree = "<group>"; };
 		88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
-		9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.release.xcconfig"; sourceTree = "<group>"; };
-		AD6E75315517DE46FE495B65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9801C12C6F50269FDAE98DDF /* Pods_BabylonBotDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4101C9E1CF5C726005EF656 /* BBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstants.h; sourceTree = "<group>"; };
 		B4101C9F1CF5C726005EF656 /* BBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstants.m; sourceTree = "<group>"; };
 		B4101CA11CF5CBFB005EF656 /* BBChatBotDataModelDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelDispatch.h; sourceTree = "<group>"; };
@@ -428,9 +429,9 @@
 		B4FA1C361CF5B9D20066D8B1 /* BBWebSocketsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBWebSocketsClient.h; path = Babylon/BBWebSocketsClient.h; sourceTree = "<group>"; };
 		B4FA1C371CF5B9D20066D8B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Babylon/Main.storyboard; sourceTree = "<group>"; };
 		B4FA1C381CF5B9D20066D8B1 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = Babylon/ChatViewController.h; sourceTree = "<group>"; };
-		CF460E772239EF6102694286 /* Pods-BabylonBotDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQMessagesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F68D899A0AE7E8180C89579D /* Pods-JSQMessagesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessagesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessagesTests/Pods-JSQMessagesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9058AA08C919B22A85CF393 /* Pods-JSQMessages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessages.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages.release.xcconfig"; sourceTree = "<group>"; };
+		BFB5C7DAAC564B27132CFFCC /* Pods-BabylonBotDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		BFBCA988909DA629F3496145 /* Pods_JSQMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSQMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,7 +446,7 @@
 				88445B3519E0AE4A0014F889 /* CoreGraphics.framework in Frameworks */,
 				88445B3319E0AE450014F889 /* Foundation.framework in Frameworks */,
 				88445B3119E0AE3F0014F889 /* UIKit.framework in Frameworks */,
-				019369FB07441EFF72FDE999 /* Pods.framework in Frameworks */,
+				47A39A1A23D4A5E1B30F8107 /* Pods_JSQMessages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +461,6 @@
 				88445B3B19E0C0B10014F889 /* XCTest.framework in Frameworks */,
 				88445B3919E0C0AC0014F889 /* Foundation.framework in Frameworks */,
 				88445B3819E0C0A70014F889 /* UIKit.framework in Frameworks */,
-				C8994EF7DDBE74B9E3F1A16C /* libPods-JSQMessagesTests.a in Frameworks */,
-				BF6DA766BD3B8893A67FB2BD /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +468,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F07AC79157A78193BE7B0652 /* Pods_BabylonBotDemo.framework in Frameworks */,
+				B1163EEEFF6F935CD944D53E /* Pods_BabylonBotDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,24 +500,11 @@
 				88445B3619E0AE5C0014F889 /* QuartzCore.framework */,
 				88445B3019E0AE3F0014F889 /* UIKit.framework */,
 				88445B3A19E0C0B10014F889 /* XCTest.framework */,
-				E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */,
 				2BC496DC8070EB88DD918AF6 /* Pods.framework */,
-				64CD47608DF90C4B600DCDF9 /* Pods_BabylonBotDemo.framework */,
+				9801C12C6F50269FDAE98DDF /* Pods_BabylonBotDemo.framework */,
+				BFBCA988909DA629F3496145 /* Pods_JSQMessages.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		842892590A65F355D8619D29 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AD6E75315517DE46FE495B65 /* Pods.release.xcconfig */,
-				4D257782A244F7688A2F6AA8 /* Pods.debug.xcconfig */,
-				F68D899A0AE7E8180C89579D /* Pods-JSQMessagesTests.debug.xcconfig */,
-				242A2BCAF25E39CC1DAF654E /* Pods-JSQMessagesTests.release.xcconfig */,
-				CF460E772239EF6102694286 /* Pods-BabylonBotDemo.debug.xcconfig */,
-				9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		88A25EF919D8DEC400924534 = {
@@ -533,7 +519,7 @@
 				88A25F2B19D8DF2500924534 /* JSQMessagesDemo */,
 				88A25F1E19D8DEC500924534 /* JSQMessagesTests */,
 				88A25F0319D8DEC400924534 /* Products */,
-				842892590A65F355D8619D29 /* Pods */,
+				E3B9D415F9CDFF112E33ABE7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -963,6 +949,17 @@
 			name = WebSockets;
 			sourceTree = "<group>";
 		};
+		E3B9D415F9CDFF112E33ABE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFB5C7DAAC564B27132CFFCC /* Pods-BabylonBotDemo.debug.xcconfig */,
+				81FA18F80777B64DDB611BD3 /* Pods-BabylonBotDemo.release.xcconfig */,
+				0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */,
+				B9058AA08C919B22A85CF393 /* Pods-JSQMessages.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -970,12 +967,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88A25F2519D8DEC500924534 /* Build configuration list for PBXNativeTarget "JSQMessages" */;
 			buildPhases = (
-				90945CFDCD14BCFE538D66C9 /* Check Pods Manifest.lock */,
+				424930926210C48D41053C94 /* 📦 Check Pods Manifest.lock */,
 				88A25EFE19D8DEC400924534 /* Sources */,
 				88A25EFF19D8DEC400924534 /* Frameworks */,
 				88A25F0019D8DEC400924534 /* Resources */,
-				C8D68BB894C4DD38C5615198 /* Embed Pods Frameworks */,
-				908FA537E0B2FD4A94A60411 /* Copy Pods Resources */,
+				81D23EDE7DBD919DB302864B /* 📦 Embed Pods Frameworks */,
+				88B8C0AE724D5679270296F9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -990,12 +987,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88A25F2819D8DEC500924534 /* Build configuration list for PBXNativeTarget "JSQMessagesTests" */;
 			buildPhases = (
-				95BD949B70ECF8FE9CDDB707 /* Check Pods Manifest.lock */,
 				88A25F1719D8DEC400924534 /* Sources */,
 				88A25F1819D8DEC400924534 /* Frameworks */,
 				88A25F1919D8DEC400924534 /* Resources */,
-				78F522A7ECBD8D8774672696 /* Embed Pods Frameworks */,
-				B85CD3AA4EFCF4765BE7FAD9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1011,12 +1005,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4FA1C0E1CF5B3260066D8B1 /* Build configuration list for PBXNativeTarget "BabylonBotDemo" */;
 			buildPhases = (
-				7EBC3FAB792CE725CFC29CE0 /* Check Pods Manifest.lock */,
+				3870ECDEC02C0661BB92CC39 /* 📦 Check Pods Manifest.lock */,
 				B4FA1BDA1CF5B3250066D8B1 /* Sources */,
 				B4FA1BDB1CF5B3250066D8B1 /* Frameworks */,
 				B4FA1BDC1CF5B3250066D8B1 /* Resources */,
-				4EA7A7B0C0E7030B7FBB7808 /* Embed Pods Frameworks */,
-				7C0B8EDB67929ABEDA969C4F /* Copy Pods Resources */,
+				F39B9C8C6DBDD3757BA2991B /* 📦 Embed Pods Frameworks */,
+				D08E02A867A9D699AAE0ACDA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1167,6 +1161,7 @@
 				9F4A61C11CF5FBBC00A808A7 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				9F4A61C21CF5FBBC00A808A7 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */,
 				B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */,
+				7F3062EA1CF744160026909D /* JSQMessagesOptionsTableViewCell.xib in Resources */,
 				9F4A61C01CF5FBBC00A808A7 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				9F4A61B91CF5FB6F00A808A7 /* JSQMessagesViewController.xib in Resources */,
 				9F4A61BB1CF5FBB200A808A7 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
@@ -1193,44 +1188,74 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4EA7A7B0C0E7030B7FBB7808 /* Embed Pods Frameworks */ = {
+		3870ECDEC02C0661BB92CC39 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		78F522A7ECBD8D8774672696 /* Embed Pods Frameworks */ = {
+		424930926210C48D41053C94 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7C0B8EDB67929ABEDA969C4F /* Copy Pods Resources */ = {
+		81D23EDE7DBD919DB302864B /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88B8C0AE724D5679270296F9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D08E02A867A9D699AAE0ACDA /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1238,94 +1263,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7EBC3FAB792CE725CFC29CE0 /* Check Pods Manifest.lock */ = {
+		F39B9C8C6DBDD3757BA2991B /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		908FA537E0B2FD4A94A60411 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		90945CFDCD14BCFE538D66C9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		95BD949B70ECF8FE9CDDB707 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B85CD3AA4EFCF4765BE7FAD9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSQMessagesTests/Pods-JSQMessagesTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8D68BB894C4DD38C5615198 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1458,6 +1408,7 @@
 				9F4A61941CF5F89100A808A7 /* NSString+JSQMessages.m in Sources */,
 				9F4A619F1CF5F8A400A808A7 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				9F4A61A71CF5F93300A808A7 /* JSQLocationMediaItem.m in Sources */,
+				7F3062E91CF73D2D0026909D /* JSQMessagesOption.m in Sources */,
 				9F4A619E1CF5F8A400A808A7 /* JSQMessagesTimestampFormatter.m in Sources */,
 				9F4A61A11CF5F91700A808A7 /* JSQAudioMediaViewAttributes.m in Sources */,
 				B4FA1C3C1CF5B9D20066D8B1 /* BBWebSocketsClient.m in Sources */,
@@ -1465,8 +1416,11 @@
 				9F4A61A91CF5F93300A808A7 /* JSQMessage.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
+				7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */,
 				9F4A619B1CF5F8A400A808A7 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				9F4A61AA1CF5F93300A808A7 /* JSQMessagesBubbleImage.m in Sources */,
+				7F3062E71CF73D230026909D /* JSQMessagesOptionsTableViewController.m in Sources */,
+				7F3062E61CF73D1E0026909D /* JSQMessagesOptionsTableViewCell.m in Sources */,
 				9F4A61971CF5F89100A808A7 /* UIImage+JSQMessages.m in Sources */,
 				B4FA1C3D1CF5B9D20066D8B1 /* ChatViewController.m in Sources */,
 				9F4A619C1CF5F8A400A808A7 /* JSQMessagesBubbleImageFactory.m in Sources */,
@@ -1629,7 +1583,7 @@
 		};
 		88A25F2619D8DEC500924534 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D257782A244F7688A2F6AA8 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1637,7 +1591,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/JSQMessagesDemo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1648,7 +1602,7 @@
 		};
 		88A25F2719D8DEC500924534 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD6E75315517DE46FE495B65 /* Pods.release.xcconfig */;
+			baseConfigurationReference = B9058AA08C919B22A85CF393 /* Pods-JSQMessages.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1656,7 +1610,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/JSQMessagesDemo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1667,7 +1621,6 @@
 		};
 		88A25F2919D8DEC500924534 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F68D899A0AE7E8180C89579D /* Pods-JSQMessagesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -1686,7 +1639,6 @@
 		};
 		88A25F2A19D8DEC500924534 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 242A2BCAF25E39CC1DAF654E /* Pods-JSQMessagesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -1701,11 +1653,12 @@
 		};
 		B4FA1C081CF5B3260066D8B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF460E772239EF6102694286 /* Pods-BabylonBotDemo.debug.xcconfig */;
+			baseConfigurationReference = BFB5C7DAAC564B27132CFFCC /* Pods-BabylonBotDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BabylonBotDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1718,12 +1671,13 @@
 		};
 		B4FA1C091CF5B3260066D8B1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCCBF6FB24ED2417F232EFC /* Pods-BabylonBotDemo.release.xcconfig */;
+			baseConfigurationReference = 81FA18F80777B64DDB611BD3 /* Pods-BabylonBotDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BabylonBotDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
