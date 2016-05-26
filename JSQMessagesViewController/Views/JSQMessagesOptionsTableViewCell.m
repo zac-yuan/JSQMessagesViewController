@@ -10,4 +10,12 @@
 
 @implementation JSQMessagesOptionsTableViewCell
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.preservesSuperviewLayoutMargins = NO;
+    self.separatorInset = UIEdgeInsetsZero;
+    self.layoutMargins = UIEdgeInsetsZero;
+}
+
 @end

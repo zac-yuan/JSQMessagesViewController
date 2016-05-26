@@ -188,9 +188,9 @@
 - (void)addViewMediaMessage
 {
     NSArray *dataSource =
-    @[ [JSQMessagesOption optionWithText:@"Better" textColor:[UIColor whiteColor] backgroundColor:[UIColor clearColor]],
-       [JSQMessagesOption optionWithText:@"Same" textColor:[UIColor blackColor] backgroundColor:[UIColor lightGrayColor]],
-       [JSQMessagesOption optionWithText:@"Worse" textColor:[UIColor whiteColor] backgroundColor:[UIColor clearColor]] ];
+    @[ [JSQMessagesOption optionWithText:@"Better" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:13.f] backgroundColor:[UIColor clearColor] height:20.f],
+       [JSQMessagesOption optionWithText:@"Same" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:13.f] backgroundColor:[UIColor lightGrayColor] height:20.f],
+       [JSQMessagesOption optionWithText:@"Worse" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:13.f] backgroundColor:[UIColor clearColor] height:20.f] ];
 
     JSQMessagesOptionsTableViewController *tableViewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
     JSQViewMediaItem *viewMediaItem = [[JSQViewMediaItem alloc] initWithViewMedia:tableViewController.view];

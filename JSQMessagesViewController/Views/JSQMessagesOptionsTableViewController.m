@@ -10,8 +10,7 @@
 #import "JSQMessagesOptionsTableViewCell.h"
 #import "JSQMessagesOption.h"
 #import "UIView+JSQMessages.h"
-
-static const CGFloat kTableCellHeight = 30.f;
+#import "BBConstants.h"
 
 @interface JSQMessagesOptionsTableViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -32,6 +31,14 @@ static const CGFloat kTableCellHeight = 30.f;
     [self setupUi];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if(!self.tableView.layer.mask) {
+        self.tableView.layer.mask = [CALayer roudedBubbleMaskForRect:self.tableView.bounds corners:UIRectCornerBottomLeft|UIRectCornerBottomRight];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -40,8 +47,12 @@ static const CGFloat kTableCellHeight = 30.f;
 -(void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
     
-    // the height of the bubble is calculated elsewhere. It uses the size of this media view + any text. We need to ensure the height of this view is set as the calculation is taken from the view's frame. Even though autolayout is used, the setup code executes before the view is added. We make the width 0 so the calculation uses the biggest width (i.e. from the text, not this view).
-    self.view.frame = CGRectMake(0.f, 0.f, 0.f, dataSource.count * kTableCellHeight);
+    // the height of the bubble is calculated elsewhere. The calculation is the size of this view + the text size. We need to ensure the height of this view is set on setting the data source, as bubble calculation uses this view's frame. Even though autolayout is used, the setup code executes before the view is added and the size automatically calcualted. We make the width 0 so the calculation uses the biggest width (i.e. width of the text, not this view which defaults to total screen width).
+    CGFloat height = 0;
+    for(JSQMessagesOption *option in dataSource) {
+        height += option.height;
+    }
+    self.view.frame = CGRectMake(0.f, 0.f, 0.f, height);
 }
 
 -(void)setupUi {
@@ -51,15 +62,15 @@ static const CGFloat kTableCellHeight = 30.f;
     self.tableView.scrollEnabled = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 0.f, 1.f)]; // removes last separator
     Class classId = [JSQMessagesOptionsTableViewCell class];
     UINib *nib = [UINib nibWithNibName:kJSQMessagesOptionsTableViewCellReuseId bundle:[NSBundle bundleForClass:classId]];
     [self.tableView registerNib:nib forCellReuseIdentifier:kJSQMessagesOptionsTableViewCellReuseId];
-    
+
     // view
     [self.view addSubview:self.tableView];
-    [self.view jsq_pinAllEdgesOfSubview:self.tableView];
+    [self.view jsq_pinAllEdgesOfSubview:self.tableView withPadding:2.f];
     self.view.backgroundColor = [UIColor clearColor];
 }
 
@@ -79,6 +90,7 @@ static const CGFloat kTableCellHeight = 30.f;
     JSQMessagesOption *option = self.dataSource[indexPath.row];
     cell.optionNameLabel.text = option.text;
     cell.optionNameLabel.textColor = option.textColor;
+    cell.optionNameLabel.font = option.font;
     cell.backgroundColor = option.backgroundColor;
     
     return cell;
@@ -87,7 +99,8 @@ static const CGFloat kTableCellHeight = 30.f;
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kTableCellHeight;
+    JSQMessagesOption *option = self.dataSource[indexPath.row];
+    return option.height;
 }
 
 @end

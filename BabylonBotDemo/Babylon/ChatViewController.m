@@ -42,7 +42,7 @@
                   senderId:(NSString *)senderId
          senderDisplayName:(NSString *)senderDisplayName
                       date:(NSDate *)date {
-    [self sendMessage:button withMessageText:text senderId:senderId senderDisplayName:senderDisplayName date:date];
+    [self sendMessage:button withMessageText:text senderId:senderId senderDisplayName:senderDisplayName date:date success:nil];
 }
 
 #pragma mark - JSQMessages CollectionView DataSource
