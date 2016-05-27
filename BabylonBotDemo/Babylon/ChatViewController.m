@@ -1,6 +1,7 @@
 
 #import "ChatViewController.h"
 #import "ApiManagerChatBot.h"
+#import "BBConstants.h"
 
 @implementation ChatViewController
 
@@ -13,15 +14,12 @@
         BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
 
         JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:chatDataModel.chat];
-        [self.chatMessagesArray addObject:message];
-        [self finishReceivingMessageAnimated:YES];
-
+        [self addChatMessageForBot:message showObject:YES];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
         JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:error.localizedFailureReason];
-        [self.chatMessagesArray addObject:message];
-        [self finishReceivingMessageAnimated:YES];
+        [self addChatMessageForBot:message showObject:YES];
         
     }];
         
@@ -42,7 +40,7 @@
                   senderId:(NSString *)senderId
          senderDisplayName:(NSString *)senderDisplayName
                       date:(NSDate *)date {
-    [self sendMessage:button withMessageText:text senderId:senderId senderDisplayName:senderDisplayName date:date success:nil];
+    [self sendMessage:button withMessageText:text senderId:senderId senderDisplayName:senderDisplayName date:date showMessage:YES success:nil];
 }
 
 #pragma mark - JSQMessages CollectionView DataSource
@@ -68,7 +66,7 @@
     if ([message.senderId isEqualToString:self.senderId]) {
         return nil;
     } else {
-        return [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"bot-heart"] diameter:30];
+        return [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"babybotIcon"] diameter:30];
     }
 }
 

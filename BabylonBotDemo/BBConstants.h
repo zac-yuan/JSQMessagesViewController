@@ -2,7 +2,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-extern NSString *const chatBotApiUrlBase;
+extern NSString *const kChatBotApiUrlBase;
+extern NSString *const kBabylonDoctorName;
+extern NSString *const kBabylonDoctorId;
+
 extern const CGFloat kOptionCellHeight;
 extern const CGFloat kDefaultFontSize;
 
@@ -19,6 +22,7 @@ extern const CGFloat kDefaultFontSize;
 
 @interface NSString (Babylon)
 + (NSString *)babylonErrorMsg:(NSError *)error;
++ (NSString *)babylonBadgeCounter:(NSArray *)messages;
 @end
 
 @interface CALayer (Babylon)

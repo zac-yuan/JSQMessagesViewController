@@ -1,12 +1,18 @@
 
 #import "BBConstants.h"
+#import "JSQMessages.h"
 
 //dev-chatscript.babylontesting.co.uk/v1
 //staging-chatscript.babylontesting.co.uk/v1
-NSString *const chatBotApiUrlBase = @"http://dev-chatscript.babylontesting.co.uk/v1";
-const CGFloat kOptionCellHeight = 45.f;
-const CGFloat kDefaultFontSize = 16.f;
-const CGFloat kDefaultCornerRadii = 15.f;
+
+NSString *const kChatBotApiUrlBase          = @"http://dev-chatscript.babylontesting.co.uk/v1";
+NSString *const kBabylonDoctorName          = @"Dr. Babylon";
+NSString *const kBabylonDoctorId            = @"babyBot";
+
+const CGFloat kOptionCellHeight             = 45.f;
+const CGFloat kDefaultFontSize              = 16.f;
+const CGFloat kDefaultCornerRadii           = 15.f;
+
 
 // COLORS
 @implementation UIColor (Babylon)
@@ -40,6 +46,15 @@ const CGFloat kDefaultCornerRadii = 15.f;
             return @"I don't get it. Sorry";
         }
     }
+}
++ (NSString *)babylonBadgeCounter:(NSArray *)messages {
+    int count = 0;
+    for (JSQMessage *message in messages) {
+        if (message.senderId == kBabylonDoctorId) {
+            count++;
+        }
+    }
+    return [NSString stringWithFormat:@"%i", count];
 }
 @end
 

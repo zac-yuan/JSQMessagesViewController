@@ -243,7 +243,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 
 #pragma mark - Api Utils
 - (NSString *)apiRestBuilderUrl:(NSString *)url {
-    return [NSString stringWithFormat:@"%@/%@", chatBotApiUrlBase, url];
+    return [NSString stringWithFormat:@"%@/%@", kChatBotApiUrlBase, url];
 }
 
 - (NSString *)formatedInput:(NSString *)input {

@@ -56,7 +56,7 @@
     for (int x=0; x<[chatDataModel.dispatch count]; x++) {
         NSString *optionTitle = [(BBChatBotDataModelDispatch *)[chatDataModel.dispatch objectAtIndex:x] title];
         UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] success:^{
+            [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
                 [self selectedOption:chatDataModel.dispatch[x] inOptions:chatDataModel.dispatch forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             }];
         }];
@@ -101,20 +101,19 @@
                                                   displayName:senderDisplayName
                                                          text:question.chat
                                                         media:item];
-    [self.chatMessagesArray addObject:userMessage];
-    [self finishSendingMessage];
+    
+    [self addChatMessageForUser:userMessage showObject:YES];
+
 }
 
-- (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date success:(ChatViewHelperSendSuccess)success {
+- (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date showMessage:(BOOL)showMessage success:(ChatViewHelperSendSuccess)success {
     
     JSQMessage *userMessage = [[JSQMessage alloc] initWithSenderId:senderId
                                                  senderDisplayName:senderDisplayName
                                                               date:date
                                                               text:text];
     
-    [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    [self.chatMessagesArray addObject:userMessage];
-    [self finishSendingMessage];
+    [self addChatMessageForUser:userMessage showObject:showMessage];
     
     self.showTypingIndicator = YES;
     [self.collectionView reloadData];
@@ -127,8 +126,6 @@
         }
         
         BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
-        
-        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
         JSQMessage *botMessage = [[JSQMessage alloc] initWithSenderId:kBabylonDoctorId
                                                     senderDisplayName:kBabylonDoctorName
                                                                  date:date
@@ -136,19 +133,15 @@
         
         if ([chatDataModel.dispatch count]>0) {
             [self presentMenuOptionsController:chatDataModel];
+            [self addChatMessageForBot:botMessage showObject:NO];
         } else {
-            [self.chatMessagesArray addObject:botMessage];
+            [self addChatMessageForBot:botMessage showObject:YES];
         }
-        
-        [self finishReceivingMessageAnimated:YES];
-
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
       
-        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
         JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:error.localizedFailureReason];
-        [self.chatMessagesArray addObject:message];
-        [self finishReceivingMessageAnimated:YES];
+        [self addChatMessageForBot:message showObject:YES];
         
     }];
     
@@ -215,7 +208,7 @@
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:self.senderId
                                                    displayName:self.senderDisplayName
                                                          media:photoItem];
-    [self addChatMessageObject:photoMessage];
+    [self addChatMessageForUser:photoMessage showObject:YES];
 }
 
 - (void)addLocation:(JSQLocationMediaItemCompletionBlock)completion {
@@ -230,7 +223,7 @@
     JSQMessage *locationMessage = [JSQMessage messageWithSenderId:self.senderId
                                                       displayName:self.senderDisplayName
                                                             media:locationItem];
-    [self addChatMessageObject:locationMessage];
+    [self addChatMessageForUser:locationMessage showObject:YES];
     
 }
 
@@ -241,7 +234,7 @@
     JSQMessage *audioMessage = [JSQMessage messageWithSenderId:self.senderId
                                                    displayName:self.senderDisplayName
                                                          media:audioItem];
-    [self addChatMessageObject:audioMessage];
+    [self addChatMessageForUser:audioMessage showObject:YES];
 }
 
 - (void)addVideo:(NSURL *)videoURL {
@@ -250,16 +243,25 @@
     JSQMessage *videoMessage = [JSQMessage messageWithSenderId:self.senderId
                                                    displayName:self.senderDisplayName
                                                          media:videoItem];
-    [self addChatMessageObject:videoMessage];
+    [self addChatMessageForUser:videoMessage showObject:YES];
     
 }
 
-- (void)addChatMessageObject:(JSQMessage *)message {
-    
+- (void)addChatMessageForUser:(JSQMessage *)message showObject:(BOOL)showObject {
     [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    [self.chatMessagesArray addObject:message];
+    if (showObject) {
+        [self.chatMessagesArray addObject:message];
+    }
     [self finishSendingMessageAnimated:YES];
-    
+}
+
+- (void)addChatMessageForBot:(JSQMessage *)message showObject:(BOOL)showObject {
+    [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
+    if (showObject) {
+        [self.chatMessagesArray addObject:message];
+        [[[[self tabBarController] tabBar] items][0] setBadgeValue:[NSString babylonBadgeCounter:self.chatMessagesArray]];
+    }
+    [self finishReceivingMessageAnimated:YES];
 }
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {
