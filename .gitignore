@@ -20,3 +20,4 @@ DerivedData
 *.xccheckout
 /Pods/
 xcshareddata
+/Carthage/

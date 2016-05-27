@@ -13,6 +13,20 @@
 		54271E3E1C905B9200294290 /* JSQAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */; };
 		54271E401C905D1600294290 /* JSQAudioMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */; };
 		544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */; };
+		617421271CF8A61600EB8E5B /* Babylon_Check.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617421261CF8A61600EB8E5B /* Babylon_Check.framework */; };
+		6174212F1CF8AB4700EB8E5B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617421291CF8AB4600EB8E5B /* SwiftyJSON.framework */; };
+		617421301CF8AB4700EB8E5B /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6174212A1CF8AB4700EB8E5B /* SwiftDate.framework */; };
+		617421311CF8AB4700EB8E5B /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6174212B1CF8AB4700EB8E5B /* Mixpanel.framework */; };
+		617421321CF8AB4700EB8E5B /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6174212C1CF8AB4700EB8E5B /* CryptoSwift.framework */; };
+		617421331CF8AB4700EB8E5B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6174212D1CF8AB4700EB8E5B /* Alamofire.framework */; };
+		617421341CF8AB4700EB8E5B /* AfroLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6174212E1CF8AB4700EB8E5B /* AfroLayout.framework */; };
+		6174213D1CF8ABB200EB8E5B /* AfroLayout.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 617421361CF8ABB200EB8E5B /* AfroLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6174213E1CF8ABB200EB8E5B /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 617421371CF8ABB200EB8E5B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6174213F1CF8ABB200EB8E5B /* Babylon_Check.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 617421381CF8ABB200EB8E5B /* Babylon_Check.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		617421401CF8ABB200EB8E5B /* CryptoSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 617421391CF8ABB200EB8E5B /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		617421411CF8ABB200EB8E5B /* Mixpanel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6174213A1CF8ABB200EB8E5B /* Mixpanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		617421421CF8ABB200EB8E5B /* SwiftDate.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6174213B1CF8ABB200EB8E5B /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		617421431CF8ABB200EB8E5B /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6174213C1CF8ABB200EB8E5B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7F3062E61CF73D1E0026909D /* JSQMessagesOptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24A961CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.m */; };
 		7F3062E71CF73D230026909D /* JSQMessagesOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24A9B1CF6F96200025AFA /* JSQMessagesOptionsTableViewController.m */; };
 		7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24AA11CF6F99200025AFA /* JSQViewMediaItem.m */; };
@@ -223,6 +237,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		617421351CF8AB7C00EB8E5B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6174213D1CF8ABB200EB8E5B /* AfroLayout.framework in CopyFiles */,
+				6174213E1CF8ABB200EB8E5B /* Alamofire.framework in CopyFiles */,
+				6174213F1CF8ABB200EB8E5B /* Babylon_Check.framework in CopyFiles */,
+				617421401CF8ABB200EB8E5B /* CryptoSwift.framework in CopyFiles */,
+				617421411CF8ABB200EB8E5B /* Mixpanel.framework in CopyFiles */,
+				617421421CF8ABB200EB8E5B /* SwiftDate.framework in CopyFiles */,
+				617421431CF8ABB200EB8E5B /* SwiftyJSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -233,6 +266,20 @@
 		54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItemTests.m; sourceTree = "<group>"; };
 		544A321F1CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaViewAttributes.h; sourceTree = "<group>"; };
 		544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaViewAttributes.m; sourceTree = "<group>"; };
+		617421261CF8A61600EB8E5B /* Babylon_Check.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Babylon_Check.framework; path = Carthage/Build/iOS/Babylon_Check.framework; sourceTree = "<group>"; };
+		617421291CF8AB4600EB8E5B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		6174212A1CF8AB4700EB8E5B /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		6174212B1CF8AB4700EB8E5B /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
+		6174212C1CF8AB4700EB8E5B /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		6174212D1CF8AB4700EB8E5B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		6174212E1CF8AB4700EB8E5B /* AfroLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AfroLayout.framework; path = Carthage/Build/iOS/AfroLayout.framework; sourceTree = "<group>"; };
+		617421361CF8ABB200EB8E5B /* AfroLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AfroLayout.framework; path = Carthage/Build/iOS/AfroLayout.framework; sourceTree = "<group>"; };
+		617421371CF8ABB200EB8E5B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		617421381CF8ABB200EB8E5B /* Babylon_Check.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Babylon_Check.framework; path = Carthage/Build/iOS/Babylon_Check.framework; sourceTree = "<group>"; };
+		617421391CF8ABB200EB8E5B /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		6174213A1CF8ABB200EB8E5B /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
+		6174213B1CF8ABB200EB8E5B /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		6174213C1CF8ABB200EB8E5B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7F9574161CF72447009F92D2 /* JSQMessagesOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesOption.h; sourceTree = "<group>"; };
 		7F9574171CF72447009F92D2 /* JSQMessagesOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesOption.m; sourceTree = "<group>"; };
 		7FF24A951CF6F95600025AFA /* JSQMessagesOptionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesOptionsTableViewCell.h; sourceTree = "<group>"; };
@@ -468,6 +515,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6174212F1CF8AB4700EB8E5B /* SwiftyJSON.framework in Frameworks */,
+				617421301CF8AB4700EB8E5B /* SwiftDate.framework in Frameworks */,
+				617421311CF8AB4700EB8E5B /* Mixpanel.framework in Frameworks */,
+				617421321CF8AB4700EB8E5B /* CryptoSwift.framework in Frameworks */,
+				617421331CF8AB4700EB8E5B /* Alamofire.framework in Frameworks */,
+				617421341CF8AB4700EB8E5B /* AfroLayout.framework in Frameworks */,
+				617421271CF8A61600EB8E5B /* Babylon_Check.framework in Frameworks */,
 				B1163EEEFF6F935CD944D53E /* Pods_BabylonBotDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +546,13 @@
 		636A8663AEEE5C37B65C515D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				617421291CF8AB4600EB8E5B /* SwiftyJSON.framework */,
+				6174212A1CF8AB4700EB8E5B /* SwiftDate.framework */,
+				6174212B1CF8AB4700EB8E5B /* Mixpanel.framework */,
+				6174212C1CF8AB4700EB8E5B /* CryptoSwift.framework */,
+				6174212D1CF8AB4700EB8E5B /* Alamofire.framework */,
+				6174212E1CF8AB4700EB8E5B /* AfroLayout.framework */,
+				617421261CF8A61600EB8E5B /* Babylon_Check.framework */,
 				1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */,
 				88445B3419E0AE4A0014F889 /* CoreGraphics.framework */,
 				88445B4119E1B50B0014F889 /* CoreLocation.framework */,
@@ -510,6 +571,13 @@
 		88A25EF919D8DEC400924534 = {
 			isa = PBXGroup;
 			children = (
+				617421361CF8ABB200EB8E5B /* AfroLayout.framework */,
+				617421371CF8ABB200EB8E5B /* Alamofire.framework */,
+				617421381CF8ABB200EB8E5B /* Babylon_Check.framework */,
+				617421391CF8ABB200EB8E5B /* CryptoSwift.framework */,
+				6174213A1CF8ABB200EB8E5B /* Mixpanel.framework */,
+				6174213B1CF8ABB200EB8E5B /* SwiftDate.framework */,
+				6174213C1CF8ABB200EB8E5B /* SwiftyJSON.framework */,
 				886C33FE19F45E30006B4997 /* JSQMessagesViewController.podspec */,
 				88A25F3E19D8E01A00924534 /* JSQMessagesViewController */,
 				B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */,
@@ -1007,10 +1075,12 @@
 			buildPhases = (
 				3870ECDEC02C0661BB92CC39 /* 📦 Check Pods Manifest.lock */,
 				B4FA1BDA1CF5B3250066D8B1 /* Sources */,
+				617421281CF8A84200EB8E5B /* ShellScript */,
 				B4FA1BDB1CF5B3250066D8B1 /* Frameworks */,
 				B4FA1BDC1CF5B3250066D8B1 /* Resources */,
 				F39B9C8C6DBDD3757BA2991B /* 📦 Embed Pods Frameworks */,
 				D08E02A867A9D699AAE0ACDA /* 📦 Copy Pods Resources */,
+				617421351CF8AB7C00EB8E5B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1217,6 +1287,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		617421281CF8A84200EB8E5B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AfroLayout.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mixpanel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		81D23EDE7DBD919DB302864B /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1658,7 +1747,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BabylonBotDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1677,7 +1769,10 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BabylonBotDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

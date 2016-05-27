@@ -54,11 +54,27 @@
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
     
     for (int x=0; x<[chatDataModel.dispatch count]; x++) {
-        NSString *optionTitle = [(BBChatBotDataModelDispatch *)[chatDataModel.dispatch objectAtIndex:x] title];
-        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] success:^{
-                [self selectedOption:chatDataModel.dispatch[x] inOptions:chatDataModel.dispatch forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-            }];
+        
+        BBChatBotDataModelDispatch *dispatch = [chatDataModel.dispatch objectAtIndex:x];
+        
+        NSString *optionTitle = dispatch.title;
+        NSString *optionDescription = [NSString stringWithFormat:@"%@ %@", dispatch.decision, dispatch.title];
+        
+        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionDescription, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            if ([dispatch.decision isKindOfClass:[NSString class]] ) {
+                if ( ! [dispatch.decision isEqualToString:@"triage"]) {
+                    
+                    [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] success:^{
+                        [self selectedOption:chatDataModel.dispatch[x] inOptions:chatDataModel.dispatch forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+                    }];
+                    
+                } else { //triage flow starts here
+                    [self menuOptionSelected:dispatch.talkId];
+                }
+            }
+            
+            
         }];
         [alertViewController addAction:chatMenuOption];
     }
@@ -76,6 +92,11 @@
         [strongSelf presentViewController:alertViewController animated:YES completion:nil];
     });
     
+}
+
+#pragma mark - Option Handler
+-(void)menuOptionSelected:(nullable NSObject *)menuOption {
+    //method to be overriden and customized
 }
 
 - (void)selectedOption:(BBChatBotDataModelDispatch *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelTalkChat *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
@@ -222,7 +243,7 @@
     
     //TODO: It's not stable yet (Review it)
     BBLocationManager *locationManager = [BBLocationManager sharedInstance];
-    [locationManager startUpdatingLocation];
+    //[locationManager startUpdatingLocation];
     
     JSQLocationMediaItem *locationItem = [[JSQLocationMediaItem alloc] init];
     [locationItem setLocation:locationManager.locationManager.location withCompletionHandler:completion];

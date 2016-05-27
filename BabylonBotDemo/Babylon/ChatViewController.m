@@ -24,7 +24,51 @@
         [self finishReceivingMessageAnimated:YES];
         
     }];
-        
+    
+    //check
+    self.checkController = [[CheckController alloc] initWithAppVersion:@"1.0.2"
+                                                             authToken:@"114c885f724074d4b7abd108d3465ed2"
+                                                             patientId:@"2115"
+                                                           patientName:@"Danilo Testing"
+                                                               isDebug:YES
+                                                               baseUrl:@"https://staging1-check.babylontesting.co.uk/"
+                                                           mixpanelKey:@""
+                                                               isMuted:NO];
+}
+
+#pragma mark - Chat delegate
+
+-(void)openCheck {
+    [self openCheckWithBodyPartId:nil];
+}
+
+-(void)openCheckWithBodyPartId:(nullable NSString * )bodyPartId {
+    
+    [self.checkController createFlow:bodyPartId
+                             success:^void (Flow *flow) {
+                                 NSLog(@"%@", flow.question.questionText);
+                                 
+                                 JSQMessage *message = [JSQMessage messageWithSenderId:@"babyBot" displayName:@"Babylon Doctor" text:flow.question.questionText];
+                                 [self.chatMessagesArray addObject:message];
+                                 [self finishReceivingMessageAnimated:YES];
+                                 
+                             }
+                             failure:^void () {
+                                 NSLog(@"fail");
+                             }];
+    
+}
+
+#pragma mark - Option Handler
+-(void)menuOptionSelected:(nullable NSObject *)menuOption {
+    
+    Answer *answer = [[Answer alloc] initWithAnswerId:@"" answerText:@"" answerOrder:1 category:@""];
+    
+    NSLog(@"%@", answer);
+    
+    if ([menuOption isKindOfClass:[NSString class]]) {
+        [self openCheckWithBodyPartId: (NSString *) menuOption];
+    }
 }
 
 #pragma mark - Actions

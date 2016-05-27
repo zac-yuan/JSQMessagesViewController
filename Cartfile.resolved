@@ -1,0 +1,7 @@
+github "Alamofire/Alamofire" "3.3.1"
+github "krzyzanowskim/CryptoSwift" "0.3.1"
+github "malcommac/SwiftDate" "3.0.2"
+github "SwiftyJSON/SwiftyJSON" "2.3.3"
+github "va3093/afrolayout" "15167c868ef6b47a36a78717fdf92e756820c2ca"
+github "mixpanel/mixpanel-iphone" "v2.9.1"
+git "file:///Users/danilo.aliberti/Projects/ios-check/" "1242124923b56c9a2ecbf12e74a6f9c76e485e21"
