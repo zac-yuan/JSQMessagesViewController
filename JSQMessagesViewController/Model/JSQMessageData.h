@@ -89,6 +89,11 @@
 - (BOOL)isMixedMediaMessage;
 
 /**
+ * `YES` if the message requires to handle its own touch events.
+ */
+- (BOOL)wantsTouches;
+
+/**
  *  @return An integer that can be used as a table address in a hash table structure.
  *
  *  @discussion This value must be unique for each message with distinct contents. 

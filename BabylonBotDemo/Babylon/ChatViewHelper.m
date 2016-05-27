@@ -3,9 +3,13 @@
 #import "BBConstants.h"
 #import "ApiManagerChatBot.h"
 #import "JSQViewMediaItem.h"
-#import "JSQMessagesOptionsTableViewController.h"
-#import "JSQMessagesOption.h"
+#import "OptionsTableViewController.h"
+#import "BBOption.h"
 @import ios_maps;
+
+@interface ChatViewHelper () <JSQMessagesOptionsDelegate>
+
+@end
 
 @implementation ChatViewHelper
 
@@ -92,15 +96,18 @@
             textColor = [UIColor babylonPurple];
         }
         
-        [dataSource addObject:[JSQMessagesOption optionWithText:option.title textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
+        [dataSource addObject:[BBOption optionWithText:option.title textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
     }
 
-    JSQMessagesOptionsTableViewController *viewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
+    OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
+    viewController.delegate = self;
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
     JSQMessage *userMessage = [JSQMessage messageWithSenderId:senderId
                                                   displayName:senderDisplayName
                                                          text:question.chat
                                                         media:item];
+    userMessage.wantsTouches = YES;
+
     [self.chatMessagesArray addObject:userMessage];
     [self finishSendingMessage];
 }
@@ -264,6 +271,12 @@
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {
     return YES;
+}
+
+#pragma mark - JSQMessagesOptionsDelegate
+
+-(void)sender:(id)sender selectedOption:(BBOption *)option {
+    
 }
 
 @end

@@ -70,6 +70,10 @@
  */
 @property (copy, nonatomic, readonly) id<JSQMessageMediaData> media;
 
+/**
+ *  `YES` if media requires to handle its own touch events.
+ */
+@property (assign, nonatomic) BOOL wantsTouches;
 
 #pragma mark - Initialization
 

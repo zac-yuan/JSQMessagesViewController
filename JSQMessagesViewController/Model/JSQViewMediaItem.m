@@ -115,6 +115,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
+        _viewController = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(viewController))];
     }
     return self;
 }
@@ -123,13 +124,19 @@
 {
     [super encodeWithCoder:aCoder];
     [aCoder encodeObject:self.media forKey:NSStringFromSelector(@selector(media))];
+    [aCoder encodeObject:self.viewController forKey:NSStringFromSelector(@selector(viewController))];
 }
 
 #pragma mark - NSCopying
 
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-    JSQViewMediaItem *copy = [[JSQViewMediaItem allocWithZone:zone] initWithViewMedia:self.media];
+    JSQViewMediaItem *copy;
+    if(self.viewController) {
+        copy = [[JSQViewMediaItem allocWithZone:zone] initWithViewControllerMedia:self.viewController];
+    } else {
+        copy = [[JSQViewMediaItem allocWithZone:zone] initWithViewMedia:self.media];
+    }
     copy.appliesMediaViewMaskAsOutgoing = self.appliesMediaViewMaskAsOutgoing;
     return copy;
 }

@@ -1,21 +1,14 @@
-//
-//  JSQMessagesOption.m
-//  JSQMessages
-//
-//  Created by BabylonHealth on 26/05/2016.
-//  Copyright © 2016 Hexed Bits. All rights reserved.
-//
 
-#import "JSQMessagesOption.h"
+#import "BBMessagesOption.h"
 
-@implementation JSQMessagesOption
+@implementation BBMessagesOption
 
-+(JSQMessagesOption *)optionWithText:(NSString *)text
++(BBMessagesOption *)optionWithText:(NSString *)text
                            textColor:(UIColor *)textColor
                                 font:(UIFont *)font
                      backgroundColor:(UIColor *)backgroundColor
                               height:(CGFloat)height {
-    JSQMessagesOption *option = [JSQMessagesOption new];
+    BBMessagesOption *option = [BBMessagesOption new];
     option.text = text;
     option.textColor = textColor;
     option.font = font;

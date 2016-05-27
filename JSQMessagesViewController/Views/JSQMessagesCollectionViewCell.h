@@ -172,6 +172,12 @@
  */
 @property (weak, nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
 
+/**
+ *  Return `YES` if the bubble is the root tap gesture recognizer.
+ *  The default value is `YES`.
+ */
+@property (assign, nonatomic, getter=isRootTapRecognizer) BOOL rootTapRecognizer;
+
 #pragma mark - Class methods
 
 /**
