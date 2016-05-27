@@ -2,7 +2,7 @@
 //  JSQMessagesOptionsTableViewCell.h
 //  JSQMessages
 //
-//  Created by Lee Arromba on 25/05/2016.
+//  Created by BabylonHealth on 25/05/2016.
 //  Copyright © 2016 Hexed Bits. All rights reserved.
 //
 
