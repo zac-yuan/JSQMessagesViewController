@@ -1,7 +1,7 @@
 
 #import "BBWebSocketsChannel.h"
 
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 #import <libkern/OSAtomic.h>
 
 static NSString *kPubNubProtocol = @"https";
