@@ -2,6 +2,7 @@
 #import "ApiManagerChatBot.h"
 #import "BBWebSocketsClient.h"
 #import "BBConstants.h"
+#import "AppDelegate.h"
 
 typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoint;
 
@@ -18,7 +19,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
         [_sharedConfiguration.manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
         [_sharedConfiguration.manager.reachabilityManager startMonitoring];
         
-        [_sharedConfiguration initWebSocketChannel:@"1077"];
+        [((AppDelegate *)[UIApplication sharedApplication].delegate).pubNubClient subscribeToChannels:@[@"1077"] withPresence:YES];
         
     });
     

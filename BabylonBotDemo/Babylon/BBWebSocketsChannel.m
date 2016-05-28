@@ -3,15 +3,11 @@
 
 #import "AFNetworking.h"
 #import <libkern/OSAtomic.h>
+#import "BBConstants.h"
 
 static NSString *kPubNubProtocol = @"https";
 static NSString *kPubNubHost = @"pubsub.pubnub.com";
 static NSString *kPubNubSdkId = @"babybot-notifications";
-
-//TODO: UPGRADE API KEY BEFORE RELEASE
-static NSString *kPublishKey = @"pub-c-63c4d0c1-0085-4719-962f-fbc211d4f90a";
-static NSString *kSubscribeKey = @"sub-c-67d2f8fe-20ed-11e6-b700-0619f8945a4f";
-static NSString *kSecretKey = @"sec-c-NmNkYTRlMTAtYTIwZC00YzgwLTllNjAtNzQzYTAwMzg4YjYw";
 
 static const NSTimeInterval kPubNubPollTimeoutSeconds = 20.0;
 static const NSTimeInterval kPubNubTimeoutSeconds = 5.0;
@@ -48,9 +44,9 @@ static const NSTimeInterval kPubNubHeartbeatIntervalFail = 1.0;
         _state = BBWebSocketsChannelStateDisconnected;
         _name = name;
         _channelId = [[self class] _urlEncode:name];
-        _authKey = [[self class] _urlEncode:kSecretKey];
-        _subscriberKey = [[self class] _urlEncode:kSubscribeKey];
-        _publisherKey = [[self class] _urlEncode:kPublishKey];
+        _authKey = [[self class] _urlEncode:kPubNubSecretKey];
+        _subscriberKey = [[self class] _urlEncode:kPubNubSubscribeKey];
+        _publisherKey = [[self class] _urlEncode:kPubNubPublishKey];
         _clientUuid = @"6C7D7289-93D7-4C73-8033-E383FD9A3FE7"; //[[NSUUID UUID] UUIDString];
         _heartbeat = heartbeat;
         _connectQueue = dispatch_queue_create("BBWebSocketsChannelConnectQueue", DISPATCH_QUEUE_CONCURRENT);

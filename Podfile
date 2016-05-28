@@ -16,4 +16,5 @@ target :BabylonBotDemo do
     pod 'AFNetworking', '~> 2.0'
     pod 'AFNetworkActivityLogger'
     pod 'ios-maps'
+    pod 'PubNub'
 end

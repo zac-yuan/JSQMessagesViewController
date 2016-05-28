@@ -2,6 +2,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+extern NSString *const kPubNubPublishKey;
+extern NSString *const kPubNubSubscribeKey;
+extern NSString *const kPubNubSecretKey;
 extern NSString *const kChatBotApiUrlBase;
 extern NSString *const kBabylonDoctorName;
 extern NSString *const kBabylonDoctorId;

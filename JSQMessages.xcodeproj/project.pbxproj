@@ -880,6 +880,17 @@
 			name = V2;
 			sourceTree = "<group>";
 		};
+		B4E5772F1CFA4C7A004AF360 /* Rest Api (in progress) */ = {
+			isa = PBXGroup;
+			children = (
+				B4FA1C351CF5B9D20066D8B1 /* BBWebSocketsChannel.h */,
+				B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */,
+				B4FA1C361CF5B9D20066D8B1 /* BBWebSocketsClient.h */,
+				B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */,
+			);
+			name = "Rest Api (in progress)";
+			sourceTree = "<group>";
+		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -969,10 +980,7 @@
 		B4FA1C1C1CF5B9350066D8B1 /* WebSockets */ = {
 			isa = PBXGroup;
 			children = (
-				B4FA1C351CF5B9D20066D8B1 /* BBWebSocketsChannel.h */,
-				B4FA1C311CF5B9D20066D8B1 /* BBWebSocketsChannel.m */,
-				B4FA1C361CF5B9D20066D8B1 /* BBWebSocketsClient.h */,
-				B4FA1C321CF5B9D20066D8B1 /* BBWebSocketsClient.m */,
+				B4E5772F1CFA4C7A004AF360 /* Rest Api (in progress) */,
 			);
 			name = WebSockets;
 			sourceTree = "<group>";

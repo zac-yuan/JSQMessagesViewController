@@ -5,6 +5,10 @@
 //dev-chatscript.babylontesting.co.uk/v1
 //staging-chatscript.babylontesting.co.uk/v1
 
+NSString *const kPubNubPublishKey           = @"pub-c-63c4d0c1-0085-4719-962f-fbc211d4f90a";
+NSString *const kPubNubSubscribeKey         = @"sub-c-67d2f8fe-20ed-11e6-b700-0619f8945a4f";
+NSString *const kPubNubSecretKey            = @"sec-c-NmNkYTRlMTAtYTIwZC00YzgwLTllNjAtNzQzYTAwMzg4YjYw";
+
 NSString *const kChatBotApiUrlBase          = @"http://dev-chatscript.babylontesting.co.uk/v1";
 NSString *const kBabylonDoctorName          = @"Dr. Babylon";
 NSString *const kBabylonDoctorId            = @"babyBot";
