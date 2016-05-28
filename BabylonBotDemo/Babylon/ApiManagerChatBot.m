@@ -36,7 +36,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
             success:(void (^)(AFHTTPRequestOperation *operation, id response))success
             failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    [self.manager GET:[self apiRestBuilderUrl:@"talk"]
+    [self.manager GET:[self apiRestBuilderUrl:@"talk" withType:apiRestGet]
            parameters:@{@"query":query,
                         @"auth_key":self.authKey,
                         @"user_id":self.userID}
@@ -54,7 +54,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 - (void)getConversations:(void (^)(AFHTTPRequestOperation *operation, id response))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    [self.manager GET:[self apiRestBuilderUrl:@"conversations"]
+    [self.manager GET:[self apiRestBuilderUrl:@"conversations" withType:apiRestGet]
            parameters:@{@"auth_key":self.authKey,
                         @"user_id":self.userID}
               success:^(AFHTTPRequestOperation *operation, id response) {
@@ -71,7 +71,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 - (void)getConversationHistory:(void (^)(AFHTTPRequestOperation *operation, id response))success
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    [self.manager GET:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@", self.conversationID]]
+    [self.manager GET:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@", self.conversationID] withType:apiRestGet]
            parameters:@{@"auth_key":self.authKey,
                         @"user_id":self.userID}
               success:^(AFHTTPRequestOperation *operation, id response) {
@@ -88,7 +88,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 - (void)getConversationStatement:(void (^)(AFHTTPRequestOperation *operation, id response))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    [self.manager GET:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", self.conversationID, self.statementID]]
+    [self.manager GET:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", self.conversationID, self.statementID] withType:apiRestGet]
            parameters:@{@"auth_key":self.authKey,
                         @"user_id":self.userID}
               success:^(AFHTTPRequestOperation *operation, id response) {
@@ -108,7 +108,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                      success:(void (^)(AFHTTPRequestOperation *operation, id response))success
                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    [self.manager POST:[self apiRestBuilderUrl:@"conversation/text"]
+    [self.manager POST:[self apiRestBuilderUrl:@"conversation/text" withType:apiRestPost]
             parameters:@{@"value":[self formatedInput:input],
                          @"auth_key":self.authKey,
                          @"user_id":self.userID,
@@ -129,7 +129,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                       success:(void (^)(AFHTTPRequestOperation *, id))success
                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    [self.manager POST:[self apiRestBuilderUrl:@"conversation/image"]
+    [self.manager POST:[self apiRestBuilderUrl:@"conversation/image" withType:apiRestPost]
             parameters:@{@"input":@{@"value":[self encodeToBase64String:image]},
                          @"auth_key":self.authKey,
                          @"user_id":self.userID,
@@ -150,7 +150,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                         withStatement:(NSString *)statementId success:(void (^)(AFHTTPRequestOperation *, id))success
                               failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", self.conversationID, self.statementID]]
+    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", self.conversationID, self.statementID] withType:apiRestPost]
             parameters:@{@"input":@{@"value":[self encodeToBase64String:image]},
                          @"auth_key":self.authKey,
                          @"user_id":self.userID,
@@ -175,7 +175,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                   success:(void (^)(AFHTTPRequestOperation *, id))success
                   failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    [self.manager PUT:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@/text", conversationId, statementId]]
+    [self.manager PUT:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@/text", conversationId, statementId] withType:apiRestPut]
            parameters:@{@"statement":@{@"value":input},
                         @"auth_key":self.authKey,
                         @"user_id":self.userID}
@@ -192,7 +192,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                    success:(void (^)(AFHTTPRequestOperation *, id))success
                    failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    [self.manager DELETE:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@", conversationId]]
+    [self.manager DELETE:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@", conversationId] withType:apiRestDelete]
               parameters:@{@"auth_key":self.authKey,
                            @"user_id":self.userID}
                  success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -207,7 +207,7 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                    success:(void (^)(AFHTTPRequestOperation *, id))success
                    failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    [self.manager DELETE:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", conversationId, statementId]]
+    [self.manager DELETE:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", conversationId, statementId] withType:apiRestDelete]
               parameters:@{@"auth_key":self.authKey,
                            @"user_id":self.userID}
                  success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -242,8 +242,19 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 }
 
 #pragma mark - Api Utils
-- (NSString *)apiRestBuilderUrl:(NSString *)url {
-    return [NSString stringWithFormat:@"%@/%@", kChatBotApiUrlBase, url];
+- (NSString *)apiRestBuilderUrl:(NSString *)url withType:(ApiRestEndPoint)methodType {
+    switch (methodType) {
+        case apiRestGet:
+            return [NSString stringWithFormat:@"%@/%@", kChatBotApiUrlBase, url];
+        case apiRestPost:
+            return [NSString stringWithFormat:@"%@/%@?auth_key=%@&user_id=%@&target_id=%@&speaker_id=%@", kChatBotApiUrlBase, url, self.authKey, self.userID, self.targetID, self.speakerID];
+        case apiRestPut:
+            return [NSString stringWithFormat:@"%@/%@?auth_key=%@&user_id=%@&target_id=%@&speaker_id=%@", kChatBotApiUrlBase, url, self.authKey, self.userID, self.targetID, self.speakerID];
+        case apiRestDelete:
+            return [NSString stringWithFormat:@"%@/%@?auth_key=%@&user_id=%@&target_id=%@&speaker_id=%@", kChatBotApiUrlBase, url, self.authKey, self.userID, self.targetID, self.speakerID];
+        default:
+            return [NSString stringWithFormat:@"%@/%@", kChatBotApiUrlBase, url];
+    }
 }
 
 - (NSString *)formatedInput:(NSString *)input {

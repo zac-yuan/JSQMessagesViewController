@@ -1,5 +1,6 @@
 
 #import "BBChatBotDataModelTalkChat.h"
+#import "BBChatBotDataModelV2.h"
 #import "JSQMessages.h"
 #import "ApiManagerChatBot.h"
 

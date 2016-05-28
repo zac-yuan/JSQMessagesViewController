@@ -184,6 +184,10 @@
 		B47AA0FC1CF632FC0025A5F6 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CA21CF5CBFB005EF656 /* BBChatBotDataModelDispatch.m */; };
 		B4DCC9651CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */; };
 		B4DCC9671CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */; };
+		B4E5772B1CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E577241CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m */; };
+		B4E5772C1CFA29E0004AF360 /* BBChatBotDataModelOptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E577261CFA29E0004AF360 /* BBChatBotDataModelOptionData.m */; };
+		B4E5772D1CFA29E0004AF360 /* BBChatBotDataModelStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */; };
+		B4E5772E1CFA29E0004AF360 /* BBChatBotDataModelV2.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */; };
 		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
 		B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */; };
 		B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */; };
@@ -405,6 +409,14 @@
 		B4DCC9631CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellMenuOptions.h; sourceTree = "<group>"; };
 		B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellMenuOptions.m; sourceTree = "<group>"; };
 		B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellMenuOptions.xib; sourceTree = "<group>"; };
+		B4E577231CFA29E0004AF360 /* BBChatBotDataModelChosenOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelChosenOption.h; sourceTree = "<group>"; };
+		B4E577241CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelChosenOption.m; sourceTree = "<group>"; };
+		B4E577251CFA29E0004AF360 /* BBChatBotDataModelOptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelOptionData.h; sourceTree = "<group>"; };
+		B4E577261CFA29E0004AF360 /* BBChatBotDataModelOptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelOptionData.m; sourceTree = "<group>"; };
+		B4E577271CFA29E0004AF360 /* BBChatBotDataModelStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelStatement.h; sourceTree = "<group>"; };
+		B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelStatement.m; sourceTree = "<group>"; };
+		B4E577291CFA29E0004AF360 /* BBChatBotDataModelV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelV2.h; sourceTree = "<group>"; };
+		B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelV2.m; sourceTree = "<group>"; };
 		B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -853,6 +865,21 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		B4E577221CFA29CF004AF360 /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				B4E577231CFA29E0004AF360 /* BBChatBotDataModelChosenOption.h */,
+				B4E577241CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m */,
+				B4E577251CFA29E0004AF360 /* BBChatBotDataModelOptionData.h */,
+				B4E577261CFA29E0004AF360 /* BBChatBotDataModelOptionData.m */,
+				B4E577271CFA29E0004AF360 /* BBChatBotDataModelStatement.h */,
+				B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */,
+				B4E577291CFA29E0004AF360 /* BBChatBotDataModelV2.h */,
+				B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */,
+			);
+			name = V2;
+			sourceTree = "<group>";
+		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +926,7 @@
 		B4FA1C171CF5B8C20066D8B1 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				B4E577221CFA29CF004AF360 /* V2 */,
 				B4FA1C181CF5B8D60066D8B1 /* Talk */,
 			);
 			name = "Data Models";
@@ -1388,6 +1416,7 @@
 			files = (
 				9F4A61B61CF5F94600A808A7 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				9F4A61AB1CF5F93300A808A7 /* JSQPhotoMediaItem.m in Sources */,
+				B4E5772B1CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m in Sources */,
 				B4FA1C391CF5B9D20066D8B1 /* ApiManagerChatBot.m in Sources */,
 				9F4A61AC1CF5F93300A808A7 /* JSQVideoMediaItem.m in Sources */,
 				9F4A61AF1CF5F94600A808A7 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
@@ -1410,9 +1439,11 @@
 				9F4A61A71CF5F93300A808A7 /* JSQLocationMediaItem.m in Sources */,
 				7F3062E91CF73D2D0026909D /* JSQMessagesOption.m in Sources */,
 				9F4A619E1CF5F8A400A808A7 /* JSQMessagesTimestampFormatter.m in Sources */,
+				B4E5772C1CFA29E0004AF360 /* BBChatBotDataModelOptionData.m in Sources */,
 				9F4A61A11CF5F91700A808A7 /* JSQAudioMediaViewAttributes.m in Sources */,
 				B4FA1C3C1CF5B9D20066D8B1 /* BBWebSocketsClient.m in Sources */,
 				B4101CA01CF5C726005EF656 /* BBConstants.m in Sources */,
+				B4E5772D1CFA29E0004AF360 /* BBChatBotDataModelStatement.m in Sources */,
 				9F4A61A91CF5F93300A808A7 /* JSQMessage.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
@@ -1429,6 +1460,7 @@
 				9F4A61B71CF5F94600A808A7 /* JSQMessagesToolbarContentView.m in Sources */,
 				9F4A61B81CF5F94600A808A7 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				9F4A61B11CF5F94600A808A7 /* JSQMessagesComposerTextView.m in Sources */,
+				B4E5772E1CFA29E0004AF360 /* BBChatBotDataModelV2.m in Sources */,
 				9F4A61921CF5F89100A808A7 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
 				B4101CBF1CF707AD005EF656 /* BBDotActivityIndicatorView.m in Sources */,
 				9F4A61B01CF5F94600A808A7 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
