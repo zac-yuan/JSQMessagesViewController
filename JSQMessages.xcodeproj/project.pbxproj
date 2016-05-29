@@ -188,6 +188,7 @@
 		B4E5772C1CFA29E0004AF360 /* BBChatBotDataModelOptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E577261CFA29E0004AF360 /* BBChatBotDataModelOptionData.m */; };
 		B4E5772D1CFA29E0004AF360 /* BBChatBotDataModelStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */; };
 		B4E5772E1CFA29E0004AF360 /* BBChatBotDataModelV2.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */; };
+		B4E5773B1CFAFB77004AF360 /* BBPubNubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E5773A1CFAFB77004AF360 /* BBPubNubClient.m */; };
 		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
 		B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */; };
 		B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */; };
@@ -417,6 +418,8 @@
 		B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelStatement.m; sourceTree = "<group>"; };
 		B4E577291CFA29E0004AF360 /* BBChatBotDataModelV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelV2.h; sourceTree = "<group>"; };
 		B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelV2.m; sourceTree = "<group>"; };
+		B4E577391CFAFB77004AF360 /* BBPubNubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBPubNubClient.h; path = Babylon/BBPubNubClient.h; sourceTree = "<group>"; };
+		B4E5773A1CFAFB77004AF360 /* BBPubNubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBPubNubClient.m; path = Babylon/BBPubNubClient.m; sourceTree = "<group>"; };
 		B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -891,6 +894,15 @@
 			name = "Rest Api (in progress)";
 			sourceTree = "<group>";
 		};
+		B4E577381CFAFB5A004AF360 /* PubNub */ = {
+			isa = PBXGroup;
+			children = (
+				B4E577391CFAFB77004AF360 /* BBPubNubClient.h */,
+				B4E5773A1CFAFB77004AF360 /* BBPubNubClient.m */,
+			);
+			name = PubNub;
+			sourceTree = "<group>";
+		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -980,6 +992,7 @@
 		B4FA1C1C1CF5B9350066D8B1 /* WebSockets */ = {
 			isa = PBXGroup;
 			children = (
+				B4E577381CFAFB5A004AF360 /* PubNub */,
 				B4E5772F1CFA4C7A004AF360 /* Rest Api (in progress) */,
 			);
 			name = WebSockets;
@@ -1470,6 +1483,7 @@
 				9F4A61B11CF5F94600A808A7 /* JSQMessagesComposerTextView.m in Sources */,
 				B4E5772E1CFA29E0004AF360 /* BBChatBotDataModelV2.m in Sources */,
 				9F4A61921CF5F89100A808A7 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
+				B4E5773B1CFAFB77004AF360 /* BBPubNubClient.m in Sources */,
 				B4101CBF1CF707AD005EF656 /* BBDotActivityIndicatorView.m in Sources */,
 				9F4A61B01CF5F94600A808A7 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				9F4A61A01CF5F90300A808A7 /* JSQMessagesCollectionViewCell.m in Sources */,

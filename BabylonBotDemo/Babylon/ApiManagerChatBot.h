@@ -1,9 +1,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
-#import "BBWebSocketsClient.h"
 
-@interface ApiManagerChatBot : NSObject <BBWebSocketsClientDelegate>
+@interface ApiManagerChatBot : NSObject
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *authKey;
@@ -25,7 +24,8 @@
 - (void)getConversationHistory:(void (^)(AFHTTPRequestOperation *operation, id response))success
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
-- (void)getConversationStatement:(void (^)(AFHTTPRequestOperation *operation, id response))success
+- (void)getConversationStatement:(NSString *)chatStatment withConversationId:(NSString *)chatId
+                          sucess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 // Post Methods

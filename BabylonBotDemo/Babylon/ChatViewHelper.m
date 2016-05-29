@@ -17,6 +17,16 @@
     self.senderId = @"123456789";
     self.senderDisplayName = @"Anonymous User";
     
+    // Setup WebSockets
+    [self setPubNubClient:[[BBPubNubClient alloc] init]];
+    [self.pubNubClient setPubNubClientDelegate:self];
+    [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
+        if (!status.isError) {
+            //TODO: Replace the channel id with user id
+            [self.pubNubClient subscribeToChannel:@"1077"];
+        }
+    }];
+    
     // Custom config for chat
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeMake(30, 30);
@@ -44,6 +54,25 @@
 
 - (void)customAction:(id)sender {
     NSLog(@"Custom action received! Sender: %@", sender);
+}
+
+#pragma mark - PubNubClient delegate
+- (void)pubNubClient:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
+    
+    //TODO:
+    NSString *statementId = [message.data.message objectForKey:@"statement"];
+    NSString *chatId = [message.data.message objectForKey:@"conversation"];
+    
+    [[ApiManagerChatBot sharedConfiguration] getConversationStatement:statementId withConversationId:chatId sucess:^(AFHTTPRequestOperation *operation, id response) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
+- (void)pubNubClient:(PubNub *)client didReceiveStatus:(PNSubscribeStatus *)status {
+    
 }
 
 #pragma mark - Menu options

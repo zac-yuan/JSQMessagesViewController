@@ -1,6 +1,5 @@
 
 #import "ApiManagerChatBot.h"
-#import "BBWebSocketsClient.h"
 #import "BBConstants.h"
 #import "AppDelegate.h"
 
@@ -18,9 +17,6 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
         [_sharedConfiguration.manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
         [_sharedConfiguration.manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
         [_sharedConfiguration.manager.reachabilityManager startMonitoring];
-        
-        [((AppDelegate *)[UIApplication sharedApplication].delegate).pubNubClient subscribeToChannels:@[@"1077"] withPresence:YES];
-        
     });
     
     //HARDCODE: DEMO ONLY
@@ -86,10 +82,11 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     
 }
 
-- (void)getConversationStatement:(void (^)(AFHTTPRequestOperation *operation, id response))success
+- (void)getConversationStatement:(NSString *)chatStatment withConversationId:(NSString *)chatId
+                          sucess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-    [self.manager GET:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", self.conversationID, self.statementID] withType:apiRestGet]
+    [self.manager GET:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/statement/%@", chatId, chatStatment] withType:apiRestGet]
            parameters:@{@"auth_key":self.authKey,
                         @"user_id":self.userID}
               success:^(AFHTTPRequestOperation *operation, id response) {
@@ -219,29 +216,6 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     
 }
 
-#pragma mark - WebSocket
-- (void)initWebSocketChannel:(NSString *)channelName {
-    
-    BBWebSocketsClient *socketClient = [[BBWebSocketsClient alloc] initWithChannel:channelName];
-    [socketClient setDelegate:self];
-    [socketClient connectWithCompletion:^{
-        NSLog(@"websocket connect");
-    }];
-    
-}
-
-- (void)pubNubClient:(BBWebSocketsClient *)client presenceEvents:(NSArray *)presenceEvents {
-    NSLog(@"%@", presenceEvents);
-}
-
-- (void)pubNubClient:(BBWebSocketsClient *)client state:(BBWebSocketsChannelState)state {
-    NSLog(@"%@ / %lu", client, (unsigned long)state);
-}
-
-- (void)pubNubClient:(BBWebSocketsClient *)client messages:(NSArray *)messages receivedDate:(NSDate *)receivedDate {
-    NSLog(@"%@ %@ %@", client, messages, receivedDate);
-}
-
 #pragma mark - Api Utils
 - (NSString *)apiRestBuilderUrl:(NSString *)url withType:(ApiRestEndPoint)methodType {
     switch (methodType) {
@@ -269,6 +243,5 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 - (BOOL)isConnectedToInternet {
     return [[_manager reachabilityManager] isReachable];
 }
-
 
 @end
