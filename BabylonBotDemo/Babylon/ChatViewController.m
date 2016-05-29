@@ -9,21 +9,6 @@
     [super viewDidLoad];
     
     // Start chatBot
-    //TODO: Change it to apimanager getConversation
-    [[ApiManagerChatBot sharedConfiguration] getTalkChat:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
-        BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
-
-        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:chatDataModel.chat];
-        [self addChatMessageForBot:message showObject:YES];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
-        [self addChatMessageForBot:message showObject:YES];
-        
-    }];
-    
-    //FIXME: DEBUG ONLY
     [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
         BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
         NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);

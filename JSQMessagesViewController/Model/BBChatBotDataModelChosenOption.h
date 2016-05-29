@@ -3,7 +3,7 @@
 
 @interface BBChatBotDataModelChosenOption : NSObject
 
-@property (nonatomic, strong) NSString * id;
+@property (nonatomic, strong) NSString * messageId;
 @property (nonatomic, strong) NSString * source;
 @property (nonatomic, strong) NSString * value;
 

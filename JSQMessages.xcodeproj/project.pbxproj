@@ -859,6 +859,21 @@
 			name = DotAnimationBuilder;
 			sourceTree = "<group>";
 		};
+		B4629C2E1CFB7BD000B585D6 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				B4E577231CFA29E0004AF360 /* BBChatBotDataModelChosenOption.h */,
+				B4E577241CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m */,
+				B4E577251CFA29E0004AF360 /* BBChatBotDataModelOptionData.h */,
+				B4E577261CFA29E0004AF360 /* BBChatBotDataModelOptionData.m */,
+				B4E577271CFA29E0004AF360 /* BBChatBotDataModelStatement.h */,
+				B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */,
+				B4E577291CFA29E0004AF360 /* BBChatBotDataModelV2.h */,
+				B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
 		B47AA0FD1CF6417F0025A5F6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,14 +886,7 @@
 		B4E577221CFA29CF004AF360 /* V2 */ = {
 			isa = PBXGroup;
 			children = (
-				B4E577231CFA29E0004AF360 /* BBChatBotDataModelChosenOption.h */,
-				B4E577241CFA29E0004AF360 /* BBChatBotDataModelChosenOption.m */,
-				B4E577251CFA29E0004AF360 /* BBChatBotDataModelOptionData.h */,
-				B4E577261CFA29E0004AF360 /* BBChatBotDataModelOptionData.m */,
-				B4E577271CFA29E0004AF360 /* BBChatBotDataModelStatement.h */,
-				B4E577281CFA29E0004AF360 /* BBChatBotDataModelStatement.m */,
-				B4E577291CFA29E0004AF360 /* BBChatBotDataModelV2.h */,
-				B4E5772A1CFA29E0004AF360 /* BBChatBotDataModelV2.m */,
+				B4629C2E1CFB7BD000B585D6 /* Post */,
 			);
 			name = V2;
 			sourceTree = "<group>";

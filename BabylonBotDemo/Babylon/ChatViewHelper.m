@@ -65,8 +65,22 @@
     
     [[ApiManagerChatBot sharedConfiguration] getConversationStatement:statementId withConversationId:chatId sucess:^(AFHTTPRequestOperation *operation, id response) {
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        BBChatBotDataModelStatement *chatDataModel = [[BBChatBotDataModelStatement alloc] initWithDictionary:response];
+        JSQMessage *botMessage = [[JSQMessage alloc] initWithSenderId:kBabylonDoctorId
+                                                    senderDisplayName:kBabylonDoctorName
+                                                                 date:[NSDate date]
+                                                                 text:chatDataModel.value];
         
+        if ([chatDataModel.optionData.options count]>0) {
+            [self presentMenuOptionsController:chatDataModel];
+            [self addChatMessageForBot:botMessage showObject:NO];
+        } else {
+            [self addChatMessageForBot:botMessage showObject:YES];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+        [self addChatMessageForBot:message showObject:YES];
     }];
     
 }
@@ -76,17 +90,18 @@
 }
 
 #pragma mark - Menu options
-- (void)presentMenuOptionsController:(BBChatBotDataModelTalkChat *)chatDataModel {
+- (void)presentMenuOptionsController:(BBChatBotDataModelStatement *)chatDataModel {
     
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil
-                                                                                 message:NSLocalizedString(chatDataModel.chat, nil)
+                                                                                 message:NSLocalizedString(chatDataModel.value, nil)
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
     
-    for (int x=0; x<[chatDataModel.dispatch count]; x++) {
-        NSString *optionTitle = [(BBChatBotDataModelDispatch *)[chatDataModel.dispatch objectAtIndex:x] title];
+    for (int x=0; x<[chatDataModel.optionData.options count]; x++) {
+        
+        NSString *optionTitle = [(BBChatBotDataModelChosenOption *)[chatDataModel.optionData.options objectAtIndex:x] value];
         UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-                [self selectedOption:chatDataModel.dispatch[x] inOptions:chatDataModel.dispatch forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+            [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             }];
         }];
         [alertViewController addAction:chatMenuOption];
@@ -107,10 +122,10 @@
     
 }
 
-- (void)selectedOption:(BBChatBotDataModelDispatch *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelTalkChat *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
+- (void)selectedOption:(BBChatBotDataModelChosenOption *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelStatement *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSMutableArray *dataSource = [NSMutableArray new];
     
-    for(BBChatBotDataModelDispatch *option in options ) {
+    for(BBChatBotDataModelChosenOption *option in options ) {
         UIColor *textColor;
         UIColor *backgroundColor;
         if(option == selectedOption) {
@@ -121,14 +136,14 @@
             textColor = [UIColor babylonPurple];
         }
         
-        [dataSource addObject:[JSQMessagesOption optionWithText:option.title textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
+        [dataSource addObject:[JSQMessagesOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
     }
 
     JSQMessagesOptionsTableViewController *viewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
     JSQMessage *userMessage = [JSQMessage messageWithSenderId:senderId
                                                   displayName:senderDisplayName
-                                                         text:question.chat
+                                                         text:question.value
                                                         media:item];
     
     [self addChatMessageForUser:userMessage showObject:YES];
@@ -148,35 +163,12 @@
     [self.collectionView reloadData];
     [self scrollToBottomAnimated:YES];
     
-    //TODO: Change it to apimanager postConversation method
-    [[ApiManagerChatBot sharedConfiguration] getTalkChat:text success:^(AFHTTPRequestOperation *operation, id response) {
-        if(success) {
-            success();
-        }
-        
-        BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
-        JSQMessage *botMessage = [[JSQMessage alloc] initWithSenderId:kBabylonDoctorId
-                                                    senderDisplayName:kBabylonDoctorName
-                                                                 date:date
-                                                                 text:chatDataModel.chat];
-        
-        if ([chatDataModel.dispatch count]>0) {
-            [self presentMenuOptionsController:chatDataModel];
-            [self addChatMessageForBot:botMessage showObject:NO];
-        } else {
-            [self addChatMessageForBot:botMessage showObject:YES];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-      
-        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
-        [self addChatMessageForBot:message showObject:YES];
-        
-    }];
-    
     //FIXME: DEBUG ONLY
     [[ApiManagerChatBot sharedConfiguration] postConversationText:text success:^(AFHTTPRequestOperation *operation, id response) {
         BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
+        if(success) {
+            success();
+        }
         NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

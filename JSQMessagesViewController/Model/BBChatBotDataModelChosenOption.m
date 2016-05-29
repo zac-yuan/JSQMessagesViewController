@@ -8,7 +8,7 @@
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
 	if(![dictionary[@"id"] isKindOfClass:[NSNull class]]){
-		self.id = dictionary[@"id"];
+		self.messageId = dictionary[@"id"];
 	}	
 	if(![dictionary[@"source"] isKindOfClass:[NSNull class]]){
 		self.source = dictionary[@"source"];

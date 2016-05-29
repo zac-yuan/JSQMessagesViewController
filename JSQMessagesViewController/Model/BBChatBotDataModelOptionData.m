@@ -1,5 +1,6 @@
 
 #import "BBChatBotDataModelOptionData.h"
+#import "BBChatBotDataModelChosenOption.h"
 
 @interface BBChatBotDataModelOptionData ()
 @end
@@ -18,7 +19,7 @@
 		NSArray * optionsDictionaries = dictionary[@"options"];
 		NSMutableArray * optionsItems = [NSMutableArray array];
 		for(NSDictionary * optionsDictionary in optionsDictionaries){
-			BBChatBotDataModelOptionData * optionsItem = [[BBChatBotDataModelOptionData alloc] initWithDictionary:optionsDictionary];
+			BBChatBotDataModelChosenOption * optionsItem = [[BBChatBotDataModelChosenOption alloc] initWithDictionary:optionsDictionary];
 			[optionsItems addObject:optionsItem];
 		}
 		self.options = optionsItems;
