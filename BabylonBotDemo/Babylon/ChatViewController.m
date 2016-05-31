@@ -46,7 +46,7 @@
     if ([message.senderId isEqualToString:self.senderId]) {
         return nil;
     } else {
-        return [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"babybotIcon"] diameter:30];
+        return [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"bot-heart"] diameter:30];
     }
 }
 
