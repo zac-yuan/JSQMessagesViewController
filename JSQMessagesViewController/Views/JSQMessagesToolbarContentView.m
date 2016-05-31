@@ -159,6 +159,12 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     [self setNeedsUpdateConstraints];
 }
 
+-(void)setEnabled:(BOOL)enabled
+{
+    self.userInteractionEnabled = enabled;
+    self.alpha = enabled ? 1.f : .3f;
+}
+
 #pragma mark - Getters
 
 - (CGFloat)leftBarButtonItemWidth

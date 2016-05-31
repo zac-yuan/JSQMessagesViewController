@@ -73,6 +73,12 @@
     NSLog(@"Custom action received! Sender: %@", sender);
 }
 
+-(BOOL)showTypingIndicator {
+    BOOL showTypingIndicator = [super showTypingIndicator];
+    [self setToolbarEnabled:!showTypingIndicator];
+    return showTypingIndicator;
+}
+
 #pragma mark - PubNubClient delegate
 - (void)pubNubClient:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
     
