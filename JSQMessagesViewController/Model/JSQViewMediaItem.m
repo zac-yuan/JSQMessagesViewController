@@ -87,7 +87,7 @@
 
 - (NSUInteger)mediaHash
 {
-    return self.hash;
+    return self.media.hash;
 }
 
 - (id)mediaData

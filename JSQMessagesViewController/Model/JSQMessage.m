@@ -156,12 +156,20 @@
 
     JSQMessage *aMessage = (JSQMessage *)object;
 
-    if (self.isMediaMessage != aMessage.isMediaMessage) {
+    if (self.isMediaMessage != aMessage.isMediaMessage ||
+        self.isMixedMediaMessage != aMessage.isMixedMediaMessage) {
         return NO;
     }
 
-    BOOL hasEqualContent = self.isMediaMessage ? [self.media isEqual:aMessage.media] : [self.text isEqualToString:aMessage.text];
-
+    BOOL hasEqualContent;
+    if(self.isMediaMessage) {
+        hasEqualContent = [self.media isEqual:aMessage.media];
+    } else if(self.isMixedMediaMessage) {
+        hasEqualContent = [self.media isEqual:aMessage.media] && [self.text isEqualToString:aMessage.text];
+    }else {
+        hasEqualContent = [self.text isEqualToString:aMessage.text];
+    }
+    
     return [self.senderId isEqualToString:aMessage.senderId]
     && [self.senderDisplayName isEqualToString:aMessage.senderDisplayName]
     && ([self.date compare:aMessage.date] == NSOrderedSame)
@@ -170,14 +178,22 @@
 
 - (NSUInteger)hash
 {
-    NSUInteger contentHash = self.isMediaMessage ? [self.media mediaHash] : self.text.hash;
+    NSUInteger contentHash;
+    if(self.isMediaMessage) {
+        contentHash = [self.media mediaHash];
+    } else if(self.isMixedMediaMessage) {
+        contentHash = [self.media mediaHash] ^ self.text.hash;
+    } else {
+        contentHash = self.text.hash;
+    }
+    
     return self.senderId.hash ^ self.date.hash ^ contentHash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@>",
-            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media];
+    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, isMixedMediaMessage=%@, text=%@, media=%@>",
+            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), @(self.isMixedMediaMessage), self.text, self.media];
 }
 
 - (id)debugQuickLookObject
@@ -195,6 +211,7 @@
         _senderDisplayName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(senderDisplayName))];
         _date = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(date))];
         _isMediaMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMediaMessage))];
+        _isMixedMediaMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMixedMediaMessage))];
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
     }
@@ -207,6 +224,7 @@
     [aCoder encodeObject:self.senderDisplayName forKey:NSStringFromSelector(@selector(senderDisplayName))];
     [aCoder encodeObject:self.date forKey:NSStringFromSelector(@selector(date))];
     [aCoder encodeBool:self.isMediaMessage forKey:NSStringFromSelector(@selector(isMediaMessage))];
+    [aCoder encodeBool:self.isMixedMediaMessage forKey:NSStringFromSelector(@selector(isMixedMediaMessage))];
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
 
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
@@ -222,6 +240,12 @@
         return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
                                                  senderDisplayName:self.senderDisplayName
                                                               date:self.date
+                                                             media:self.media];
+    } else if(self.isMixedMediaMessage) {
+        return [[[self class] allocWithZone:zone] initWithSenderId:self.senderId
+                                                 senderDisplayName:self.senderDisplayName
+                                                              date:self.date
+                                                              text:self.text
                                                              media:self.media];
     }
 
