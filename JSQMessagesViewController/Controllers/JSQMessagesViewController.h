@@ -310,4 +310,9 @@
  */
 - (void)viewDidDisappear:(BOOL)animated NS_REQUIRES_SUPER;
 
+/**
+ `NO` disables the toolbar
+ */
+- (void)setToolbarEnabled:(BOOL)enabled;
+
 @end

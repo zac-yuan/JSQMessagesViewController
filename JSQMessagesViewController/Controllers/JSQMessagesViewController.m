@@ -177,6 +177,10 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     [self jsq_updateCollectionViewInsets];
 }
 
+- (void)setToolbarEnabled:(BOOL)enabled {
+    self.inputToolbar.contentView.enabled = enabled;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
