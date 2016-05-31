@@ -1,5 +1,5 @@
 //
-//  JSQMessagesOptionsTableViewCell.h
+//  OptionsTableViewCell.h
 //  JSQMessages
 //
 //  Created by BabylonHealth on 25/05/2016.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString * const kJSQMessagesOptionsTableViewCellReuseId = @"JSQMessagesOptionsTableViewCell";
+static NSString * const kOptionsTableViewCellReuseId = @"OptionsTableViewCell";
 
-@interface JSQMessagesOptionsTableViewCell : UITableViewCell
+@interface OptionsTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *optionNameLabel;
 

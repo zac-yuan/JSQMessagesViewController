@@ -473,6 +473,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.delegate = collectionView;
+    cell.rootTapRecognizer = ![messageItem wantsTouches];
 
     if (!isMediaMessage) {
         if(isMixedMediaMessage) {

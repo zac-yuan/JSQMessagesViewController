@@ -1,21 +1,14 @@
-//
-//  JSQMessagesOption.m
-//  JSQMessages
-//
-//  Created by Lee Arromba on 26/05/2016.
-//  Copyright © 2016 Hexed Bits. All rights reserved.
-//
 
-#import "JSQMessagesOption.h"
+#import "BBOption.h"
 
-@implementation JSQMessagesOption
+@implementation BBOption
 
-+(JSQMessagesOption *)optionWithText:(NSString *)text
++(BBOption *)optionWithText:(NSString *)text
                            textColor:(UIColor *)textColor
                                 font:(UIFont *)font
                      backgroundColor:(UIColor *)backgroundColor
                               height:(CGFloat)height {
-    JSQMessagesOption *option = [JSQMessagesOption new];
+    BBOption *option = [BBOption new];
     option.text = text;
     option.textColor = textColor;
     option.font = font;

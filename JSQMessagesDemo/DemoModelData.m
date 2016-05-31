@@ -39,8 +39,6 @@
     self = [super init];
     if (self) {
         
-        self.tableViewControllers = [NSMutableArray new];
-        
         if ([NSUserDefaults emptyMessagesSetting]) {
             self.messages = [NSMutableArray new];
         }
@@ -187,21 +185,15 @@
 
 - (void)addViewMediaMessage
 {
-    NSArray *dataSource =
-    @[ [JSQMessagesOption optionWithText:@"Better" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:13.f] backgroundColor:[UIColor clearColor] height:20.f],
-       [JSQMessagesOption optionWithText:@"Same" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:13.f] backgroundColor:[UIColor lightGrayColor] height:20.f],
-       [JSQMessagesOption optionWithText:@"Worse" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:13.f] backgroundColor:[UIColor clearColor] height:20.f] ];
-
-    JSQMessagesOptionsTableViewController *tableViewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
-    JSQViewMediaItem *viewMediaItem = [[JSQViewMediaItem alloc] initWithViewMedia:tableViewController.view];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = [UIColor blueColor];
+    JSQViewMediaItem *viewMediaItem = [[JSQViewMediaItem alloc] initWithViewMedia:view];
     viewMediaItem.appliesMediaViewMaskAsOutgoing = NO;
-    
     JSQMessage *viewMediaMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
                                                        displayName:kJSQDemoAvatarDisplayNameJobs
                                                               text:@"How are you feeling?"
                                                              media:viewMediaItem];
     [self.messages addObject:viewMediaMessage];
-    [self.tableViewControllers addObject:tableViewController];
 }
 
 - (void)addLocationMediaMessageCompletion:(JSQLocationMediaItemCompletionBlock)completion
