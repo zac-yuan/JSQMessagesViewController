@@ -21,6 +21,28 @@
     self.senderId = @"123456789";
     self.senderDisplayName = @"Anonymous User";
     
+    // Setup WebSockets
+    [self setPubNubClient:[[BBPubNubClient alloc] init]];
+    [self.pubNubClient setPubNubClientDelegate:self];
+    [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
+        if (!status.isError) {
+            //TODO: Replace the channel id with user id
+            [self.pubNubClient subscribeToChannel:@"1077"];
+            
+            // Start chatBot
+            [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
+                BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
+                NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+                [self addChatMessageForBot:message showObject:YES];
+                
+            }];
+            
+        }
+    }];
+    
     // Custom config for chat
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeMake(30, 30);
@@ -50,18 +72,61 @@
     NSLog(@"Custom action received! Sender: %@", sender);
 }
 
+#pragma mark - PubNubClient delegate
+- (void)pubNubClient:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
+    
+    //TODO:
+    NSString *statementId = [message.data.message objectForKey:@"statement"];
+    NSString *chatId = [message.data.message objectForKey:@"conversation"];
+    
+    [[ApiManagerChatBot sharedConfiguration] getConversationStatement:statementId withConversationId:chatId sucess:^(AFHTTPRequestOperation *operation, id response) {
+        
+        BBChatBotDataModelStatement *chatDataModel = [[BBChatBotDataModelStatement alloc] initWithDictionary:response];
+        JSQMessage *botMessage = [[JSQMessage alloc] initWithSenderId:kBabylonDoctorId
+                                                    senderDisplayName:kBabylonDoctorName
+                                                                 date:[NSDate date]
+                                                                 text:chatDataModel.value];
+        
+        if ([chatDataModel.optionData.options count]>0) {
+            [self presentMenuOptionsController:chatDataModel];
+            [self addChatMessageForBot:botMessage showObject:NO];
+        } else {
+            [self addChatMessageForBot:botMessage showObject:YES];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+        [self addChatMessageForBot:message showObject:YES];
+    }];
+    
+}
+
+- (void)pubNubClient:(PubNub *)client didReceiveStatus:(PNSubscribeStatus *)status {
+    NSLog(@"PubNub Client: %@ - status: %@ / %@", client, status, status.subscribedChannels);
+}
+
 #pragma mark - Menu options
-- (void)presentMenuOptionsController:(BBChatBotDataModelTalkChat *)chatDataModel {
+- (void)presentMenuOptionsController:(BBChatBotDataModelStatement *)chatDataModel {
     
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil
-                                                                                 message:NSLocalizedString(chatDataModel.chat, nil)
+                                                                                 message:NSLocalizedString(chatDataModel.value, nil)
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
     
-    for (int x=0; x<[chatDataModel.dispatch count]; x++) {
-        NSString *optionTitle = [(BBChatBotDataModelDispatch *)[chatDataModel.dispatch objectAtIndex:x] title];
+    for (int x=0; x<[chatDataModel.optionData.options count]; x++) {
+        
+        NSString *optionTitle = [(BBChatBotDataModelChosenOption *)[chatDataModel.optionData.options objectAtIndex:x] value];
         UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self sendMessage:nil withMessageText:[[chatDataModel.dispatch objectAtIndex:x] title] senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] success:^{
-                [self selectedOption:chatDataModel.dispatch[x] inOptions:chatDataModel.dispatch forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+            BBChatBotDataModelChosenOption *optionSelected = chatDataModel.optionData.options[x];
+            
+            //TODO:
+            //            [self sendOption:@{@"options":@[@{@"id":optionSelected.messageId,
+            //                                              @"value":optionSelected.value,
+            //                                              @"source":optionSelected.source}]} withConversationId:chatDataModel.inResponseTo completionHandler:^(bool success) {
+            //                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+            //            }];
+            
+            [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+                [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             }];
         }];
         [alertViewController addAction:chatMenuOption];
@@ -82,10 +147,10 @@
     
 }
 
-- (void)selectedOption:(BBChatBotDataModelDispatch *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelTalkChat *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
+- (void)selectedOption:(BBChatBotDataModelChosenOption *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelStatement *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSMutableArray *dataSource = [NSMutableArray new];
     
-    for(BBChatBotDataModelDispatch *option in options) {
+    for(BBChatBotDataModelChosenOption *option in options ) {
         UIColor *textColor;
         UIColor *backgroundColor;
         if(option == selectedOption) {
@@ -96,7 +161,7 @@
             textColor = [UIColor babylonPurple];
         }
         
-        [dataSource addObject:[BBOption optionWithText:option.title textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
+        [dataSource addObject:[BBOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
     }
 
     OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
@@ -104,59 +169,49 @@
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
     JSQMessage *userMessage = [JSQMessage messageWithSenderId:senderId
                                                   displayName:senderDisplayName
-                                                         text:question.chat
+                                                         text:question.value
                                                         media:item];
     userMessage.wantsTouches = YES;
-
-    [self.chatMessagesArray addObject:userMessage];
-    [self finishSendingMessage];
+    [self addChatMessageForUser:userMessage showObject:YES];
 }
 
-- (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date success:(ChatViewHelperSendSuccess)success {
+- (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date showMessage:(BOOL)showMessage success:(ChatViewHelperSendSuccess)success {
     
     JSQMessage *userMessage = [[JSQMessage alloc] initWithSenderId:senderId
                                                  senderDisplayName:senderDisplayName
                                                               date:date
                                                               text:text];
     
-    [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    [self.chatMessagesArray addObject:userMessage];
-    [self finishSendingMessage];
+    [self addChatMessageForUser:userMessage showObject:showMessage];
     
     self.showTypingIndicator = YES;
     [self.collectionView reloadData];
     [self scrollToBottomAnimated:YES];
     
-    //TODO: Change it to apimanager postConversation method
-    [[ApiManagerChatBot sharedConfiguration] getTalkChat:text success:^(AFHTTPRequestOperation *operation, id response) {
+    //FIXME: DEBUG ONLY
+    [[ApiManagerChatBot sharedConfiguration] postConversationText:text success:^(AFHTTPRequestOperation *operation, id response) {
+        BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
         if(success) {
             success();
         }
-        
-        BBChatBotDataModelTalkChat *chatDataModel = [[BBChatBotDataModelTalkChat alloc] initWithDictionary:response];
-        
-        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
-        JSQMessage *botMessage = [[JSQMessage alloc] initWithSenderId:kBabylonDoctorId
-                                                    senderDisplayName:kBabylonDoctorName
-                                                                 date:date
-                                                                 text:chatDataModel.chat];
-        
-        if ([chatDataModel.dispatch count]>0) {
-            [self presentMenuOptionsController:chatDataModel];
-        } else {
-            [self.chatMessagesArray addObject:botMessage];
-        }
-        
-        [self finishReceivingMessageAnimated:YES];
-
+        NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-      
-        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
-        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:error.localizedFailureReason];
-        [self.chatMessagesArray addObject:message];
-        [self finishReceivingMessageAnimated:YES];
+        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+        [self addChatMessageForBot:message showObject:YES];
+    }];
+
+    
+}
+
+- (void)sendOption:(NSDictionary *)optionDic withConversationId:(NSString *)conversationId
+ completionHandler:(void(^)(bool success))completionHandler {
+    
+    [[ApiManagerChatBot sharedConfiguration] postConversationOption:optionDic withConversationId:conversationId success:^(AFHTTPRequestOperation *operation, id response) {
+        completionHandler(YES);
         
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completionHandler(NO);
     }];
     
 }
@@ -222,7 +277,7 @@
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:self.senderId
                                                    displayName:self.senderDisplayName
                                                          media:photoItem];
-    [self addChatMessageObject:photoMessage];
+    [self addChatMessageForUser:photoMessage showObject:YES];
 }
 
 - (void)addLocation:(JSQLocationMediaItemCompletionBlock)completion {
@@ -237,7 +292,7 @@
     JSQMessage *locationMessage = [JSQMessage messageWithSenderId:self.senderId
                                                       displayName:self.senderDisplayName
                                                             media:locationItem];
-    [self addChatMessageObject:locationMessage];
+    [self addChatMessageForUser:locationMessage showObject:YES];
     
 }
 
@@ -248,7 +303,7 @@
     JSQMessage *audioMessage = [JSQMessage messageWithSenderId:self.senderId
                                                    displayName:self.senderDisplayName
                                                          media:audioItem];
-    [self addChatMessageObject:audioMessage];
+    [self addChatMessageForUser:audioMessage showObject:YES];
 }
 
 - (void)addVideo:(NSURL *)videoURL {
@@ -257,16 +312,25 @@
     JSQMessage *videoMessage = [JSQMessage messageWithSenderId:self.senderId
                                                    displayName:self.senderDisplayName
                                                          media:videoItem];
-    [self addChatMessageObject:videoMessage];
+    [self addChatMessageForUser:videoMessage showObject:YES];
     
 }
 
-- (void)addChatMessageObject:(JSQMessage *)message {
-    
+- (void)addChatMessageForUser:(JSQMessage *)message showObject:(BOOL)showObject {
     [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    [self.chatMessagesArray addObject:message];
+    if (showObject) {
+        [self.chatMessagesArray addObject:message];
+    }
     [self finishSendingMessageAnimated:YES];
-    
+}
+
+- (void)addChatMessageForBot:(JSQMessage *)message showObject:(BOOL)showObject {
+    [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
+    if (showObject) {
+        [self.chatMessagesArray addObject:message];
+        [[[[self tabBarController] tabBar] items][0] setBadgeValue:[NSString babylonBadgeCounter:self.chatMessagesArray]];
+    }
+    [self finishReceivingMessageAnimated:YES];
 }
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {

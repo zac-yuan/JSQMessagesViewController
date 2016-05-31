@@ -23,21 +23,37 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
   - ios-maps (0.2.5)
   - JSQSystemSoundPlayer (2.0.1)
+  - PubNub (4.3.3):
+    - CocoaLumberjack (= 2.3.0)
+    - PubNub/Core (= 4.3.3)
+  - PubNub/Core (4.3.3):
+    - CocoaLumberjack (= 2.3.0)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
   - AFNetworking (~> 2.0)
   - ios-maps
   - JSQSystemSoundPlayer (~> 2.0)
+  - PubNub
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   ios-maps: 5db3f12df3db79e10815c0ae6e5f656bcfef397d
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  PubNub: 51acd937c947d931a75d2caef654fd12f7573e09
 
-PODFILE CHECKSUM: 60f8859dd9c63654ff9bd75061de780701425f9a
+PODFILE CHECKSUM: dc8d921a6ff02b108bb9a5b5d6eb371facd05afa
 
 COCOAPODS: 1.0.0

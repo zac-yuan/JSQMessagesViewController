@@ -2,21 +2,30 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-extern NSString *const chatBotApiUrlBase;
+extern NSString *const kPubNubPublishKey;
+extern NSString *const kPubNubSubscribeKey;
+extern NSString *const kPubNubSecretKey;
+extern NSString *const kChatBotApiUrlBase;
+extern NSString *const kBabylonDoctorName;
+extern NSString *const kBabylonDoctorId;
+
 extern const CGFloat kOptionCellHeight;
 extern const CGFloat kDefaultFontSize;
 
-// COLORS
 @interface UIColor (Babylon)
 + (UIColor *)babylonPurple;
 + (UIColor *)babylonWhite;
 + (UIColor *)randomColor;
 @end
 
-// FONTS
 @interface UIFont (Babylon)
 + (UIFont *)babylonRegularFont:(float)fontSize;
 + (UIFont *)babylonMediumFont:(float)fontSize;
+@end
+
+@interface NSString (Babylon)
++ (NSString *)babylonErrorMsg:(NSError *)error;
++ (NSString *)babylonBadgeCounter:(NSArray *)messages;
 @end
 
 @interface CALayer (Babylon)

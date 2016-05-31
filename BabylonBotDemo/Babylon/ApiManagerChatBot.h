@@ -1,6 +1,6 @@
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 
 @interface ApiManagerChatBot : NSObject
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -24,7 +24,8 @@
 - (void)getConversationHistory:(void (^)(AFHTTPRequestOperation *operation, id response))success
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
-- (void)getConversationStatement:(void (^)(AFHTTPRequestOperation *operation, id response))success
+- (void)getConversationStatement:(NSString *)chatStatment withConversationId:(NSString *)chatId
+                          sucess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 // Post Methods
@@ -40,10 +41,18 @@
                       success:(void (^)(AFHTTPRequestOperation *operation, id response))success
                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (void)postConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
+                       success:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 // Put Methods
 - (void)putConversationText:(NSString *)input withConversationId:(NSString *)conversationId andStatementId:(NSString *)statementId
                     success:(void (^)(AFHTTPRequestOperation *, id))success
                     failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+
+- (void)putConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
+                      success:(void (^)(AFHTTPRequestOperation *, id))success
+                      failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
 // Delete Methods
 - (void)deleteConversation:(NSString *)conversationId
