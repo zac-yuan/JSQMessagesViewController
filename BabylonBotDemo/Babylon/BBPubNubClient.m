@@ -38,7 +38,7 @@
 }
 
 - (void)subscribeToChannel:(NSString *)channelName {
-    [self.pubNubClient subscribeToChannels:@[channelName] withPresence:YES];
+    [self.pubNubClient subscribeToChannels:@[channelName] withPresence:NO];
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {

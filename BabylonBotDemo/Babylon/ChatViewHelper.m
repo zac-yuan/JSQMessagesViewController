@@ -20,10 +20,11 @@
     // Setup WebSockets
     [self setPubNubClient:[[BBPubNubClient alloc] init]];
     [self.pubNubClient setPubNubClientDelegate:self];
+    
+    //TODO: Replace the channel id with user id
+    [self.pubNubClient subscribeToChannel:@"1077"];
     [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
         if (!status.isError) {
-            //TODO: Replace the channel id with user id
-            [self.pubNubClient subscribeToChannel:@"1077"];
             
             // Start chatBot
             [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
