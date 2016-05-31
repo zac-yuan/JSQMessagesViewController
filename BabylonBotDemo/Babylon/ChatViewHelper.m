@@ -85,7 +85,7 @@
 - (void)selectedOption:(BBChatBotDataModelDispatch *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelTalkChat *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSMutableArray *dataSource = [NSMutableArray new];
     
-    for(BBChatBotDataModelDispatch *option in options ) {
+    for(BBChatBotDataModelDispatch *option in options) {
         UIColor *textColor;
         UIColor *backgroundColor;
         if(option == selectedOption) {
@@ -276,7 +276,7 @@
 #pragma mark - JSQMessagesOptionsDelegate
 
 -(void)sender:(id)sender selectedOption:(BBOption *)option {
-    
+    NSLog(@"OPTION SELECTED");
 }
 
 @end
