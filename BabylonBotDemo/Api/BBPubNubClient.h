@@ -12,4 +12,5 @@
 - (void)pingPubNubService:(void (^)(PNErrorStatus *status, PNTimeResult *result))completionHandler;
 @property (nonatomic, weak) id<BBPubNubClientDelegate> pubNubClientDelegate;
 @property (nonatomic) PubNub *pubNubClient;
+@property (nonatomic) NSString *subscribedChannel;
 @end

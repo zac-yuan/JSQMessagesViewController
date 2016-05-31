@@ -38,12 +38,15 @@
 }
 
 - (void)subscribeToChannel:(NSString *)channelName {
-    [self.pubNubClient subscribeToChannels:@[channelName] withPresence:YES];
+    [self setSubscribedChannel:channelName];
+    [self.pubNubClient subscribeToChannels:@[channelName] withPresence:NO];
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
-    if ([self.pubNubClientDelegate respondsToSelector:@selector(pubNubClient:didReceiveMessage:)]) {
-        [self.pubNubClientDelegate pubNubClient:client didReceiveMessage:message];
+    if ([message.data.subscribedChannel isEqualToString:self.subscribedChannel]) {
+        if ([self.pubNubClientDelegate respondsToSelector:@selector(pubNubClient:didReceiveMessage:)]) {
+            [self.pubNubClientDelegate pubNubClient:client didReceiveMessage:message];
+        }
     }
     
     // Handle new message stored in message.data.message
