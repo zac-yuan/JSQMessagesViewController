@@ -41,10 +41,18 @@
                       success:(void (^)(AFHTTPRequestOperation *operation, id response))success
                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (void)postConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
+                       success:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 // Put Methods
 - (void)putConversationText:(NSString *)input withConversationId:(NSString *)conversationId andStatementId:(NSString *)statementId
                     success:(void (^)(AFHTTPRequestOperation *, id))success
                     failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+
+- (void)putConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
+                      success:(void (^)(AFHTTPRequestOperation *, id))success
+                      failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
 // Delete Methods
 - (void)deleteConversation:(NSString *)conversationId

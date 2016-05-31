@@ -5,22 +5,6 @@
 
 @implementation ChatViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Start chatBot
-    [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
-        BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
-        NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
-        [self addChatMessageForBot:message showObject:YES];
-
-    }];
-        
-}
-
 #pragma mark - Actions
 - (IBAction)closeActionButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

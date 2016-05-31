@@ -168,6 +168,30 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     
 }
 
+- (void)postConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
+                       success:(void (^)(AFHTTPRequestOperation *, id))success
+                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    
+    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"/conversation/%@/statement/option_select", conversationId] withType:apiRestPost]
+            parameters:@{@"statement":@{@"value":input},
+                         @"auth_key":self.authKey,
+                         @"user_id":self.userID,
+                         @"target_id":self.targetID,
+                         @"speaker_id":self.speakerID}
+               success:^(AFHTTPRequestOperation *operation, id response) {
+                   success(operation, response);
+                   
+                   NSLog(@"%@", response);
+                   
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   failure(operation, error);
+                   
+                   NSLog(@"Operation: %@\nError: %@", operation, error);
+                   
+    }];
+    
+}
+
 #pragma mark - Put Methods
 - (void)putConversationText:(NSString *)input withConversationId:(NSString *)conversationId andStatementId:(NSString *)statementId
                   success:(void (^)(AFHTTPRequestOperation *, id))success
@@ -181,6 +205,30 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                   success(operation, responseObject);
               } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
                   failure(operation, error);
+    }];
+    
+}
+
+- (void)putConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
+                      success:(void (^)(AFHTTPRequestOperation *, id))success
+                      failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    
+    [self.manager PUT:[self apiRestBuilderUrl:[NSString stringWithFormat:@"/conversation/%@/statement/option_select", conversationId] withType:apiRestPost]
+            parameters:@{@"statement":@{@"value":input},
+                         @"auth_key":self.authKey,
+                         @"user_id":self.userID,
+                         @"target_id":self.targetID,
+                         @"speaker_id":self.speakerID}
+               success:^(AFHTTPRequestOperation *operation, id response) {
+                   success(operation, response);
+                   
+                   NSLog(@"%@", response);
+                   
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   failure(operation, error);
+                   
+                   NSLog(@"Operation: %@\nError: %@", operation, error);
+                   
     }];
     
 }

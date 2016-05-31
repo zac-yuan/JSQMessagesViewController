@@ -24,6 +24,18 @@
         if (!status.isError) {
             //TODO: Replace the channel id with user id
             [self.pubNubClient subscribeToChannel:@"1077"];
+            
+            // Start chatBot
+            [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
+                BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
+                NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+                [self addChatMessageForBot:message showObject:YES];
+                
+            }];
+            
         }
     }];
     
@@ -86,7 +98,7 @@
 }
 
 - (void)pubNubClient:(PubNub *)client didReceiveStatus:(PNSubscribeStatus *)status {
-    
+    NSLog(@"PubNub Client: %@ - status: %@ / %@", client, status, status.subscribedChannels);
 }
 
 #pragma mark - Menu options
@@ -100,8 +112,17 @@
         
         NSString *optionTitle = [(BBChatBotDataModelChosenOption *)[chatDataModel.optionData.options objectAtIndex:x] value];
         UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            BBChatBotDataModelChosenOption *optionSelected = chatDataModel.optionData.options[x];
+            
+            //TODO:
+            //            [self sendOption:@{@"options":@[@{@"id":optionSelected.messageId,
+            //                                              @"value":optionSelected.value,
+            //                                              @"source":optionSelected.source}]} withConversationId:chatDataModel.inResponseTo completionHandler:^(bool success) {
+            //                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+            //            }];
+            
             [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+                [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             }];
         }];
         [alertViewController addAction:chatMenuOption];
@@ -176,6 +197,18 @@
         [self addChatMessageForBot:message showObject:YES];
     }];
 
+    
+}
+
+- (void)sendOption:(NSDictionary *)optionDic withConversationId:(NSString *)conversationId
+ completionHandler:(void(^)(bool success))completionHandler {
+    
+    [[ApiManagerChatBot sharedConfiguration] postConversationOption:optionDic withConversationId:conversationId success:^(AFHTTPRequestOperation *operation, id response) {
+        completionHandler(YES);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completionHandler(NO);
+    }];
     
 }
 
