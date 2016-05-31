@@ -89,7 +89,7 @@
         <scene sceneID="qGt-yf-Psu">
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" id="wfq-kE-L7W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" badgeValue="0" id="zVk-ne-rLA"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home_inactive" badgeValue="0" selectedImage="Home_Active" id="zVk-ne-rLA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rtq-27-KZA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -163,7 +163,7 @@
         <scene sceneID="ZIh-GA-EBN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7kp-b1-oTA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Appointments" id="Eed-S2-YUJ"/>
+                    <tabBarItem key="tabBarItem" title="Appointments" image="Appointments_inactive" selectedImage="Appointments_active" id="Eed-S2-YUJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MKt-rX-NFJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -182,7 +182,7 @@
         <scene sceneID="IUA-bP-Ej8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EVC-Ok-z67" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" id="yCw-2F-AS1"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="Notifications_inactive" selectedImage="Notifications_active" id="yCw-2F-AS1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qrv-pQ-C3X">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -201,7 +201,7 @@
         <scene sceneID="stV-Wt-Jea">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ngg-Bi-24E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="ERC-Xq-rLp"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="me_inactive" selectedImage="me_active" id="ERC-Xq-rLp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgM-Yd-LjX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -218,6 +218,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Appointments_active" width="22" height="23"/>
+        <image name="Appointments_inactive" width="23" height="23"/>
+        <image name="Home_Active" width="25" height="22"/>
+        <image name="Home_inactive" width="25" height="22"/>
+        <image name="Notifications_active" width="23" height="22"/>
+        <image name="Notifications_inactive" width="23" height="23"/>
         <image name="close" width="25" height="25"/>
+        <image name="me_active" width="21" height="21"/>
+        <image name="me_inactive" width="23" height="23"/>
     </resources>
 </document>

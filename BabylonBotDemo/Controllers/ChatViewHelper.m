@@ -22,26 +22,27 @@
     self.senderDisplayName = @"Anonymous User";
     
     // Setup WebSockets
-    [self setPubNubClient:[[BBPubNubClient alloc] init]];
+    [self setPubNubClient:[BBPubNubClient shared]];
     [self.pubNubClient setPubNubClientDelegate:self];
     
     //TODO: Replace the channel id with user id
-    [self.pubNubClient subscribeToChannel:@"1077"];
-    [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
-        if (!status.isError) {
-            
-            // Start chatBot
-            [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
-                BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
-                NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
+    [self.pubNubClient subscribeToChannel:@"1077" completionHandler:^(PNAcknowledgmentStatus *status) {
+        [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
+            if (!status.isError) {
+                //TODO: Handle if push notifications is disabled ()
+                // Start chatBot
+                [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
+                    BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
+                    NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
+                    
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+                    [self addChatMessageForBot:message showObject:YES];
+                    
+                }];
                 
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
-                [self addChatMessageForBot:message showObject:YES];
-                
-            }];
-            
-        }
+            }
+        }];
     }];
     
     // Custom config for chat

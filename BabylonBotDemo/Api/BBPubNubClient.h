@@ -8,9 +8,11 @@
 @end
 
 @interface BBPubNubClient : NSObject <PNObjectEventListener>
-- (void)subscribeToChannel:(NSString *)channelName;
++ (instancetype)shared;
+- (void)subscribeToChannel:(NSString *)channelName completionHandler:(void(^)(PNAcknowledgmentStatus *status))completionHandler;
 - (void)pingPubNubService:(void (^)(PNErrorStatus *status, PNTimeResult *result))completionHandler;
 @property (nonatomic, weak) id<BBPubNubClientDelegate> pubNubClientDelegate;
-@property (nonatomic) PubNub *pubNubClient;
-@property (nonatomic) NSString *subscribedChannel;
+@property (nonatomic, strong) PubNub *pubNubClient;
+@property (nonatomic, strong) NSString *subscribedChannel;
+@property (nonatomic, strong) NSData *deviceToken;
 @end

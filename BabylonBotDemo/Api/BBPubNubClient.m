@@ -4,12 +4,15 @@
 
 @implementation BBPubNubClient
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self initWebSockets];
-    }
-    return self;
++ (instancetype)shared {
+    static BBPubNubClient *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+        [_sharedInstance initWebSockets];
+    });
+    
+    return _sharedInstance;
 }
 
 - (void)initWebSockets {
@@ -37,9 +40,21 @@
     }];
 }
 
-- (void)subscribeToChannel:(NSString *)channelName {
+- (void)subscribeToChannel:(NSString *)channelName completionHandler:(void(^)(PNAcknowledgmentStatus *status))completionHandler {
     [self setSubscribedChannel:channelName];
     [self.pubNubClient subscribeToChannels:@[channelName] withPresence:NO];
+    [self addPushNotificationForChannel:channelName completionHandler:^(PNAcknowledgmentStatus *status) {
+        completionHandler(status);
+    }];
+}
+
+- (void)addPushNotificationForChannel:(NSString *)channelName
+                    completionHandler:(void(^)(PNAcknowledgmentStatus *status))completionHandler {
+    [self.pubNubClient addPushNotificationsOnChannels:@[channelName]
+                                  withDevicePushToken:self.deviceToken
+                                        andCompletion:^(PNAcknowledgmentStatus * _Nonnull status) {
+                                            completionHandler(status);
+    }];
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {

@@ -1,16 +1,23 @@
 
 #import "AppDelegate.h"
 #import "BBConstants.h"
+#import "BBPubNubClient.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [application registerForRemoteNotifications];
 
+    // Register device for push notifications
+    UIUserNotificationType appTypes = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *appSettings = [UIUserNotificationSettings settingsForTypes:appTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:appSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     return YES;
+    
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[BBPubNubClient shared] setDeviceToken:deviceToken];
     NSLog(@"Did register for remote notification with device token: %@", deviceToken);
 }
 
@@ -22,6 +29,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:userInfo];
     NSLog(@"Did receive remote notitication: %@", userInfo);
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
