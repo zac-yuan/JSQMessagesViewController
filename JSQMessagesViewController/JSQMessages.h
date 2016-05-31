@@ -27,7 +27,7 @@
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
-#import "JSQMessagesOptionsTableViewController.h"
+#import "OptionsTableViewController.h"
 
 //  Layout
 #import "JSQMessagesBubbleSizeCalculating.h"
@@ -44,7 +44,7 @@
 
 //  Model
 #import "JSQMessage.h"
-#import "JSQMessagesOption.h"
+#import "BBOption.h"
 
 #import "JSQMediaItem.h"
 #import "JSQAudioMediaItem.h"

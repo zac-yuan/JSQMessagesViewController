@@ -1,14 +1,14 @@
 //
-//  JSQMessagesOptionsTableViewCell.m
+//  OptionsTableViewCell.m
 //  JSQMessages
 //
 //  Created by BabylonHealth on 25/05/2016.
 //  Copyright © 2016 Hexed Bits. All rights reserved.
 //
 
-#import "JSQMessagesOptionsTableViewCell.h"
+#import "OptionsTableViewCell.h"
 
-@implementation JSQMessagesOptionsTableViewCell
+@implementation OptionsTableViewCell
 
 -(void)awakeFromNib {
     [super awakeFromNib];

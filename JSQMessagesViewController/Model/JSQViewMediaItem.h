@@ -14,7 +14,7 @@
  *  to a `JSQMediaMessage` object during its initialization to construct a valid media message object.
  *  You may wish to subclass `JSQViewMediaItem` to provide additional functionality or behavior.
  */
-@interface JSQViewMediaItem : JSQMediaItem <JSQMessageMediaData, NSCoding, NSCopying>
+@interface JSQViewMediaItem : JSQMediaItem
 
 /**
  *  The media for the mixed media item. The default value is `nil`.

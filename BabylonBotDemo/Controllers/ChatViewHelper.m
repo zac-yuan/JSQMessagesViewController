@@ -3,9 +3,13 @@
 #import "BBConstants.h"
 #import "ApiManagerChatBot.h"
 #import "JSQViewMediaItem.h"
-#import "JSQMessagesOptionsTableViewController.h"
-#import "JSQMessagesOption.h"
+#import "OptionsTableViewController.h"
+#import "BBOption.h"
 @import ios_maps;
+
+@interface ChatViewHelper () <JSQMessagesOptionsDelegate>
+
+@end
 
 @implementation ChatViewHelper
 
@@ -158,18 +162,18 @@
             textColor = [UIColor babylonPurple];
         }
         
-        [dataSource addObject:[JSQMessagesOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
+        [dataSource addObject:[BBOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
     }
 
-    JSQMessagesOptionsTableViewController *viewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
+    OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
+    viewController.delegate = self;
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
     JSQMessage *userMessage = [JSQMessage messageWithSenderId:senderId
                                                   displayName:senderDisplayName
                                                          text:question.value
                                                         media:item];
-    
+    userMessage.wantsTouches = YES;
     [self addChatMessageForUser:userMessage showObject:YES];
-
 }
 
 - (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date showMessage:(BOOL)showMessage success:(ChatViewHelperSendSuccess)success {
@@ -332,6 +336,12 @@
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {
     return YES;
+}
+
+#pragma mark - JSQMessagesOptionsDelegate
+
+-(void)sender:(id)sender selectedOption:(BBOption *)option {
+    NSLog(@"OPTION SELECTED");
 }
 
 @end

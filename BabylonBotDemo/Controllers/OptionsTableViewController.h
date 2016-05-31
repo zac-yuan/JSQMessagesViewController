@@ -8,10 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JSQMessagesOptionsTableViewController : UIViewController
+@class BBOption;
+
+@protocol JSQMessagesOptionsDelegate <NSObject>
+
+@required
+-(void)sender:(id)sender selectedOption:(BBOption *)option;
+
+@end
+
+@interface OptionsTableViewController : UIViewController
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, weak) id<JSQMessagesOptionsDelegate> delegate;
 
 -(instancetype)initWithDataSource:(NSArray *)dataSource;
 

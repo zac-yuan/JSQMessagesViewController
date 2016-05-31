@@ -29,7 +29,7 @@
 static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 
-@interface JSQMessagesCollectionViewCell ()
+@interface JSQMessagesCollectionViewCell () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
@@ -111,7 +111,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     [super awakeFromNib];
 
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-
+    
     self.backgroundColor = [UIColor whiteColor];
 
     self.cellTopLabelHeightConstraint.constant = 0.0f;
@@ -132,7 +132,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
+    tap.delegate = self;
     self.tapGestureRecognizer = tap;
+    self.rootTapRecognizer = YES;
 }
 
 - (void)dealloc
@@ -394,15 +396,14 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     }
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(nonnull UITouch *)touch
 {
     CGPoint touchPt = [touch locationInView:self];
-
-    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
+    
+    if([self isRootTapRecognizer]) {
         return CGRectContainsPoint(self.messageBubbleContainerView.frame, touchPt);
     }
-    
-    return YES;
+    return NO;
 }
 
 @end
