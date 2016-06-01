@@ -181,7 +181,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vEC-eD-v7h" firstAttribute="top" secondItem="sDN-Q6-2cp" secondAttribute="bottom" constant="75" id="4T9-XD-FqB"/>
                             <constraint firstItem="JYZ-og-5xc" firstAttribute="top" secondItem="sDN-Q6-2cp" secondAttribute="bottom" constant="-44" id="6Vb-no-eRr"/>
