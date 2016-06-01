@@ -178,8 +178,8 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 }
 
 - (void)setToolbarButtonsEnabled:(BOOL)enabled {
-    self.inputToolbar.contentView.userInteractionEnabled = enabled;
-    self.inputToolbar.contentView.userInteractionEnabled = enabled;
+    self.inputToolbar.contentView.leftBarButtonItem.userInteractionEnabled = enabled;
+    self.inputToolbar.contentView.rightBarButtonItem.userInteractionEnabled = enabled;
 }
 
 #pragma mark - Getters
