@@ -62,6 +62,13 @@ const CGFloat kDefaultCornerRadii           = 15.f;
 }
 @end
 
+// UIIMAGE
+@implementation UIImage (Babylon)
++ (UIImage *)babylonBotHearth {
+    return [UIImage imageNamed:@"bot-heart"];
+}
+@end
+
 // CALAYER
 @implementation CALayer (Babylon)
 + (CALayer *)roudedBubbleMaskForRect:(CGRect)rect corners:(UIRectCorner)corners {

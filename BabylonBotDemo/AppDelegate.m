@@ -18,7 +18,7 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[BBPubNubClient shared] setDeviceToken:deviceToken];
+    [[BBPubNubClient shared] saveDeviceToken:deviceToken];
     NSLog(@"Did register for remote notification with device token: %@", deviceToken);
 }
 
