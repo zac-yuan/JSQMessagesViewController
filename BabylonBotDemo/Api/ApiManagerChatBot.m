@@ -192,6 +192,11 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     
 }
 
+//ASK
+- (void)post {
+    
+}
+
 #pragma mark - Put Methods
 - (void)putConversationText:(NSString *)input withConversationId:(NSString *)conversationId andStatementId:(NSString *)statementId
                   success:(void (^)(AFHTTPRequestOperation *, id))success

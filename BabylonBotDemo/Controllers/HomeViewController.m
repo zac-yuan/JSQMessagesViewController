@@ -1,5 +1,7 @@
 
 #import "HomeViewController.h"
+#import <OHHTTPStubs/OHHTTPStubs.h>
+#import <OHHTTPStubs/OHPathHelpers.h>
 
 NSString *const segueChatBot = @"segueChatBot";
 
@@ -8,8 +10,12 @@ NSString *const segueChatBot = @"segueChatBot";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
+    //TODO: Remove before release (DEMO ONLY)
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.path isEqualToString:@"/v1/ask"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"ask.json", self.class) statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+    }];
     
 }
 

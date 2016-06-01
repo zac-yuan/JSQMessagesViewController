@@ -14,6 +14,7 @@
 @property (nonatomic, strong) BBSource *source;
 @property (nonatomic, strong) BBMember *speaker;
 @property (nonatomic, strong) NSString *value;
+@property (nonatomic, strong) NSString *timestamp;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

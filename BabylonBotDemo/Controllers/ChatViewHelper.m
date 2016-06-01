@@ -5,11 +5,8 @@
 #import "JSQViewMediaItem.h"
 #import "OptionsTableViewController.h"
 #import "BBOption.h"
+
 @import ios_maps;
-
-@interface ChatViewHelper () <JSQMessagesOptionsDelegate>
-
-@end
 
 @implementation ChatViewHelper
 
@@ -95,6 +92,10 @@
                                                                  date:[NSDate date]
                                                                  text:chatDataModel.value];
         
+        //FIXME: ASK MOCK DEMO ONLY
+        if ([chatDataModel.value isEqualToString:@""]) {
+            
+        }
         if ([chatDataModel.optionData.options count]>0) {
             [self presentMenuOptionsController:chatDataModel];
             [self addChatMessageForBot:botMessage showObject:NO];
@@ -133,18 +134,17 @@
             //                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             //            }];
             
-            //TODO: Old method (update to send options)
-//            [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-//                [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-//            }];
-            
             if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
                 
-                
+                [self sendFakeData:^{
+                    
+                }];
                 
             } else {
                 
-                
+                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+                }];
                 
             }
             
@@ -237,6 +237,8 @@
 }
 
 - (void)sendFakeData:(void(^)())completionHandler {
+    
+    
     
 }
 

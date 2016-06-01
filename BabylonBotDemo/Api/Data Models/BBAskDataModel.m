@@ -10,7 +10,10 @@
 	}	
 	if(![dictionary[@"expected_input"] isKindOfClass:[NSNull class]]){
 		self.expectedInput = dictionary[@"expected_input"];
-	}	
+	}
+    if(![dictionary[@"timestamp"] isKindOfClass:[NSNull class]]){
+        self.timestamp = dictionary[@"timestamp"];
+    }
 	if(dictionary[@"members"] != nil && ![dictionary[@"members"] isKindOfClass:[NSNull class]]){
 		NSArray * membersDictionaries = dictionary[@"members"];
 		NSMutableArray * membersItems = [NSMutableArray array];
