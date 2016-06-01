@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F0EFE0F1AC23D7E003FF3DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */; };
 		47A39A1A23D4A5E1B30F8107 /* Pods_JSQMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBCA988909DA629F3496145 /* Pods_JSQMessages.framework */; };
+		47E46B3A1CFF16FB00D816CE /* ask.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E46B381CFF16FB00D816CE /* ask.json */; };
+		47E46B3B1CFF16FB00D816CE /* photo_upload.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E46B391CFF16FB00D816CE /* photo_upload.json */; };
 		54271E3B1C90469100294290 /* jsq_messages_sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 54271E3A1C90469100294290 /* jsq_messages_sample.m4a */; };
 		54271E3E1C905B9200294290 /* JSQAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */; };
 		54271E401C905D1600294290 /* JSQAudioMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */; };
@@ -231,6 +233,8 @@
 		0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2BC496DC8070EB88DD918AF6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47E46B381CFF16FB00D816CE /* ask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ask.json; path = Models/JSON/ask.json; sourceTree = "<group>"; };
+		47E46B391CFF16FB00D816CE /* photo_upload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = photo_upload.json; path = Models/JSON/photo_upload.json; sourceTree = "<group>"; };
 		54271E3A1C90469100294290 /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
 		54271E3C1C905B9200294290 /* JSQAudioMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaItem.h; sourceTree = "<group>"; };
 		54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItem.m; sourceTree = "<group>"; };
@@ -515,6 +519,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47E46B371CFF16C800D816CE /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				47E46B381CFF16FB00D816CE /* ask.json */,
+				47E46B391CFF16FB00D816CE /* photo_upload.json */,
+			);
+			name = JSON;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		636A8663AEEE5C37B65C515D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +570,7 @@
 		7F0319341CFD9EF900BF4F79 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				47E46B371CFF16C800D816CE /* JSON */,
 				B4EED5041CFF0D7F00F9EC99 /* ChatBot */,
 				B4EED5051CFF0D9700F9EC99 /* Ask */,
 			);
@@ -1245,8 +1260,10 @@
 				9F4A61BB1CF5FBB200A808A7 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				9F4A61C51CF5FC5D00A808A7 /* JSQMessagesAssets.bundle in Resources */,
 				B4101CBD1CF70799005EF656 /* BBMessagesTypingIndicatorFooterView.xib in Resources */,
+				47E46B3A1CFF16FB00D816CE /* ask.json in Resources */,
 				7F0319611CFD9F0400BF4F79 /* OptionsTableViewCell.xib in Resources */,
 				9F4A61C31CF5FBBC00A808A7 /* JSQMessagesToolbarContentView.xib in Resources */,
+				47E46B3B1CFF16FB00D816CE /* photo_upload.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
