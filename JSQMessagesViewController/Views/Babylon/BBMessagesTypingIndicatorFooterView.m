@@ -43,7 +43,7 @@ const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight = 46.0f;
     dotParms.activityViewWidth = self.dotActivityIndicatorView.frame.size.width;
     dotParms.activityViewHeight = self.dotActivityIndicatorView.frame.size.height;
     dotParms.numberOfCircles = 3;
-    dotParms.internalSpacing = 5;
+    dotParms.internalSpacing = 3.5;
     dotParms.animationDelay = 0.2;
     dotParms.animationDuration = 0.6;
     dotParms.animationFromValue = 0.3;
@@ -71,7 +71,7 @@ const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight = 46.0f;
     NSParameterAssert(collectionView != nil);
     
     CGFloat bubbleMarginMinimumSpacing = 6.0f;
-    CGFloat indicatorMarginMinimumSpacing = 26.0f;
+    CGFloat indicatorMarginMinimumSpacing = 24.0f;
     
     JSQMessagesBubbleImageFactory *bubbleImageFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     

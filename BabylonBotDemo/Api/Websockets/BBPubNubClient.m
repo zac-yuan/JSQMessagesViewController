@@ -2,14 +2,19 @@
 #import "BBPubNubClient.h"
 #import "BBConstants.h"
 
+NSString *const kDeviceToken = @"deviceToken";
+
 @implementation BBPubNubClient
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self initWebSockets];
-    }
-    return self;
++ (instancetype)shared {
+    static BBPubNubClient *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+        [_sharedInstance initWebSockets];
+    });
+    
+    return _sharedInstance;
 }
 
 - (void)initWebSockets {
@@ -19,6 +24,17 @@
     _pubNubClient = [PubNub clientWithConfiguration:configuration];
     [_pubNubClient addListener:self];
     
+}
+
+- (void)saveDeviceToken:(NSData *)deviceToken {
+
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:deviceToken] forKey:kDeviceToken];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+- (NSData *)loadDeviceToken {
+    return [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken]];
 }
 
 - (void)pingPubNubService:(void (^)(PNErrorStatus *status, PNTimeResult *result))completionHandler {
@@ -37,9 +53,22 @@
     }];
 }
 
-- (void)subscribeToChannel:(NSString *)channelName {
+- (void)subscribeToChannel:(NSString *)channelName completionHandler:(void(^)(PNAcknowledgmentStatus *status))completionHandler {
     [self setSubscribedChannel:channelName];
     [self.pubNubClient subscribeToChannels:@[channelName] withPresence:NO];
+    [self addPushNotificationForChannel:channelName completionHandler:^(PNAcknowledgmentStatus *status) {
+        completionHandler(status);
+    }];
+}
+
+- (void)addPushNotificationForChannel:(NSString *)channelName
+                    completionHandler:(void(^)(PNAcknowledgmentStatus *status))completionHandler {
+    [self.pubNubClient addPushNotificationsOnChannels:@[channelName]
+                                  withDevicePushToken:[self loadDeviceToken]
+                                        andCompletion:^(PNAcknowledgmentStatus * _Nonnull status) {
+                                            completionHandler(status);
+    }];
+    
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {

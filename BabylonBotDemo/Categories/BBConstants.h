@@ -28,6 +28,11 @@ extern const CGFloat kDefaultFontSize;
 + (NSString *)babylonBadgeCounter:(NSArray *)messages;
 @end
 
+@interface UIImage (Babylon)
++ (UIImage *)babylonBotHearth;
++ (UIImage *)homeScreenBackgroundImage;
+@end
+
 @interface CALayer (Babylon)
 + (CALayer *)roudedBubbleMaskForRect:(CGRect)rect corners:(UIRectCorner)corners;
 @end

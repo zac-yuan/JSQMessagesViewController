@@ -18,7 +18,7 @@ const CGFloat kDefaultFontSize              = 16.f;
 const CGFloat kDefaultCornerRadii           = 15.f;
 
 
-// COLORS
+#pragma mark - UIColor
 @implementation UIColor (Babylon)
 + (UIColor *)babylonPurple {return [UIColor colorWithRed:144.0f/255.0f green:19.0f/255.0f blue:254.0f/255.0f alpha:1.0];}
 + (UIColor *)babylonWhite {return [UIColor whiteColor];}
@@ -30,13 +30,13 @@ const CGFloat kDefaultCornerRadii           = 15.f;
 }
 @end
 
-// FONTS
+#pragma mark - UIFont
 @implementation UIFont (Babylon)
 + (UIFont *)babylonRegularFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Regular" size:fontSize];}
 + (UIFont *)babylonMediumFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Medium" size:fontSize];}
 @end
 
-// STRINGS
+#pragma mark - NString
 @implementation NSString (Babylon)
 + (NSString *)babylonErrorMsg:(NSError *)error {
     if ([error.localizedFailureReason length]>0) {
@@ -62,7 +62,17 @@ const CGFloat kDefaultCornerRadii           = 15.f;
 }
 @end
 
-// CALAYER
+#pragma mark - UIImage
+@implementation UIImage (Babylon)
++ (UIImage *)babylonBotHearth {
+    return [UIImage imageNamed:@"bot-heart"];
+}
++ (UIImage *)homeScreenBackgroundImage {
+    return [UIImage imageNamed:@"homeScreenBackground"];
+}
+@end
+
+#pragma mark - CALayer
 @implementation CALayer (Babylon)
 + (CALayer *)roudedBubbleMaskForRect:(CGRect)rect corners:(UIRectCorner)corners {
     CGSize cornerRadii = CGSizeMake(kDefaultCornerRadii, kDefaultCornerRadii);
