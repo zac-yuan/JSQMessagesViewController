@@ -9,6 +9,8 @@ NSString *const segueChatBot = @"segueChatBot";
     [super viewDidLoad];
     
     
+    
+    
 }
 
 - (IBAction)textFieldTouchDownAction:(id)sender {

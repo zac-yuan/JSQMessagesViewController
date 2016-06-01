@@ -61,11 +61,13 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     // Enable/disable springy bubbles
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
+    [self.collectionView reloadData];
+    
 }
 
 - (void)customAction:(id)sender {
@@ -131,9 +133,21 @@
             //                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             //            }];
             
-            [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-                [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-            }];
+            //TODO: Old method (update to send options)
+//            [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+//                [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+//            }];
+            
+            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
+                
+                
+                
+            } else {
+                
+                
+                
+            }
+            
         }];
         [alertViewController addAction:chatMenuOption];
     }
@@ -219,6 +233,10 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completionHandler(NO);
     }];
+    
+}
+
+- (void)sendFakeData:(void(^)())completionHandler {
     
 }
 

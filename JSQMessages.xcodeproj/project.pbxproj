@@ -950,15 +950,11 @@
 		B4EED5031CFEF21400F9EC99 /* ChatBot */ = {
 			isa = PBXGroup;
 			children = (
+				B4EED5191CFF182100F9EC99 /* ChatBot Options */,
 				7F0319531CFD9F0400BF4F79 /* ChatViewController.h */,
 				7F0319541CFD9F0400BF4F79 /* ChatViewController.m */,
 				7F0319551CFD9F0400BF4F79 /* ChatViewHelper.h */,
 				7F0319561CFD9F0400BF4F79 /* ChatViewHelper.m */,
-				7F0319571CFD9F0400BF4F79 /* OptionsTableViewCell.h */,
-				7F0319581CFD9F0400BF4F79 /* OptionsTableViewCell.m */,
-				7F0319591CFD9F0400BF4F79 /* OptionsTableViewCell.xib */,
-				7F03195A1CFD9F0400BF4F79 /* OptionsTableViewController.h */,
-				7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */,
 			);
 			name = ChatBot;
 			sourceTree = "<group>";
@@ -999,6 +995,18 @@
 				B4EED50F1CFF0E8D00F9EC99 /* BBSpeaker.m */,
 			);
 			name = Ask;
+			sourceTree = "<group>";
+		};
+		B4EED5191CFF182100F9EC99 /* ChatBot Options */ = {
+			isa = PBXGroup;
+			children = (
+				7F0319571CFD9F0400BF4F79 /* OptionsTableViewCell.h */,
+				7F0319581CFD9F0400BF4F79 /* OptionsTableViewCell.m */,
+				7F0319591CFD9F0400BF4F79 /* OptionsTableViewCell.xib */,
+				7F03195A1CFD9F0400BF4F79 /* OptionsTableViewController.h */,
+				7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */,
+			);
+			name = "ChatBot Options";
 			sourceTree = "<group>";
 		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
