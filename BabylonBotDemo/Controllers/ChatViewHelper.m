@@ -75,7 +75,7 @@
 
 -(BOOL)showTypingIndicator {
     BOOL showTypingIndicator = [super showTypingIndicator];
-    [self setToolbarEnabled:!showTypingIndicator];
+    self.toolbarButtonsEnabled = !showTypingIndicator;
     return showTypingIndicator;
 }
 
