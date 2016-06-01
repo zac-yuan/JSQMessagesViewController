@@ -191,6 +191,11 @@
 		B4EED4FD1CFED0D600F9EC99 /* BBWebSocketsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4F91CFED0D600F9EC99 /* BBWebSocketsChannel.m */; };
 		B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */; };
 		B4EED5011CFEF1FE00F9EC99 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED5001CFEF1FE00F9EC99 /* HomeViewController.m */; };
+		B4EED5101CFF0E8D00F9EC99 /* BBAskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED5071CFF0E8D00F9EC99 /* BBAskDataModel.m */; };
+		B4EED5111CFF0E8D00F9EC99 /* BBMember.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED5091CFF0E8D00F9EC99 /* BBMember.m */; };
+		B4EED5121CFF0E8D00F9EC99 /* BBPossibleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED50B1CFF0E8D00F9EC99 /* BBPossibleElement.m */; };
+		B4EED5131CFF0E8D00F9EC99 /* BBSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED50D1CFF0E8D00F9EC99 /* BBSource.m */; };
+		B4EED5141CFF0E8D00F9EC99 /* BBSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED50F1CFF0E8D00F9EC99 /* BBSpeaker.m */; };
 		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
 		B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */; };
 		B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */; };
@@ -428,6 +433,16 @@
 		B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsClient.m; sourceTree = "<group>"; };
 		B4EED4FF1CFEF1FE00F9EC99 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B4EED5001CFEF1FE00F9EC99 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B4EED5061CFF0E8D00F9EC99 /* BBAskDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAskDataModel.h; sourceTree = "<group>"; };
+		B4EED5071CFF0E8D00F9EC99 /* BBAskDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAskDataModel.m; sourceTree = "<group>"; };
+		B4EED5081CFF0E8D00F9EC99 /* BBMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMember.h; sourceTree = "<group>"; };
+		B4EED5091CFF0E8D00F9EC99 /* BBMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMember.m; sourceTree = "<group>"; };
+		B4EED50A1CFF0E8D00F9EC99 /* BBPossibleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPossibleElement.h; sourceTree = "<group>"; };
+		B4EED50B1CFF0E8D00F9EC99 /* BBPossibleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPossibleElement.m; sourceTree = "<group>"; };
+		B4EED50C1CFF0E8D00F9EC99 /* BBSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSource.h; sourceTree = "<group>"; };
+		B4EED50D1CFF0E8D00F9EC99 /* BBSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSource.m; sourceTree = "<group>"; };
+		B4EED50E1CFF0E8D00F9EC99 /* BBSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSpeaker.h; sourceTree = "<group>"; };
+		B4EED50F1CFF0E8D00F9EC99 /* BBSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSpeaker.m; sourceTree = "<group>"; };
 		B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -541,20 +556,8 @@
 		7F0319341CFD9EF900BF4F79 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F0319351CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.h */,
-				7F0319361CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m */,
-				7F0319371CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.h */,
-				7F0319381CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.m */,
-				7F0319391CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.h */,
-				7F03193A1CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.m */,
-				7F03193B1CFD9EF900BF4F79 /* BBChatBotDataModelStatement.h */,
-				7F03193C1CFD9EF900BF4F79 /* BBChatBotDataModelStatement.m */,
-				7F03193D1CFD9EF900BF4F79 /* BBChatBotDataModelTalkChat.h */,
-				7F03193E1CFD9EF900BF4F79 /* BBChatBotDataModelTalkChat.m */,
-				7F03193F1CFD9EF900BF4F79 /* BBChatBotDataModelV2.h */,
-				7F0319401CFD9EF900BF4F79 /* BBChatBotDataModelV2.m */,
-				7F0319411CFD9EF900BF4F79 /* BBOption.h */,
-				7F0319421CFD9EF900BF4F79 /* BBOption.m */,
+				B4EED5041CFF0D7F00F9EC99 /* ChatBot */,
+				B4EED5051CFF0D9700F9EC99 /* Ask */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -943,6 +946,44 @@
 				7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */,
 			);
 			name = ChatBot;
+			sourceTree = "<group>";
+		};
+		B4EED5041CFF0D7F00F9EC99 /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				7F0319351CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.h */,
+				7F0319361CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m */,
+				7F0319371CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.h */,
+				7F0319381CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.m */,
+				7F0319391CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.h */,
+				7F03193A1CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.m */,
+				7F03193B1CFD9EF900BF4F79 /* BBChatBotDataModelStatement.h */,
+				7F03193C1CFD9EF900BF4F79 /* BBChatBotDataModelStatement.m */,
+				7F03193D1CFD9EF900BF4F79 /* BBChatBotDataModelTalkChat.h */,
+				7F03193E1CFD9EF900BF4F79 /* BBChatBotDataModelTalkChat.m */,
+				7F03193F1CFD9EF900BF4F79 /* BBChatBotDataModelV2.h */,
+				7F0319401CFD9EF900BF4F79 /* BBChatBotDataModelV2.m */,
+				7F0319411CFD9EF900BF4F79 /* BBOption.h */,
+				7F0319421CFD9EF900BF4F79 /* BBOption.m */,
+			);
+			name = ChatBot;
+			sourceTree = "<group>";
+		};
+		B4EED5051CFF0D9700F9EC99 /* Ask */ = {
+			isa = PBXGroup;
+			children = (
+				B4EED5061CFF0E8D00F9EC99 /* BBAskDataModel.h */,
+				B4EED5071CFF0E8D00F9EC99 /* BBAskDataModel.m */,
+				B4EED5081CFF0E8D00F9EC99 /* BBMember.h */,
+				B4EED5091CFF0E8D00F9EC99 /* BBMember.m */,
+				B4EED50A1CFF0E8D00F9EC99 /* BBPossibleElement.h */,
+				B4EED50B1CFF0E8D00F9EC99 /* BBPossibleElement.m */,
+				B4EED50C1CFF0E8D00F9EC99 /* BBSource.h */,
+				B4EED50D1CFF0E8D00F9EC99 /* BBSource.m */,
+				B4EED50E1CFF0E8D00F9EC99 /* BBSpeaker.h */,
+				B4EED50F1CFF0E8D00F9EC99 /* BBSpeaker.m */,
+			);
+			name = Ask;
 			sourceTree = "<group>";
 		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
@@ -1439,6 +1480,7 @@
 				7F03194C1CFD9EF900BF4F79 /* BBChatBotDataModelV2.m in Sources */,
 				7F0319621CFD9F0400BF4F79 /* OptionsTableViewController.m in Sources */,
 				9F4A61931CF5F89100A808A7 /* NSBundle+JSQMessages.m in Sources */,
+				B4EED5141CFF0E8D00F9EC99 /* BBSpeaker.m in Sources */,
 				9F4A61AE1CF5F94600A808A7 /* JSQMessagesCollectionView.m in Sources */,
 				9F4A61B21CF5F94600A808A7 /* JSQMessagesInputToolbar.m in Sources */,
 				9F4A61951CF5F89100A808A7 /* UIColor+JSQMessages.m in Sources */,
@@ -1471,10 +1513,14 @@
 				9F4A61921CF5F89100A808A7 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
 				B4101CBF1CF707AD005EF656 /* BBDotActivityIndicatorView.m in Sources */,
 				7F03194D1CFD9EF900BF4F79 /* BBOption.m in Sources */,
+				B4EED5121CFF0E8D00F9EC99 /* BBPossibleElement.m in Sources */,
 				9F4A61B01CF5F94600A808A7 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				9F4A61A01CF5F90300A808A7 /* JSQMessagesCollectionViewCell.m in Sources */,
+				B4EED5131CFF0E8D00F9EC99 /* BBSource.m in Sources */,
 				7F03194B1CFD9EF900BF4F79 /* BBChatBotDataModelTalkChat.m in Sources */,
 				9F4A618D1CF5F82A00A808A7 /* JSQMessagesAvatarImage.m in Sources */,
+				B4EED5111CFF0E8D00F9EC99 /* BBMember.m in Sources */,
+				B4EED5101CFF0E8D00F9EC99 /* BBAskDataModel.m in Sources */,
 				9F4A61911CF5F88700A808A7 /* UIView+JSQMessages.m in Sources */,
 				9F4A61B31CF5F94600A808A7 /* JSQMessagesLabel.m in Sources */,
 				9F4A61A81CF5F93300A808A7 /* JSQMediaItem.m in Sources */,
