@@ -5,9 +5,10 @@
 #import "JSQViewMediaItem.h"
 #import "OptionsTableViewController.h"
 #import "BBOption.h"
+#import "RatingView.h"
 @import ios_maps;
 
-@interface ChatViewHelper () <JSQMessagesOptionsDelegate>
+@interface ChatViewHelper () <OptionsDelegate, RatingViewDelegate>
 
 @end
 
@@ -61,6 +62,8 @@
     [UIMenuController sharedMenuController].menuItems = @[ [[UIMenuItem alloc] initWithTitle:@"Edit" action:@selector(customAction:)] ];
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
     
+    // TODO: add rating, this is for testing only
+    [self addRating:3];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -171,7 +174,7 @@
         
         [dataSource addObject:[BBOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
     }
-
+    
     OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
     viewController.delegate = self;
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
@@ -324,6 +327,18 @@
     
 }
 
+- (void)addRating:(NSInteger)rating {
+    RatingView *view = [[RatingView alloc] initWithNumberOfButtons:5 maxWidth:self.view.bounds.size.width - 50.f initialRating:rating];
+    view.delegate = self;
+    JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewMedia:view];
+    JSQMessage *userMessage = [JSQMessage messageWithSenderId:kBabylonDoctorId
+                                                  displayName:kBabylonDoctorName
+                                                         text:@"How would you rate my service?"
+                                                        media:item];
+    userMessage.wantsTouches = YES;
+    [self addChatMessageForUser:userMessage showObject:YES];
+}
+
 - (void)addChatMessageForUser:(JSQMessage *)message showObject:(BOOL)showObject {
     [JSQSystemSoundPlayer jsq_playMessageSentSound];
     if (showObject) {
@@ -345,10 +360,16 @@
     return YES;
 }
 
-#pragma mark - JSQMessagesOptionsDelegate
+#pragma mark - OptionsDelegate
 
 -(void)sender:(id)sender selectedOption:(BBOption *)option {
     NSLog(@"OPTION SELECTED");
+}
+
+#pragma mark - RatingViewDelegate
+
+-(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating {
+    NSLog(@"SELECTED RATING");
 }
 
 @end

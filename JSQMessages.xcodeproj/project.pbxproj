@@ -30,6 +30,7 @@
 		7F0319691CFD9F4F00BF4F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0319671CFD9F4F00BF4F79 /* LaunchScreen.storyboard */; };
 		7F03196A1CFD9F4F00BF4F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0319681CFD9F4F00BF4F79 /* Main.storyboard */; };
 		7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24AA11CF6F99200025AFA /* JSQViewMediaItem.m */; };
+		7F5685091CFEEE7100DB13E8 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5685071CFEEE7100DB13E8 /* RatingView.m */; };
 		7FF24AA21CF6F99200025AFA /* JSQViewMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF24AA11CF6F99200025AFA /* JSQViewMediaItem.m */; };
 		88078A9D19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88078A9C19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m */; };
 		88324C3419F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88324C3319F6301C00BC732D /* JSQMessagesMediaViewBubbleImageMaskerTests.m */; };
@@ -260,6 +261,8 @@
 		7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTableViewController.m; sourceTree = "<group>"; };
 		7F0319671CFD9F4F00BF4F79 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0319681CFD9F4F00BF4F79 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7F5685061CFEEE7100DB13E8 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		7F5685071CFEEE7100DB13E8 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		7FF24AA01CF6F99200025AFA /* JSQViewMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQViewMediaItem.h; sourceTree = "<group>"; };
 		7FF24AA11CF6F99200025AFA /* JSQViewMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQViewMediaItem.m; sourceTree = "<group>"; };
 		81FA18F80777B64DDB611BD3 /* Pods-BabylonBotDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemo/Pods-BabylonBotDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				7F0319591CFD9F0400BF4F79 /* OptionsTableViewCell.xib */,
 				7F03195A1CFD9F0400BF4F79 /* OptionsTableViewController.h */,
 				7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */,
+				7F5685061CFEEE7100DB13E8 /* RatingView.h */,
+				7F5685071CFEEE7100DB13E8 /* RatingView.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1421,6 +1426,7 @@
 				9F4A61B21CF5F94600A808A7 /* JSQMessagesInputToolbar.m in Sources */,
 				9F4A61951CF5F89100A808A7 /* UIColor+JSQMessages.m in Sources */,
 				9F4A61941CF5F89100A808A7 /* NSString+JSQMessages.m in Sources */,
+				7F5685091CFEEE7100DB13E8 /* RatingView.m in Sources */,
 				9F4A619F1CF5F8A400A808A7 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				7F0319491CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.m in Sources */,
 				9F4A61A71CF5F93300A808A7 /* JSQLocationMediaItem.m in Sources */,
