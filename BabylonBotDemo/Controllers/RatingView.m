@@ -100,34 +100,19 @@
     }
     for(NSInteger i = 0; i < numOfButtons; i++) {
         UIButton *button = self.buttons[i];
-
-        // 1. fade out button
-        [UIView animateWithDuration:0.1 delay:i*0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            button.alpha = 0.f;
-
-            // 3. fade in button
-            [UIView animateWithDuration:0.1 delay:i*0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                button.alpha = 1.f;
-                
-                // 4. if it's the max rating...
-                if(i == rating) {
-                  
-                    // 5. explode button
-                    [UIView animateWithDuration:0.1 delay:i*0.1 options:UIViewAnimationOptionCurveLinear animations:^{
-                        button.transform = CGAffineTransformMakeScale(1.5, 1.5);
-                    } completion:^(BOOL finished) {
-                    
-                        // 6. implode button
-                        [UIView animateWithDuration:0.2 animations:^{
-                            button.transform = CGAffineTransformIdentity;
-                        }];
-                    }];
-                }
-            } completion:nil];
-        } completion:^(BOOL finished) {
-            // 2. finished fading out? then set its selected value
-            button.selected = (i <= rating);
-        }];
+        button.selected = (i <= rating);
+        
+        if(i == rating) {
+            // explode button
+            [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                button.transform = CGAffineTransformMakeScale(1.5, 1.5);
+            } completion:^(BOOL finished) {
+                // implode button
+                [UIView animateWithDuration:0.2 animations:^{
+                    button.transform = CGAffineTransformIdentity;
+                }];
+            }];
+        }
     }
 }
 
