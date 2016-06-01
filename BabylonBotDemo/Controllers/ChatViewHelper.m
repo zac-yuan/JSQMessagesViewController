@@ -369,7 +369,7 @@
 #pragma mark - RatingViewDelegate
 
 -(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating {
-    NSLog(@"SELECTED RATING");
+    NSLog(@"SELECTED RATING (%ld)", rating);
 }
 
 @end
