@@ -12,6 +12,9 @@
 
 @protocol RatingViewDelegate <NSObject>
 
+/**
+ @param rating The start rating (ranges from 1 - n)
+ */
 -(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating;
 
 @end
