@@ -141,7 +141,7 @@
     [self setRating:rating];
     
     if([self.delegate respondsToSelector:@selector(ratingView:selectedRating:)]) {
-        [self.delegate ratingView:self selectedRating:rating];
+        [self.delegate ratingView:self selectedRating:(rating + 1)];
     }
 }
 
