@@ -30,6 +30,7 @@ extern const CGFloat kDefaultFontSize;
 
 @interface UIImage (Babylon)
 + (UIImage *)babylonBotHearth;
++ (UIImage *)homeScreenBackgroundImage;
 @end
 
 @interface CALayer (Babylon)

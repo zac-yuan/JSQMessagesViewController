@@ -190,6 +190,7 @@
 		B4EED4FC1CFED0D600F9EC99 /* BBPubNubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4F71CFED0D600F9EC99 /* BBPubNubClient.m */; };
 		B4EED4FD1CFED0D600F9EC99 /* BBWebSocketsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4F91CFED0D600F9EC99 /* BBWebSocketsChannel.m */; };
 		B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */; };
+		B4EED5011CFEF1FE00F9EC99 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED5001CFEF1FE00F9EC99 /* HomeViewController.m */; };
 		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
 		B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */; };
 		B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */; };
@@ -425,6 +426,8 @@
 		B4EED4F91CFED0D600F9EC99 /* BBWebSocketsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsChannel.m; sourceTree = "<group>"; };
 		B4EED4FA1CFED0D600F9EC99 /* BBWebSocketsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBWebSocketsClient.h; sourceTree = "<group>"; };
 		B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsClient.m; sourceTree = "<group>"; };
+		B4EED4FF1CFEF1FE00F9EC99 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		B4EED5001CFEF1FE00F9EC99 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -559,15 +562,7 @@
 		7F03194E1CFD9F0400BF4F79 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7F0319531CFD9F0400BF4F79 /* ChatViewController.h */,
-				7F0319541CFD9F0400BF4F79 /* ChatViewController.m */,
-				7F0319551CFD9F0400BF4F79 /* ChatViewHelper.h */,
-				7F0319561CFD9F0400BF4F79 /* ChatViewHelper.m */,
-				7F0319571CFD9F0400BF4F79 /* OptionsTableViewCell.h */,
-				7F0319581CFD9F0400BF4F79 /* OptionsTableViewCell.m */,
-				7F0319591CFD9F0400BF4F79 /* OptionsTableViewCell.xib */,
-				7F03195A1CFD9F0400BF4F79 /* OptionsTableViewController.h */,
-				7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */,
+				B4EED5021CFEF20800F9EC99 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -922,6 +917,32 @@
 				B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */,
 			);
 			path = Websockets;
+			sourceTree = "<group>";
+		};
+		B4EED5021CFEF20800F9EC99 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B4EED5031CFEF21400F9EC99 /* ChatBot */,
+				B4EED4FF1CFEF1FE00F9EC99 /* HomeViewController.h */,
+				B4EED5001CFEF1FE00F9EC99 /* HomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		B4EED5031CFEF21400F9EC99 /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				7F0319531CFD9F0400BF4F79 /* ChatViewController.h */,
+				7F0319541CFD9F0400BF4F79 /* ChatViewController.m */,
+				7F0319551CFD9F0400BF4F79 /* ChatViewHelper.h */,
+				7F0319561CFD9F0400BF4F79 /* ChatViewHelper.m */,
+				7F0319571CFD9F0400BF4F79 /* OptionsTableViewCell.h */,
+				7F0319581CFD9F0400BF4F79 /* OptionsTableViewCell.m */,
+				7F0319591CFD9F0400BF4F79 /* OptionsTableViewCell.xib */,
+				7F03195A1CFD9F0400BF4F79 /* OptionsTableViewController.h */,
+				7F03195B1CFD9F0400BF4F79 /* OptionsTableViewController.m */,
+			);
+			name = ChatBot;
 			sourceTree = "<group>";
 		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
@@ -1402,6 +1423,7 @@
 				9F4A61AC1CF5F93300A808A7 /* JSQVideoMediaItem.m in Sources */,
 				7F03195F1CFD9F0400BF4F79 /* ChatViewHelper.m in Sources */,
 				9F4A61AF1CF5F94600A808A7 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
+				B4EED5011CFEF1FE00F9EC99 /* HomeViewController.m in Sources */,
 				9F4A618F1CF5F86A00A808A7 /* JSQMessagesViewController.m in Sources */,
 				9F4A61A51CF5F91700A808A7 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				9F4A61B51CF5F94600A808A7 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */,

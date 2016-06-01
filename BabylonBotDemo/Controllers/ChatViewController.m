@@ -6,9 +6,6 @@
 @implementation ChatViewController
 
 #pragma mark - Actions
-- (IBAction)closeActionButton:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)helpActionButton:(UIBarButtonItem *)sender {
     // TODO: Add Help
