@@ -12,6 +12,7 @@
     UIUserNotificationSettings *appSettings = [UIUserNotificationSettings settingsForTypes:appTypes categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:appSettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
     return YES;
     
 }

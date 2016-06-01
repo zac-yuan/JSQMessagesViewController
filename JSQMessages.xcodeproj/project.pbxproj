@@ -15,9 +15,6 @@
 		544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */; };
 		7F03191B1CFD9DAD00BF4F79 /* BBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03191A1CFD9DAD00BF4F79 /* BBConstants.m */; };
 		7F0319431CFD9EF900BF4F79 /* ApiManagerChatBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */; };
-		7F0319441CFD9EF900BF4F79 /* BBPubNubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03192F1CFD9EF900BF4F79 /* BBPubNubClient.m */; };
-		7F0319451CFD9EF900BF4F79 /* BBWebSocketsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319311CFD9EF900BF4F79 /* BBWebSocketsChannel.m */; };
-		7F0319461CFD9EF900BF4F79 /* BBWebSocketsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319331CFD9EF900BF4F79 /* BBWebSocketsClient.m */; };
 		7F0319471CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319361CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m */; };
 		7F0319481CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319381CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.m */; };
 		7F0319491CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03193A1CFD9EF900BF4F79 /* BBChatBotDataModelOptionData.m */; };
@@ -190,6 +187,9 @@
 		B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */ = {isa = PBXBuildFile; fileRef = B4101CB41CF701EA005EF656 /* BBDotActivityIndicatorParms.m */; };
 		B4DCC9651CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */; };
 		B4DCC9671CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */; };
+		B4EED4FC1CFED0D600F9EC99 /* BBPubNubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4F71CFED0D600F9EC99 /* BBPubNubClient.m */; };
+		B4EED4FD1CFED0D600F9EC99 /* BBWebSocketsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4F91CFED0D600F9EC99 /* BBWebSocketsChannel.m */; };
+		B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */; };
 		B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE11CF5B3260066D8B1 /* main.m */; };
 		B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */; };
 		B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */; };
@@ -235,12 +235,6 @@
 		7F03191A1CFD9DAD00BF4F79 /* BBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstants.m; sourceTree = "<group>"; };
 		7F03192C1CFD9EF900BF4F79 /* ApiManagerChatBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManagerChatBot.h; sourceTree = "<group>"; };
 		7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiManagerChatBot.m; sourceTree = "<group>"; };
-		7F03192E1CFD9EF900BF4F79 /* BBPubNubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPubNubClient.h; sourceTree = "<group>"; };
-		7F03192F1CFD9EF900BF4F79 /* BBPubNubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPubNubClient.m; sourceTree = "<group>"; };
-		7F0319301CFD9EF900BF4F79 /* BBWebSocketsChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBWebSocketsChannel.h; sourceTree = "<group>"; };
-		7F0319311CFD9EF900BF4F79 /* BBWebSocketsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsChannel.m; sourceTree = "<group>"; };
-		7F0319321CFD9EF900BF4F79 /* BBWebSocketsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBWebSocketsClient.h; sourceTree = "<group>"; };
-		7F0319331CFD9EF900BF4F79 /* BBWebSocketsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsClient.m; sourceTree = "<group>"; };
 		7F0319351CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelChosenOption.h; sourceTree = "<group>"; };
 		7F0319361CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelChosenOption.m; sourceTree = "<group>"; };
 		7F0319371CFD9EF900BF4F79 /* BBChatBotDataModelDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelDispatch.h; sourceTree = "<group>"; };
@@ -425,6 +419,12 @@
 		B4DCC9631CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesCollectionViewCellMenuOptions.h; sourceTree = "<group>"; };
 		B4DCC9641CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesCollectionViewCellMenuOptions.m; sourceTree = "<group>"; };
 		B4DCC9661CE0DD7A00E8A568 /* JSQMessagesCollectionViewCellMenuOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSQMessagesCollectionViewCellMenuOptions.xib; sourceTree = "<group>"; };
+		B4EED4F61CFED0D600F9EC99 /* BBPubNubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPubNubClient.h; sourceTree = "<group>"; };
+		B4EED4F71CFED0D600F9EC99 /* BBPubNubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPubNubClient.m; sourceTree = "<group>"; };
+		B4EED4F81CFED0D600F9EC99 /* BBWebSocketsChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBWebSocketsChannel.h; sourceTree = "<group>"; };
+		B4EED4F91CFED0D600F9EC99 /* BBWebSocketsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsChannel.m; sourceTree = "<group>"; };
+		B4EED4FA1CFED0D600F9EC99 /* BBWebSocketsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBWebSocketsClient.h; sourceTree = "<group>"; };
+		B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBWebSocketsClient.m; sourceTree = "<group>"; };
 		B4FA1BDE1CF5B3250066D8B1 /* BabylonBotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonBotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -527,15 +527,10 @@
 		7F03192B1CFD9EF900BF4F79 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				7F0319341CFD9EF900BF4F79 /* Data Models */,
+				B4EED4F51CFED0D600F9EC99 /* Websockets */,
 				7F03192C1CFD9EF900BF4F79 /* ApiManagerChatBot.h */,
 				7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */,
-				7F03192E1CFD9EF900BF4F79 /* BBPubNubClient.h */,
-				7F03192F1CFD9EF900BF4F79 /* BBPubNubClient.m */,
-				7F0319301CFD9EF900BF4F79 /* BBWebSocketsChannel.h */,
-				7F0319311CFD9EF900BF4F79 /* BBWebSocketsChannel.m */,
-				7F0319321CFD9EF900BF4F79 /* BBWebSocketsClient.h */,
-				7F0319331CFD9EF900BF4F79 /* BBWebSocketsClient.m */,
-				7F0319341CFD9EF900BF4F79 /* Data Models */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -914,6 +909,19 @@
 				B4101CB81CF702C5005EF656 /* BBDotActivityIndicatorView.m */,
 			);
 			name = DotAnimationBuilder;
+			sourceTree = "<group>";
+		};
+		B4EED4F51CFED0D600F9EC99 /* Websockets */ = {
+			isa = PBXGroup;
+			children = (
+				B4EED4F61CFED0D600F9EC99 /* BBPubNubClient.h */,
+				B4EED4F71CFED0D600F9EC99 /* BBPubNubClient.m */,
+				B4EED4F81CFED0D600F9EC99 /* BBWebSocketsChannel.h */,
+				B4EED4F91CFED0D600F9EC99 /* BBWebSocketsChannel.m */,
+				B4EED4FA1CFED0D600F9EC99 /* BBWebSocketsClient.h */,
+				B4EED4FB1CFED0D600F9EC99 /* BBWebSocketsClient.m */,
+			);
+			path = Websockets;
 			sourceTree = "<group>";
 		};
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
@@ -1402,12 +1410,11 @@
 				B4101CBE1CF7079D005EF656 /* BBMessagesTypingIndicatorFooterView.m in Sources */,
 				9F4A61A41CF5F91700A808A7 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				7F0319431CFD9EF900BF4F79 /* ApiManagerChatBot.m in Sources */,
-				7F0319461CFD9EF900BF4F79 /* BBWebSocketsClient.m in Sources */,
 				9F4A61A21CF5F91700A808A7 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */,
 				B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */,
+				B4EED4FD1CFED0D600F9EC99 /* BBWebSocketsChannel.m in Sources */,
 				7F03194C1CFD9EF900BF4F79 /* BBChatBotDataModelV2.m in Sources */,
-				7F0319451CFD9EF900BF4F79 /* BBWebSocketsChannel.m in Sources */,
 				7F0319621CFD9F0400BF4F79 /* OptionsTableViewController.m in Sources */,
 				9F4A61931CF5F89100A808A7 /* NSBundle+JSQMessages.m in Sources */,
 				9F4A61AE1CF5F94600A808A7 /* JSQMessagesCollectionView.m in Sources */,
@@ -1423,13 +1430,14 @@
 				9F4A61A11CF5F91700A808A7 /* JSQAudioMediaViewAttributes.m in Sources */,
 				9F4A61A91CF5F93300A808A7 /* JSQMessage.m in Sources */,
 				7F0319601CFD9F0400BF4F79 /* OptionsTableViewCell.m in Sources */,
-				7F0319441CFD9EF900BF4F79 /* BBPubNubClient.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
+				B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */,
 				B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
 				7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */,
 				9F4A619B1CF5F8A400A808A7 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				9F4A61AA1CF5F93300A808A7 /* JSQMessagesBubbleImage.m in Sources */,
 				9F4A61971CF5F89100A808A7 /* UIImage+JSQMessages.m in Sources */,
+				B4EED4FC1CFED0D600F9EC99 /* BBPubNubClient.m in Sources */,
 				9F4A619C1CF5F8A400A808A7 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				7F03191B1CFD9DAD00BF4F79 /* BBConstants.m in Sources */,
 				9F4A61961CF5F89100A808A7 /* UIDevice+JSQMessages.m in Sources */,

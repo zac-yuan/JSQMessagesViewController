@@ -55,6 +55,7 @@
                                         andCompletion:^(PNAcknowledgmentStatus * _Nonnull status) {
                                             completionHandler(status);
     }];
+    
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
