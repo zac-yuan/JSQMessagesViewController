@@ -5,6 +5,8 @@
 #import "ApiManagerChatBot.h"
 #import "BBPubNubClient.h"
 
+@import Babylon_Check;
+
 typedef void (^ChatViewHelperSendSuccess)(void);
 
 @interface ChatViewHelper : JSQMessagesViewController <UIActionSheetDelegate, JSQMessagesComposerTextViewPasteDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, BBPubNubClientDelegate, JSQMessagesOptionsDelegate>
@@ -17,4 +19,12 @@ typedef void (^ChatViewHelperSendSuccess)(void);
 - (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date showMessage:(BOOL)showMessage success:(ChatViewHelperSendSuccess)success;
 - (void)addChatMessageForUser:(JSQMessage *)message showObject:(BOOL)showObject;
 - (void)addChatMessageForBot:(JSQMessage *)message showObject:(BOOL)showObject;
+
+#pragma mark - Create buttons list
+-(void)createButtonsListWithFlow:(Flow *)flow;
+-(void)createButtonsListWithOutcome:(Outcome *)outcome;
+
+#pragma mark - currentFlow
+@property (nonatomic, strong) Flow *currentFlow;
+
 @end

@@ -28,13 +28,16 @@
             if (!status.isError) {
                 //TODO: Handle if push notifications is disabled ()
                 // Start chatBot
-                [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
-                    // post conversation and wait websockets response
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
-                    [self addChatMessageForBot:message showObject:YES];
-                    
-                }];
+
+                
+                
+                //                [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
+//                    // post conversation and wait websockets response
+//                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                    JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
+//                    [self addChatMessageForBot:message showObject:YES];
+//                    
+//                }];
                 
             }
         }];
@@ -62,7 +65,7 @@
     [super viewWillAppear:animated];
     
     // Enable/disable springy bubbles
-    self.collectionView.collectionViewLayout.springinessEnabled = YES;
+    self.collectionView.collectionViewLayout.springinessEnabled = NO;
     [self.collectionView reloadData];
     
 }
@@ -122,51 +125,58 @@
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
     
 
-    for (int x=0; x<[chatDataModel.dispatch count]; x++) {
-        
-        BBChatBotDataModelDispatch *dispatch = [chatDataModel.dispatch objectAtIndex:x];
-        
-        NSString *optionTitle = dispatch.title;
-        NSString *optionDescription = [NSString stringWithFormat:@"%@ %@", dispatch.decision, dispatch.title];
-        
-        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionDescription, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            
-            if ([dispatch.decision isKindOfClass:[NSString class]] ) {
-                if ( ! [dispatch.decision isEqualToString:@"triage"]) {
-                    
-                    
-                    [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:YES success:^{
-                        
-                        [self selectedOption:chatDataModel.dispatch[x]
-                                   inOptions:chatDataModel.dispatch
-                                 forQuestion:chatDataModel
-                                    senderId:kBabylonDoctorId
-                           senderDisplayName:kBabylonDoctorName
-                                        date:[NSDate date]];
-                    }];
-                    
-                } else { //triage flow starts here
-                    [self menuOptionSelected:dispatch.talkId];
-                }
-            }
-            
-//            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
-//                
-//                [self sendFakeData:^{
+//    for (int x=0; x<[chatDataModel.dispatch count]; x++) {
+//        
+//        BBChatBotDataModelDispatch *dispatch = [chatDataModel.dispatch objectAtIndex:x];
+//        
+//        NSString *optionTitle = dispatch.title;
+//        NSString *optionDescription = [NSString stringWithFormat:@"%@ %@", dispatch.decision, dispatch.title];
+//        
+//        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionDescription, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//            
+//            if ([dispatch.decision isKindOfClass:[NSString class]] ) {
+//                if ( ! [dispatch.decision isEqualToString:@"triage"]) {
 //                    
-//                }];
-//                
-//            } else {
-//                
-//                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-//                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-//                }];
-//                
+//                    
+//                    [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:YES success:^{
+//                        
+//                        [self selectedOption:chatDataModel.dispatch[x]
+//                                   inOptions:chatDataModel.dispatch
+//                                 forQuestion:chatDataModel
+//                                    senderId:kBabylonDoctorId
+//                           senderDisplayName:kBabylonDoctorName
+//                                        date:[NSDate date]];
+//                    }];
+//                    
+//                } else { //triage flow starts here
+//                    [self menuOptionSelected:dispatch.talkId];
+//                }
 //            }
-            
-        }];
-        [alertViewController addAction:chatMenuOption];
-    }
+//            
+////            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
+////                
+////                [self sendFakeData:^{
+////                    
+////                }];
+////                
+////            } else {
+////                
+////                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+////                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+////                }];
+////                
+////            }
+//            
+//        }];
+//        [alertViewController addAction:chatMenuOption];
+//    }
+    
+    
+    UIAlertAction *triageMenuOption = [UIAlertAction actionWithTitle:@"Triage - head selected" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self openCheckWithBodyPartId:@"F00004"];
+        [self showTypingIndicator];
+    }];
+    [alertViewController addAction:triageMenuOption];
     
     UIAlertAction *cancelMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
                                                                style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -187,6 +197,82 @@
 -(void)menuOptionSelected:(nullable NSObject *)menuOption {
     //method to be overriden and customized
 }
+
+#pragma mark - OpenCheck with bodyPartId
+-(void)openCheckWithBodyPartId:(nullable NSString * )bodyPartId {
+    //method to be overriden and customized
+}
+
+#pragma mark - Create buttons list
+-(void)createButtonsListWithFlow:(Flow *)flow {
+    
+    self.currentFlow = flow;
+    
+    NSMutableArray *dataSource = [NSMutableArray new];
+    
+    for(Answer *answer in flow.question.answers ) {
+        UIColor *textColor;
+        UIColor *backgroundColor;
+//        if(option == selectedOption) {
+//            backgroundColor = [UIColor babylonPurple];
+//            textColor = [UIColor babylonWhite];
+//        } else {
+            backgroundColor = [UIColor babylonWhite];
+            textColor = [UIColor babylonPurple];
+//        }
+        
+        BBOption *option = [BBOption optionWithText:answer.answerText textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight];
+        
+        option.answerId = answer.answerId;
+        
+        [dataSource addObject: option];
+    }
+    
+    OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
+    viewController.delegate = self;
+    JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
+    JSQMessage *userMessage = [JSQMessage messageWithSenderId:kChatBotApiUserId
+                                                  displayName:kBabylonDoctorName
+                                                         text:flow.question.questionText
+                                                        media:item];
+    
+    userMessage.wantsTouches = YES;
+    [self addChatMessageForUser:userMessage showObject:YES];
+}
+
+#pragma mark - Create buttons list with Outcome
+-(void)createButtonsListWithOutcome:(Outcome *)outcome {
+    
+    NSMutableArray *dataSource = [NSMutableArray new];
+    
+    for(OutcomeAction *action in outcome.actions ) {
+        UIColor *textColor;
+        UIColor *backgroundColor;
+        //        if(option == selectedOption) {
+        //            backgroundColor = [UIColor babylonPurple];
+        //            textColor = [UIColor babylonWhite];
+        //        } else {
+        backgroundColor = [UIColor babylonWhite];
+        textColor = [UIColor babylonPurple];
+        //        }
+        
+        BBOption *option = [BBOption optionWithText:action.title textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight];
+        
+        [dataSource addObject: option];
+    }
+    
+    OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
+    viewController.delegate = self;
+    JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
+    JSQMessage *userMessage = [JSQMessage messageWithSenderId:kChatBotApiUserId
+                                                  displayName:kBabylonDoctorName
+                                                         text:outcome.text
+                                                        media:item];
+    
+    userMessage.wantsTouches = YES;
+    [self addChatMessageForUser:userMessage showObject:YES];
+}
+
 
 - (void)selectedOption:(BBChatBotDataModelDispatch *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelTalkChat *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSMutableArray *dataSource = [NSMutableArray new];
@@ -388,6 +474,19 @@
 
 -(void)sender:(id)sender selectedOption:(BBOption *)option {
     NSLog(@"OPTION SELECTED");
+    
+    //trying to change the selected color
+    option.backgroundColor = [UIColor babylonPurple];
+    option.textColor = [UIColor babylonWhite];
+    [self.collectionView reloadData];
+    
+    [self postAnswerWithId:option.answerId];
+}
+
+#pragma mark - Post selected answer - putFlow
+
+-(void)postAnswerWithId:(NSString *)answerId {
+    //method to be overriden and customized
 }
 
 @end

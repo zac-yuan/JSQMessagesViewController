@@ -9,6 +9,8 @@
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, assign) CGFloat height;
 
+@property (nonatomic, strong) NSString *answerId;
+
 +(BBOption *)optionWithText:(NSString *)text
                            textColor:(UIColor *)textColor
                                 font:(UIFont *)font

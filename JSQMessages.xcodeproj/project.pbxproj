@@ -29,6 +29,7 @@
 		617421411CF8ABB200EB8E5B /* Mixpanel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6174213A1CF8ABB200EB8E5B /* Mixpanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		617421421CF8ABB200EB8E5B /* SwiftDate.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6174213B1CF8ABB200EB8E5B /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		617421431CF8ABB200EB8E5B /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6174213C1CF8ABB200EB8E5B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		618EB63B1D0075EA000D98F9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 618EB63A1D0075EA000D98F9 /* Cartfile */; };
 		7F03191B1CFD9DAD00BF4F79 /* BBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03191A1CFD9DAD00BF4F79 /* BBConstants.m */; };
 		7F0319431CFD9EF900BF4F79 /* ApiManagerChatBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */; };
 		7F0319471CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319361CFD9EF900BF4F79 /* BBChatBotDataModelChosenOption.m */; };
@@ -288,6 +289,7 @@
 		6174213A1CF8ABB200EB8E5B /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
 		6174213B1CF8ABB200EB8E5B /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		6174213C1CF8ABB200EB8E5B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		618EB63A1D0075EA000D98F9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = BabylonBotDemo/Cartfile; sourceTree = "<group>"; };
 		7F0319191CFD9DAD00BF4F79 /* BBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstants.h; sourceTree = "<group>"; };
 		7F03191A1CFD9DAD00BF4F79 /* BBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstants.m; sourceTree = "<group>"; };
 		7F03192C1CFD9EF900BF4F79 /* ApiManagerChatBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManagerChatBot.h; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				6174213C1CF8ABB200EB8E5B /* SwiftyJSON.framework */,
 				886C33FE19F45E30006B4997 /* JSQMessagesViewController.podspec */,
 				88A25F3E19D8E01A00924534 /* JSQMessagesViewController */,
+				618EB63A1D0075EA000D98F9 /* Cartfile */,
 				B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */,
 				B4FA1BF91CF5B3260066D8B1 /* BabylonBotDemoTests */,
 				B4FA1C041CF5B3260066D8B1 /* BabylonBotDemoUITests */,
@@ -1329,6 +1332,7 @@
 			files = (
 				9F4A61C41CF5FBBC00A808A7 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				9F4A61C11CF5FBBC00A808A7 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
+				618EB63B1D0075EA000D98F9 /* Cartfile in Resources */,
 				9F4A61C21CF5FBBC00A808A7 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */,
 				B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */,
 				9F4A61C01CF5FBBC00A808A7 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
@@ -1849,6 +1853,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1872,6 +1877,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

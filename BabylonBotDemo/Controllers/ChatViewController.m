@@ -28,8 +28,8 @@
     
     //check
     self.checkController = [[CheckController alloc] initWithAppVersion:@"1.0.2"
-                                                             authToken:@"114c885f724074d4b7abd108d3465ed2"
-                                                             patientId:@"2115"
+                                                             authToken:@"f57d0e8bf1fd2b1949832cceaf7e22c0"
+                                                             patientId:@"126"
                                                            patientName:@"Danilo Testing"
                                                                isDebug:YES
                                                                baseUrl:@"https://staging1-check.babylontesting.co.uk/"
@@ -45,12 +45,17 @@
 
 -(void)openCheckWithBodyPartId:(nullable NSString * )bodyPartId {
     
+    [self showTypingIndicator];
+    
     [self.checkController createFlow:bodyPartId
                              success:^void (Flow *flow) {
                                  NSLog(@"%@", flow.question.questionText);
                                  
-                                 JSQMessage *message = [JSQMessage messageWithSenderId:@"babyBot" displayName:@"Babylon Doctor" text:flow.question.questionText];
-                                 [self.chatMessagesArray addObject:message];
+                                 //JSQMessage *message = [JSQMessage messageWithSenderId:@"babyBot" displayName:@"Babylon Doctor" text:flow.question.questionText];
+//                                 [self.chatMessagesArray addObject:message];
+                                 
+                                 [self createButtonsListWithFlow:flow];
+                                 
                                  [self finishReceivingMessageAnimated:YES];
                                  
                              }
@@ -59,6 +64,57 @@
                              }];
     
 }
+
+-(void)postAnswerWithId:(NSString *)answerId {
+    
+    Flow *flow = self.currentFlow;
+    
+    Answer *selectedAnswer = [[Answer alloc] initWithAnswerId:answerId answerText:@"" answerOrder:0 category:@""];
+    
+    flow.answers = [NSArray arrayWithObject:selectedAnswer];
+    
+    [self.checkController putFlow:flow
+                           gender:@"male"
+                       patientDob:[NSDate date]
+                          success:^(Question * _Nullable nextQuestion) {
+        
+                              if (!nextQuestion) {
+                                  
+                                  [self showTypingIndicator];
+                                  
+                                  //outcome - get
+                                  [self.checkController getOutcome:self.currentFlow.flowId
+                                                           success:^(Outcome * _Nullable outcome) {
+                                                               [self createButtonsListWithOutcome:outcome];
+                                  } failure:^{
+                                      
+                                  }];
+                                  
+                                  
+                              } else {
+                                  //flow - nextQuestion
+                                  Flow *newFlow = [[Flow alloc] initWithFlowId:self.currentFlow.flowId question:nextQuestion];
+                                  
+                                  [self showTypingIndicator];
+                                  [self createButtonsListWithFlow:newFlow];
+                                  
+                              }
+        
+    } failure:^{
+        NSLog(@"fail to put flow");
+    }];
+}
+
+#pragma mark - Create buttons list Flow
+-(void)createButtonsListWithFlow:(Flow *)flow {
+    [super createButtonsListWithFlow:flow];
+}
+
+#pragma mark - Create buttons list Outcome
+-(void)createButtonsListWithOutcome:(Outcome *)outcome{
+    [super createButtonsListWithOutcome:outcome];
+}
+
 
 #pragma mark - Option Handler
 -(void)menuOptionSelected:(nullable NSObject *)menuOption {
