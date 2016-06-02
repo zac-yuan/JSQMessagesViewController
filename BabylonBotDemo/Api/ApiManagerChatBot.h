@@ -13,6 +13,10 @@
 
 + (instancetype)sharedConfiguration;
 
+//FIXME: demo only
+- (void)receiveRatingRequestFromSocketSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 // Get Methods
 - (void)getTalkChat:(NSString *)query
             success:(void (^)(AFHTTPRequestOperation *operation, id response))success
@@ -44,6 +48,11 @@
 - (void)postConversationOption:(NSDictionary *)input withConversationId:(NSString *)conversationId
                        success:(void (^)(AFHTTPRequestOperation *operation, id response))success
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+- (void)postConversationRating:(NSInteger)rating
+            withConversationId:(NSString *)conversationId
+                       success:(void (^)(AFHTTPRequestOperation *, id))success
+                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
 // Put Methods
 - (void)putConversationText:(NSString *)input withConversationId:(NSString *)conversationId andStatementId:(NSString *)statementId

@@ -5,8 +5,11 @@
 #import "JSQViewMediaItem.h"
 #import "OptionsTableViewController.h"
 #import "BBOption.h"
-
+#import "RatingView.h"
 @import ios_maps;
+
+@interface ChatViewHelper () <OptionsDelegate, RatingViewDelegate>
+@end
 
 @implementation ChatViewHelper
 
@@ -55,7 +58,6 @@
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(customAction:)];
     [UIMenuController sharedMenuController].menuItems = @[ [[UIMenuItem alloc] initWithTitle:@"Edit" action:@selector(customAction:)] ];
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -122,7 +124,7 @@
         BBOption *option = [BBOption optionWithText:chosenOption.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight optionSelected:chosenOption];
         [dataSource addObject:option];
     }
-
+    
     OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
     viewController.delegate = self;
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewControllerMedia:viewController];
@@ -160,6 +162,23 @@
         }
         NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
         
+        //FIXME: randomly shows rating. This should come from the socket
+        NSInteger rand = arc4random_uniform(3);
+        if(rand == 2) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                __weak typeof(self) weakSelf = self;
+                [[ApiManagerChatBot sharedConfiguration] receiveRatingRequestFromSocketSuccess:^(AFHTTPRequestOperation *operation, id response) {
+                    __strong typeof(self) strongSelf = weakSelf;
+                    if(!strongSelf) {
+                        return;
+                    }
+                    [strongSelf addRating:3];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"%@", error);
+                }];
+            });
+        }
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
         [self addChatMessageForBot:message showObject:YES];
@@ -210,6 +229,19 @@
     
     [self sendMessage:nil withMessageText:selectedOption.text senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
         
+    }];
+}
+
+-(void)sendRating:(NSInteger)rating completionHandler:(void(^)(BOOL success))completionHandler {
+    //FIXME: hardcoded conversationId
+    [[ApiManagerChatBot sharedConfiguration] postConversationRating:rating withConversationId:@"1" success:^(AFHTTPRequestOperation *operation, id response) {
+        if(completionHandler) {
+            completionHandler(YES);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if(completionHandler) {
+            completionHandler(NO);
+        }
     }];
 }
 
@@ -313,6 +345,19 @@
     
 }
 
+- (void)addRating:(NSInteger)rating {
+    RatingView *view = [[RatingView alloc] initWithNumberOfButtons:5 maxWidth:self.view.bounds.size.width - 100.f initialRating:rating];
+    view.delegate = self;
+    JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewMedia:view];
+    JSQMessage *userMessage = [JSQMessage messageWithSenderId:kBabylonDoctorId
+                                                  displayName:kBabylonDoctorName
+                                                         text:@"How would you rate my service?"
+                                                        media:item];
+    view.message = userMessage;
+    userMessage.wantsTouches = YES;
+    [self addChatMessageForUser:userMessage showObject:YES];
+}
+
 - (void)addChatMessageForUser:(JSQMessage *)message showObject:(BOOL)showObject {
     [JSQSystemSoundPlayer jsq_playMessageSentSound];
     if (showObject) {
@@ -332,6 +377,35 @@
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {
     return YES;
+}
+
+#pragma mark - RatingViewDelegate
+
+-(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating {
+    ratingView.userInteractionEnabled = NO;
+    ratingView.message.wantsTouches = NO;
+    [self.collectionView reloadData];
+   
+    self.showTypingIndicator = YES;
+    
+    __weak typeof(self) weakSelf = self;
+    [self sendRating:rating completionHandler:^(BOOL success) {
+        __strong typeof(self) strongSelf = weakSelf;
+        if(!strongSelf) {
+            return;
+        }
+        
+        strongSelf.showTypingIndicator = NO;
+
+        if(success) {
+            NSLog(@"SENT RATING (%ld)", rating);
+            
+            JSQMessage *userMessage = [JSQMessage messageWithSenderId:kBabylonDoctorId
+                                                          displayName:kBabylonDoctorName
+                                                                 text:@"Thanks for the feedback"];
+            [strongSelf addChatMessageForUser:userMessage showObject:YES];
+        }
+    }];
 }
 
 @end

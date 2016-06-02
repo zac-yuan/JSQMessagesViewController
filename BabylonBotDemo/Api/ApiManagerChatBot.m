@@ -28,7 +28,25 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     return _sharedConfiguration;
 }
 
+//FIXME: demo only
+- (void)receiveRatingRequestFromSocketSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    [self.manager POST:@"websocket-rating"
+            parameters:@{}
+               success:^(AFHTTPRequestOperation *operation, id response) {
+                   success(operation, response);
+                   
+                   NSLog(@"Returning mock rating");
+                   
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   failure(operation, error);
+                   
+                   NSLog(@"Operation: %@\nError: %@", operation, error);
+               }];
+}
+
 #pragma mark - Get Methods
+
 - (void)getTalkChat:(NSString *)query
             success:(void (^)(AFHTTPRequestOperation *operation, id response))success
             failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
@@ -165,6 +183,40 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                    NSLog(@"Operation: %@\nError: %@", operation, error);
                    
     }];
+    
+}
+
+- (void)postConversationRating:(NSInteger)rating
+            withConversationId:(NSString *)conversationId
+                       success:(void (^)(AFHTTPRequestOperation *, id))success
+                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    
+    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/element", conversationId] withType:apiRestPost]
+            parameters:@{@"input":@{ @"value":@(rating),
+                                     @"source":@{ @"source_type" : @"star_rating",
+                                                  @"source_id" : [NSNull null] },
+                                     @"speaker":@{ @"type" : @"user",
+                                                   @"id" : self.speakerID }},
+                         @"auth_key":self.authKey,
+                         @"user_id":self.userID,
+                         @"target_id":self.targetID,
+                         @"speaker_id":self.speakerID}
+               success:^(AFHTTPRequestOperation *operation, id response) {
+                   success(operation, response);
+                   
+                   NSLog(@"%@", response);
+                   
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   //FIXME: endpoint not ready
+                   if(success) {
+                       success(operation, nil);
+                   }
+                   
+//                   failure(operation, error);
+//                   
+//                   NSLog(@"Operation: %@\nError: %@", operation, error);
+                   
+               }];
     
 }
 
