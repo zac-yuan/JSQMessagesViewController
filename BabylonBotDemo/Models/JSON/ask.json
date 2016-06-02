@@ -1,0 +1,67 @@
+{
+    "element_id" : "993982323",
+    "value" : "Hmmm. That doesn't sound good. Can I forward your question to one of our doctors",
+    "members": [{
+                "type": "user",
+                "id": "122"
+                },
+                {
+                "type": "babylon",
+                "id":null,
+                }],
+    "source" : {
+        "source_type" : "chatbot_output",
+        "source_id" : null,
+    },
+    "speaker": {
+        "type": "babylon",
+        "id": null,
+    },
+    "possible_elements": [{
+                          "element_id" : "993982327",
+                          "value" : "Yes",
+                          "members": [{
+                                      "type": "user",
+                                      "id": "122"
+                                      },
+                                      {
+                                      "type": "babylon",
+                                      "id":null,
+                                      }],
+                          "source" : {
+                          "source_type" : "ask",
+                          "source_id" : "993982322",
+                          },
+                          "speaker": {
+                          "type": "user",
+                          "id": "3838"
+                          },
+                          "possible_elements": [],
+                          "expected_input": []
+                          }
+                          ,
+                          {
+                          "element_id" : "993982327",
+                          "value" : "No",
+                          "members": [{
+                                      "type": "user",
+                                      "id": "122"
+                                      },
+                                      {
+                                      "type": "babylon",
+                                      "id":null,
+                                      }],
+                          "source" : {
+                          "source_type" : "no_action",
+                          "source_id" : 0,
+                          }, 
+                          "speaker": {
+                          "type": "user",
+                          "id": "3838"
+                          },
+                          "possible_elements": [],
+                          "expected_input": []
+                          }],
+    "expected_input": ["selected_element"],
+    "timestamp": "2016-06-01T8:52:29+0100"
+}

@@ -9,7 +9,6 @@
 @import ios_maps;
 
 @interface ChatViewHelper () <OptionsDelegate, RatingViewDelegate>
-
 @end
 
 @implementation ChatViewHelper
@@ -27,15 +26,13 @@
     [self.pubNubClient setPubNubClientDelegate:self];
     
     //TODO: Replace the channel id with user id
-    [self.pubNubClient subscribeToChannel:@"1077" completionHandler:^(PNAcknowledgmentStatus *status) {
+    [self.pubNubClient subscribeToChannel:kChatBotApiUserId completionHandler:^(PNAcknowledgmentStatus *status) {
         [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
             if (!status.isError) {
                 //TODO: Handle if push notifications is disabled ()
                 // Start chatBot
                 [[ApiManagerChatBot sharedConfiguration] postConversationText:@"hello" success:^(AFHTTPRequestOperation *operation, id response) {
-                    BBChatBotDataModelV2 *chatDataModel = [[BBChatBotDataModelV2 alloc] initWithDictionary:response];
-                    NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
-                    
+                    // post conversation and wait websockets response
                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
                     [self addChatMessageForBot:message showObject:YES];
@@ -66,11 +63,13 @@
     [self addRating:3];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     // Enable/disable springy bubbles
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
+    [self.collectionView reloadData];
+    
 }
 
 - (void)customAction:(id)sender {
@@ -79,7 +78,7 @@
 
 -(BOOL)showTypingIndicator {
     BOOL showTypingIndicator = [super showTypingIndicator];
-    [self setToolbarEnabled:!showTypingIndicator];
+    self.toolbarButtonsEnabled = !showTypingIndicator;
     return showTypingIndicator;
 }
 
@@ -97,7 +96,6 @@
                                                     senderDisplayName:kBabylonDoctorName
                                                                  date:[NSDate date]
                                                                  text:chatDataModel.value];
-        
         if ([chatDataModel.optionData.options count]>0) {
             [self presentMenuOptionsController:chatDataModel];
             [self addChatMessageForBot:botMessage showObject:NO];
@@ -113,7 +111,7 @@
 }
 
 - (void)pubNubClient:(PubNub *)client didReceiveStatus:(PNSubscribeStatus *)status {
-    NSLog(@"PubNub Client: %@ - status: %@ / %@", client, status, status.subscribedChannels);
+    NSLog(@"PubNub Client: %@ \n Status: %@ \n Channels: %@", client, status, status.subscribedChannels);
 }
 
 #pragma mark - Menu options
@@ -136,9 +134,20 @@
             //                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
             //            }];
             
-            [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-                [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-            }];
+            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
+                
+                [self sendFakeData:^{
+                    
+                }];
+                
+            } else {
+                
+                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+                }];
+                
+            }
+            
         }];
         [alertViewController addAction:chatMenuOption];
     }
@@ -237,6 +246,9 @@
             completionHandler(NO);
         }
     }];
+}
+
+- (void)sendFakeData:(void(^)()) completionHandler {
 }
 
 #pragma mark - Media Picker

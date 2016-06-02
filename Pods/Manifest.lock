@@ -23,37 +23,52 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (2.3.0):
-    - CocoaLumberjack/Default (= 2.3.0)
-    - CocoaLumberjack/Extensions (= 2.3.0)
-  - CocoaLumberjack/Core (2.3.0)
-  - CocoaLumberjack/Default (2.3.0):
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.3.0):
+  - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
   - ios-maps (0.2.5)
   - JSQSystemSoundPlayer (2.0.1)
-  - PubNub (4.3.3):
-    - CocoaLumberjack (= 2.3.0)
-    - PubNub/Core (= 4.3.3)
-  - PubNub/Core (4.3.3):
-    - CocoaLumberjack (= 2.3.0)
+  - OHHTTPStubs (5.0.0):
+    - OHHTTPStubs/Default (= 5.0.0)
+  - OHHTTPStubs/Core (5.0.0)
+  - OHHTTPStubs/Default (5.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.0.0)
+  - PubNub (4.3.0):
+    - CocoaLumberjack (= 2.2.0)
+    - PubNub/Core (= 4.3.0)
+  - PubNub/Core (4.3.0):
+    - CocoaLumberjack (= 2.2.0)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
   - AFNetworking (~> 2.0)
   - ios-maps
   - JSQSystemSoundPlayer (~> 2.0)
+  - OHHTTPStubs
   - PubNub
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   ios-maps: 5db3f12df3db79e10815c0ae6e5f656bcfef397d
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  PubNub: 51acd937c947d931a75d2caef654fd12f7573e09
+  OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
+  PubNub: a05f2a2c6cc1f637a0c473f236c4671c0b8c09b1
 
-PODFILE CHECKSUM: dc8d921a6ff02b108bb9a5b5d6eb371facd05afa
+PODFILE CHECKSUM: 3bab42d94c5ba91bb6f17145096098be79f2a334
 
 COCOAPODS: 1.0.0

@@ -2,6 +2,8 @@
 #import "BBPubNubClient.h"
 #import "BBConstants.h"
 
+NSString *const kDeviceToken = @"deviceToken";
+
 @implementation BBPubNubClient
 
 + (instancetype)shared {
@@ -22,6 +24,17 @@
     _pubNubClient = [PubNub clientWithConfiguration:configuration];
     [_pubNubClient addListener:self];
     
+}
+
+- (void)saveDeviceToken:(NSData *)deviceToken {
+
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:deviceToken] forKey:kDeviceToken];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+- (NSData *)loadDeviceToken {
+    return [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kDeviceToken]];
 }
 
 - (void)pingPubNubService:(void (^)(PNErrorStatus *status, PNTimeResult *result))completionHandler {
@@ -51,7 +64,7 @@
 - (void)addPushNotificationForChannel:(NSString *)channelName
                     completionHandler:(void(^)(PNAcknowledgmentStatus *status))completionHandler {
     [self.pubNubClient addPushNotificationsOnChannels:@[channelName]
-                                  withDevicePushToken:self.deviceToken
+                                  withDevicePushToken:[self loadDeviceToken]
                                         andCompletion:^(PNAcknowledgmentStatus * _Nonnull status) {
                                             completionHandler(status);
     }];

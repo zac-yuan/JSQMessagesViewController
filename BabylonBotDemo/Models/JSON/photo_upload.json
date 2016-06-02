@@ -1,0 +1,25 @@
+{
+    "element_id": "993982389",
+    "value": null,
+    "members": [{
+                "type": "user",
+                "id": "122"
+                }, {
+                "type": "babylon",
+                "id": null
+                }, {
+                "type": "ask_doctor",
+                "id": "23"
+                }],
+    "source": {
+        "source_type": "photo_upload",
+        "source_id": "wwww.host.com/path/to/image"
+    },
+    "speaker": {
+        "type": "user",
+        "id": "3838"
+    },
+    "possible_elements": [],
+    "expected_input": null,
+    "timestamp": "2016-06-01T8:52:29+0100"
+}

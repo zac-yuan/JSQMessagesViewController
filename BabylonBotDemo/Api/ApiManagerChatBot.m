@@ -20,8 +20,8 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     });
     
     //HARDCODE: DEMO ONLY
-    _sharedConfiguration.userID = @"14";
-    _sharedConfiguration.authKey = @"060c654836f149a6c755754ecb0cdc62";
+    _sharedConfiguration.userID = kChatBotApiUserId;
+    _sharedConfiguration.authKey = kChatBotApiToken;
     _sharedConfiguration.speakerID = _sharedConfiguration.userID;
     _sharedConfiguration.targetID = @"babybot";
 
@@ -217,6 +217,11 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                    NSLog(@"Operation: %@\nError: %@", operation, error);
                    
     }];
+    
+}
+
+//ASK
+- (void)post {
     
 }
 

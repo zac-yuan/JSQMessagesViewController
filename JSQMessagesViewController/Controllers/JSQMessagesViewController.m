@@ -177,8 +177,16 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     [self jsq_updateCollectionViewInsets];
 }
 
-- (void)setToolbarEnabled:(BOOL)enabled {
-    self.inputToolbar.contentView.enabled = enabled;
+- (void)setToolbarButtonsEnabled:(BOOL)enabled {
+    self.inputToolbar.contentView.leftBarButtonItem.userInteractionEnabled = enabled;
+    self.inputToolbar.contentView.rightBarButtonItem.userInteractionEnabled = enabled;
+}
+
+#pragma mark - Getters
+
+-(BOOL)toolbarButtonsEnabled {
+    return (self.inputToolbar.contentView.leftBarButtonItem.userInteractionEnabled &&
+            self.inputToolbar.contentView.rightBarButtonItem.userInteractionEnabled);
 }
 
 #pragma mark - View lifecycle
