@@ -213,15 +213,23 @@
         }
         NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [[ApiManagerChatBot sharedConfiguration] mockRatingSuccess:^(AFHTTPRequestOperation *operation, id response) {
-                //FIXME: this is for testing only
-                [self addRating:3];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"shouldnt happen...");
-            }];
-        });
-        
+        //FIXME: randomly shows rating. This should come from the socket
+        NSInteger rand = arc4random_uniform(4);
+        if(rand == 3) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                __weak typeof(self) weakSelf = self;
+                [[ApiManagerChatBot sharedConfiguration] receiveRatingRequestFromSocketSuccess:^(AFHTTPRequestOperation *operation, id response) {
+                    __strong typeof(self) strongSelf = weakSelf;
+                    if(!strongSelf) {
+                        return;
+                    }
+                    [strongSelf addRating:3];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"%@", error);
+                }];
+            });
+        }
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:[NSString babylonErrorMsg:error]];
         [self addChatMessageForBot:message showObject:YES];
@@ -243,6 +251,7 @@
 }
 
 -(void)sendRating:(NSInteger)rating completionHandler:(void(^)(BOOL success))completionHandler {
+    
     //FIXME: hardcoded conversationId
     [[ApiManagerChatBot sharedConfiguration] postConversationRating:rating withConversationId:@"1" success:^(AFHTTPRequestOperation *operation, id response) {
         if(completionHandler) {
@@ -359,13 +368,14 @@
 }
 
 - (void)addRating:(NSInteger)rating {
-    RatingView *view = [[RatingView alloc] initWithNumberOfButtons:5 maxWidth:self.view.bounds.size.width - 50.f initialRating:rating];
+    RatingView *view = [[RatingView alloc] initWithNumberOfButtons:5 maxWidth:self.view.bounds.size.width - 100.f initialRating:rating];
     view.delegate = self;
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewMedia:view];
     JSQMessage *userMessage = [JSQMessage messageWithSenderId:kBabylonDoctorId
                                                   displayName:kBabylonDoctorName
                                                          text:@"How would you rate my service?"
                                                         media:item];
+    view.message = userMessage;
     userMessage.wantsTouches = YES;
     [self addChatMessageForUser:userMessage showObject:YES];
 }
@@ -400,9 +410,29 @@
 #pragma mark - RatingViewDelegate
 
 -(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating {
-    NSLog(@"SELECTED RATING (%ld)", rating);
+    ratingView.userInteractionEnabled = NO;
+    ratingView.message.wantsTouches = NO;
+    [self.collectionView reloadData];
+   
+    self.showTypingIndicator = YES;
+    
+    __weak typeof(self) weakSelf = self;
     [self sendRating:rating completionHandler:^(BOOL success) {
-        NSLog(@"SENT RATING (%ld)", rating);
+        __strong typeof(self) strongSelf = weakSelf;
+        if(!strongSelf) {
+            return;
+        }
+        
+        strongSelf.showTypingIndicator = NO;
+
+        if(success) {
+            NSLog(@"SENT RATING (%ld)", rating);
+            
+            JSQMessage *userMessage = [JSQMessage messageWithSenderId:kBabylonDoctorId
+                                                          displayName:kBabylonDoctorName
+                                                                 text:@"Thanks for the feedback"];
+            [strongSelf addChatMessageForUser:userMessage showObject:YES];
+        }
     }];
 }
 

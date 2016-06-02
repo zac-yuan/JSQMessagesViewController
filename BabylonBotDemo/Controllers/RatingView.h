@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class RatingView;
+@class JSQMessage;
 
 @protocol RatingViewDelegate <NSObject>
 
@@ -22,6 +23,7 @@
 @interface RatingView : UIView
 
 @property (nonatomic, weak) id<RatingViewDelegate>delegate;
+@property (nonatomic, weak) JSQMessage *message;
 
 -(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
                               maxWidth:(CGFloat)maxWidth

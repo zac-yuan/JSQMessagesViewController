@@ -29,8 +29,8 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 }
 
 //FIXME: demo only
-- (void)mockRatingSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
-                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (void)receiveRatingRequestFromSocketSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     [self.manager POST:@"websocket-rating"
             parameters:@{}
                success:^(AFHTTPRequestOperation *operation, id response) {
@@ -207,9 +207,14 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                    NSLog(@"%@", response);
                    
                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                   failure(operation, error);
+                   //FIXME: endpoint not ready
+                   if(success) {
+                       success(operation, nil);
+                   }
                    
-                   NSLog(@"Operation: %@\nError: %@", operation, error);
+//                   failure(operation, error);
+//                   
+//                   NSLog(@"Operation: %@\nError: %@", operation, error);
                    
                }];
     

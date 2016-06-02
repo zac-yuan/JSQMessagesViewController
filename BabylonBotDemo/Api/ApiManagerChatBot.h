@@ -14,8 +14,8 @@
 + (instancetype)sharedConfiguration;
 
 //FIXME: demo only
-- (void)mockRatingSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
-                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+- (void)receiveRatingRequestFromSocketSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 // Get Methods
 - (void)getTalkChat:(NSString *)query
