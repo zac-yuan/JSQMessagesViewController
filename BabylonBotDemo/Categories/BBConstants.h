@@ -2,6 +2,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+//TODO: Remove before release
+extern NSString *const kChatBotApiToken;
+extern NSString *const kChatBotApiUserId;
+//-------- end
+
 extern NSString *const kPubNubPublishKey;
 extern NSString *const kPubNubSubscribeKey;
 extern NSString *const kPubNubSecretKey;

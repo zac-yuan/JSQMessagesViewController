@@ -23,7 +23,7 @@
     [self.pubNubClient setPubNubClientDelegate:self];
     
     //TODO: Replace the channel id with user id
-    [self.pubNubClient subscribeToChannel:@"1077" completionHandler:^(PNAcknowledgmentStatus *status) {
+    [self.pubNubClient subscribeToChannel:kChatBotApiUserId completionHandler:^(PNAcknowledgmentStatus *status) {
         [self.pubNubClient pingPubNubService:^(PNErrorStatus *status, PNTimeResult *result) {
             if (!status.isError) {
                 //TODO: Handle if push notifications is disabled ()
