@@ -19,10 +19,10 @@
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-//        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
-//        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:error.localizedFailureReason];
-//        [self.chatMessagesArray addObject:message];
-//        [self finishReceivingMessageAnimated:YES];
+        [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
+        JSQMessage *message = [JSQMessage messageWithSenderId:kBabylonDoctorId displayName:kBabylonDoctorName text:error.localizedFailureReason];
+        [self.chatMessagesArray addObject:message];
+        [self finishReceivingMessageAnimated:YES];
         
     }];
     
