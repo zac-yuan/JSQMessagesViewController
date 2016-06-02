@@ -92,8 +92,9 @@
                                                                  date:[NSDate date]
                                                                  text:chatDataModel.value];
         if ([chatDataModel.optionData.options count]>0) {
-            [self presentMenuOptionsController:chatDataModel];
-            [self addChatMessageForBot:botMessage showObject:NO];
+            [self showChatBotOptions:nil inOptions:chatDataModel.optionData.options
+                     forQuestion:chatDataModel senderId:kBabylonDoctorId
+               senderDisplayName:kBabylonDoctorName date:[NSDate date]];
         } else {
             [self addChatMessageForBot:botMessage showObject:YES];
         }
@@ -109,60 +110,7 @@
     NSLog(@"PubNub Client: %@ \n Status: %@ \n Channels: %@", client, status, status.subscribedChannels);
 }
 
-#pragma mark - Menu options
-- (void)presentMenuOptionsController:(BBChatBotDataModelStatement *)chatDataModel {
-    
-    UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil
-                                                                                 message:NSLocalizedString(chatDataModel.value, nil)
-                                                                          preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    for (int x=0; x<[chatDataModel.optionData.options count]; x++) {
-        
-        NSString *optionTitle = [(BBChatBotDataModelChosenOption *)[chatDataModel.optionData.options objectAtIndex:x] value];
-        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionTitle, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            BBChatBotDataModelChosenOption *optionSelected = chatDataModel.optionData.options[x];
-            
-            //TODO:
-            //            [self sendOption:@{@"options":@[@{@"id":optionSelected.messageId,
-            //                                              @"value":optionSelected.value,
-            //                                              @"source":optionSelected.source}]} withConversationId:chatDataModel.inResponseTo completionHandler:^(bool success) {
-            //                [self selectedOption:chatDataModel.optionData.options[x] inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-            //            }];
-            
-            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
-                
-                [self sendFakeData:^{
-                    
-                }];
-                
-            } else {
-                
-                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-                }];
-                
-            }
-            
-        }];
-        [alertViewController addAction:chatMenuOption];
-    }
-    
-    UIAlertAction *cancelMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
-                                                               style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                                                                   
-                                                               }];
-    
-    [alertViewController addAction:cancelMenuOption];
-    
-    
-    __strong typeof(self) strongSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [strongSelf presentViewController:alertViewController animated:YES completion:nil];
-    });
-    
-}
-
-- (void)selectedOption:(BBChatBotDataModelChosenOption *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelStatement *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
+- (void)showChatBotOptions:(BBChatBotDataModelChosenOption *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelStatement *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSMutableArray *dataSource = [NSMutableArray new];
     
     for(BBChatBotDataModelChosenOption *option in options ) {
@@ -176,7 +124,7 @@
             textColor = [UIColor babylonPurple];
         }
         
-        [dataSource addObject:[BBOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight]];
+        [dataSource addObject:[BBOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight optionSelected:selectedOption]];
     }
 
     OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
@@ -187,7 +135,7 @@
                                                          text:question.value
                                                         media:item];
     userMessage.wantsTouches = YES;
-    [self addChatMessageForUser:userMessage showObject:YES];
+    [self addChatMessageForBot:userMessage showObject:YES];
 }
 
 - (void)sendMessage:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date showMessage:(BOOL)showMessage success:(ChatViewHelperSendSuccess)success {
@@ -231,7 +179,8 @@
     
 }
 
-- (void)sendFakeData:(void(^)()) completionHandler {
+#pragma mark - JSQMessagesOptionsDelegate
+-(void)sender:(id)sender selectedOption:(BBOption *)option {
     
 }
 
@@ -354,12 +303,6 @@
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {
     return YES;
-}
-
-#pragma mark - JSQMessagesOptionsDelegate
-
--(void)sender:(id)sender selectedOption:(BBOption *)option {
-    NSLog(@"OPTION SELECTED");
 }
 
 @end
