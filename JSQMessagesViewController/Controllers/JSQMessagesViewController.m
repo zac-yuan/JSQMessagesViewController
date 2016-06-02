@@ -177,6 +177,10 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     [self jsq_updateCollectionViewInsets];
 }
 
+- (void)setToolbarEnabled:(BOOL)enabled {
+    self.inputToolbar.contentView.enabled = enabled;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -473,6 +477,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.delegate = collectionView;
+    cell.rootTapRecognizer = ![messageItem wantsTouches];
 
     if (!isMediaMessage) {
         if(isMixedMediaMessage) {

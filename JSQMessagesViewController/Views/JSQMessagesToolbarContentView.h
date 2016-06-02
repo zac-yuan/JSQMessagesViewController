@@ -111,6 +111,11 @@ FOUNDATION_EXPORT const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingD
  */
 @property (weak, nonatomic, readonly) UIView *rightBarButtonContainerView;
 
+/**
+ *  `NO` disables the content view
+ */
+@property (nonatomic, assign) BOOL enabled;
+
 #pragma mark - Class methods
 
 /**

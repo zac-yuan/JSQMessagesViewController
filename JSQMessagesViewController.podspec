@@ -24,5 +24,6 @@ Pod::Spec.new do |s|
 
 	s.dependency 'JSQSystemSoundPlayer', '~> 2.0.1'
     s.dependency 'AFNetworking', '~> 2.0'
+    s.dependency 'PubNub'
 
 end

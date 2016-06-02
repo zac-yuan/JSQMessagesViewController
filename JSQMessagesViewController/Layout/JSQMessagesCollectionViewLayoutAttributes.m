@@ -122,6 +122,11 @@
         return copy;
     }
     
+    // FIXME: for some reason self.messageBubbleFont == nil, which causes a crash (NSParameterAssert above). This is a quick fix for now
+    if (!self.messageBubbleFont) {
+        return nil;
+    }
+
     copy.messageBubbleFont = self.messageBubbleFont;
     copy.messageBubbleContainerViewWidth = self.messageBubbleContainerViewWidth;
     copy.textViewFrameInsets = self.textViewFrameInsets;

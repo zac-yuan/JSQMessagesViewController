@@ -1,12 +1,35 @@
 
 #import "AppDelegate.h"
+#import "BBConstants.h"
+#import "BBPubNubClient.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    // Register device for push notifications
+    UIUserNotificationType appTypes = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *appSettings = [UIUserNotificationSettings settingsForTypes:appTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:appSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     return YES;
+    
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[BBPubNubClient shared] setDeviceToken:deviceToken];
+    NSLog(@"Did register for remote notification with device token: %@", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Did fail to register for remote notifications: %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:userInfo];
+    NSLog(@"Did receive remote notitication: %@", userInfo);
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -26,8 +49,8 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+-(void) applicationWillTerminate:(UIApplication *)application {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
