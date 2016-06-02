@@ -13,7 +13,7 @@
 @protocol JSQMessagesOptionsDelegate <NSObject>
 
 @required
--(void)sender:(id)sender selectedOption:(BBOption *)option;
+-(void)sender:(id)sender selectedOption:(BBOption *)selectedOption;
 
 @end
 
