@@ -11,6 +11,7 @@
 		47A39A1A23D4A5E1B30F8107 /* Pods_JSQMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBCA988909DA629F3496145 /* Pods_JSQMessages.framework */; };
 		47E46B3A1CFF16FB00D816CE /* ask.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E46B381CFF16FB00D816CE /* ask.json */; };
 		47E46B3B1CFF16FB00D816CE /* photo_upload.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E46B391CFF16FB00D816CE /* photo_upload.json */; };
+		47E46B3F1D002DD900D816CE /* rating_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E46B3E1D002DD900D816CE /* rating_response.json */; };
 		54271E3B1C90469100294290 /* jsq_messages_sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 54271E3A1C90469100294290 /* jsq_messages_sample.m4a */; };
 		54271E3E1C905B9200294290 /* JSQAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */; };
 		54271E401C905D1600294290 /* JSQAudioMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */; };
@@ -236,6 +237,7 @@
 		2BC496DC8070EB88DD918AF6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E46B381CFF16FB00D816CE /* ask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ask.json; path = Models/JSON/ask.json; sourceTree = "<group>"; };
 		47E46B391CFF16FB00D816CE /* photo_upload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = photo_upload.json; path = Models/JSON/photo_upload.json; sourceTree = "<group>"; };
+		47E46B3E1D002DD900D816CE /* rating_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rating_response.json; sourceTree = "<group>"; };
 		54271E3A1C90469100294290 /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
 		54271E3C1C905B9200294290 /* JSQAudioMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaItem.h; sourceTree = "<group>"; };
 		54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItem.m; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 			children = (
 				47E46B381CFF16FB00D816CE /* ask.json */,
 				47E46B391CFF16FB00D816CE /* photo_upload.json */,
+				47E46B3E1D002DD900D816CE /* rating_response.json */,
 			);
 			name = JSON;
 			path = ../..;
@@ -1274,6 +1277,7 @@
 				9F4A61C41CF5FBBC00A808A7 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				9F4A61C11CF5FBBC00A808A7 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				9F4A61C21CF5FBBC00A808A7 /* JSQMessagesCollectionViewCellMenuOptions.xib in Resources */,
+				47E46B3F1D002DD900D816CE /* rating_response.json in Resources */,
 				B4FA1BED1CF5B3260066D8B1 /* Assets.xcassets in Resources */,
 				9F4A61C01CF5FBBC00A808A7 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				9F4A61B91CF5FB6F00A808A7 /* JSQMessagesViewController.xib in Resources */,

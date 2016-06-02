@@ -1,0 +1,25 @@
+{
+    "element_id": "9939823892",
+    "value": "How would you rate that answer",
+    "members": [{
+                "type": "user",
+                "id": "122"
+                }, {
+                "type": "babylon",
+                "id": null
+                }, {
+                "type": "ask_doctor",
+                "id": "23"
+                }],
+    "source": {
+        "source_type": "chat_bot_output",
+        "source_id": null
+    },
+    "speaker": {
+        "type": "babylon",
+        "id": null
+    },
+    "possible_elements": [],
+    "expected_input": ["star_rating"],
+    "timestamp": "2016-06-01T8:52:29+0100"
+}
