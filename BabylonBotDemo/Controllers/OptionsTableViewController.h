@@ -10,9 +10,8 @@
 
 @class BBOption;
 
-@protocol JSQMessagesOptionsDelegate <NSObject>
+@protocol OptionsDelegate <NSObject>
 
-@required
 -(void)sender:(id)sender selectedOption:(BBOption *)option;
 
 @end
@@ -21,7 +20,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
-@property (nonatomic, weak) id<JSQMessagesOptionsDelegate> delegate;
+@property (nonatomic, weak) id<OptionsDelegate> delegate;
 
 -(instancetype)initWithDataSource:(NSArray *)dataSource;
 
