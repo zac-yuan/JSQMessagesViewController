@@ -91,11 +91,6 @@
                                                     senderDisplayName:kBabylonDoctorName
                                                                  date:[NSDate date]
                                                                  text:chatDataModel.value];
-        
-        //FIXME: ASK MOCK DEMO ONLY
-        if ([chatDataModel.value isEqualToString:@""]) {
-            
-        }
         if ([chatDataModel.optionData.options count]>0) {
             [self presentMenuOptionsController:chatDataModel];
             [self addChatMessageForBot:botMessage showObject:NO];
@@ -236,9 +231,7 @@
     
 }
 
-- (void)sendFakeData:(void(^)())completionHandler {
-    
-    
+- (void)sendFakeData:(void(^)()) completionHandler {
     
 }
 
