@@ -227,6 +227,18 @@
     
 }
 
+-(void)sendRating:(NSInteger)rating completionHandler:(void(^)(BOOL success))completionHandler {
+    [[ApiManagerChatBot sharedConfiguration] postConversationRating:rating success:^(AFHTTPRequestOperation *operation, id response) {
+        if(completionHandler) {
+            completionHandler(YES);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if(completionHandler) {
+            completionHandler(NO);
+        }
+    }];
+}
+
 #pragma mark - Media Picker
 - (void)didPressAccessoryButton:(UIButton *)sender {
     [self.inputToolbar.contentView.textView resignFirstResponder];
@@ -370,6 +382,9 @@
 
 -(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating {
     NSLog(@"SELECTED RATING (%ld)", rating);
+    [self sendRating:rating completionHandler:^(BOOL success) {
+        NSLog(@"SENT RATING (%ld)", rating);
+    }];
 }
 
 @end

@@ -20,8 +20,8 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     });
     
     //HARDCODE: DEMO ONLY
-    _sharedConfiguration.userID = @"1077";
-    _sharedConfiguration.authKey = @"73e40106b7bef08ae9a1888e35882a4b";
+    _sharedConfiguration.userID = @"14";
+    _sharedConfiguration.authKey = @"060c654836f149a6c755754ecb0cdc62";
     _sharedConfiguration.speakerID = _sharedConfiguration.userID;
     _sharedConfiguration.targetID = @"babybot";
 
@@ -165,6 +165,34 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
                    NSLog(@"Operation: %@\nError: %@", operation, error);
                    
     }];
+    
+}
+
+- (void)postConversationRating:(NSInteger)rating
+                       success:(void (^)(AFHTTPRequestOperation *, id))success
+                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    
+    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/element", self.conversationID] withType:apiRestPost]
+            parameters:@{@"input":@{ @"value":@(rating),
+                                     @"source":@{ @"source_type" : @"star_rating",
+                                                  @"source_id" : [NSNull null] },
+                                     @"speaker":@{ @"type" : @"user",
+                                                   @"id" : self.speakerID }},
+                         @"auth_key":self.authKey,
+                         @"user_id":self.userID,
+                         @"target_id":self.targetID,
+                         @"speaker_id":self.speakerID}
+               success:^(AFHTTPRequestOperation *operation, id response) {
+                   success(operation, response);
+                   
+                   NSLog(@"%@", response);
+                   
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   failure(operation, error);
+                   
+                   NSLog(@"Operation: %@\nError: %@", operation, error);
+                   
+               }];
     
 }
 

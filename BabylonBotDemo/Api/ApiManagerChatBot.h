@@ -45,6 +45,10 @@
                        success:(void (^)(AFHTTPRequestOperation *operation, id response))success
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (void)postConversationRating:(NSInteger)rating
+                       success:(void (^)(AFHTTPRequestOperation *, id))success
+                       failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+
 // Put Methods
 - (void)putConversationText:(NSString *)input withConversationId:(NSString *)conversationId andStatementId:(NSString *)statementId
                     success:(void (^)(AFHTTPRequestOperation *, id))success
