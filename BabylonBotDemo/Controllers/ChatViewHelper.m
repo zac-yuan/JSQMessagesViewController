@@ -162,8 +162,8 @@
         NSLog(@"conversation id > %@ - %@", chatDataModel.conversationId, chatDataModel.statements);
         
         //FIXME: randomly shows rating. This should come from the socket
-        NSInteger rand = arc4random_uniform(4);
-        if(rand == 3) {
+        NSInteger rand = arc4random_uniform(3);
+        if(rand == 2) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 __weak typeof(self) weakSelf = self;
                 [[ApiManagerChatBot sharedConfiguration] receiveRatingRequestFromSocketSuccess:^(AFHTTPRequestOperation *operation, id response) {
