@@ -28,7 +28,25 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
     return _sharedConfiguration;
 }
 
+//FIXME: demo only
+- (void)mockRatingSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    [self.manager POST:@"websocket-rating"
+            parameters:@{}
+               success:^(AFHTTPRequestOperation *operation, id response) {
+                   success(operation, response);
+                   
+                   NSLog(@"Returning mock rating");
+                   
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   failure(operation, error);
+                   
+                   NSLog(@"Operation: %@\nError: %@", operation, error);
+               }];
+}
+
 #pragma mark - Get Methods
+
 - (void)getTalkChat:(NSString *)query
             success:(void (^)(AFHTTPRequestOperation *operation, id response))success
             failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
@@ -169,10 +187,11 @@ typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoin
 }
 
 - (void)postConversationRating:(NSInteger)rating
+            withConversationId:(NSString *)conversationId
                        success:(void (^)(AFHTTPRequestOperation *, id))success
                        failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     
-    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/element", self.conversationID] withType:apiRestPost]
+    [self.manager POST:[self apiRestBuilderUrl:[NSString stringWithFormat:@"conversation/%@/element", conversationId] withType:apiRestPost]
             parameters:@{@"input":@{ @"value":@(rating),
                                      @"source":@{ @"source_type" : @"star_rating",
                                                   @"source_id" : [NSNull null] },

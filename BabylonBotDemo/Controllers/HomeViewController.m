@@ -16,7 +16,12 @@ NSString *const segueChatBot = @"segueChatBot";
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"ask.json", self.class) statusCode:200 headers:@{@"Content-Type":@"application/json"}];
     }];
-    
+ 
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.path isEqualToString:@"websocket-rating"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"rating_response.json", self.class) statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+    }];
 }
 
 - (IBAction)textFieldTouchDownAction:(id)sender {

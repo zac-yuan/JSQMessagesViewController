@@ -13,6 +13,10 @@
 
 + (instancetype)sharedConfiguration;
 
+//FIXME: demo only
+- (void)mockRatingSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 // Get Methods
 - (void)getTalkChat:(NSString *)query
             success:(void (^)(AFHTTPRequestOperation *operation, id response))success
@@ -46,6 +50,7 @@
                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 - (void)postConversationRating:(NSInteger)rating
+            withConversationId:(NSString *)conversationId
                        success:(void (^)(AFHTTPRequestOperation *, id))success
                        failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
