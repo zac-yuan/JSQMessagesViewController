@@ -7,7 +7,7 @@
 
 typedef void (^ChatViewHelperSendSuccess)(void);
 
-@interface ChatViewHelper : JSQMessagesViewController <UIActionSheetDelegate, JSQMessagesComposerTextViewPasteDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, BBPubNubClientDelegate>
+@interface ChatViewHelper : JSQMessagesViewController <UIActionSheetDelegate, JSQMessagesComposerTextViewPasteDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, BBPubNubClientDelegate, JSQMessagesOptionsDelegate>
 @property (strong, nonatomic) NSMutableArray *chatMessagesArray;
 @property (strong, nonatomic) JSQMessagesBubbleImage *userBubbleMsg;
 @property (strong, nonatomic) JSQMessagesBubbleImage *botBubbleMsg;

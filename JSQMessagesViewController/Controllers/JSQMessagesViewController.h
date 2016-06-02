@@ -172,6 +172,11 @@
  */
 @property (assign, nonatomic) CGFloat topContentAdditionalInset;
 
+/**
+ `NO` disables the toolbar buttons' user interaction
+ */
+@property (nonatomic) BOOL toolbarButtonsEnabled;
+
 #pragma mark - Class methods
 
 /**
@@ -309,10 +314,5 @@
  Call to super required.
  */
 - (void)viewDidDisappear:(BOOL)animated NS_REQUIRES_SUPER;
-
-/**
- `NO` disables the toolbar
- */
-- (void)setToolbarEnabled:(BOOL)enabled;
 
 @end

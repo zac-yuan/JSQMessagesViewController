@@ -73,9 +73,6 @@
 }
 
 #pragma mark - Actions
-- (IBAction)closeActionButton:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)helpActionButton:(UIBarButtonItem *)sender {
     // TODO: Add Help
@@ -113,7 +110,7 @@
     if ([message.senderId isEqualToString:self.senderId]) {
         return nil;
     } else {
-        return [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"bot-heart"] diameter:30];
+        return [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage babylonBotHearth] diameter:30];
     }
 }
 

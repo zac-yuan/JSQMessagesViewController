@@ -5,6 +5,9 @@
 //dev-chatscript.babylontesting.co.uk/v1
 //staging-chatscript.babylontesting.co.uk/v1
 
+NSString *const kChatBotApiToken            = @"55266d43bf9084aea2e8c225094d7f13";
+NSString *const kChatBotApiUserId           = @"85";
+
 NSString *const kPubNubPublishKey           = @"pub-c-63c4d0c1-0085-4719-962f-fbc211d4f90a";
 NSString *const kPubNubSubscribeKey         = @"sub-c-67d2f8fe-20ed-11e6-b700-0619f8945a4f";
 NSString *const kPubNubSecretKey            = @"sec-c-NmNkYTRlMTAtYTIwZC00YzgwLTllNjAtNzQzYTAwMzg4YjYw";
@@ -18,7 +21,7 @@ const CGFloat kDefaultFontSize              = 16.f;
 const CGFloat kDefaultCornerRadii           = 15.f;
 
 
-// COLORS
+#pragma mark - UIColor
 @implementation UIColor (Babylon)
 + (UIColor *)babylonPurple {return [UIColor colorWithRed:144.0f/255.0f green:19.0f/255.0f blue:254.0f/255.0f alpha:1.0];}
 + (UIColor *)babylonWhite {return [UIColor whiteColor];}
@@ -30,13 +33,13 @@ const CGFloat kDefaultCornerRadii           = 15.f;
 }
 @end
 
-// FONTS
+#pragma mark - UIFont
 @implementation UIFont (Babylon)
 + (UIFont *)babylonRegularFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Regular" size:fontSize];}
 + (UIFont *)babylonMediumFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Medium" size:fontSize];}
 @end
 
-// STRINGS
+#pragma mark - NString
 @implementation NSString (Babylon)
 + (NSString *)babylonErrorMsg:(NSError *)error {
     if ([error.localizedFailureReason length]>0) {
@@ -62,7 +65,17 @@ const CGFloat kDefaultCornerRadii           = 15.f;
 }
 @end
 
-// CALAYER
+#pragma mark - UIImage
+@implementation UIImage (Babylon)
++ (UIImage *)babylonBotHearth {
+    return [UIImage imageNamed:@"bot-heart"];
+}
++ (UIImage *)homeScreenBackgroundImage {
+    return [UIImage imageNamed:@"homeScreenBackground"];
+}
+@end
+
+#pragma mark - CALayer
 @implementation CALayer (Babylon)
 + (CALayer *)roudedBubbleMaskForRect:(CGRect)rect corners:(UIRectCorner)corners {
     CGSize cornerRadii = CGSizeMake(kDefaultCornerRadii, kDefaultCornerRadii);
