@@ -86,6 +86,9 @@
     NSString *statementId = [message.data.message objectForKey:@"statement"];
     NSString *chatId = [message.data.message objectForKey:@"conversation"];
     
+    //TODO: change into a session or something
+    [ApiManagerChatBot sharedConfiguration].conversationID = chatId;
+    
     [[ApiManagerChatBot sharedConfiguration] getConversationStatement:statementId withConversationId:chatId sucess:^(AFHTTPRequestOperation *operation, id response) {
         
         BBChatBotDataModelStatement *chatDataModel = [[BBChatBotDataModelStatement alloc] initWithDictionary:response];
@@ -115,18 +118,11 @@
 - (void)showChatBotOptions:(BBChatBotDataModelChosenOption *)selectedOption inOptions:(NSArray *)options forQuestion:(BBChatBotDataModelStatement *)question senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
     NSMutableArray *dataSource = [NSMutableArray new];
     
-    for(BBChatBotDataModelChosenOption *option in options ) {
-        UIColor *textColor;
-        UIColor *backgroundColor;
-        if(option == selectedOption) {
-            backgroundColor = [UIColor babylonPurple];
-            textColor = [UIColor babylonWhite];
-        } else {
-            backgroundColor = [UIColor babylonWhite];
-            textColor = [UIColor babylonPurple];
-        }
-        
-        [dataSource addObject:[BBOption optionWithText:option.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight optionSelected:selectedOption]];
+    for(BBChatBotDataModelChosenOption *chosenOption in options ) {
+        UIColor *textColor = [UIColor babylonPurple];
+        UIColor *backgroundColor = [UIColor babylonWhite];
+        BBOption *option = [BBOption optionWithText:chosenOption.value textColor:textColor font:[UIFont babylonRegularFont:kDefaultFontSize] backgroundColor:backgroundColor height:kOptionCellHeight optionSelected:chosenOption];
+        [dataSource addObject:option];
     }
     
     OptionsTableViewController *viewController = [[OptionsTableViewController alloc] initWithDataSource:dataSource];
@@ -136,6 +132,11 @@
                                                   displayName:senderDisplayName
                                                          text:question.value
                                                         media:item];
+   
+    for(BBOption *option in dataSource ) {
+        option.message = userMessage;
+    }
+    
     userMessage.wantsTouches = YES;
     [self addChatMessageForBot:userMessage showObject:YES];
 }
@@ -198,6 +199,39 @@
     
 }
 
+#pragma mark - JSQMessagesOptionsDelegate
+-(void)sender:(id)sender selectedOption:(BBOption *)selectedOption {
+    // select option
+    OptionsTableViewController *tableViewController = sender;
+    for(BBOption *option in tableViewController.dataSource) {
+        if(option == selectedOption) {
+            option.textColor = [UIColor babylonWhite];
+            option.backgroundColor = [UIColor babylonPurple];
+        } else {
+            option.textColor = [UIColor babylonPurple];
+            option.backgroundColor = [UIColor babylonWhite];
+        }
+    }
+    selectedOption.message.wantsTouches = NO;
+    tableViewController.tableView.userInteractionEnabled = NO;
+    [tableViewController.tableView reloadData];
+    
+    self.showTypingIndicator = YES;
+
+    //TODO: the real implementation
+//    NSDictionary *option = @{ @"" : @"" };
+//    NSString *conversationID = [ApiManagerChatBot sharedConfiguration].conversationID;
+//    [self sendOption:option withConversationId:conversationID completionHandler:^(bool success) {
+//        if(success) {
+//            NSLog(@"woohoo");
+//        }
+//    }];
+    
+    [self sendMessage:nil withMessageText:selectedOption.text senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+        
+    }];
+}
+
 -(void)sendRating:(NSInteger)rating completionHandler:(void(^)(BOOL success))completionHandler {
     //FIXME: hardcoded conversationId
     [[ApiManagerChatBot sharedConfiguration] postConversationRating:rating withConversationId:@"1" success:^(AFHTTPRequestOperation *operation, id response) {
@@ -209,9 +243,6 @@
             completionHandler(NO);
         }
     }];
-}
-
-- (void)sendFakeData:(void(^)()) completionHandler {
 }
 
 #pragma mark - Media Picker
@@ -346,12 +377,6 @@
 
 - (BOOL)composerTextView:(JSQMessagesComposerTextView *)textView shouldPasteWithSender:(id)sender {
     return YES;
-}
-
-#pragma mark - OptionsDelegate
-
--(void)sender:(id)sender selectedOption:(BBOption *)option {
-    NSLog(@"OPTION SELECTED");
 }
 
 #pragma mark - RatingViewDelegate
