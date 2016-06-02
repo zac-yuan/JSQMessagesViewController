@@ -33,6 +33,7 @@ PODS:
     - CocoaLumberjack/Default
   - ios-maps (0.2.5)
   - JSQSystemSoundPlayer (2.0.1)
+  - Nimble (4.0.1)
   - OHHTTPStubs (5.0.0):
     - OHHTTPStubs/Default (= 5.0.0)
   - OHHTTPStubs/Core (5.0.0)
@@ -51,14 +52,17 @@ PODS:
     - PubNub/Core (= 4.3.0)
   - PubNub/Core (4.3.0):
     - CocoaLumberjack (= 2.2.0)
+  - Quick (0.9.2)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
   - AFNetworking (~> 2.0)
   - ios-maps
   - JSQSystemSoundPlayer (~> 2.0)
+  - Nimble
   - OHHTTPStubs
   - PubNub
+  - Quick
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
@@ -66,9 +70,11 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   ios-maps: 5db3f12df3db79e10815c0ae6e5f656bcfef397d
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
   PubNub: a05f2a2c6cc1f637a0c473f236c4671c0b8c09b1
+  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
-PODFILE CHECKSUM: 3bab42d94c5ba91bb6f17145096098be79f2a334
+PODFILE CHECKSUM: e00b07a273975b49566ad6e046c62c6f75191674
 
 COCOAPODS: 1.0.0
