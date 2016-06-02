@@ -19,3 +19,8 @@ target :BabylonBotDemo do
     pod 'PubNub'
     pod 'OHHTTPStubs'
 end
+
+target 'BabylonBotDemoTests' do
+    pod 'Quick'
+    pod 'Nimble'
+end
