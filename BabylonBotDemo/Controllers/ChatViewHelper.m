@@ -124,59 +124,85 @@
                                                                                  message:NSLocalizedString(chatDataModel.value, nil)
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
     
-
-//    for (int x=0; x<[chatDataModel.dispatch count]; x++) {
-//        
-//        BBChatBotDataModelDispatch *dispatch = [chatDataModel.dispatch objectAtIndex:x];
-//        
-//        NSString *optionTitle = dispatch.title;
-//        NSString *optionDescription = [NSString stringWithFormat:@"%@ %@", dispatch.decision, dispatch.title];
-//        
-//        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionDescription, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//            
-//            if ([dispatch.decision isKindOfClass:[NSString class]] ) {
-//                if ( ! [dispatch.decision isEqualToString:@"triage"]) {
-//                    
-//                    
-//                    [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:YES success:^{
-//                        
-//                        [self selectedOption:chatDataModel.dispatch[x]
-//                                   inOptions:chatDataModel.dispatch
-//                                 forQuestion:chatDataModel
-//                                    senderId:kBabylonDoctorId
-//                           senderDisplayName:kBabylonDoctorName
-//                                        date:[NSDate date]];
-//                    }];
-//                    
-//                } else { //triage flow starts here
-//                    [self menuOptionSelected:dispatch.talkId];
-//                }
-//            }
-//            
-////            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
-////                
-////                [self sendFakeData:^{
-////                    
-////                }];
-////                
-////            } else {
-////                
-////                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
-////                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
-////                }];
-////                
-////            }
-//            
-//        }];
-//        [alertViewController addAction:chatMenuOption];
-//    }
+    if (chatDataModel.optionData.options) {
+        
+        for (int x=0; x<[chatDataModel.optionData.options count]; x++) {
+            
+            BBChatBotDataModelChosenOption *option = chatDataModel.optionData.options[x];
+            
+    //
+    //        BBChatBotDataModelDispatch *dispatch = [chatDataModel.dispatch objectAtIndex:x];
+    //        
+    //        NSString *optionTitle = dispatch.title;
+    //        NSString *optionDescription = [NSString stringWithFormat:@"%@ %@", dispatch.decision, dispatch.title];
+    //        
+    //        UIAlertAction *chatMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(optionDescription, nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    //            
+    //            if ([dispatch.decision isKindOfClass:[NSString class]] ) {
+    //                if ( ! [dispatch.decision isEqualToString:@"triage"]) {
+    //                    
+    //                    
+    //                    [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:YES success:^{
+    //                        
+    //                        [self selectedOption:chatDataModel.dispatch[x]
+    //                                   inOptions:chatDataModel.dispatch
+    //                                 forQuestion:chatDataModel
+    //                                    senderId:kBabylonDoctorId
+    //                           senderDisplayName:kBabylonDoctorName
+    //                                        date:[NSDate date]];
+    //                    }];
+    //                    
+    //                } else { //triage flow starts here
+    //                    [self menuOptionSelected:dispatch.talkId];
+    //                }
+    //            }
+    //            
+    ////            if ([optionSelected.value isEqualToString:@"Ask a clinician"]) {
+    ////                
+    ////                [self sendFakeData:^{
+    ////                    
+    ////                }];
+    ////                
+    ////            } else {
+    ////                
+    ////                [self sendMessage:nil withMessageText:optionTitle senderId:self.senderId senderDisplayName:self.senderDisplayName date:[NSDate date] showMessage:NO success:^{
+    ////                    [self selectedOption:optionSelected inOptions:chatDataModel.optionData.options forQuestion:chatDataModel senderId:kBabylonDoctorId senderDisplayName:kBabylonDoctorName date:[NSDate date]];
+    ////                }];
+    ////                
+    ////            }
+    //            
+    //        }];
+    //        [alertViewController addAction:chatMenuOption];
+            
+            
+            
+            
+            
+            //source: triage
+            //value: head
+            //messageId: F00004
+            
+            if ([option.source isKindOfClass:[NSString class]]) {
+                if ([option.source isEqualToString:@"triage"]) {
+                    
+                    NSString *label = [NSString stringWithFormat:@"Triage - %@ selected", option.value ];
+                    
+                    UIAlertAction *triageMenuOption = [UIAlertAction actionWithTitle:label
+                                                                               style:UIAlertActionStyleDefault
+                                                                             handler:^(UIAlertAction *action) {
+                        [self showTypingIndicator];
+                        [self openCheckWithBodyPartId: option.messageId ];
+                        
+                    }];
+                    [alertViewController addAction:triageMenuOption];
+                }
+            }
+        }
+        
+    }
     
     
-    UIAlertAction *triageMenuOption = [UIAlertAction actionWithTitle:@"Triage - head selected" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self openCheckWithBodyPartId:@"F00004"];
-        [self showTypingIndicator];
-    }];
-    [alertViewController addAction:triageMenuOption];
+    
     
     UIAlertAction *cancelMenuOption = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
                                                                style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
