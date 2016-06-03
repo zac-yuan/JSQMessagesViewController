@@ -370,7 +370,11 @@
     [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
     if (showObject) {
         [self.chatMessagesArray addObject:message];
-        [[[[self tabBarController] tabBar] items][0] setBadgeValue:[NSString babylonBadgeCounter:self.chatMessagesArray]];
+        if ((NSInteger *)[[self tabBarController] selectedIndex] != 0) {
+            [[[[self tabBarController] tabBar] items][0] setBadgeValue:[NSString babylonBadgeCounter:self.chatMessagesArray]];
+        } else {
+            [[[[self tabBarController] tabBar] items][0] setBadgeValue:nil];
+        }
     }
     [self finishReceivingMessageAnimated:YES];
 }

@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="120" y="1270"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="kJh-10-afj">
             <objects>
-                <tabBarController id="Dyo-br-jsx" sceneMemberID="viewController">
+                <tabBarController id="Dyo-br-jsx" customClass="MainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -95,7 +95,7 @@
         <scene sceneID="qGt-yf-Psu">
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" id="wfq-kE-L7W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home_inactive" badgeValue="0" selectedImage="Home_Active" id="zVk-ne-rLA"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home_inactive" selectedImage="Home_Active" id="zVk-ne-rLA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rtq-27-KZA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
