@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1857172B1D0188AC00F26397 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857172A1D0188AC00F26397 /* MainTabBarController.m */; };
+		1857172E1D018D9F00F26397 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857172D1D018D9F00F26397 /* MainNavigationController.m */; };
 		1F0EFE0F1AC23D7E003FF3DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */; };
 		47A39A1A23D4A5E1B30F8107 /* Pods_JSQMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBCA988909DA629F3496145 /* Pods_JSQMessages.framework */; };
 		47E46B3A1CFF16FB00D816CE /* ask.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E46B381CFF16FB00D816CE /* ask.json */; };
@@ -237,6 +238,8 @@
 		0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		185717291D0188AC00F26397 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		1857172A1D0188AC00F26397 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		1857172C1D018D9F00F26397 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		1857172D1D018D9F00F26397 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2BC496DC8070EB88DD918AF6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E46B381CFF16FB00D816CE /* ask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ask.json; path = Models/JSON/ask.json; sourceTree = "<group>"; };
@@ -607,6 +610,8 @@
 				B4EED5021CFEF20800F9EC99 /* Home */,
 				185717291D0188AC00F26397 /* MainTabBarController.h */,
 				1857172A1D0188AC00F26397 /* MainTabBarController.m */,
+				1857172C1D018D9F00F26397 /* MainNavigationController.h */,
+				1857172D1D018D9F00F26397 /* MainNavigationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1564,6 +1569,7 @@
 			files = (
 				9F4A61B61CF5F94600A808A7 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				9F4A61AB1CF5F93300A808A7 /* JSQPhotoMediaItem.m in Sources */,
+				1857172E1D018D9F00F26397 /* MainNavigationController.m in Sources */,
 				9F4A61AC1CF5F93300A808A7 /* JSQVideoMediaItem.m in Sources */,
 				7F03195F1CFD9F0400BF4F79 /* ChatViewHelper.m in Sources */,
 				9F4A61AF1CF5F94600A808A7 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,

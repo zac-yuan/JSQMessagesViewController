@@ -7,6 +7,11 @@ NSString *const segueChatBot = @"segueChatBot";
 
 @implementation HomeViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.chatBotTextField setText:nil];
+    [self.chatBotTextField resignFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
