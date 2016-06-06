@@ -18,6 +18,7 @@ target :BabylonBotDemo do
     pod 'ios-maps'
     pod 'PubNub'
     pod 'OHHTTPStubs'
+    pod 'monitor-ios', :git => 'https://github.com/Babylonpartners/ios-monitor.git', :branch => 'develop'
 end
 
 target 'BabylonBotDemoTests' do
