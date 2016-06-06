@@ -134,6 +134,10 @@
 		88C00A501A44D4D800B004B3 /* JSQPhotoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C00A4F1A44D4D800B004B3 /* JSQPhotoMediaItemTests.m */; };
 		88C00A521A44D4E500B004B3 /* JSQVideoMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */; };
 		88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */; };
+		8CB2038D1D05C1D900296E49 /* BBMemberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB203891D05C1D900296E49 /* BBMemberTests.m */; };
+		8CB2038E1D05C1D900296E49 /* BBPossibleElementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB2038A1D05C1D900296E49 /* BBPossibleElementTests.m */; };
+		8CB2038F1D05C1D900296E49 /* BBSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB2038B1D05C1D900296E49 /* BBSourceTests.m */; };
+		8CB203901D05C1D900296E49 /* BBSpeakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB2038C1D05C1D900296E49 /* BBSpeakerTests.m */; };
 		9F4A618D1CF5F82A00A808A7 /* JSQMessagesAvatarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A25F8019D8E01A00924534 /* JSQMessagesAvatarImage.m */; };
 		9F4A618F1CF5F86A00A808A7 /* JSQMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A25F6319D8E01A00924534 /* JSQMessagesViewController.m */; };
 		9F4A61901CF5F88200A808A7 /* JSQMessagesKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A25F6119D8E01A00924534 /* JSQMessagesKeyboardController.m */; };
@@ -430,6 +434,10 @@
 		88C00A511A44D4E500B004B3 /* JSQVideoMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQVideoMediaItemTests.m; sourceTree = "<group>"; };
 		88C4582E19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQMessagesMediaViewBubbleImageMasker.h; sourceTree = "<group>"; };
 		88C4582F19F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
+		8CB203891D05C1D900296E49 /* BBMemberTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMemberTests.m; sourceTree = "<group>"; };
+		8CB2038A1D05C1D900296E49 /* BBPossibleElementTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPossibleElementTests.m; sourceTree = "<group>"; };
+		8CB2038B1D05C1D900296E49 /* BBSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSourceTests.m; sourceTree = "<group>"; };
+		8CB2038C1D05C1D900296E49 /* BBSpeakerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSpeakerTests.m; sourceTree = "<group>"; };
 		96861D27B103BA65C2DE762C /* Pods-BabylonBotDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemoTests/Pods-BabylonBotDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9801C12C6F50269FDAE98DDF /* Pods_BabylonBotDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9BB64B9760F089ED2076F1 /* Pods_BabylonBotDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1068,6 +1076,10 @@
 		B4FA1BF91CF5B3260066D8B1 /* BabylonBotDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8CB203891D05C1D900296E49 /* BBMemberTests.m */,
+				8CB2038A1D05C1D900296E49 /* BBPossibleElementTests.m */,
+				8CB2038B1D05C1D900296E49 /* BBSourceTests.m */,
+				8CB2038C1D05C1D900296E49 /* BBSpeakerTests.m */,
 				B4FA1BFA1CF5B3260066D8B1 /* BabylonBotDemoTests.m */,
 				B4FA1BFC1CF5B3260066D8B1 /* Info.plist */,
 			);
@@ -1646,6 +1658,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FA1BFB1CF5B3260066D8B1 /* BabylonBotDemoTests.m in Sources */,
+				8CB203901D05C1D900296E49 /* BBSpeakerTests.m in Sources */,
+				8CB2038D1D05C1D900296E49 /* BBMemberTests.m in Sources */,
+				8CB2038F1D05C1D900296E49 /* BBSourceTests.m in Sources */,
+				8CB2038E1D05C1D900296E49 /* BBPossibleElementTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
