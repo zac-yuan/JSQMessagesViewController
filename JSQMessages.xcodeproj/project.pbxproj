@@ -138,6 +138,7 @@
 		8CB2038E1D05C1D900296E49 /* BBPossibleElementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB2038A1D05C1D900296E49 /* BBPossibleElementTests.m */; };
 		8CB2038F1D05C1D900296E49 /* BBSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB2038B1D05C1D900296E49 /* BBSourceTests.m */; };
 		8CB203901D05C1D900296E49 /* BBSpeakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB2038C1D05C1D900296E49 /* BBSpeakerTests.m */; };
+		8CB203941D05C2EA00296E49 /* MonitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB203931D05C2EA00296E49 /* MonitorViewController.m */; };
 		9F4A618D1CF5F82A00A808A7 /* JSQMessagesAvatarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A25F8019D8E01A00924534 /* JSQMessagesAvatarImage.m */; };
 		9F4A618F1CF5F86A00A808A7 /* JSQMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A25F6319D8E01A00924534 /* JSQMessagesViewController.m */; };
 		9F4A61901CF5F88200A808A7 /* JSQMessagesKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A25F6119D8E01A00924534 /* JSQMessagesKeyboardController.m */; };
@@ -438,6 +439,8 @@
 		8CB2038A1D05C1D900296E49 /* BBPossibleElementTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPossibleElementTests.m; sourceTree = "<group>"; };
 		8CB2038B1D05C1D900296E49 /* BBSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSourceTests.m; sourceTree = "<group>"; };
 		8CB2038C1D05C1D900296E49 /* BBSpeakerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSpeakerTests.m; sourceTree = "<group>"; };
+		8CB203921D05C2EA00296E49 /* MonitorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorViewController.h; sourceTree = "<group>"; };
+		8CB203931D05C2EA00296E49 /* MonitorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorViewController.m; sourceTree = "<group>"; };
 		96861D27B103BA65C2DE762C /* Pods-BabylonBotDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonBotDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonBotDemoTests/Pods-BabylonBotDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9801C12C6F50269FDAE98DDF /* Pods_BabylonBotDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9BB64B9760F089ED2076F1 /* Pods_BabylonBotDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonBotDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -615,6 +618,7 @@
 		7F03194E1CFD9F0400BF4F79 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8CB203911D05C2DF00296E49 /* Monitor */,
 				B4EED5021CFEF20800F9EC99 /* Home */,
 				185717291D0188AC00F26397 /* MainTabBarController.h */,
 				1857172A1D0188AC00F26397 /* MainTabBarController.m */,
@@ -939,6 +943,15 @@
 				88A2600019D8E18400924534 /* JSQMessagesTypingIndicatorFooterViewTests.m */,
 			);
 			path = ViewTests;
+			sourceTree = "<group>";
+		};
+		8CB203911D05C2DF00296E49 /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				8CB203921D05C2EA00296E49 /* MonitorViewController.h */,
+				8CB203931D05C2EA00296E49 /* MonitorViewController.m */,
+			);
+			name = Monitor;
 			sourceTree = "<group>";
 		};
 		B4101CAA1CF6F87F005EF656 /* Babylon */ = {
@@ -1620,6 +1633,7 @@
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */,
 				B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
+				8CB203941D05C2EA00296E49 /* MonitorViewController.m in Sources */,
 				7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */,
 				9F4A619B1CF5F8A400A808A7 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				9F4A61AA1CF5F93300A808A7 /* JSQMessagesBubbleImage.m in Sources */,
