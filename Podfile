@@ -10,15 +10,12 @@ target :JSQMessages do
 end
 
 target :BabylonBotDemo do
-    inherit! :search_paths
-
     pod 'JSQSystemSoundPlayer', '~> 2.0'
     pod 'AFNetworking', '~> 2.0'
     pod 'AFNetworkActivityLogger'
     pod 'ios-maps'
     pod 'PubNub'
     pod 'OHHTTPStubs'
-    pod 'ios-monitor', :git => 'https://github.com/Babylonpartners/ios-monitor.git', :branch => 'develop'
 end
 
 target 'BabylonBotDemoTests' do

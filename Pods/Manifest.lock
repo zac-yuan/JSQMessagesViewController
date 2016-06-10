@@ -23,89 +23,56 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (2.2.0):
-    - CocoaLumberjack/Default (= 2.2.0)
-    - CocoaLumberjack/Extensions (= 2.2.0)
-  - CocoaLumberjack/Core (2.2.0)
-  - CocoaLumberjack/Default (2.2.0):
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.2.0):
+  - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
-  - EAIntroView (2.9.0):
-    - EARestrictedScrollView (~> 1.1.0)
-  - EARestrictedScrollView (1.1.0)
   - ios-maps (0.2.5)
-  - ios-monitor (1.1.4):
-    - AFNetworking (~> 2.6.3)
-    - EAIntroView
-    - libextobjc/EXTScope
-    - SVProgressHUD
-    - ZipArchive
   - JSQSystemSoundPlayer (2.0.1)
-  - libextobjc/EXTScope (0.4.1):
-    - libextobjc/RuntimeExtensions
-  - libextobjc/RuntimeExtensions (0.4.1)
   - Nimble (4.0.1)
-  - OHHTTPStubs (5.0.0):
-    - OHHTTPStubs/Default (= 5.0.0)
-  - OHHTTPStubs/Core (5.0.0)
-  - OHHTTPStubs/Default (5.0.0):
+  - OHHTTPStubs (5.1.0):
+    - OHHTTPStubs/Default (= 5.1.0)
+  - OHHTTPStubs/Core (5.1.0)
+  - OHHTTPStubs/Default (5.1.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.0.0):
+  - OHHTTPStubs/JSON (5.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.0.0):
+  - OHHTTPStubs/NSURLSession (5.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.0.0)
-  - PubNub (4.3.0):
-    - CocoaLumberjack (= 2.2.0)
-    - PubNub/Core (= 4.3.0)
-  - PubNub/Core (4.3.0):
-    - CocoaLumberjack (= 2.2.0)
+  - OHHTTPStubs/OHPathHelpers (5.1.0)
+  - PubNub (4.3.3):
+    - CocoaLumberjack (= 2.3.0)
+    - PubNub/Core (= 4.3.3)
+  - PubNub/Core (4.3.3):
+    - CocoaLumberjack (= 2.3.0)
   - Quick (0.9.2)
-  - SVProgressHUD (2.0.3)
-  - ZipArchive (1.4.0)
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
   - AFNetworking (~> 2.0)
   - ios-maps
-  - ios-monitor (from `https://github.com/Babylonpartners/ios-monitor.git`, branch `develop`)
   - JSQSystemSoundPlayer (~> 2.0)
   - Nimble
   - OHHTTPStubs
   - PubNub
   - Quick
 
-EXTERNAL SOURCES:
-  ios-monitor:
-    :branch: develop
-    :git: https://github.com/Babylonpartners/ios-monitor.git
-
-CHECKOUT OPTIONS:
-  ios-monitor:
-    :commit: ea3d063add8f81d7fb830cae5764a37c8f40899c
-    :git: https://github.com/Babylonpartners/ios-monitor.git
-
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
-  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   ios-maps: 5db3f12df3db79e10815c0ae6e5f656bcfef397d
-  ios-monitor: b94c7cb4375885bac67fab2530f1d8617ce3962f
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
-  OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
-  PubNub: a05f2a2c6cc1f637a0c473f236c4671c0b8c09b1
+  OHHTTPStubs: 592f74439d2d72615115cf99a954237a3fbe26e5
+  PubNub: 51acd937c947d931a75d2caef654fd12f7573e09
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
-  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: f97300cf3688dc8deaf0bd315352faa2d9ea52b2
-
-COCOAPODS: 1.0.0
+COCOAPODS: 0.39.0
