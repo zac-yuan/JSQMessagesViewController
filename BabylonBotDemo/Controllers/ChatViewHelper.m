@@ -1,6 +1,6 @@
 
 #import "ChatViewHelper.h"
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 #import "ApiManagerChatBot.h"
 #import "JSQViewMediaItem.h"
 #import "OptionsTableViewController.h"

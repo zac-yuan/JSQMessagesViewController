@@ -1,6 +1,6 @@
 
 #import "ApiManagerChatBot.h"
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 #import "AppDelegate.h"
 
 typedef enum {apiRestGet, apiRestPost, apiRestPut, apiRestDelete} ApiRestEndPoint;

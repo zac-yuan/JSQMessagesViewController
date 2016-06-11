@@ -1,5 +1,5 @@
 
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 #import "JSQMessages.h"
 
 //dev-chatscript.babylontesting.co.uk/v1

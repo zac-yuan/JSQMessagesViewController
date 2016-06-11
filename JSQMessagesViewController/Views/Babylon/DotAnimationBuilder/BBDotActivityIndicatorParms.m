@@ -1,6 +1,5 @@
 
 #import "BBDotActivityIndicatorParms.h"
-#import "BBConstants.h"
 
 @implementation BBDotActivityIndicatorParms
 

@@ -1,7 +1,7 @@
 
 #import "ChatViewController.h"
 #import "ApiManagerChatBot.h"
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 
 @implementation ChatViewController
 

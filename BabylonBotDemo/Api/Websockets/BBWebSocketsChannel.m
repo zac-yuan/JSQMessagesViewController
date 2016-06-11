@@ -3,7 +3,7 @@
 
 #import "AFNetworking.h"
 #import <libkern/OSAtomic.h>
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 
 static NSString *kPubNubProtocol = @"https";
 static NSString *kPubNubHost = @"pubsub.pubnub.com";

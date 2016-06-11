@@ -1,6 +1,6 @@
 
 #import "BBPubNubClient.h"
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 
 NSString *const kDeviceToken = @"deviceToken";
 

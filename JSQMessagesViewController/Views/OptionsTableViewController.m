@@ -10,7 +10,7 @@
 #import "OptionsTableViewCell.h"
 #import "BBOption.h"
 #import "UIView+JSQMessages.h"
-#import "BBConstants.h"
+#import "BBConstantsTemp.h"
 
 @interface OptionsTableViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
