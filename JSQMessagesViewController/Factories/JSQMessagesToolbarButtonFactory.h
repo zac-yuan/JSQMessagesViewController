@@ -40,5 +40,6 @@
  *  @return A newly created button.
  */
 + (UIButton *)defaultSendButtonItem;
++ (UIButton *)babylonSendButtonItem;
 
 @end
