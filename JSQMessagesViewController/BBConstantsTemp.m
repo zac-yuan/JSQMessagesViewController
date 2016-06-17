@@ -5,8 +5,8 @@
 //dev-chatscript.babylontesting.co.uk/v1
 //staging-chatscript.babylontesting.co.uk/v1
 
-NSString *const kChatBotApiToken            = @"55266d43bf9084aea2e8c225094d7f13";
-NSString *const kChatBotApiUserId           = @"85";
+NSString *const kChatBotApiToken            = @"debc6543cd3bc7abca7380e22568d7c6";
+NSString *const kChatBotApiUserId           = @"2742";
 
 NSString *const kPubNubPublishKey           = @"pub-c-63c4d0c1-0085-4719-962f-fbc211d4f90a";
 NSString *const kPubNubSubscribeKey         = @"sub-c-67d2f8fe-20ed-11e6-b700-0619f8945a4f";
