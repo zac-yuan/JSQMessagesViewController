@@ -7,32 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184A2D311D1D73E000369A4F /* BBOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2D301D1D73E000369A4F /* BBOption.m */; };
+		184A2D321D1D73E500369A4F /* BBOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2D301D1D73E000369A4F /* BBOption.m */; };
 		1857172B1D0188AC00F26397 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857172A1D0188AC00F26397 /* MainTabBarController.m */; };
 		1857172E1D018D9F00F26397 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857172D1D018D9F00F26397 /* MainNavigationController.m */; };
-		189275C91D0C9E9800427592 /* BBAskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B21D0C9E9800427592 /* BBAskDataModel.m */; };
-		189275CA1D0C9E9800427592 /* BBAskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B21D0C9E9800427592 /* BBAskDataModel.m */; };
-		189275CB1D0C9E9800427592 /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B41D0C9E9800427592 /* BBChatBotDataModelChosenOption.m */; };
-		189275CC1D0C9E9800427592 /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B41D0C9E9800427592 /* BBChatBotDataModelChosenOption.m */; };
-		189275CD1D0C9E9800427592 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B61D0C9E9800427592 /* BBChatBotDataModelDispatch.m */; };
-		189275CE1D0C9E9800427592 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B61D0C9E9800427592 /* BBChatBotDataModelDispatch.m */; };
-		189275CF1D0C9E9800427592 /* BBChatBotDataModelOptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B81D0C9E9800427592 /* BBChatBotDataModelOptionData.m */; };
-		189275D01D0C9E9800427592 /* BBChatBotDataModelOptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275B81D0C9E9800427592 /* BBChatBotDataModelOptionData.m */; };
-		189275D11D0C9E9800427592 /* BBChatBotDataModelStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275BA1D0C9E9800427592 /* BBChatBotDataModelStatement.m */; };
-		189275D21D0C9E9800427592 /* BBChatBotDataModelStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275BA1D0C9E9800427592 /* BBChatBotDataModelStatement.m */; };
-		189275D31D0C9E9800427592 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275BC1D0C9E9800427592 /* BBChatBotDataModelTalkChat.m */; };
-		189275D41D0C9E9800427592 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275BC1D0C9E9800427592 /* BBChatBotDataModelTalkChat.m */; };
-		189275D51D0C9E9800427592 /* BBChatBotDataModelV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275BE1D0C9E9800427592 /* BBChatBotDataModelV2.m */; };
-		189275D61D0C9E9800427592 /* BBChatBotDataModelV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275BE1D0C9E9800427592 /* BBChatBotDataModelV2.m */; };
-		189275D71D0C9E9800427592 /* BBMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C01D0C9E9800427592 /* BBMember.m */; };
-		189275D81D0C9E9800427592 /* BBMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C01D0C9E9800427592 /* BBMember.m */; };
-		189275D91D0C9E9800427592 /* BBOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C21D0C9E9800427592 /* BBOption.m */; };
-		189275DA1D0C9E9800427592 /* BBOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C21D0C9E9800427592 /* BBOption.m */; };
-		189275DB1D0C9E9800427592 /* BBPossibleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C41D0C9E9800427592 /* BBPossibleElement.m */; };
-		189275DC1D0C9E9800427592 /* BBPossibleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C41D0C9E9800427592 /* BBPossibleElement.m */; };
-		189275DD1D0C9E9800427592 /* BBSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C61D0C9E9800427592 /* BBSource.m */; };
-		189275DE1D0C9E9800427592 /* BBSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C61D0C9E9800427592 /* BBSource.m */; };
-		189275DF1D0C9E9800427592 /* BBSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C81D0C9E9800427592 /* BBSpeaker.m */; };
-		189275E01D0C9E9800427592 /* BBSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 189275C81D0C9E9800427592 /* BBSpeaker.m */; };
+		1875720A1D1D7561007D99CC /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */; };
+		1875720B1D1D756B007D99CC /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */; };
+		188F3B8B1D1C478200E98DB6 /* BBAskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B741D1C478200E98DB6 /* BBAskDataModel.m */; };
+		188F3B8D1D1C478200E98DB6 /* BBChatBotDataModelDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B781D1C478200E98DB6 /* BBChatBotDataModelDispatch.m */; };
+		188F3B8E1D1C478200E98DB6 /* BBChatBotDataModelOptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B7A1D1C478200E98DB6 /* BBChatBotDataModelOptionData.m */; };
+		188F3B8F1D1C478200E98DB6 /* BBChatBotDataModelStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B7C1D1C478200E98DB6 /* BBChatBotDataModelStatement.m */; };
+		188F3B901D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B7E1D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m */; };
+		188F3B911D1C478200E98DB6 /* BBChatBotDataModelV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B801D1C478200E98DB6 /* BBChatBotDataModelV2.m */; };
+		188F3B921D1C478200E98DB6 /* BBMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B821D1C478200E98DB6 /* BBMember.m */; };
+		188F3B941D1C478200E98DB6 /* BBPossibleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B861D1C478200E98DB6 /* BBPossibleElement.m */; };
+		188F3B951D1C478200E98DB6 /* BBSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B881D1C478200E98DB6 /* BBSource.m */; };
+		188F3B961D1C478200E98DB6 /* BBSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B8A1D1C478200E98DB6 /* BBSpeaker.m */; };
+		188F3B9A1D1C493E00E98DB6 /* BBLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */; };
+		188F3B9B1D1C494B00E98DB6 /* BBLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */; };
 		189EA69F1D0CA7360014B384 /* BBConstantsTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */; };
 		189EA6A01D0CA73B0014B384 /* BBConstantsTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */; };
 		18DC639E1D0C7D9600F9DFB6 /* OptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC63981D0C7D9600F9DFB6 /* OptionsTableViewCell.m */; };
@@ -258,34 +250,36 @@
 
 /* Begin PBXFileReference section */
 		0FC5ACC20C5F0E2ECF469E3D /* Pods-JSQMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSQMessages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSQMessages/Pods-JSQMessages.debug.xcconfig"; sourceTree = "<group>"; };
+		184A2D2F1D1D73E000369A4F /* BBOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBOption.h; path = Babylon/Options/BBOption.h; sourceTree = "<group>"; };
+		184A2D301D1D73E000369A4F /* BBOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBOption.m; path = Babylon/Options/BBOption.m; sourceTree = "<group>"; };
 		185717291D0188AC00F26397 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		1857172A1D0188AC00F26397 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		1857172C1D018D9F00F26397 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		1857172D1D018D9F00F26397 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
-		189275B11D0C9E9800427592 /* BBAskDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAskDataModel.h; sourceTree = "<group>"; };
-		189275B21D0C9E9800427592 /* BBAskDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAskDataModel.m; sourceTree = "<group>"; };
-		189275B31D0C9E9800427592 /* BBChatBotDataModelChosenOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelChosenOption.h; sourceTree = "<group>"; };
-		189275B41D0C9E9800427592 /* BBChatBotDataModelChosenOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelChosenOption.m; sourceTree = "<group>"; };
-		189275B51D0C9E9800427592 /* BBChatBotDataModelDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelDispatch.h; sourceTree = "<group>"; };
-		189275B61D0C9E9800427592 /* BBChatBotDataModelDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelDispatch.m; sourceTree = "<group>"; };
-		189275B71D0C9E9800427592 /* BBChatBotDataModelOptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelOptionData.h; sourceTree = "<group>"; };
-		189275B81D0C9E9800427592 /* BBChatBotDataModelOptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelOptionData.m; sourceTree = "<group>"; };
-		189275B91D0C9E9800427592 /* BBChatBotDataModelStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelStatement.h; sourceTree = "<group>"; };
-		189275BA1D0C9E9800427592 /* BBChatBotDataModelStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelStatement.m; sourceTree = "<group>"; };
-		189275BB1D0C9E9800427592 /* BBChatBotDataModelTalkChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelTalkChat.h; sourceTree = "<group>"; };
-		189275BC1D0C9E9800427592 /* BBChatBotDataModelTalkChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelTalkChat.m; sourceTree = "<group>"; };
-		189275BD1D0C9E9800427592 /* BBChatBotDataModelV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelV2.h; sourceTree = "<group>"; };
-		189275BE1D0C9E9800427592 /* BBChatBotDataModelV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelV2.m; sourceTree = "<group>"; };
-		189275BF1D0C9E9800427592 /* BBMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMember.h; sourceTree = "<group>"; };
-		189275C01D0C9E9800427592 /* BBMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMember.m; sourceTree = "<group>"; };
-		189275C11D0C9E9800427592 /* BBOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBOption.h; sourceTree = "<group>"; };
-		189275C21D0C9E9800427592 /* BBOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBOption.m; sourceTree = "<group>"; };
-		189275C31D0C9E9800427592 /* BBPossibleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPossibleElement.h; sourceTree = "<group>"; };
-		189275C41D0C9E9800427592 /* BBPossibleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPossibleElement.m; sourceTree = "<group>"; };
-		189275C51D0C9E9800427592 /* BBSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSource.h; sourceTree = "<group>"; };
-		189275C61D0C9E9800427592 /* BBSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSource.m; sourceTree = "<group>"; };
-		189275C71D0C9E9800427592 /* BBSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSpeaker.h; sourceTree = "<group>"; };
-		189275C81D0C9E9800427592 /* BBSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSpeaker.m; sourceTree = "<group>"; };
+		187572081D1D7561007D99CC /* BBChatBotDataModelChosenOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBChatBotDataModelChosenOption.h; path = Babylon/Options/BBChatBotDataModelChosenOption.h; sourceTree = "<group>"; };
+		187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBChatBotDataModelChosenOption.m; path = Babylon/Options/BBChatBotDataModelChosenOption.m; sourceTree = "<group>"; };
+		188F3B731D1C478200E98DB6 /* BBAskDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAskDataModel.h; sourceTree = "<group>"; };
+		188F3B741D1C478200E98DB6 /* BBAskDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAskDataModel.m; sourceTree = "<group>"; };
+		188F3B771D1C478200E98DB6 /* BBChatBotDataModelDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelDispatch.h; sourceTree = "<group>"; };
+		188F3B781D1C478200E98DB6 /* BBChatBotDataModelDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelDispatch.m; sourceTree = "<group>"; };
+		188F3B791D1C478200E98DB6 /* BBChatBotDataModelOptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelOptionData.h; sourceTree = "<group>"; };
+		188F3B7A1D1C478200E98DB6 /* BBChatBotDataModelOptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelOptionData.m; sourceTree = "<group>"; };
+		188F3B7B1D1C478200E98DB6 /* BBChatBotDataModelStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelStatement.h; sourceTree = "<group>"; };
+		188F3B7C1D1C478200E98DB6 /* BBChatBotDataModelStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelStatement.m; sourceTree = "<group>"; };
+		188F3B7D1D1C478200E98DB6 /* BBChatBotDataModelTalkChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelTalkChat.h; sourceTree = "<group>"; };
+		188F3B7E1D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelTalkChat.m; sourceTree = "<group>"; };
+		188F3B7F1D1C478200E98DB6 /* BBChatBotDataModelV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChatBotDataModelV2.h; sourceTree = "<group>"; };
+		188F3B801D1C478200E98DB6 /* BBChatBotDataModelV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChatBotDataModelV2.m; sourceTree = "<group>"; };
+		188F3B811D1C478200E98DB6 /* BBMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMember.h; sourceTree = "<group>"; };
+		188F3B821D1C478200E98DB6 /* BBMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMember.m; sourceTree = "<group>"; };
+		188F3B851D1C478200E98DB6 /* BBPossibleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBPossibleElement.h; sourceTree = "<group>"; };
+		188F3B861D1C478200E98DB6 /* BBPossibleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBPossibleElement.m; sourceTree = "<group>"; };
+		188F3B871D1C478200E98DB6 /* BBSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSource.h; sourceTree = "<group>"; };
+		188F3B881D1C478200E98DB6 /* BBSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSource.m; sourceTree = "<group>"; };
+		188F3B891D1C478200E98DB6 /* BBSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSpeaker.h; sourceTree = "<group>"; };
+		188F3B8A1D1C478200E98DB6 /* BBSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSpeaker.m; sourceTree = "<group>"; };
+		188F3B981D1C493E00E98DB6 /* BBLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBLoadingViewController.h; path = Babylon/Loading/BBLoadingViewController.h; sourceTree = "<group>"; };
+		188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBLoadingViewController.m; path = Babylon/Loading/BBLoadingViewController.m; sourceTree = "<group>"; };
 		189EA69D1D0CA7360014B384 /* BBConstantsTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstantsTemp.h; sourceTree = "<group>"; };
 		189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstantsTemp.m; sourceTree = "<group>"; };
 		18DC63971D0C7D9600F9DFB6 /* OptionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTableViewCell.h; sourceTree = "<group>"; };
@@ -563,45 +557,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		189275B01D0C9E9800427592 /* Babylon */ = {
+		188F3B721D1C478200E98DB6 /* Babylon */ = {
 			isa = PBXGroup;
 			children = (
-				189275B11D0C9E9800427592 /* BBAskDataModel.h */,
-				189275B21D0C9E9800427592 /* BBAskDataModel.m */,
-				189275B31D0C9E9800427592 /* BBChatBotDataModelChosenOption.h */,
-				189275B41D0C9E9800427592 /* BBChatBotDataModelChosenOption.m */,
-				189275B51D0C9E9800427592 /* BBChatBotDataModelDispatch.h */,
-				189275B61D0C9E9800427592 /* BBChatBotDataModelDispatch.m */,
-				189275B71D0C9E9800427592 /* BBChatBotDataModelOptionData.h */,
-				189275B81D0C9E9800427592 /* BBChatBotDataModelOptionData.m */,
-				189275B91D0C9E9800427592 /* BBChatBotDataModelStatement.h */,
-				189275BA1D0C9E9800427592 /* BBChatBotDataModelStatement.m */,
-				189275BB1D0C9E9800427592 /* BBChatBotDataModelTalkChat.h */,
-				189275BC1D0C9E9800427592 /* BBChatBotDataModelTalkChat.m */,
-				189275BD1D0C9E9800427592 /* BBChatBotDataModelV2.h */,
-				189275BE1D0C9E9800427592 /* BBChatBotDataModelV2.m */,
-				189275BF1D0C9E9800427592 /* BBMember.h */,
-				189275C01D0C9E9800427592 /* BBMember.m */,
-				189275C11D0C9E9800427592 /* BBOption.h */,
-				189275C21D0C9E9800427592 /* BBOption.m */,
-				189275C31D0C9E9800427592 /* BBPossibleElement.h */,
-				189275C41D0C9E9800427592 /* BBPossibleElement.m */,
-				189275C51D0C9E9800427592 /* BBSource.h */,
-				189275C61D0C9E9800427592 /* BBSource.m */,
-				189275C71D0C9E9800427592 /* BBSpeaker.h */,
-				189275C81D0C9E9800427592 /* BBSpeaker.m */,
+				188F3B731D1C478200E98DB6 /* BBAskDataModel.h */,
+				188F3B741D1C478200E98DB6 /* BBAskDataModel.m */,
+				188F3B771D1C478200E98DB6 /* BBChatBotDataModelDispatch.h */,
+				188F3B781D1C478200E98DB6 /* BBChatBotDataModelDispatch.m */,
+				188F3B791D1C478200E98DB6 /* BBChatBotDataModelOptionData.h */,
+				188F3B7A1D1C478200E98DB6 /* BBChatBotDataModelOptionData.m */,
+				188F3B7B1D1C478200E98DB6 /* BBChatBotDataModelStatement.h */,
+				188F3B7C1D1C478200E98DB6 /* BBChatBotDataModelStatement.m */,
+				188F3B7D1D1C478200E98DB6 /* BBChatBotDataModelTalkChat.h */,
+				188F3B7E1D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m */,
+				188F3B7F1D1C478200E98DB6 /* BBChatBotDataModelV2.h */,
+				188F3B801D1C478200E98DB6 /* BBChatBotDataModelV2.m */,
+				188F3B811D1C478200E98DB6 /* BBMember.h */,
+				188F3B821D1C478200E98DB6 /* BBMember.m */,
+				188F3B851D1C478200E98DB6 /* BBPossibleElement.h */,
+				188F3B861D1C478200E98DB6 /* BBPossibleElement.m */,
+				188F3B871D1C478200E98DB6 /* BBSource.h */,
+				188F3B881D1C478200E98DB6 /* BBSource.m */,
+				188F3B891D1C478200E98DB6 /* BBSpeaker.h */,
+				188F3B8A1D1C478200E98DB6 /* BBSpeaker.m */,
 			);
 			path = Babylon;
+			sourceTree = "<group>";
+		};
+		188F3B971D1C48E900E98DB6 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				188F3B981D1C493E00E98DB6 /* BBLoadingViewController.h */,
+				188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */,
+			);
+			name = Loading;
 			sourceTree = "<group>";
 		};
 		18DC63A21D0C7DA800F9DFB6 /* Options */ = {
 			isa = PBXGroup;
 			children = (
+				184A2D2F1D1D73E000369A4F /* BBOption.h */,
+				184A2D301D1D73E000369A4F /* BBOption.m */,
 				18DC63971D0C7D9600F9DFB6 /* OptionsTableViewCell.h */,
 				18DC63981D0C7D9600F9DFB6 /* OptionsTableViewCell.m */,
 				18DC63991D0C7D9600F9DFB6 /* OptionsTableViewCell.xib */,
 				18DC639A1D0C7D9600F9DFB6 /* OptionsTableViewController.h */,
 				18DC639B1D0C7D9600F9DFB6 /* OptionsTableViewController.m */,
+				187572081D1D7561007D99CC /* BBChatBotDataModelChosenOption.h */,
+				187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */,
 			);
 			name = Options;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 		7F0319341CFD9EF900BF4F79 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				188F3B721D1C478200E98DB6 /* Babylon */,
 				47E46B371CFF16C800D816CE /* JSON */,
 			);
 			path = "Data Models";
@@ -856,7 +860,6 @@
 		88A25F7619D8E01A00924534 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				189275B01D0C9E9800427592 /* Babylon */,
 				54271E3C1C905B9200294290 /* JSQAudioMediaItem.h */,
 				54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */,
 				88445B3E19E1B4470014F889 /* JSQLocationMediaItem.h */,
@@ -1009,6 +1012,7 @@
 		B4101CAA1CF6F87F005EF656 /* Babylon */ = {
 			isa = PBXGroup;
 			children = (
+				188F3B971D1C48E900E98DB6 /* Loading */,
 				18DC63A31D0C7DB100F9DFB6 /* Rating */,
 				18DC63A21D0C7DA800F9DFB6 /* Options */,
 				B4101CB21CF7015F005EF656 /* DotAnimationBuilder */,
@@ -1549,41 +1553,34 @@
 			files = (
 				88078A9D19D8FEB5005B4595 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				88A25FCE19D8E01A00924534 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
+				1875720A1D1D7561007D99CC /* BBChatBotDataModelChosenOption.m in Sources */,
 				88A25FD119D8E01A00924534 /* JSQMessagesInputToolbar.m in Sources */,
 				88A25FCB19D8E01A00924534 /* JSQMessagesCollectionViewCell.m in Sources */,
 				88A25FBB19D8E01A00924534 /* JSQMessagesViewController.m in Sources */,
 				18DC63A01D0C7D9600F9DFB6 /* OptionsTableViewController.m in Sources */,
 				8885734D19DE55D000E89D20 /* NSUserDefaults+DemoSettings.m in Sources */,
 				544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */,
-				189275CB1D0C9E9800427592 /* BBChatBotDataModelChosenOption.m in Sources */,
 				B4DCC9651CE0DD5700E8A568 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */,
 				883C11781A09FB100092A16D /* JSQMessagesCellTextView.m in Sources */,
 				88A25FB919D8E01A00924534 /* UIView+JSQMessages.m in Sources */,
+				184A2D311D1D73E000369A4F /* BBOption.m in Sources */,
 				189EA69F1D0CA7360014B384 /* BBConstantsTemp.m in Sources */,
 				88A25FCA19D8E01A00924534 /* JSQMessagesCollectionView.m in Sources */,
 				88A25FD219D8E01A00924534 /* JSQMessagesLabel.m in Sources */,
 				88445B4019E1B4470014F889 /* JSQLocationMediaItem.m in Sources */,
 				88A25FC619D8E01A00924534 /* JSQMessagesAvatarImage.m in Sources */,
 				88A25FD519D8E01A00924534 /* JSQMessagesToolbarContentView.m in Sources */,
-				189275D51D0C9E9800427592 /* BBChatBotDataModelV2.m in Sources */,
 				88A25FC119D8E01A00924534 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
 				8885734A19DE540400E89D20 /* DemoSettingsViewController.m in Sources */,
 				B4101CAD1CF6F8D7005EF656 /* BBMessagesTypingIndicatorFooterView.m in Sources */,
-				189275DB1D0C9E9800427592 /* BBPossibleElement.m in Sources */,
 				88A25FC719D8E01A00924534 /* JSQMessagesBubbleImage.m in Sources */,
 				88A25FC519D8E01A00924534 /* JSQMessage.m in Sources */,
 				88A25FD719D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				88A25FD319D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
-				189275D71D0C9E9800427592 /* BBMember.m in Sources */,
 				88A25FC819D8E01A00924534 /* JSQPhotoMediaItem.m in Sources */,
-				189275CF1D0C9E9800427592 /* BBChatBotDataModelOptionData.m in Sources */,
 				88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
-				189275C91D0C9E9800427592 /* BBAskDataModel.m in Sources */,
-				189275CD1D0C9E9800427592 /* BBChatBotDataModelDispatch.m in Sources */,
-				189275D11D0C9E9800427592 /* BBChatBotDataModelStatement.m in Sources */,
 				88A25FB819D8E01A00924534 /* UIImage+JSQMessages.m in Sources */,
 				88A25FBF19D8E01A00924534 /* JSQMessagesTimestampFormatter.m in Sources */,
-				189275D91D0C9E9800427592 /* BBOption.m in Sources */,
 				88A25FE019D8E0C400924534 /* DemoModelData.m in Sources */,
 				88A25F3C19D8DF2500924534 /* main.m in Sources */,
 				88A25F3719D8DF2500924534 /* AppDelegate.m in Sources */,
@@ -1604,14 +1601,12 @@
 				7FF24AA21CF6F99200025AFA /* JSQViewMediaItem.m in Sources */,
 				88A25FC019D8E01A00924534 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				88A25FC219D8E01A00924534 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
-				189275D31D0C9E9800427592 /* BBChatBotDataModelTalkChat.m in Sources */,
 				88A25FE119D8E0C400924534 /* TableViewController.m in Sources */,
 				88A25FBD19D8E01A00924534 /* JSQMessagesAvatarImageFactory.m in Sources */,
-				189275DF1D0C9E9800427592 /* BBSpeaker.m in Sources */,
 				88A25FB519D8E01A00924534 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
-				189275DD1D0C9E9800427592 /* BBSource.m in Sources */,
 				8873B60C1AB7B244006DF9AC /* NSBundle+JSQMessages.m in Sources */,
 				88A25FD019D8E01A00924534 /* JSQMessagesComposerTextView.m in Sources */,
+				188F3B9A1D1C493E00E98DB6 /* BBLoadingViewController.m in Sources */,
 				88A25FC319D8E01A00924534 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				18DC63A11D0C7D9600F9DFB6 /* RatingView.m in Sources */,
 			);
@@ -1658,7 +1653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189275D01D0C9E9800427592 /* BBChatBotDataModelOptionData.m in Sources */,
+				188F3B8E1D1C478200E98DB6 /* BBChatBotDataModelOptionData.m in Sources */,
 				9F4A61B61CF5F94600A808A7 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				9F4A61AB1CF5F93300A808A7 /* JSQPhotoMediaItem.m in Sources */,
 				1857172E1D018D9F00F26397 /* MainNavigationController.m in Sources */,
@@ -1667,20 +1662,19 @@
 				7F03195F1CFD9F0400BF4F79 /* ChatViewHelper.m in Sources */,
 				9F4A61AF1CF5F94600A808A7 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				B4EED5011CFEF1FE00F9EC99 /* HomeViewController.m in Sources */,
-				189275CC1D0C9E9800427592 /* BBChatBotDataModelChosenOption.m in Sources */,
 				9F4A618F1CF5F86A00A808A7 /* JSQMessagesViewController.m in Sources */,
 				9F4A61A51CF5F91700A808A7 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				9F4A61B51CF5F94600A808A7 /* JSQMessagesCollectionViewCellMenuOptions.m in Sources */,
 				9F4A61B41CF5F94600A808A7 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
-				189275CA1D0C9E9800427592 /* BBAskDataModel.m in Sources */,
+				188F3B8B1D1C478200E98DB6 /* BBAskDataModel.m in Sources */,
 				B4101CBE1CF7079D005EF656 /* BBMessagesTypingIndicatorFooterView.m in Sources */,
 				9F4A61A41CF5F91700A808A7 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				7F0319431CFD9EF900BF4F79 /* ApiManagerChatBot.m in Sources */,
 				9F4A61A21CF5F91700A808A7 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				B4FA1BE51CF5B3260066D8B1 /* AppDelegate.m in Sources */,
 				B4FA1BE21CF5B3260066D8B1 /* main.m in Sources */,
-				189275DC1D0C9E9800427592 /* BBPossibleElement.m in Sources */,
-				189275D81D0C9E9800427592 /* BBMember.m in Sources */,
+				188F3B941D1C478200E98DB6 /* BBPossibleElement.m in Sources */,
+				188F3B921D1C478200E98DB6 /* BBMember.m in Sources */,
 				B4EED4FD1CFED0D600F9EC99 /* BBWebSocketsChannel.m in Sources */,
 				9F4A61931CF5F89100A808A7 /* NSBundle+JSQMessages.m in Sources */,
 				9F4A61AE1CF5F94600A808A7 /* JSQMessagesCollectionView.m in Sources */,
@@ -1693,25 +1687,27 @@
 				9F4A619E1CF5F8A400A808A7 /* JSQMessagesTimestampFormatter.m in Sources */,
 				9F4A61A11CF5F91700A808A7 /* JSQAudioMediaViewAttributes.m in Sources */,
 				9F4A61A91CF5F93300A808A7 /* JSQMessage.m in Sources */,
-				189275D41D0C9E9800427592 /* BBChatBotDataModelTalkChat.m in Sources */,
+				188F3B901D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m in Sources */,
 				1857172B1D0188AC00F26397 /* MainTabBarController.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */,
 				B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
+				184A2D321D1D73E500369A4F /* BBOption.m in Sources */,
 				8CB203941D05C2EA00296E49 /* MonitorViewController.m in Sources */,
 				7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */,
-				189275D21D0C9E9800427592 /* BBChatBotDataModelStatement.m in Sources */,
+				188F3B8F1D1C478200E98DB6 /* BBChatBotDataModelStatement.m in Sources */,
 				189EA6A01D0CA73B0014B384 /* BBConstantsTemp.m in Sources */,
 				9F4A619B1CF5F8A400A808A7 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				9F4A61AA1CF5F93300A808A7 /* JSQMessagesBubbleImage.m in Sources */,
 				9F4A61971CF5F89100A808A7 /* UIImage+JSQMessages.m in Sources */,
+				188F3B911D1C478200E98DB6 /* BBChatBotDataModelV2.m in Sources */,
 				B4EED4FC1CFED0D600F9EC99 /* BBPubNubClient.m in Sources */,
-				189275D61D0C9E9800427592 /* BBChatBotDataModelV2.m in Sources */,
 				9F4A619C1CF5F8A400A808A7 /* JSQMessagesBubbleImageFactory.m in Sources */,
+				188F3B9B1D1C494B00E98DB6 /* BBLoadingViewController.m in Sources */,
 				9F4A61961CF5F89100A808A7 /* UIDevice+JSQMessages.m in Sources */,
-				189275DE1D0C9E9800427592 /* BBSource.m in Sources */,
+				188F3B951D1C478200E98DB6 /* BBSource.m in Sources */,
 				9F4A61A31CF5F91700A808A7 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
-				189275E01D0C9E9800427592 /* BBSpeaker.m in Sources */,
+				188F3B961D1C478200E98DB6 /* BBSpeaker.m in Sources */,
 				9F4A61B71CF5F94600A808A7 /* JSQMessagesToolbarContentView.m in Sources */,
 				7F03195E1CFD9F0400BF4F79 /* ChatViewController.m in Sources */,
 				9F4A61B81CF5F94600A808A7 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
@@ -1720,16 +1716,16 @@
 				B4101CBF1CF707AD005EF656 /* BBDotActivityIndicatorView.m in Sources */,
 				9F4A61B01CF5F94600A808A7 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				9F4A61A01CF5F90300A808A7 /* JSQMessagesCollectionViewCell.m in Sources */,
+				1875720B1D1D756B007D99CC /* BBChatBotDataModelChosenOption.m in Sources */,
 				9F4A618D1CF5F82A00A808A7 /* JSQMessagesAvatarImage.m in Sources */,
 				9F4A61911CF5F88700A808A7 /* UIView+JSQMessages.m in Sources */,
 				9F4A61B31CF5F94600A808A7 /* JSQMessagesLabel.m in Sources */,
 				9F4A61A81CF5F93300A808A7 /* JSQMediaItem.m in Sources */,
 				9F4A61901CF5F88200A808A7 /* JSQMessagesKeyboardController.m in Sources */,
 				9F4A61A61CF5F93300A808A7 /* JSQAudioMediaItem.m in Sources */,
-				189275DA1D0C9E9800427592 /* BBOption.m in Sources */,
 				18DC63A51D0C86E200F9DFB6 /* OptionsTableViewCell.m in Sources */,
 				9F4A61AD1CF5F94600A808A7 /* JSQMessagesCellTextView.m in Sources */,
-				189275CE1D0C9E9800427592 /* BBChatBotDataModelDispatch.m in Sources */,
+				188F3B8D1D1C478200E98DB6 /* BBChatBotDataModelDispatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

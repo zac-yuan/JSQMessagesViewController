@@ -44,6 +44,16 @@
     return self;
 }
 
+- (instancetype)initWithImageAndProgressBar:(UIImage *)image
+{
+    self = [super init];
+    if (self) {
+        _image = [image copy];
+        _cachedImageView = nil;
+    }
+    return self;
+}
+
 - (void)clearCachedMediaViews
 {
     [super clearCachedMediaViews];
@@ -73,13 +83,17 @@
     }
     
     if (self.cachedImageView == nil) {
+        
         CGSize size = [self mediaViewDisplaySize];
+        
         UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
         imageView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
+        
         [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:imageView isOutgoing:self.appliesMediaViewMaskAsOutgoing];
         self.cachedImageView = imageView;
+        
     }
     
     return self.cachedImageView;

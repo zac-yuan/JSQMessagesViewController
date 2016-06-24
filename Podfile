@@ -7,6 +7,7 @@ use_frameworks!
 
 target :JSQMessages do
     pod 'JSQSystemSoundPlayer', '~> 2.0'
+    pod 'ios-foundation'
 end
 
 target :BabylonBotDemo do
