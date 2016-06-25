@@ -45,6 +45,7 @@ typedef void (^JSQLocationMediaItemCompletionBlock)(void);
  */
 @property (readonly, nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSString *searchType;
+@property (strong, nonatomic) NSString *placeId;
 
 /**
  *  Initializes and returns a location media item object having the given location.
