@@ -30,8 +30,6 @@
 		18DC639E1D0C7D9600F9DFB6 /* OptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC63981D0C7D9600F9DFB6 /* OptionsTableViewCell.m */; };
 		18DC639F1D0C7D9600F9DFB6 /* OptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DC63991D0C7D9600F9DFB6 /* OptionsTableViewCell.xib */; };
 		18DC63A01D0C7D9600F9DFB6 /* OptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC639B1D0C7D9600F9DFB6 /* OptionsTableViewController.m */; };
-		18DC63A11D0C7D9600F9DFB6 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC639D1D0C7D9600F9DFB6 /* RatingView.m */; };
-		18DC63A41D0C86DA00F9DFB6 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC639D1D0C7D9600F9DFB6 /* RatingView.m */; };
 		18DC63A51D0C86E200F9DFB6 /* OptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC63981D0C7D9600F9DFB6 /* OptionsTableViewCell.m */; };
 		18DC63A61D0C86E700F9DFB6 /* OptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DC63991D0C7D9600F9DFB6 /* OptionsTableViewCell.xib */; };
 		18DC63A71D0C86F000F9DFB6 /* OptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC639B1D0C7D9600F9DFB6 /* OptionsTableViewController.m */; };
@@ -44,6 +42,8 @@
 		54271E3E1C905B9200294290 /* JSQAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3D1C905B9200294290 /* JSQAudioMediaItem.m */; };
 		54271E401C905D1600294290 /* JSQAudioMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */; };
 		544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */; };
+		617970F41D244D5D0070FEA4 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617970F31D244D5D0070FEA4 /* RatingView.swift */; };
+		61F0648A1D24591E00408D33 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617970F31D244D5D0070FEA4 /* RatingView.swift */; };
 		7F0319431CFD9EF900BF4F79 /* ApiManagerChatBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */; };
 		7F03195E1CFD9F0400BF4F79 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319541CFD9F0400BF4F79 /* ChatViewController.m */; };
 		7F03195F1CFD9F0400BF4F79 /* ChatViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319561CFD9F0400BF4F79 /* ChatViewHelper.m */; };
@@ -287,8 +287,6 @@
 		18DC63991D0C7D9600F9DFB6 /* OptionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsTableViewCell.xib; sourceTree = "<group>"; };
 		18DC639A1D0C7D9600F9DFB6 /* OptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTableViewController.h; sourceTree = "<group>"; };
 		18DC639B1D0C7D9600F9DFB6 /* OptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTableViewController.m; sourceTree = "<group>"; };
-		18DC639C1D0C7D9600F9DFB6 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
-		18DC639D1D0C7D9600F9DFB6 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		1F0EFE0E1AC23D7E003FF3DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2BC496DC8070EB88DD918AF6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E46B381CFF16FB00D816CE /* ask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ask.json; path = Models/JSON/ask.json; sourceTree = "<group>"; };
@@ -300,6 +298,8 @@
 		54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItemTests.m; sourceTree = "<group>"; };
 		544A321F1CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaViewAttributes.h; sourceTree = "<group>"; };
 		544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaViewAttributes.m; sourceTree = "<group>"; };
+		617970F21D244D5C0070FEA4 /* BabylonBotDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BabylonBotDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		617970F31D244D5D0070FEA4 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		7F03192C1CFD9EF900BF4F79 /* ApiManagerChatBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManagerChatBot.h; sourceTree = "<group>"; };
 		7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiManagerChatBot.m; sourceTree = "<group>"; };
 		7F0319531CFD9F0400BF4F79 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
@@ -612,8 +612,6 @@
 		18DC63A31D0C7DB100F9DFB6 /* Rating */ = {
 			isa = PBXGroup;
 			children = (
-				18DC639C1D0C7D9600F9DFB6 /* RatingView.h */,
-				18DC639D1D0C7D9600F9DFB6 /* RatingView.m */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -1071,6 +1069,7 @@
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
 			isa = PBXGroup;
 			children = (
+				617970F31D244D5D0070FEA4 /* RatingView.swift */,
 				7F03192B1CFD9EF900BF4F79 /* Api */,
 				7F03194E1CFD9F0400BF4F79 /* Controllers */,
 				7F0319661CFD9F4F00BF4F79 /* Storyboards */,
@@ -1079,6 +1078,7 @@
 				B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */,
 				B4FA1BF11CF5B3260066D8B1 /* Info.plist */,
 				B4FA1BE01CF5B3260066D8B1 /* Supporting Files */,
+				617970F21D244D5C0070FEA4 /* BabylonBotDemo-Bridging-Header.h */,
 			);
 			path = BabylonBotDemo;
 			sourceTree = "<group>";
@@ -1235,6 +1235,7 @@
 		88A25EFA19D8DEC400924534 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Hexed Bits";
 				TargetAttributes = {
@@ -1592,6 +1593,7 @@
 				88A25FCC19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				88A25FBE19D8E01A00924534 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				B4101CB51CF701EA005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
+				61F0648A1D24591E00408D33 /* RatingView.swift in Sources */,
 				18DC639E1D0C7D9600F9DFB6 /* OptionsTableViewCell.m in Sources */,
 				88A25FDF19D8E0C400924534 /* DemoMessagesViewController.m in Sources */,
 				B4101CB91CF702C5005EF656 /* BBDotActivityIndicatorView.m in Sources */,
@@ -1608,7 +1610,6 @@
 				88A25FD019D8E01A00924534 /* JSQMessagesComposerTextView.m in Sources */,
 				188F3B9A1D1C493E00E98DB6 /* BBLoadingViewController.m in Sources */,
 				88A25FC319D8E01A00924534 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
-				18DC63A11D0C7D9600F9DFB6 /* RatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,7 +1658,6 @@
 				9F4A61B61CF5F94600A808A7 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				9F4A61AB1CF5F93300A808A7 /* JSQPhotoMediaItem.m in Sources */,
 				1857172E1D018D9F00F26397 /* MainNavigationController.m in Sources */,
-				18DC63A41D0C86DA00F9DFB6 /* RatingView.m in Sources */,
 				9F4A61AC1CF5F93300A808A7 /* JSQVideoMediaItem.m in Sources */,
 				7F03195F1CFD9F0400BF4F79 /* ChatViewHelper.m in Sources */,
 				9F4A61AF1CF5F94600A808A7 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
@@ -1688,6 +1688,7 @@
 				9F4A61A11CF5F91700A808A7 /* JSQAudioMediaViewAttributes.m in Sources */,
 				9F4A61A91CF5F93300A808A7 /* JSQMessage.m in Sources */,
 				188F3B901D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m in Sources */,
+				617970F41D244D5D0070FEA4 /* RatingView.swift in Sources */,
 				1857172B1D0188AC00F26397 /* MainTabBarController.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */,
@@ -1867,6 +1868,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/JSQMessagesDemo/Info.plist";
@@ -1876,6 +1878,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JSQMessagesViewController/Views/JSQMessages-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1886,6 +1890,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/JSQMessagesDemo/Info.plist";
@@ -1895,6 +1900,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JSQMessagesViewController/Views/JSQMessages-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1936,6 +1942,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1946,6 +1953,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BabylonBotDemo/BabylonBotDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1955,6 +1964,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1966,6 +1976,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.babylonpartners.BabylonBotDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BabylonBotDemo/BabylonBotDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};

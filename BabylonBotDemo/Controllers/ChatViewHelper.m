@@ -5,7 +5,8 @@
 #import "JSQViewMediaItem.h"
 #import "OptionsTableViewController.h"
 #import "BBOption.h"
-#import "RatingView.h"
+#import "BabylonBotDemo-Swift.h"
+@protocol RatingViewDelegate;
 @import ios_maps;
 
 @interface ChatViewHelper () <OptionsDelegate, RatingViewDelegate>
