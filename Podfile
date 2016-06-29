@@ -15,6 +15,7 @@ target :BabylonBotDemo do
     pod 'JSQSystemSoundPlayer', '~> 2.0'
     pod 'AFNetworking', '~> 2.0'
     pod 'AFNetworkActivityLogger'
+    pod 'AfroLayout'
     pod 'ios-maps'
     pod 'PubNub'
     pod 'OHHTTPStubs'
