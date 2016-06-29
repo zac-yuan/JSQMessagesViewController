@@ -1,33 +1,33 @@
+////
+////  RatingViewController.h
+////  JSQMessages
+////
+////  Created by BabylonHealth on 01/06/2016.
+////  Copyright © 2016 Hexed Bits. All rights reserved.
+////
 //
-//  RatingViewController.h
-//  JSQMessages
+//#import <UIKit/UIKit.h>
 //
-//  Created by BabylonHealth on 01/06/2016.
-//  Copyright © 2016 Hexed Bits. All rights reserved.
+//@class RatingView;
+//@class JSQMessage;
 //
-
-#import <UIKit/UIKit.h>
-
-@class RatingView;
-@class JSQMessage;
-
-@protocol RatingViewDelegate <NSObject>
-
-/**
- @param rating The start rating (ranges from 1 - n)
- */
--(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating;
-
-@end
-
-@interface RatingView : UIView
-
-@property (nonatomic, weak) id<RatingViewDelegate>delegate;
-@property (nonatomic, weak) JSQMessage *message;
-
--(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
-                              maxWidth:(CGFloat)maxWidth
-                         initialRating:(NSInteger)rating;
--(void)setRating:(NSInteger)rating;
-
-@end
+//@protocol RatingViewDelegate <NSObject>
+//
+///**
+// @param rating The start rating (ranges from 1 - n)
+// */
+//-(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating;
+//
+//@end
+//
+//@interface RatingView : UIView
+//
+//@property (nonatomic, weak) id<RatingViewDelegate>delegate;
+//@property (nonatomic, weak) JSQMessage *message;
+//
+//-(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
+//                              maxWidth:(CGFloat)maxWidth
+//                         initialRating:(NSInteger)rating;
+//-(void)setRating:(NSInteger)rating;
+//
+//@end

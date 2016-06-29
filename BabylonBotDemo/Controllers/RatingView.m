@@ -1,3 +1,4 @@
+/*
 //
 //  RatingViewController.m
 //  JSQMessages
@@ -85,6 +86,8 @@
 
 -(UIButton *)createButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor greenColor];
+    
     [button setBackgroundImage:[UIImage imageNamed:@"rating-star-unselected"] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"rating-star-selected"] forState:UIControlStateSelected];
     if([self respondsToSelector:@selector(buttonPressed:)]) {
@@ -130,4 +133,4 @@
     }
 }
 
-@end
+@end*/
