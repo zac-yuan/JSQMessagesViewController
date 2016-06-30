@@ -13,6 +13,7 @@
 @property (nonatomic, assign) NSInteger numberOfButtons;
 @property (nonatomic, strong) NSArray *buttons;
 @property (nonatomic, assign) CGFloat maxWidth;
+@property (nonatomic, strong) UIView *container;
 
 @end
 
@@ -21,8 +22,13 @@
 -(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
                               maxWidth:(CGFloat)maxWidth
                          initialRating:(NSInteger)rating {
+    
     self = [super init];
+    
     if(self) {
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        [self setup];
+        
         NSAssert(numberOfButtons > 1, @"numberOfButtons must be > 1");
         NSAssert(maxWidth > 0, @"maxWidth must be > 0");
         NSAssert(rating > 0 && rating <= numberOfButtons, @"rating must be > 0 and <= numberOfButtons");
@@ -42,6 +48,18 @@
     return self;
 }
 
+-(void)setup {
+    
+    NSLog(@"%@", [NSBundle mainBundle] );
+    
+    [NSBundle bunt]
+    
+    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"RatingView" owner:nil options:nil];
+    
+    self.container = [nibContents firstObject];
+    [self addSubview:self.container];
+}
+
 -(void)setupUiFromButtons:(NSArray *)buttons maxWidth:(CGFloat)maxWidth {
     CGFloat height = maxWidth / buttons.count;
     self.bounds = CGRectMake(0, 0, maxWidth + 5, height);
@@ -51,7 +69,7 @@
     UIButton *prevButton = nil;
     for(UIButton *button in buttons) {
         button.translatesAutoresizingMaskIntoConstraints = NO;
-        [self addSubview:button];
+        [self.container addSubview:button];
         
         if(prevButton) {
             // contrain to right of prev button
