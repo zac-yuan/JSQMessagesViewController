@@ -7,7 +7,7 @@
 //
 
 #import "RatingView.h"
-
+#import "JSQMessagesViewController.h"
 @interface RatingView ()
 
 @property (nonatomic, assign) NSInteger numberOfButtons;
@@ -28,36 +28,92 @@
     if(self) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
         [self setup];
+        self.container.translatesAutoresizingMaskIntoConstraints = NO;
         
         NSAssert(numberOfButtons > 1, @"numberOfButtons must be > 1");
         NSAssert(maxWidth > 0, @"maxWidth must be > 0");
         NSAssert(rating > 0 && rating <= numberOfButtons, @"rating must be > 0 and <= numberOfButtons");
-
+        
         self.numberOfButtons = numberOfButtons;
         self.maxWidth = maxWidth;
-       
+        
         NSArray *buttons = [self createButtons:numberOfButtons];
         for(NSInteger i = 0; i < buttons.count; i++) {
             UIButton *button = buttons[i];
             button.selected = (i <= (rating - 1));
         }
         self.buttons = buttons;
-     
-        [self setupUiFromButtons:buttons maxWidth:maxWidth];
+        
+        //[self setupUiFromButtons:buttons maxWidth:maxWidth];
     }
     return self;
 }
 
 -(void)setup {
-    
-    NSLog(@"%@", [NSBundle mainBundle] );
-    
-    [NSBundle bunt]
-    
-    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"RatingView" owner:nil options:nil];
+    NSArray *nibContents = [[NSBundle bundleForClass:[JSQMessagesViewController class]] loadNibNamed:@"RatingView" owner:nil options:nil];
     
     self.container = [nibContents firstObject];
     [self addSubview:self.container];
+    
+    NSLayoutConstraint* topConstrain =
+    [NSLayoutConstraint constraintWithItem:self
+                                 attribute:NSLayoutAttributeTop
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.container
+                                 attribute:NSLayoutAttributeTop
+                                multiplier:1.0
+                                  constant:10];
+    
+    NSLayoutConstraint* bottomConstrain =
+    [NSLayoutConstraint constraintWithItem:self
+                                 attribute:NSLayoutAttributeBottom
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.container
+                                 attribute:NSLayoutAttributeBottom
+                                multiplier:1.0
+                                  constant:10];
+    
+    
+    NSLayoutConstraint* trailConstrain =
+    [NSLayoutConstraint constraintWithItem:self
+                                 attribute:NSLayoutAttributeTrailing
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.container
+                                 attribute:NSLayoutAttributeTrailing
+                                multiplier:1.0
+                                  constant:10];
+    
+    NSLayoutConstraint* leadingConstrain =
+    [NSLayoutConstraint constraintWithItem:self
+                                 attribute:NSLayoutAttributeLeading
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.container
+                                 attribute:NSLayoutAttributeLeading
+                                multiplier:1.0
+                                  constant:-10];
+    
+    //container width and height
+    NSLayoutConstraint *myWidth =
+    [NSLayoutConstraint constraintWithItem:self
+                                 attribute:NSLayoutAttributeWidth
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.superview
+                                 attribute:NSLayoutAttributeWidth
+                                multiplier:1.f
+                                  constant:0];
+    NSLayoutConstraint *myHeight =
+    [NSLayoutConstraint constraintWithItem:self
+                                 attribute:NSLayoutAttributeHeight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.superview
+                                 attribute:NSLayoutAttributeHeight
+                                multiplier:1.f
+                                  constant:100];
+    
+    [self addConstraints:@[trailConstrain, leadingConstrain, topConstrain, bottomConstrain, myWidth, myHeight]];
+    
+    [self layoutIfNeeded];
+    
 }
 
 -(void)setupUiFromButtons:(NSArray *)buttons maxWidth:(CGFloat)maxWidth {
@@ -69,25 +125,60 @@
     UIButton *prevButton = nil;
     for(UIButton *button in buttons) {
         button.translatesAutoresizingMaskIntoConstraints = NO;
+        //        [self addSubview:button];
         [self.container addSubview:button];
         
-        if(prevButton) {
-            // contrain to right of prev button
-            NSDictionary *views = NSDictionaryOfVariableBindings(prevButton, button);
-            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[prevButton][button(==prevButton)]" options:0 metrics:nil views:views]];
-            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button(==prevButton)]|" options:0 metrics:nil views:views]];
-        } else {
+//        if(prevButton) {
+//            // contrain to right of prev button
+//            NSDictionary *views = NSDictionaryOfVariableBindings(prevButton, button);
+//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[prevButton][button(==prevButton)]" options:0 metrics:nil views:views]];
+//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button(==prevButton)]|" options:0 metrics:nil views:views]];
+//            
+//        } else {
             // constrain first button to left of view
             NSDictionary *views = NSDictionaryOfVariableBindings(button);
-            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]" options:0 metrics:nil views:views]];
-            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button]|" options:0 metrics:nil views:views]];
-            
-            NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:button attribute:NSLayoutAttributeHeight multiplier:1.f constant:0.f];
-            NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight multiplier:1.f constant:0.f];
-            [self addConstraints:@[width, height]];
-        }
+//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]" options:0 metrics:nil views:views]];
+//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button]|" options:0 metrics:nil views:views]];
+//
         
-        prevButton = button;
+        
+        
+        
+        
+        
+            //star width 25
+            NSLayoutConstraint *width =
+            [NSLayoutConstraint constraintWithItem:button
+                                         attribute:NSLayoutAttributeWidth
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                         attribute:NSLayoutAttributeWidth
+                                        multiplier:1.f
+                                          constant:25];
+            //star height 25
+            NSLayoutConstraint *height =
+            [NSLayoutConstraint constraintWithItem:button
+                                         attribute:NSLayoutAttributeHeight
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                         attribute:NSLayoutAttributeHeight
+                                        multiplier:1.f
+                                          constant:25];
+            
+            //star top padding
+            NSLayoutConstraint* topConstrain =
+            [NSLayoutConstraint constraintWithItem:button
+                                         attribute:NSLayoutAttributeTop
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:self.container
+                                         attribute:NSLayoutAttributeTop
+                                        multiplier:1.f
+                                          constant:38];
+            
+            [self addConstraints:@[width, height, topConstrain]];
+//        }
+        
+//        prevButton = button;
     }
     
     [self layoutIfNeeded];
