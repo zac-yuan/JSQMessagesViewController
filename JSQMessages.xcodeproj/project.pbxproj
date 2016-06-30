@@ -43,7 +43,6 @@
 		54271E401C905D1600294290 /* JSQAudioMediaItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */; };
 		544A32211CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */; };
 		617970F41D244D5D0070FEA4 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617970F31D244D5D0070FEA4 /* RatingView.swift */; };
-		61F0648A1D24591E00408D33 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617970F31D244D5D0070FEA4 /* RatingView.swift */; };
 		7F0319431CFD9EF900BF4F79 /* ApiManagerChatBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */; };
 		7F03195E1CFD9F0400BF4F79 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319541CFD9F0400BF4F79 /* ChatViewController.m */; };
 		7F03195F1CFD9F0400BF4F79 /* ChatViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0319561CFD9F0400BF4F79 /* ChatViewHelper.m */; };
@@ -298,8 +297,8 @@
 		54271E3F1C905D1600294290 /* JSQAudioMediaItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaItemTests.m; sourceTree = "<group>"; };
 		544A321F1CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSQAudioMediaViewAttributes.h; sourceTree = "<group>"; };
 		544A32201CB2EE380084BFC0 /* JSQAudioMediaViewAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSQAudioMediaViewAttributes.m; sourceTree = "<group>"; };
-		617970F21D244D5C0070FEA4 /* BabylonBotDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BabylonBotDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		617970F31D244D5D0070FEA4 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		617970F21D244D5C0070FEA4 /* BabylonBotDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BabylonBotDemo-Bridging-Header.h"; path = "../../BabylonBotDemo/BabylonBotDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		617970F31D244D5D0070FEA4 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingView.swift; path = ../../BabylonBotDemo/RatingView.swift; sourceTree = "<group>"; };
 		7F03192C1CFD9EF900BF4F79 /* ApiManagerChatBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManagerChatBot.h; sourceTree = "<group>"; };
 		7F03192D1CFD9EF900BF4F79 /* ApiManagerChatBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiManagerChatBot.m; sourceTree = "<group>"; };
 		7F0319531CFD9F0400BF4F79 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
@@ -612,6 +611,7 @@
 		18DC63A31D0C7DB100F9DFB6 /* Rating */ = {
 			isa = PBXGroup;
 			children = (
+				617970F31D244D5D0070FEA4 /* RatingView.swift */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -1010,6 +1010,7 @@
 		B4101CAA1CF6F87F005EF656 /* Babylon */ = {
 			isa = PBXGroup;
 			children = (
+				617970F21D244D5C0070FEA4 /* BabylonBotDemo-Bridging-Header.h */,
 				188F3B971D1C48E900E98DB6 /* Loading */,
 				18DC63A31D0C7DB100F9DFB6 /* Rating */,
 				18DC63A21D0C7DA800F9DFB6 /* Options */,
@@ -1069,7 +1070,6 @@
 		B4FA1BDF1CF5B3260066D8B1 /* BabylonBotDemo */ = {
 			isa = PBXGroup;
 			children = (
-				617970F31D244D5D0070FEA4 /* RatingView.swift */,
 				7F03192B1CFD9EF900BF4F79 /* Api */,
 				7F03194E1CFD9F0400BF4F79 /* Controllers */,
 				7F0319661CFD9F4F00BF4F79 /* Storyboards */,
@@ -1078,7 +1078,6 @@
 				B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */,
 				B4FA1BF11CF5B3260066D8B1 /* Info.plist */,
 				B4FA1BE01CF5B3260066D8B1 /* Supporting Files */,
-				617970F21D244D5C0070FEA4 /* BabylonBotDemo-Bridging-Header.h */,
 			);
 			path = BabylonBotDemo;
 			sourceTree = "<group>";
@@ -1593,7 +1592,6 @@
 				88A25FCC19D8E01A00924534 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				88A25FBE19D8E01A00924534 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				B4101CB51CF701EA005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
-				61F0648A1D24591E00408D33 /* RatingView.swift in Sources */,
 				18DC639E1D0C7D9600F9DFB6 /* OptionsTableViewCell.m in Sources */,
 				88A25FDF19D8E0C400924534 /* DemoMessagesViewController.m in Sources */,
 				B4101CB91CF702C5005EF656 /* BBDotActivityIndicatorView.m in Sources */,

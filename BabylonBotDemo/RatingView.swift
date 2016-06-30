@@ -8,7 +8,7 @@
 import UIKit
 import AfroLayout
 @objc public protocol RatingViewDelegate: class {
-    func selectedRating (selectedRating rating: NSInteger)
+    func ratingView(ratingView: RatingView, selectedRating rating: NSInteger)
 }
 
 public class RatingView: UIView {
@@ -34,9 +34,8 @@ public class RatingView: UIView {
     }
     
     func setRating(rating: NSInteger) {
-        
         if let delegate = self.delegate {
-            delegate.selectedRating(selectedRating: rating)
+            delegate.ratingView(self, selectedRating: rating)
         }
     }
     
@@ -62,7 +61,6 @@ public class RatingView: UIView {
         let index = self.buttons.indexOf(button)
         if let index = index {
             self.setRating(index)
-            self.selectedRating(selectedRating: index+1)
         }
     }
     
@@ -136,8 +134,8 @@ public class RatingView: UIView {
     }
 }
 
-extension RatingView: RatingViewDelegate {
-    public func selectedRating(selectedRating rating: NSInteger) {
-        
-    }
-}
+//extension RatingView: RatingViewDelegate {
+//    public func selectedRating(selectedRating rating: NSInteger) {
+//        
+//    }
+//}
