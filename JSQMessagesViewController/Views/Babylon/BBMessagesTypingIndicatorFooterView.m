@@ -47,7 +47,7 @@ const CGFloat kJSQMessagesTypingIndicatorFooterViewHeight = 46.0f;
     dotParms.animationDelay = 0.2;
     dotParms.animationDuration = 0.6;
     dotParms.animationFromValue = 0.3;
-    dotParms.defaultColor = [UIColor purpleColor];
+    dotParms.defaultColor = [UIColor colorWithRed:144.0f/255 green:19.0f/255 blue:254.0f/255 alpha:1.0f];
     dotParms.isDataValidationEnabled = YES;
     return dotParms;
 }
