@@ -8,11 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="5G9-Tt-KXv">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="443" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" --- rate answer ---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqu-ke-XbD">
-                    <rect key="frame" x="238" y="16" width="125" height="14"/>
+                    <rect key="frame" x="159" y="16" width="125" height="14"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="125" id="WTM-0P-OzX"/>
                     </constraints>
@@ -21,45 +21,54 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C1-S7-yo1">
-                    <rect key="frame" x="288" y="38" width="25" height="25"/>
+                    <rect key="frame" x="209" y="38" width="25" height="25"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.039219798659999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="67Q-9a-iXL"/>
                         <constraint firstAttribute="width" constant="25" id="uyL-PA-LE0"/>
                     </constraints>
-                    <state key="normal" image="rating-star-unselected"/>
+                    <state key="normal" image="star-rating-unselected.png"/>
+                    <state key="selected" image="star-rating-selected.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjo-Bo-q36">
-                    <rect key="frame" x="321" y="38" width="25" height="25"/>
+                    <rect key="frame" x="242" y="38" width="25" height="25"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.039219798659999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="hAr-yo-G3m"/>
                         <constraint firstAttribute="width" constant="25" id="k1V-UG-Yow"/>
                     </constraints>
-                    <state key="normal" image="rating-star-unselected"/>
+                    <state key="normal" image="star-rating-unselected.png"/>
+                    <state key="selected" image="star-rating-selected.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z5-SK-C3d">
-                    <rect key="frame" x="255" y="38" width="25" height="25"/>
+                    <rect key="frame" x="176" y="38" width="25" height="25"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.039219798659999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="Kzw-fw-hzr"/>
                         <constraint firstAttribute="width" constant="25" id="sJC-FF-W0h"/>
                     </constraints>
-                    <state key="normal" image="rating-star-unselected"/>
+                    <state key="normal" image="star-rating-unselected.png"/>
+                    <state key="selected" image="star-rating-selected.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCh-si-o4e">
-                    <rect key="frame" x="222" y="38" width="25" height="25"/>
+                    <rect key="frame" x="143" y="38" width="25" height="25"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.039219798659999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="buX-3A-zmn"/>
                         <constraint firstAttribute="width" constant="25" id="prw-V0-vsG"/>
                     </constraints>
-                    <state key="normal" image="rating-star-unselected"/>
+                    <state key="normal" image="star-rating-unselected.png"/>
+                    <state key="selected" image="star-rating-selected.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3B-nm-aW5">
-                    <rect key="frame" x="354" y="38" width="25" height="25"/>
+                    <rect key="frame" x="275" y="38" width="25" height="25"/>
                     <color key="backgroundColor" red="1" green="1" blue="0.039219798659999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="TlY-Yb-Ohr"/>
                         <constraint firstAttribute="height" constant="25" id="bdQ-ca-ZuP"/>
                     </constraints>
-                    <state key="normal" image="rating-star-unselected"/>
+                    <state key="normal" image="star-rating-unselected.png"/>
+                    <state key="selected" image="star-rating-selected.png"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,10 +86,12 @@
                 <constraint firstItem="3C1-S7-yo1" firstAttribute="top" secondItem="Zqu-ke-XbD" secondAttribute="bottom" constant="8" id="qJz-qI-tUr"/>
                 <constraint firstItem="Q3B-nm-aW5" firstAttribute="top" secondItem="Zqu-ke-XbD" secondAttribute="bottom" constant="8" id="xh2-Er-xjn"/>
             </constraints>
-            <point key="canvasLocation" x="240" y="39"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="161.5" y="-189.5"/>
         </view>
     </objects>
     <resources>
-        <image name="rating-star-unselected" width="500" height="480"/>
+        <image name="star-rating-selected.png" width="500" height="479"/>
+        <image name="star-rating-unselected.png" width="500" height="479"/>
     </resources>
 </document>

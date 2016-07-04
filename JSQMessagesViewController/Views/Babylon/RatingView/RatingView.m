@@ -13,7 +13,6 @@
 @property (nonatomic, assign) NSInteger numberOfButtons;
 @property (nonatomic, strong) NSArray *buttons;
 @property (nonatomic, assign) CGFloat maxWidth;
-@property (nonatomic, strong) UIView *container;
 
 @end
 
@@ -27,8 +26,9 @@
     
     if(self) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        [self setup];
         self.container.translatesAutoresizingMaskIntoConstraints = NO;
+        [self setup];
+        
         
         NSAssert(numberOfButtons > 1, @"numberOfButtons must be > 1");
         NSAssert(maxWidth > 0, @"maxWidth must be > 0");
@@ -54,66 +54,78 @@
     
     self.container = [nibContents firstObject];
     [self addSubview:self.container];
-    
-    NSLayoutConstraint* topConstrain =
-    [NSLayoutConstraint constraintWithItem:self
-                                 attribute:NSLayoutAttributeTop
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self.container
-                                 attribute:NSLayoutAttributeTop
-                                multiplier:1.0
-                                  constant:10];
-    
-    NSLayoutConstraint* bottomConstrain =
-    [NSLayoutConstraint constraintWithItem:self
-                                 attribute:NSLayoutAttributeBottom
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self.container
-                                 attribute:NSLayoutAttributeBottom
-                                multiplier:1.0
-                                  constant:10];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.container.translatesAutoresizingMaskIntoConstraints = NO;
     
     
-    NSLayoutConstraint* trailConstrain =
-    [NSLayoutConstraint constraintWithItem:self
-                                 attribute:NSLayoutAttributeTrailing
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self.container
-                                 attribute:NSLayoutAttributeTrailing
-                                multiplier:1.0
-                                  constant:10];
     
-    NSLayoutConstraint* leadingConstrain =
-    [NSLayoutConstraint constraintWithItem:self
-                                 attribute:NSLayoutAttributeLeading
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self.container
-                                 attribute:NSLayoutAttributeLeading
-                                multiplier:1.0
-                                  constant:-10];
+//    NSLayoutConstraint* topConstrain =
+//    [NSLayoutConstraint constraintWithItem:self
+//                                 attribute:NSLayoutAttributeTop
+//                                 relatedBy:NSLayoutRelationEqual
+//                                    toItem:self.container
+//                                 attribute:NSLayoutAttributeTop
+//                                multiplier:1.0
+//                                  constant:10];
+//    
+//    NSLayoutConstraint* bottomConstrain =
+//    [NSLayoutConstraint constraintWithItem:self
+//                                 attribute:NSLayoutAttributeBottom
+//                                 relatedBy:NSLayoutRelationEqual
+//                                    toItem:self.container
+//                                 attribute:NSLayoutAttributeBottom
+//                                multiplier:1.0
+//                                  constant:10];
+//    
+//    
+//    NSLayoutConstraint* trailConstrain =
+//    [NSLayoutConstraint constraintWithItem:self
+//                                 attribute:NSLayoutAttributeTrailing
+//                                 relatedBy:NSLayoutRelationEqual
+//                                    toItem:self.container
+//                                 attribute:NSLayoutAttributeTrailing
+//                                multiplier:1.0
+//                                  constant:10];
+//    
+//    NSLayoutConstraint* leadingConstrain =
+//    [NSLayoutConstraint constraintWithItem:self
+//                                 attribute:NSLayoutAttributeLeading
+//                                 relatedBy:NSLayoutRelationEqual
+//                                    toItem:self.container
+//                                 attribute:NSLayoutAttributeLeading
+//                                multiplier:1.0
+//                                  constant:-10];
     
     //container width and height
-    NSLayoutConstraint *myWidth =
-    [NSLayoutConstraint constraintWithItem:self
-                                 attribute:NSLayoutAttributeWidth
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self.superview
-                                 attribute:NSLayoutAttributeWidth
-                                multiplier:1.f
-                                  constant:0];
+//    NSLayoutConstraint *myWidth =
+//    [NSLayoutConstraint constraintWithItem:self.container
+//                                 attribute:NSLayoutAttributeWidth
+//                                 relatedBy:NSLayoutRelationEqual
+//                                    toItem:self
+//                                 attribute:NSLayoutAttributeWidth
+//                                multiplier:1.f
+//                                  constant:0];
+    
     NSLayoutConstraint *myHeight =
-    [NSLayoutConstraint constraintWithItem:self
+    [NSLayoutConstraint constraintWithItem:self.container
                                  attribute:NSLayoutAttributeHeight
                                  relatedBy:NSLayoutRelationEqual
-                                    toItem:self.superview
+                                    toItem:self
                                  attribute:NSLayoutAttributeHeight
                                 multiplier:1.f
                                   constant:100];
     
-    [self addConstraints:@[trailConstrain, leadingConstrain, topConstrain, bottomConstrain, myWidth, myHeight]];
+    //[self addConstraints:@[trailConstrain, leadingConstrain, topConstrain, bottomConstrain, myWidth, myHeight]];
+    //[self addConstraints:@[topConstrain, bottomConstrain]];
     
     [self layoutIfNeeded];
     
+    for (UIButton *button in self.container.subviews) {
+        if ([button isKindOfClass:[UIButton class]] ) {
+            [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        
+    }
 }
 
 -(void)setupUiFromButtons:(NSArray *)buttons maxWidth:(CGFloat)maxWidth {
@@ -229,6 +241,7 @@
 
 -(void)buttonPressed:(UIButton *)button {
     NSInteger rating = [self.buttons indexOfObject:button];
+    NSLog(@"%i", rating);
     if(rating == NSNotFound) {
         return;
     }

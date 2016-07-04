@@ -24,6 +24,7 @@
 
 @property (nonatomic, weak) id<RatingViewDelegate>delegate;
 @property (nonatomic, weak) JSQMessage *message;
+@property (nonatomic, weak) UIView *container;
 
 -(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
                               maxWidth:(CGFloat)maxWidth
