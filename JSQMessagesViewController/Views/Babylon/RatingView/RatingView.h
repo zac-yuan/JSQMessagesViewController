@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "JSQMessageMediaData.h"
 @class RatingView;
 @class JSQMessage;
 
@@ -20,15 +20,14 @@
 
 @end
 
-@interface RatingView : UIView
+@interface RatingView : UIView <JSQMessageMediaData>    
 
 @property (nonatomic, weak) id<RatingViewDelegate>delegate;
 @property (nonatomic, weak) JSQMessage *message;
-@property (nonatomic, weak) UIView *container;
 
 -(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
                               maxWidth:(CGFloat)maxWidth
                          initialRating:(NSInteger)rating;
 -(void)setRating:(NSInteger)rating;
-
+-(void)setup;
 @end

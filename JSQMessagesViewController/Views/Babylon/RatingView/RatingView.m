@@ -24,12 +24,12 @@
     
     self = [super init];
     
+    
+    [self setup];
+    
+    
     if(self) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        self.container.translatesAutoresizingMaskIntoConstraints = NO;
-        [self setup];
-        
-        
         NSAssert(numberOfButtons > 1, @"numberOfButtons must be > 1");
         NSAssert(maxWidth > 0, @"maxWidth must be > 0");
         NSAssert(rating > 0 && rating <= numberOfButtons, @"rating must be > 0 and <= numberOfButtons");
@@ -50,150 +50,13 @@
 }
 
 -(void)setup {
-    NSArray *nibContents = [[NSBundle bundleForClass:[JSQMessagesViewController class]] loadNibNamed:@"RatingView" owner:nil options:nil];
     
-    self.container = [nibContents firstObject];
-    [self addSubview:self.container];
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    self.container.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    
-    
-//    NSLayoutConstraint* topConstrain =
-//    [NSLayoutConstraint constraintWithItem:self
-//                                 attribute:NSLayoutAttributeTop
-//                                 relatedBy:NSLayoutRelationEqual
-//                                    toItem:self.container
-//                                 attribute:NSLayoutAttributeTop
-//                                multiplier:1.0
-//                                  constant:10];
-//    
-//    NSLayoutConstraint* bottomConstrain =
-//    [NSLayoutConstraint constraintWithItem:self
-//                                 attribute:NSLayoutAttributeBottom
-//                                 relatedBy:NSLayoutRelationEqual
-//                                    toItem:self.container
-//                                 attribute:NSLayoutAttributeBottom
-//                                multiplier:1.0
-//                                  constant:10];
-//    
-//    
-//    NSLayoutConstraint* trailConstrain =
-//    [NSLayoutConstraint constraintWithItem:self
-//                                 attribute:NSLayoutAttributeTrailing
-//                                 relatedBy:NSLayoutRelationEqual
-//                                    toItem:self.container
-//                                 attribute:NSLayoutAttributeTrailing
-//                                multiplier:1.0
-//                                  constant:10];
-//    
-//    NSLayoutConstraint* leadingConstrain =
-//    [NSLayoutConstraint constraintWithItem:self
-//                                 attribute:NSLayoutAttributeLeading
-//                                 relatedBy:NSLayoutRelationEqual
-//                                    toItem:self.container
-//                                 attribute:NSLayoutAttributeLeading
-//                                multiplier:1.0
-//                                  constant:-10];
-    
-    //container width and height
-//    NSLayoutConstraint *myWidth =
-//    [NSLayoutConstraint constraintWithItem:self.container
-//                                 attribute:NSLayoutAttributeWidth
-//                                 relatedBy:NSLayoutRelationEqual
-//                                    toItem:self
-//                                 attribute:NSLayoutAttributeWidth
-//                                multiplier:1.f
-//                                  constant:0];
-    
-    NSLayoutConstraint *myHeight =
-    [NSLayoutConstraint constraintWithItem:self.container
-                                 attribute:NSLayoutAttributeHeight
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:self
-                                 attribute:NSLayoutAttributeHeight
-                                multiplier:1.f
-                                  constant:100];
-    
-    //[self addConstraints:@[trailConstrain, leadingConstrain, topConstrain, bottomConstrain, myWidth, myHeight]];
-    //[self addConstraints:@[topConstrain, bottomConstrain]];
-    
-    [self layoutIfNeeded];
-    
-    for (UIButton *button in self.container.subviews) {
+    for (UIButton *button in self.subviews) {
         if ([button isKindOfClass:[UIButton class]] ) {
             [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
         
     }
-}
-
--(void)setupUiFromButtons:(NSArray *)buttons maxWidth:(CGFloat)maxWidth {
-    CGFloat height = maxWidth / buttons.count;
-    self.bounds = CGRectMake(0, 0, maxWidth + 5, height);
-    
-    // Constraints: H:[Button][Button]...buttons.count
-    //              V:|[Button]|
-    UIButton *prevButton = nil;
-    for(UIButton *button in buttons) {
-        button.translatesAutoresizingMaskIntoConstraints = NO;
-        //        [self addSubview:button];
-        [self.container addSubview:button];
-        
-//        if(prevButton) {
-//            // contrain to right of prev button
-//            NSDictionary *views = NSDictionaryOfVariableBindings(prevButton, button);
-//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[prevButton][button(==prevButton)]" options:0 metrics:nil views:views]];
-//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button(==prevButton)]|" options:0 metrics:nil views:views]];
-//            
-//        } else {
-            // constrain first button to left of view
-            NSDictionary *views = NSDictionaryOfVariableBindings(button);
-//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]" options:0 metrics:nil views:views]];
-//            [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[button]|" options:0 metrics:nil views:views]];
-//
-        
-        
-        
-        
-        
-        
-            //star width 25
-            NSLayoutConstraint *width =
-            [NSLayoutConstraint constraintWithItem:button
-                                         attribute:NSLayoutAttributeWidth
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:nil
-                                         attribute:NSLayoutAttributeWidth
-                                        multiplier:1.f
-                                          constant:25];
-            //star height 25
-            NSLayoutConstraint *height =
-            [NSLayoutConstraint constraintWithItem:button
-                                         attribute:NSLayoutAttributeHeight
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:nil
-                                         attribute:NSLayoutAttributeHeight
-                                        multiplier:1.f
-                                          constant:25];
-            
-            //star top padding
-            NSLayoutConstraint* topConstrain =
-            [NSLayoutConstraint constraintWithItem:button
-                                         attribute:NSLayoutAttributeTop
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:self.container
-                                         attribute:NSLayoutAttributeTop
-                                        multiplier:1.f
-                                          constant:38];
-            
-            [self addConstraints:@[width, height, topConstrain]];
-//        }
-        
-//        prevButton = button;
-    }
-    
-    [self layoutIfNeeded];
 }
 
 -(NSArray *)createButtons:(NSInteger)numberOfButtons {
@@ -206,8 +69,8 @@
 
 -(UIButton *)createButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:[UIImage imageNamed:@"rating-star-unselected"] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:@"rating-star-selected"] forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageNamed:@"star-rating-unselected"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"star-rating-selected"] forState:UIControlStateSelected];
     if([self respondsToSelector:@selector(buttonPressed:)]) {
         [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -215,7 +78,7 @@
 }
 
 -(void)setRating:(NSInteger)rating {
-    NSInteger numOfButtons = self.buttons.count;
+    NSInteger numOfButtons = 5;
     if(rating < 0 && rating > numOfButtons) {
         return;
     }
@@ -239,9 +102,11 @@
 
 #pragma mark - ib actions
 
--(void)buttonPressed:(UIButton *)button {
+-(IBAction)buttonPressed:(UIButton *)button {
+    
     NSInteger rating = [self.buttons indexOfObject:button];
-    NSLog(@"%i", rating);
+    NSLog(@"index %li tag %li", (long)rating, (long)button.tag);
+    
     if(rating == NSNotFound) {
         return;
     }
@@ -250,6 +115,56 @@
     if([self.delegate respondsToSelector:@selector(ratingView:selectedRating:)]) {
         [self.delegate ratingView:self selectedRating:(rating + 1)];
     }
+}
+
+#pragma mark - JSQMessageMediaData Delegate
+
+/**
+ *  @return An initialized `UIView` object that represents the data for this media object.
+ *
+ *  @discussion You may return `nil` from this method while the media data is being downloaded.
+ */
+- (UIView *)mediaView {
+    return self;
+}
+
+/**
+ *  @return The frame size for the mediaView when displayed in a `JSQMessagesCollectionViewCell`.
+ *
+ *  @discussion You should return an appropriate size value to be set for the mediaView's frame
+ *  based on the contents of the view, and the frame and layout of the `JSQMessagesCollectionViewCell`
+ *  in which mediaView will be displayed.
+ *
+ *  @warning You must return a size with non-zero, positive width and height values.
+ */
+- (CGSize)mediaViewDisplaySize {
+    return CGSizeMake(20, 20);
+}
+
+/**
+ *  @return A placeholder media view to be displayed if mediaView is not yet available, or `nil`.
+ *  For example, if mediaView will be constructed based on media data that must be downloaded,
+ *  this placeholder view will be used until mediaView is not `nil`.
+ *
+ *  @discussion If you do not need support for a placeholder view, then you may simply return the
+ *  same value here as mediaView. Otherwise, consider using `JSQMessagesMediaPlaceholderView`.
+ *
+ *  @warning You must not return `nil` from this method.
+ *
+ *  @see JSQMessagesMediaPlaceholderView.
+ */
+- (UIView *)mediaPlaceholderView {
+    return [UIView new];
+}
+
+/**
+ *  @return An integer that can be used as a table address in a hash table structure.
+ *
+ *  @discussion This value must be unique for each media item with distinct contents.
+ *  This value is used to cache layout information in the collection view.
+ */
+- (NSUInteger)mediaHash {
+    return random()*3;
 }
 
 @end
