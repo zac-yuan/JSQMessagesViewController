@@ -11,6 +11,8 @@
 		184A2D321D1D73E500369A4F /* BBOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A2D301D1D73E000369A4F /* BBOption.m */; };
 		1857172B1D0188AC00F26397 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857172A1D0188AC00F26397 /* MainTabBarController.m */; };
 		1857172E1D018D9F00F26397 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857172D1D018D9F00F26397 /* MainNavigationController.m */; };
+		186754B31D2BE47600E365B4 /* BBConstantsTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 186754B21D2BE47600E365B4 /* BBConstantsTemp.m */; };
+		186754B51D2BE49000E365B4 /* BBConstantsTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 186754B21D2BE47600E365B4 /* BBConstantsTemp.m */; };
 		1875720A1D1D7561007D99CC /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */; };
 		1875720B1D1D756B007D99CC /* BBChatBotDataModelChosenOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */; };
 		188F3B8B1D1C478200E98DB6 /* BBAskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B741D1C478200E98DB6 /* BBAskDataModel.m */; };
@@ -25,8 +27,6 @@
 		188F3B961D1C478200E98DB6 /* BBSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B8A1D1C478200E98DB6 /* BBSpeaker.m */; };
 		188F3B9A1D1C493E00E98DB6 /* BBLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */; };
 		188F3B9B1D1C494B00E98DB6 /* BBLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */; };
-		189EA69F1D0CA7360014B384 /* BBConstantsTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */; };
-		189EA6A01D0CA73B0014B384 /* BBConstantsTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */; };
 		18DC639E1D0C7D9600F9DFB6 /* OptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC63981D0C7D9600F9DFB6 /* OptionsTableViewCell.m */; };
 		18DC639F1D0C7D9600F9DFB6 /* OptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DC63991D0C7D9600F9DFB6 /* OptionsTableViewCell.xib */; };
 		18DC63A01D0C7D9600F9DFB6 /* OptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC639B1D0C7D9600F9DFB6 /* OptionsTableViewController.m */; };
@@ -256,6 +256,9 @@
 		1857172A1D0188AC00F26397 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		1857172C1D018D9F00F26397 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		1857172D1D018D9F00F26397 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		186754AE1D2BE24500E365B4 /* JSQMessages-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSQMessages-Bridging-Header.h"; sourceTree = "<group>"; };
+		186754B11D2BE47600E365B4 /* BBConstantsTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstantsTemp.h; sourceTree = "<group>"; };
+		186754B21D2BE47600E365B4 /* BBConstantsTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstantsTemp.m; sourceTree = "<group>"; };
 		187572081D1D7561007D99CC /* BBChatBotDataModelChosenOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBChatBotDataModelChosenOption.h; path = Babylon/Options/BBChatBotDataModelChosenOption.h; sourceTree = "<group>"; };
 		187572091D1D7561007D99CC /* BBChatBotDataModelChosenOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBChatBotDataModelChosenOption.m; path = Babylon/Options/BBChatBotDataModelChosenOption.m; sourceTree = "<group>"; };
 		188F3B731D1C478200E98DB6 /* BBAskDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAskDataModel.h; sourceTree = "<group>"; };
@@ -280,8 +283,6 @@
 		188F3B8A1D1C478200E98DB6 /* BBSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSpeaker.m; sourceTree = "<group>"; };
 		188F3B981D1C493E00E98DB6 /* BBLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBLoadingViewController.h; path = Babylon/Loading/BBLoadingViewController.h; sourceTree = "<group>"; };
 		188F3B991D1C493E00E98DB6 /* BBLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBLoadingViewController.m; path = Babylon/Loading/BBLoadingViewController.m; sourceTree = "<group>"; };
-		189EA69D1D0CA7360014B384 /* BBConstantsTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConstantsTemp.h; sourceTree = "<group>"; };
-		189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConstantsTemp.m; sourceTree = "<group>"; };
 		18DC63971D0C7D9600F9DFB6 /* OptionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsTableViewCell.h; sourceTree = "<group>"; };
 		18DC63981D0C7D9600F9DFB6 /* OptionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsTableViewCell.m; sourceTree = "<group>"; };
 		18DC63991D0C7D9600F9DFB6 /* OptionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -557,6 +558,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186754B41D2BE48200E365B4 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				186754AE1D2BE24500E365B4 /* JSQMessages-Bridging-Header.h */,
+				186754B11D2BE47600E365B4 /* BBConstantsTemp.h */,
+				186754B21D2BE47600E365B4 /* BBConstantsTemp.m */,
+			);
+			name = Temp;
+			sourceTree = "<group>";
+		};
 		188F3B721D1C478200E98DB6 /* Babylon */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,11 +783,10 @@
 				88A25F5F19D8E01A00924534 /* Controllers */,
 				88A25F6519D8E01A00924534 /* Factories */,
 				88A25F6E19D8E01A00924534 /* JSQMessages.h */,
-				189EA69D1D0CA7360014B384 /* BBConstantsTemp.h */,
-				189EA69E1D0CA7360014B384 /* BBConstantsTemp.m */,
 				88A25F6F19D8E01A00924534 /* Layout */,
 				88A25F7619D8E01A00924534 /* Model */,
 				88A25F8919D8E01A00924534 /* Views */,
+				186754B41D2BE48200E365B4 /* Temp */,
 			);
 			path = JSQMessagesViewController;
 			sourceTree = "<group>";
@@ -1235,6 +1245,7 @@
 		88A25EFA19D8DEC400924534 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Hexed Bits";
 				TargetAttributes = {
@@ -1564,7 +1575,6 @@
 				883C11781A09FB100092A16D /* JSQMessagesCellTextView.m in Sources */,
 				88A25FB919D8E01A00924534 /* UIView+JSQMessages.m in Sources */,
 				184A2D311D1D73E000369A4F /* BBOption.m in Sources */,
-				189EA69F1D0CA7360014B384 /* BBConstantsTemp.m in Sources */,
 				88A25FCA19D8E01A00924534 /* JSQMessagesCollectionView.m in Sources */,
 				88A25FD219D8E01A00924534 /* JSQMessagesLabel.m in Sources */,
 				88445B4019E1B4470014F889 /* JSQLocationMediaItem.m in Sources */,
@@ -1579,6 +1589,7 @@
 				88A25FD319D8E01A00924534 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				88A25FC819D8E01A00924534 /* JSQPhotoMediaItem.m in Sources */,
 				88C4583019F5F7A0008FD427 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
+				186754B31D2BE47600E365B4 /* BBConstantsTemp.m in Sources */,
 				88A25FB819D8E01A00924534 /* UIImage+JSQMessages.m in Sources */,
 				88A25FBF19D8E01A00924534 /* JSQMessagesTimestampFormatter.m in Sources */,
 				88A25FE019D8E0C400924534 /* DemoModelData.m in Sources */,
@@ -1690,13 +1701,13 @@
 				188F3B901D1C478200E98DB6 /* BBChatBotDataModelTalkChat.m in Sources */,
 				1857172B1D0188AC00F26397 /* MainTabBarController.m in Sources */,
 				9F4A619D1CF5F8A400A808A7 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
+				186754B51D2BE49000E365B4 /* BBConstantsTemp.m in Sources */,
 				B4EED4FE1CFED0D600F9EC99 /* BBWebSocketsClient.m in Sources */,
 				B4101CC01CF707B0005EF656 /* BBDotActivityIndicatorParms.m in Sources */,
 				184A2D321D1D73E500369A4F /* BBOption.m in Sources */,
 				8CB203941D05C2EA00296E49 /* MonitorViewController.m in Sources */,
 				7F3062E81CF73D2D0026909D /* JSQViewMediaItem.m in Sources */,
 				188F3B8F1D1C478200E98DB6 /* BBChatBotDataModelStatement.m in Sources */,
-				189EA6A01D0CA73B0014B384 /* BBConstantsTemp.m in Sources */,
 				9F4A619B1CF5F8A400A808A7 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				9F4A61AA1CF5F93300A808A7 /* JSQMessagesBubbleImage.m in Sources */,
 				9F4A61971CF5F89100A808A7 /* UIImage+JSQMessages.m in Sources */,
@@ -1867,8 +1878,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/JSQMessagesDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1876,6 +1889,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JSQMessagesViewController/JSQMessages-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1886,8 +1901,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/JSQMessagesDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1895,6 +1912,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hexedbits.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JSQMessagesViewController/JSQMessages-Bridging-Header.h";
 			};
 			name = Release;
 		};

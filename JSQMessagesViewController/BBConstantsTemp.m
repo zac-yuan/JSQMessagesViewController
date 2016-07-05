@@ -26,32 +26,6 @@ const CGFloat kDefaultCornerRadii           = 15.f;
 + (UIFont *)babylonMediumFont:(float)fontSize {return [UIFont fontWithName:@"AvenirNext-Medium" size:fontSize];}
 @end
 
-#pragma mark - NString
-@implementation NSString (Babylon)
-+ (NSString *)babylonErrorMsg:(NSError *)error {
-    if ([error.localizedFailureReason length]>0) {
-        return error.localizedFailureReason;
-    } else if ([error.localizedDescription length]>0) {
-        return error.localizedDescription;
-    } else {
-        if ([error.description length]>0) {
-            return error.description;
-        } else {
-            return @"I don't get it. Sorry";
-        }
-    }
-}
-+ (NSString *)babylonBadgeCounter:(NSArray *)messages {
-    int count = 0;
-    for (JSQMessage *message in messages) {
-        if (message.senderId == kBabylonDoctorId) {
-            count++;
-        }
-    }
-    return [NSString stringWithFormat:@"%i", count];
-}
-@end
-
 #pragma mark - UIImage
 @implementation UIImage (Babylon)
 + (UIImage *)babylonBotHearth {

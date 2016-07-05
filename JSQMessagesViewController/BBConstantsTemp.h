@@ -28,11 +28,6 @@ extern const CGFloat kDefaultFontSize;
 + (UIFont *)babylonMediumFont:(float)fontSize;
 @end
 
-@interface NSString (Babylon)
-+ (NSString *)babylonErrorMsg:(NSError *)error;
-+ (NSString *)babylonBadgeCounter:(NSArray *)messages;
-@end
-
 @interface UIImage (Babylon)
 + (UIImage *)babylonBotHearth;
 + (UIImage *)homeScreenBackgroundImage;
