@@ -491,7 +491,7 @@
 		B4FA1BE11CF5B3260066D8B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../BabylonBotDemo/Assets.xcassets; sourceTree = "<group>"; };
+		B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = BabylonBotDemo/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		B4FA1BF11CF5B3260066D8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4FA1BF61CF5B3260066D8B1 /* BabylonBotDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonBotDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FA1BFA1CF5B3260066D8B1 /* BabylonBotDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabylonBotDemoTests.m; sourceTree = "<group>"; };
@@ -800,7 +800,6 @@
 		88A25F3F19D8E01A00924534 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */,
 				8861666C19F492B70025B958 /* JSQMessagesAssets.bundle */,
 			);
 			path = Assets;
@@ -1088,6 +1087,7 @@
 				7F03192B1CFD9EF900BF4F79 /* Api */,
 				7F03194E1CFD9F0400BF4F79 /* Controllers */,
 				7F0319661CFD9F4F00BF4F79 /* Storyboards */,
+				B4FA1BEC1CF5B3260066D8B1 /* Assets.xcassets */,
 				B4FA1BE31CF5B3260066D8B1 /* AppDelegate.h */,
 				B4FA1BE41CF5B3260066D8B1 /* AppDelegate.m */,
 				B4FA1BF11CF5B3260066D8B1 /* Info.plist */,

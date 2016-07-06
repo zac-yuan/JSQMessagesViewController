@@ -346,7 +346,7 @@
 }
 
 - (void)addRating:(NSInteger)rating {
-    RatingView *view = [[RatingView alloc] initWithNumberOfButtons:5 maxWidth:self.view.bounds.size.width - 100.f initialRating:rating];
+    RatingView *view = [RatingView new];
     view.delegate = self;
     JSQViewMediaItem *item = [[JSQViewMediaItem alloc] initWithViewMedia:view];
     JSQMessage *userMessage = [JSQMessage messageWithSenderId:kBabylonDoctorId

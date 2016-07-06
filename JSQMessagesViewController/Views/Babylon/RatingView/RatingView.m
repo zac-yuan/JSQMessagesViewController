@@ -18,73 +18,18 @@
 
 @implementation RatingView
 
--(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
-                              maxWidth:(CGFloat)maxWidth
-                         initialRating:(NSInteger)rating {
-    
-    self = [super init];
-    
-    
-    [self setup];
-    
-    
-    if(self) {
-        self.translatesAutoresizingMaskIntoConstraints = NO;
-        NSAssert(numberOfButtons > 1, @"numberOfButtons must be > 1");
-        NSAssert(maxWidth > 0, @"maxWidth must be > 0");
-        NSAssert(rating > 0 && rating <= numberOfButtons, @"rating must be > 0 and <= numberOfButtons");
-        
-        self.numberOfButtons = numberOfButtons;
-        self.maxWidth = maxWidth;
-        
-        NSArray *buttons = [self createButtons:numberOfButtons];
-        for(NSInteger i = 0; i < buttons.count; i++) {
-            UIButton *button = buttons[i];
-            button.selected = (i <= (rating - 1));
-        }
-        self.buttons = buttons;
-        
-        //[self setupUiFromButtons:buttons maxWidth:maxWidth];
-    }
-    return self;
-}
-
--(void)setup {
-    
-    for (UIButton *button in self.subviews) {
-        if ([button isKindOfClass:[UIButton class]] ) {
-            [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        }
-        
-    }
-}
-
--(NSArray *)createButtons:(NSInteger)numberOfButtons {
-    NSMutableArray *buttons = [NSMutableArray new];
-    for(NSInteger i = 0; i < numberOfButtons; i++) {
-        [buttons addObject:[self createButton]];
-    }
-    return [NSArray arrayWithArray:buttons];
-}
-
--(UIButton *)createButton {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:[UIImage imageNamed:@"star-rating-unselected"] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:@"star-rating-selected"] forState:UIControlStateSelected];
-    if([self respondsToSelector:@selector(buttonPressed:)]) {
-        [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return button;
-}
-
 -(void)setRating:(NSInteger)rating {
     NSInteger numOfButtons = 5;
-    if(rating < 0 && rating > numOfButtons) {
+    if(rating < 1 && rating > numOfButtons) {
         return;
     }
-    for(NSInteger i = 0; i < numOfButtons; i++) {
-        UIButton *button = self.buttons[i];
-        button.selected = (i <= rating);
+    for(NSInteger i = 1; i <= numOfButtons; i++) {
+        
+        UIButton *button = [self viewWithTag:i];
+        
+        if (button) {
+            button.selected = (i <= rating);
+        }
         
         if(i == rating) {
             // explode button
@@ -104,16 +49,17 @@
 
 -(IBAction)buttonPressed:(UIButton *)button {
     
-    NSInteger rating = [self.buttons indexOfObject:button];
-    NSLog(@"index %li tag %li", (long)rating, (long)button.tag);
+    NSInteger rating = button.tag;
+    NSLog(@"buttonPressed rating %li", (long)button.tag);
     
     if(rating == NSNotFound) {
         return;
     }
+    
     [self setRating:rating];
     
     if([self.delegate respondsToSelector:@selector(ratingView:selectedRating:)]) {
-        [self.delegate ratingView:self selectedRating:(rating + 1)];
+        [self.delegate ratingView:self selectedRating:rating];
     }
 }
 

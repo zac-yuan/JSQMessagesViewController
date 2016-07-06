@@ -17,17 +17,10 @@
  @param rating The start rating (ranges from 1 - n)
  */
 -(void)ratingView:(RatingView *)ratingView selectedRating:(NSInteger)rating;
-
 @end
 
-@interface RatingView : UIView <JSQMessageMediaData>    
-
+@interface RatingView : UIView <JSQMessageMediaData>
 @property (nonatomic, weak) id<RatingViewDelegate>delegate;
 @property (nonatomic, weak) JSQMessage *message;
-
--(instancetype)initWithNumberOfButtons:(NSInteger)numberOfButtons
-                              maxWidth:(CGFloat)maxWidth
-                         initialRating:(NSInteger)rating;
 -(void)setRating:(NSInteger)rating;
--(void)setup;
 @end
