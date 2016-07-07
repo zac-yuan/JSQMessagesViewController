@@ -1,0 +1,6 @@
+framework module Pods_JSQMessages {
+  umbrella header "Pods-JSQMessages-umbrella.h"
+
+  export *
+  module * { export * }
+}
