@@ -1,12 +1,14 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/Babylonpartners/ios-private-podspecs.git'
 
-platform :ios, '7.0'
+platform :ios, '8.3'
+use_frameworks!
 
-# ignore all warnings from all pods
-inhibit_all_warnings!
+target 'JSQMessages' do
+    pod 'JSQSystemSoundPlayer', '~> 2.0'
+    pod 'ios-foundation', :git => 'git@github.com:Babylonpartners/ios-foundation.git', :branch => 'master'
+end
 
-pod 'JSQSystemSoundPlayer', '~> 2.0'
-
-target :JSQMessagesTests, :exclusive => true do
+target 'JSQMessagesTests' do
    pod 'JSQSystemSoundPlayer', '~> 2.0'
 end

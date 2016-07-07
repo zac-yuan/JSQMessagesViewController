@@ -1,0 +1,31 @@
+{
+  "name": "ios-foundation",
+  "version": "0.1.5",
+  "summary": "iOS Babylon Core",
+  "description": "The foundation core for babylon iOS",
+  "homepage": "https://www.babylonhealth.com",
+  "license": "MIT",
+  "authors": {
+    "Babylon Health": "support@babylonhealth.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/Babylonpartners/ios-foundation.git",
+    "tag": "0.1.5"
+  },
+  "source_files": "ios-foundation/Classes/**/*",
+  "resource_bundles": {
+    "ios-foundation": [
+      "ios-foundation/Assets/**/*.{nib,xib,png,jpeg,jpg,pdf}"
+    ]
+  },
+  "frameworks": "Foundation",
+  "dependencies": {
+    "Alamofire": [
+
+    ]
+  },
+  "requires_arc": "true"
+}
