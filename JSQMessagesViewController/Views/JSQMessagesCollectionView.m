@@ -23,6 +23,8 @@
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
+#import "BBMessagesTypingIndicatorFooterView.h"
+
 #import "JSQMessagesLoadEarlierHeaderView.h"
 #import "BBMessagesTypingIndicatorFooterView.h"
 

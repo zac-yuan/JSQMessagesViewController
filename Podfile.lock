@@ -1,86 +1,28 @@
 PODS:
-  - AFNetworkActivityLogger (2.0.4):
-    - AFNetworking/NSURLConnection (~> 2.0)
-    - AFNetworking/NSURLSession (~> 2.0)
-  - AFNetworking (2.6.3):
-    - AFNetworking/NSURLConnection (= 2.6.3)
-    - AFNetworking/NSURLSession (= 2.6.3)
-    - AFNetworking/Reachability (= 2.6.3)
-    - AFNetworking/Security (= 2.6.3)
-    - AFNetworking/Serialization (= 2.6.3)
-    - AFNetworking/UIKit (= 2.6.3)
-  - AFNetworking/NSURLConnection (2.6.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.3)
-  - AFNetworking/Security (2.6.3)
-  - AFNetworking/Serialization (2.6.3)
-  - AFNetworking/UIKit (2.6.3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
   - Alamofire (3.4.1)
-  - CocoaLumberjack (2.3.0):
-    - CocoaLumberjack/Default (= 2.3.0)
-    - CocoaLumberjack/Extensions (= 2.3.0)
-  - CocoaLumberjack/Core (2.3.0)
-  - CocoaLumberjack/Default (2.3.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.3.0):
-    - CocoaLumberjack/Default
   - ios-foundation (0.1.5):
     - Alamofire
-  - ios-maps (0.2.5)
   - JSQSystemSoundPlayer (2.0.1)
-  - Nimble (4.0.1)
-  - OHHTTPStubs (5.1.0):
-    - OHHTTPStubs/Default (= 5.1.0)
-  - OHHTTPStubs/Core (5.1.0)
-  - OHHTTPStubs/Default (5.1.0):
-    - OHHTTPStubs/Core
-    - OHHTTPStubs/JSON
-    - OHHTTPStubs/NSURLSession
-    - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.1.0):
-    - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.1.0):
-    - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.1.0)
-  - PubNub (4.3.3):
-    - CocoaLumberjack (= 2.3.0)
-    - PubNub/Core (= 4.3.3)
-  - PubNub/Core (4.3.3):
-    - CocoaLumberjack (= 2.3.0)
-  - Quick (0.9.2)
 
 DEPENDENCIES:
-  - AFNetworkActivityLogger
-  - AFNetworking (~> 2.0)
-  - ios-foundation
-  - ios-maps
+  - ios-foundation (from `git@github.com:Babylonpartners/ios-foundation.git`, branch `master`)
   - JSQSystemSoundPlayer (~> 2.0)
-  - Nimble
-  - OHHTTPStubs
-  - PubNub
-  - Quick
+
+EXTERNAL SOURCES:
+  ios-foundation:
+    :branch: master
+    :git: git@github.com:Babylonpartners/ios-foundation.git
+
+CHECKOUT OPTIONS:
+  ios-foundation:
+    :commit: b5068370b48f3cc28cdd7276b70354630154230f
+    :git: git@github.com:Babylonpartners/ios-foundation.git
 
 SPEC CHECKSUMS:
-  AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
-  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
-  ios-foundation: 379cdd34d823024bb8c01d81624930fa2b00e26b
-  ios-maps: 5db3f12df3db79e10815c0ae6e5f656bcfef397d
+  ios-foundation: e9782037c086c6c6662d239ed3975f20c7a41e29
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
-  OHHTTPStubs: 592f74439d2d72615115cf99a954237a3fbe26e5
-  PubNub: 51acd937c947d931a75d2caef654fd12f7573e09
-  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
-PODFILE CHECKSUM: a21f40c896b90f4c1b3ceceef3a8616bc208f007
+PODFILE CHECKSUM: 640b7df4af577899d1711c771cfa9edbb820b088
 
 COCOAPODS: 1.0.1
