@@ -47,6 +47,7 @@
 #import "JSQMediaItem.h"
 #import "JSQAudioMediaItem.h"
 #import "JSQPhotoMediaItem.h"
+#import "JSQViewMediaItem.h"
 #import "JSQLocationMediaItem.h"
 #import "JSQVideoMediaItem.h"
 
