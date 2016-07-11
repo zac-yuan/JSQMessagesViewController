@@ -38,6 +38,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 @property (weak, nonatomic) IBOutlet UIView *messageBubbleContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *messageBubbleImageView;
 @property (weak, nonatomic) IBOutlet JSQMessagesCellTextView *textView;
+@property (weak, nonatomic) IBOutlet UIView *bottomAttachmentViewContainer;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
@@ -55,6 +56,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomAttachmentHeightConstraint;
 
 @property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
 
@@ -141,6 +144,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     _cellBottomLabel = nil;
 
     _textView = nil;
+    _bottomAttachmentView = nil;
     _messageBubbleImageView = nil;
     _mediaView = nil;
 
@@ -334,6 +338,16 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
             }
         }
     });
+}
+
+-(void)setBottomAttachmentView:(UIView *)bottomAttachmentView
+{
+    _bottomAttachmentView = bottomAttachmentView;
+    [bottomAttachmentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.bottomAttachmentViewContainer addSubview:bottomAttachmentView];
+    [self.bottomAttachmentViewContainer jsq_pinAllEdgesOfSubview:bottomAttachmentView];
+    self.bottomAttachmentHeightConstraint.constant = bottomAttachmentView.bounds.size.height;
+    [self.bottomAttachmentViewContainer layoutIfNeeded];
 }
 
 #pragma mark - Getters

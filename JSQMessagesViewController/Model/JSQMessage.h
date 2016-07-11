@@ -52,6 +52,13 @@
 @property (assign, nonatomic, readonly) BOOL isMediaMessage;
 
 /**
+ *  Returns a boolean value specifying whether or not the message contains mixed media (e.g. text and image).
+ *  If `NO`, the message contains one type of media. If `YES`, the message contains mixed media.
+ *  The value of this property depends on how the object was initialized.
+ */
+@property (assign, nonatomic, readonly) BOOL isMixedMediaMessage;
+
+/**
  *  Returns the body text of the message, or `nil` if the message is a media message.
  *  That is, if `isMediaMessage` is equal to `YES` then this value will be `nil`.
  */
@@ -81,6 +88,25 @@
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                                text:(NSString *)text;
+
+/**
+ *  Initializes and returns a message object having the given senderId, displayName, text,
+ *  and current system date.
+ *
+ *  @param senderId    The unique identifier for the user who sent the message. This value must not be `nil`.
+ *  @param displayName The display name for the user who sent the message. This value must not be `nil`.
+ *  @param text        The body text of the message. This value must not be `nil`.
+ *  @param media       The media data for the message. This value must not be `nil`.
+ *
+ *  @discussion Initializing a `JSQMessage` with this method will set `isMixedMediaMessage` to `YES` and 
+ *  `isMediaMessage` to `NO`.
+ *
+ *  @return An initialized `JSQMessage` object if successful, `nil` otherwise.
+ */
++ (instancetype)messageWithSenderId:(NSString *)senderId
+                        displayName:(NSString *)displayName
+                               text:(NSString *)text
+                              media:(id<JSQMessageMediaData>)media;
 
 /**
  *  Initializes and returns a message object having the given senderId, senderDisplayName, date, and text.
