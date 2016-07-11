@@ -543,9 +543,10 @@ JSQMessagesKeyboardControllerDelegate>
 
     BOOL isOutgoingMessage = [self isOutgoingMessage:messageItem];
     BOOL isMediaMessage = [messageItem isMediaMessage];
-
+    BOOL isMixedMediaMessage = [messageItem isMixedMediaMessage];
+    
     NSString *cellIdentifier = nil;
-    if (isMediaMessage) {
+    if (isMediaMessage || isMixedMediaMessage) {
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
@@ -556,6 +557,12 @@ JSQMessagesKeyboardControllerDelegate>
     cell.delegate = collectionView;
 
     if (!isMediaMessage) {
+        if(isMixedMediaMessage) {
+            id<JSQMessageMediaData> messageMedia = [messageItem media];
+            cell.bottomAttachmentView = [messageMedia mediaView] ?: [messageMedia mediaPlaceholderView];
+            NSParameterAssert(cell.bottomAttachmentView != nil);
+        }
+        
         cell.textView.text = [messageItem text];
 
         if ([UIDevice jsq_isCurrentDeviceBeforeiOS8]) {
