@@ -139,7 +139,6 @@
     
     [self addPhotoMediaMessage];
     [self addAudioMediaMessage];
-    [self addViewMediaMessage];
     
     /**
      *  Setting to load extra messages for testing/demo
@@ -183,25 +182,6 @@
                                                    displayName:kJSQDemoAvatarDisplayNameSquires
                                                          media:photoItem];
     [self.messages addObject:photoMessage];
-}
-
-- (void)addViewMediaMessage
-{
-    NSArray *dataSource =
-    @[ [JSQMessagesOption optionWithText:@"Better" textColor:[UIColor whiteColor] backgroundColor:[UIColor clearColor]],
-       [JSQMessagesOption optionWithText:@"Same" textColor:[UIColor blackColor] backgroundColor:[UIColor lightGrayColor]],
-       [JSQMessagesOption optionWithText:@"Worse" textColor:[UIColor whiteColor] backgroundColor:[UIColor clearColor]] ];
-
-    JSQMessagesOptionsTableViewController *tableViewController = [[JSQMessagesOptionsTableViewController alloc] initWithDataSource:dataSource];
-    JSQViewMediaItem *viewMediaItem = [[JSQViewMediaItem alloc] initWithViewMedia:tableViewController.view];
-    viewMediaItem.appliesMediaViewMaskAsOutgoing = NO;
-    
-    JSQMessage *viewMediaMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
-                                                       displayName:kJSQDemoAvatarDisplayNameJobs
-                                                              text:@"How are you feeling?"
-                                                             media:viewMediaItem];
-    [self.messages addObject:viewMediaMessage];
-    [self.tableViewControllers addObject:tableViewController];
 }
 
 - (void)addLocationMediaMessageCompletion:(JSQLocationMediaItemCompletionBlock)completion
