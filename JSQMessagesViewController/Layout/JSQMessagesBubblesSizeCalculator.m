@@ -105,35 +105,14 @@
     if ([messageData isMediaMessage]) {
         finalSize = [[messageData media] mediaViewDisplaySize];
     }
+    else if ([messageData isMixedMediaMessage]) {
+        CGSize mediaViewDisplaySize = [[messageData media] mediaViewDisplaySize];
+        CGSize textSize = [self textSizeForMessageData:messageData forLayout:layout];
+        finalSize = CGSizeMake(MAX(mediaViewDisplaySize.width, textSize.width),
+                               mediaViewDisplaySize.height + textSize.height);
+    }
     else {
-        CGSize avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];
-
-        //  from the cell xibs, there is a 2 point space between avatar and bubble
-        CGFloat spacingBetweenAvatarAndBubble = 2.0f;
-        CGFloat horizontalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.left + layout.messageBubbleTextViewTextContainerInsets.right;
-        CGFloat horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
-
-        CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
-        CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
-
-        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
-                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                          attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
-                                                             context:nil];
-
-        CGSize stringSize = CGRectIntegral(stringRect).size;
-
-        CGFloat verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
-        CGFloat verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
-
-        //  add extra 2 points of space (`self.additionalInset`), because `boundingRectWithSize:` is slightly off
-        //  not sure why. magix. (shrug) if you know, submit a PR
-        CGFloat verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
-
-        //  same as above, an extra 2 points of magix
-        CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
-
-        finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
+        finalSize = [self textSizeForMessageData:messageData forLayout:layout];
     }
 
     [self.cache setObject:[NSValue valueWithCGSize:finalSize] forKey:@([messageData messageHash])];
@@ -174,6 +153,39 @@
     self.layoutWidthForFixedWidthBubbles = MIN(width, height);
     
     return self.layoutWidthForFixedWidthBubbles;
+}
+
+- (CGSize)textSizeForMessageData:(id<JSQMessageData>)messageData
+                       forLayout:(JSQMessagesCollectionViewFlowLayout *)layout {
+    CGSize avatarSize = [self jsq_avatarSizeForMessageData:messageData withLayout:layout];
+    
+    //  from the cell xibs, there is a 2 point space between avatar and bubble
+    CGFloat spacingBetweenAvatarAndBubble = 2.0f;
+    CGFloat horizontalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.left + layout.messageBubbleTextViewTextContainerInsets.right;
+    CGFloat horizontalFrameInsets = layout.messageBubbleTextViewFrameInsets.left + layout.messageBubbleTextViewFrameInsets.right;
+    
+    CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
+    CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
+    
+    CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                         options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                      attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+                                                         context:nil];
+    
+    CGSize stringSize = CGRectIntegral(stringRect).size;
+    
+    CGFloat verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
+    CGFloat verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
+    
+    //  add extra 2 points of space (`self.additionalInset`), because `boundingRectWithSize:` is slightly off
+    //  not sure why. magix. (shrug) if you know, submit a PR
+    CGFloat verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
+    
+    //  same as above, an extra 2 points of magix
+    CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
+    
+    CGSize finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
+    return finalSize;
 }
 
 @end

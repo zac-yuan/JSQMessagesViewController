@@ -74,6 +74,21 @@
 - (BOOL)isMediaMessage;
 
 /**
+ *  This method is used to determine if the message data item contains text and media.
+ *  If this method returns `YES`, an instance of `JSQMessagesViewController` will call
+ *  the `media` and `text` methods.
+ *
+ *  If this method returns `NO` then the `media` and `text` methods are be handled via
+ *  another method.
+ *
+ *  @return A boolean value specifying whether or not this is a mixed media message (i.e. 
+ *  text and image).
+ *  Return `YES` if this item is a mixed media message, and `NO` if it is not a mixed media 
+ *  message.
+ */
+- (BOOL)isMixedMediaMessage;
+
+/**
  *  @return An integer that can be used as a table address in a hash table structure.
  *
  *  @discussion This value must be unique for each message with distinct contents. 

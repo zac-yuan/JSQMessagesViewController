@@ -162,6 +162,11 @@
 @property (weak, nonatomic) UIView *mediaView;
 
 /**
+ *  The bottom attachment view of the cell. This view displays the contents of an attachment.
+ */
+@property (weak, nonatomic) UIView *bottomAttachmentView;
+
+/**
  *  Returns the underlying gesture recognizer for tap gestures in the avatarImageView of the cell.
  *  This gesture handles the tap event for the avatarImageView and notifies the cell's delegate.
  */
