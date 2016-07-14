@@ -1,6 +1,7 @@
 
 #import "BBMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesBubbleImageFactory.h"
+#import "UIColor+JSQMessages.h"
 
 const CGFloat kBBMessagesTypingIndicatorFooterViewHeight = 46.0f;
 
@@ -46,8 +47,8 @@ const CGFloat kBBMessagesTypingIndicatorFooterViewHeight = 46.0f;
     dotParms.internalSpacing = 3.5;
     dotParms.animationDelay = 0.2;
     dotParms.animationDuration = 0.6;
-    dotParms.animationFromValue = 0.3;
-    dotParms.defaultColor = [UIColor colorWithRed:144.0f/255 green:19.0f/255 blue:254.0f/255 alpha:1.0f];
+    dotParms.animationFromValue = 0.5;
+    dotParms.defaultColor = [UIColor jsq_messageBubblePurpleColor];
     dotParms.isDataValidationEnabled = YES;
     return dotParms;
 }
