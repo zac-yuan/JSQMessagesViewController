@@ -1,5 +1,6 @@
 
 #import "BBDotActivityIndicatorParms.h"
+#import "UIColor+JSQMessages.h"
 
 @implementation BBDotActivityIndicatorParms
 
@@ -32,11 +33,11 @@
     
     self.animationDuration = (self.animationDuration == 0) ? 0.8 : self.animationDuration;
     
-    self.animationFromValue = (self.animationFromValue == 0) ? 0.2 : self.animationFromValue;
+    self.animationFromValue = (self.animationFromValue == 0) ? 0.4 : self.animationFromValue;
     
     self.animationToValue = (self.animationToValue == 0) ? 1.0 : self.animationToValue;
     
-    self.defaultColor = ( self.defaultColor == nil ) ? [UIColor purpleColor] : self.defaultColor;
+    self.defaultColor = ( self.defaultColor == nil ) ? [UIColor jsq_messageBubblePurpleColor] : self.defaultColor;
 
 }
 
