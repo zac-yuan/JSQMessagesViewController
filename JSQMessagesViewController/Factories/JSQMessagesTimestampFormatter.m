@@ -17,6 +17,7 @@
 //
 
 #import "JSQMessagesTimestampFormatter.h"
+#import "UIFont+JSQMessages.h"
 
 @interface JSQMessagesTimestampFormatter ()
 
@@ -55,11 +56,11 @@
         NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         paragraphStyle.alignment = NSTextAlignmentCenter;
         
-        _dateTextAttributes = @{ NSFontAttributeName : [UIFont boldSystemFontOfSize:12.0f],
+        _dateTextAttributes = @{ NSFontAttributeName : [UIFont babylonMediumFont:12.0f],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
         
-        _timeTextAttributes = @{ NSFontAttributeName : [UIFont systemFontOfSize:12.0f],
+        _timeTextAttributes = @{ NSFontAttributeName : [UIFont babylonRegularFont:12.0f],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
     }

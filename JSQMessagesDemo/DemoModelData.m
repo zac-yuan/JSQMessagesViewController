@@ -17,7 +17,7 @@
 //
 
 #import "DemoModelData.h"
-
+#import "UIFont+JSQMessages.h"
 #import "NSUserDefaults+DemoSettings.h"
 
 /**
@@ -59,7 +59,7 @@
         JSQMessagesAvatarImage *jsqImage = [JSQMessagesAvatarImageFactory avatarImageWithUserInitials:@"JSQ"
                                                                                       backgroundColor:[UIColor colorWithWhite:0.85f alpha:1.0f]
                                                                                             textColor:[UIColor colorWithWhite:0.60f alpha:1.0f]
-                                                                                                 font:[UIFont systemFontOfSize:14.0f]
+                                                                                                 font:[UIFont babylonRegularFont:14.0f]
                                                                                              diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
         
         JSQMessagesAvatarImage *cookImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"demo_avatar_cook"]

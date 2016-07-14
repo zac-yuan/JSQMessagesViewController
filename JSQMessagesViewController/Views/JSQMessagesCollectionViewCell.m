@@ -24,7 +24,7 @@
 
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
-
+#import "UIFont+JSQMessages.h"
 
 static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
@@ -121,13 +121,13 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.avatarViewSize = CGSizeZero;
 
     self.cellTopLabel.textAlignment = NSTextAlignmentCenter;
-    self.cellTopLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+    self.cellTopLabel.font = [UIFont babylonMediumFont:12.0f];
     self.cellTopLabel.textColor = [UIColor lightGrayColor];
 
-    self.messageBubbleTopLabel.font = [UIFont systemFontOfSize:12.0f];
+    self.messageBubbleTopLabel.font = [UIFont babylonRegularFont:12.0f];
     self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
 
-    self.cellBottomLabel.font = [UIFont systemFontOfSize:11.0f];
+    self.cellBottomLabel.font = [UIFont babylonRegularFont:11.0f];
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
