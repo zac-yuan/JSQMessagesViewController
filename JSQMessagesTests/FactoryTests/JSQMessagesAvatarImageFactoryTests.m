@@ -11,7 +11,7 @@
 #import <XCTest/XCTest.h>
 
 #import "JSQMessagesAvatarImageFactory.h"
-
+#import "UIFont+JSQMessages.h"
 
 @interface JSQMessagesAvatarImageFactoryTests : XCTestCase
 @end
@@ -56,7 +56,7 @@
     JSQMessagesAvatarImage *avatar = [JSQMessagesAvatarImageFactory avatarImageWithUserInitials:@"JSQ"
                                                                                 backgroundColor:[UIColor lightGrayColor]
                                                                                       textColor:[UIColor darkGrayColor]
-                                                                                           font:[UIFont systemFontOfSize:13.0f]
+                                                                                           font:[UIFont babylonRegularFont:13.0f]
                                                                                        diameter:diameter];
     
     XCTAssertNotNil(avatar, @"Avatar should not be nil");
