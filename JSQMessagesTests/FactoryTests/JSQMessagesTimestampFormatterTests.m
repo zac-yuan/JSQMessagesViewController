@@ -11,7 +11,7 @@
 #import <XCTest/XCTest.h>
 
 #import "JSQMessagesTimestampFormatter.h"
-
+#import "UIFont+JSQMessages.h"
 
 @interface JSQMessagesTimestampFormatterTests : XCTestCase
 @end
@@ -40,11 +40,11 @@
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
-    NSDictionary *dateAttrs = @{ NSFontAttributeName : [UIFont boldSystemFontOfSize:12.0f],
+    NSDictionary *dateAttrs = @{ NSFontAttributeName : [UIFont babylonMediumFont:12.0f],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
     
-    NSDictionary *timeAttrs = @{ NSFontAttributeName : [UIFont systemFontOfSize:12.0f],
+    NSDictionary *timeAttrs = @{ NSFontAttributeName : [UIFont babylonRegularFont:12.0f],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
     
