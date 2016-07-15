@@ -90,6 +90,11 @@
     return [UIImage jsq_bubbleImageFromBundleWithName:@"clip"];
 }
 
++ (UIImage *)babylon_defaultAccessoryImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"camera"];
+}
+
 + (UIImage *)jsq_defaultTypingIndicatorImage
 {
     return [UIImage jsq_bubbleImageFromBundleWithName:@"typing"];
