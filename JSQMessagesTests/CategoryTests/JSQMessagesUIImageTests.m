@@ -57,7 +57,7 @@
     
     XCTAssertNotNil([UIImage jsq_bubbleCompactTaillessImage]);
     
-    XCTAssertNotNil([UIImage jsq_defaultAccessoryImage]);
+    XCTAssertNotNil([UIImage babylon_defaultAccessoryImage]);
     
     XCTAssertNotNil([UIImage jsq_defaultTypingIndicatorImage]);
     
