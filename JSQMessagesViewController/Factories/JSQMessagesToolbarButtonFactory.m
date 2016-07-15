@@ -27,7 +27,7 @@
 
 + (UIButton *)defaultAccessoryButtonItem
 {
-    UIImage *accessoryImage = [UIImage jsq_defaultAccessoryImage];
+    UIImage *accessoryImage = [UIImage babylon_defaultAccessoryImage];
     UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
     UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor darkGrayColor]];
 
