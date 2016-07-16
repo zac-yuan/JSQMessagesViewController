@@ -20,7 +20,9 @@
  *  The media for the mixed media item. The default value is `nil`.
  */
 @property (strong, nonatomic) UIView *media;
+@property (strong, nonatomic) NSString *url;
 
 - (instancetype)initWithViewMedia:(UIView *)media;
+- (instancetype)initWithViewMedia:(UIView *)view andUrl:(NSString *)url;
 
 @end
