@@ -29,6 +29,17 @@
     return self;
 }
 
+- (instancetype)initWithViewMedia:(UIView *)view andUrl:(NSString *)url
+{
+    self = [super init];
+    if (self) {
+        _media = view;
+        _cachedMediaContainer = nil;
+        _url = url;
+    }
+    return self;
+}
+
 - (void)clearCachedMediaViews
 {
     [super clearCachedMediaViews];
