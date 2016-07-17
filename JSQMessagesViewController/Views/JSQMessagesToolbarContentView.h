@@ -121,4 +121,10 @@ FOUNDATION_EXPORT const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingD
  */
 + (UINib *)nib;
 
+/**
+ *  Show/Hide left button
+ */
+
+- (void)showHideLeftButton:(BOOL)status;
+
 @end
