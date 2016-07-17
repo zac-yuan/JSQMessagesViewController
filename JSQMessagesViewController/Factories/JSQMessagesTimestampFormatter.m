@@ -100,6 +100,17 @@
     return [[NSAttributedString alloc] initWithAttributedString:timestamp];
 }
 
+- (NSAttributedString *)attributedCustomText:(NSString *)string {
+    if (!string) {
+        return nil;
+    }
+    
+    NSMutableAttributedString *customString = [[NSMutableAttributedString alloc] initWithString:string
+                                                                                  attributes:self.dateTextAttributes];
+    
+    return [[NSAttributedString alloc] initWithAttributedString:customString];
+}
+
 - (NSString *)timeForDate:(NSDate *)date
 {
     if (!date) {

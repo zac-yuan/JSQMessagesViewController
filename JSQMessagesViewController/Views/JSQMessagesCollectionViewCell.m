@@ -127,7 +127,8 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.messageBubbleTopLabel.font = [UIFont babylonRegularFont:12.0f];
     self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
 
-    self.cellBottomLabel.font = [UIFont babylonRegularFont:11.0f];
+    self.cellBottomLabel.textAlignment = NSTextAlignmentCenter;
+    self.cellBottomLabel.font = [UIFont babylonMediumFont:12.0f];
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
