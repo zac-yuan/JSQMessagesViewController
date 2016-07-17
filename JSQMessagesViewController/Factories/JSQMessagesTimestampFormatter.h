@@ -75,6 +75,13 @@
 - (NSAttributedString *)attributedTimestampForDate:(NSDate *)date;
 
 /**
+ * Returns an attributed string representation of the default font style
+ * It applies the attributes in dateTextAttributes.
+ * @see 'timestampForDate:'
+ */
+- (NSAttributedString *)attributedCustomText:(NSString *)string;
+
+/**
  *  Returns a string representation of *only* the minute and hour components of the given date formatted in the current locale styled using `NSDateFormatterShortStyle`.
  *
  *  @param date The date to format.
