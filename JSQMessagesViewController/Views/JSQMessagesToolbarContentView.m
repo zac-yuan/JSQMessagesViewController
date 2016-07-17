@@ -23,7 +23,9 @@
 const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 
 
-@interface JSQMessagesToolbarContentView ()
+@interface JSQMessagesToolbarContentView () {
+    BOOL showLeftButton;
+}
 
 @property (weak, nonatomic) IBOutlet JSQMessagesComposerTextView *textView;
 
@@ -61,7 +63,7 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
     self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
 
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - Setters
@@ -89,11 +91,19 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 
     if (CGRectEqualToRect(leftBarButtonItem.frame, CGRectZero)) {
         leftBarButtonItem.frame = self.leftBarButtonContainerView.bounds;
+    } else if (showLeftButton) {
+        leftBarButtonItem.frame = CGRectMake(0, 0, 34, 32);
     }
 
     self.leftBarButtonContainerView.hidden = NO;
-    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
-    self.leftBarButtonItemWidth = CGRectGetWidth(leftBarButtonItem.frame);
+    
+    if (showLeftButton) {
+        self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+        self.leftBarButtonItemWidth = CGRectGetWidth(leftBarButtonItem.frame);
+    } else {
+        self.leftHorizontalSpacingConstraint.constant = 0;
+        self.leftBarButtonItemWidth = 0;
+    }
 
     [leftBarButtonItem setTranslatesAutoresizingMaskIntoConstraints:NO];
 
@@ -102,6 +112,11 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     [self setNeedsUpdateConstraints];
 
     _leftBarButtonItem = leftBarButtonItem;
+}
+
+- (void)showHideLeftButton:(BOOL)status {
+    showLeftButton = status;
+    [self setLeftBarButtonItem:self.leftBarButtonItem];
 }
 
 - (void)setLeftBarButtonItemWidth:(CGFloat)leftBarButtonItemWidth
