@@ -83,6 +83,16 @@
 {
     NSParameterAssert(color != nil);
     
+    if (![color isEqual:[UIColor whiteColor]]) {
+        return [self jsq_messagesDefaultBubble:color flippedForIncoming:flippedForIncoming];
+    } else {
+        return [self jsq_messagesBorderBubble:color flippedForIncoming:flippedForIncoming];
+    }
+    
+}
+
+- (JSQMessagesBubbleImage *)jsq_messagesDefaultBubble:(UIColor *)color flippedForIncoming:(BOOL)flippedForIncoming {
+    
     UIImage *normalBubble = [self.bubbleImage jsq_imageMaskedWithColor:color];
     UIImage *highlightedBubble = [self.bubbleImage jsq_imageMaskedWithColor:[color jsq_colorByDarkeningColorWithValue:0.12f]];
     
@@ -95,6 +105,51 @@
     highlightedBubble = [self jsq_stretchableImageFromImage:highlightedBubble withCapInsets:self.capInsets];
     
     return [[JSQMessagesBubbleImage alloc] initWithMessageBubbleImage:normalBubble highlightedImage:highlightedBubble];
+
+}
+
+- (JSQMessagesBubbleImage *)jsq_messagesBorderBubble:(UIColor *)color flippedForIncoming:(BOOL)flippedForIncoming {
+    
+    UIImage *image = [UIImage jsq_bubbleRegularImage];
+    UIImage *strokedImage = [UIImage jsq_bubbleRegularStrokedImage];
+    UIImage *coloredImage;
+    UIImage *coloredStrokedImage;
+    
+    coloredImage = [image jsq_imageMaskedWithColor:color];
+    coloredStrokedImage = [strokedImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
+    
+    UIImage *normalBubble = [self addImage:coloredImage withImage:coloredStrokedImage];
+    
+    color = [color jsq_colorByDarkeningColorWithValue:0.12f];
+    coloredImage = [image jsq_imageMaskedWithColor:color];
+    coloredStrokedImage = [strokedImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
+    
+    UIImage *highlightedBubble = [self addImage:coloredImage withImage:coloredStrokedImage];
+    
+    if (flippedForIncoming) {
+        normalBubble = [self jsq_horizontallyFlippedImageFromImage:normalBubble];
+        highlightedBubble = [self jsq_horizontallyFlippedImageFromImage:highlightedBubble];
+    }
+    
+    normalBubble = [self jsq_stretchableImageFromImage:normalBubble withCapInsets:self.capInsets];
+    highlightedBubble = [self jsq_stretchableImageFromImage:highlightedBubble withCapInsets:self.capInsets];
+    
+    return [[JSQMessagesBubbleImage alloc] initWithMessageBubbleImage:normalBubble highlightedImage:highlightedBubble];
+}
+
+- (UIImage *)addImage:(UIImage *)image1 withImage:(UIImage *)image2
+{
+    UIImage *result;
+    
+    UIGraphicsBeginImageContext(image1.size);
+    {
+        [image1 drawAtPoint:CGPointZero];
+        [image2 drawAtPoint:CGPointZero];
+        result = UIGraphicsGetImageFromCurrentImageContext();
+    }
+    UIGraphicsEndImageContext();
+    
+    return result;
 }
 
 - (UIImage *)jsq_horizontallyFlippedImageFromImage:(UIImage *)image
