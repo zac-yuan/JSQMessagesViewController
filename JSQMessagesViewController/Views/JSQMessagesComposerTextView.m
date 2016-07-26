@@ -22,6 +22,7 @@
 
 #import "NSString+JSQMessages.h"
 #import "UIFont+JSQMessages.h"
+#import "UIColor+JSQMessages.h"
 
 @implementation JSQMessagesComposerTextView
 
@@ -50,6 +51,7 @@
     self.font = [UIFont systemFontOfSize:16.0f];
     self.textColor = [UIColor blackColor];
     self.textAlignment = NSTextAlignmentNatural;
+    self.tintColor = [UIColor jsq_messageBubblePurpleColor];
 
     self.contentMode = UIViewContentModeRedraw;
     self.dataDetectorTypes = UIDataDetectorTypeNone;
