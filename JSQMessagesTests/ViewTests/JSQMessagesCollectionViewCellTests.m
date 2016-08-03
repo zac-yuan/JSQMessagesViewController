@@ -12,6 +12,7 @@
 
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+#import "JSQMessagesCollectionViewCellOutgoingError.h"
 
 
 @interface JSQMessagesCollectionViewCellTests : XCTestCase
@@ -48,6 +49,16 @@
     NSString *outgoingCellId = [JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier];
     XCTAssertNotNil(outgoingCellId, @"Cell identifier should not be nil");
     XCTAssertEqualObjects(outgoingCellId, NSStringFromClass([JSQMessagesCollectionViewCellOutgoing class]));
+}
+
+- (void)testMessagesOutgoingErrorCollectionViewCellInit
+{
+    UINib *outgoingCell = [JSQMessagesCollectionViewCellOutgoingError nib];
+    XCTAssertNotNil(outgoingCell, @"Nib should not be nil");
+    
+    NSString *outgoingCellId = [JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier];
+    XCTAssertNotNil(outgoingCellId, @"Cell identifier should not be nil");
+    XCTAssertEqualObjects(outgoingCellId, NSStringFromClass([JSQMessagesCollectionViewCellOutgoingError class]));
 }
 
 @end

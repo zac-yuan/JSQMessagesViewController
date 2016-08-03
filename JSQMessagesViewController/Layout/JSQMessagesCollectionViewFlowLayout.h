@@ -122,7 +122,7 @@ FOUNDATION_EXPORT const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault;
  *  This value should be considered more of a recommendation or suggestion to the layout, not an exact value.
  *
  *  @see JSQMessagesCollectionViewCellIncoming.
- *  @see JSQMessagesCollectionViewCellOutgoing.
+ *  @see JSQMessagesCollectionViewCellOutgoingError.
  */
 @property (assign, nonatomic) CGFloat messageBubbleLeftRightMargin;
 

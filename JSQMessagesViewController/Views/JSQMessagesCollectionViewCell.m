@@ -20,6 +20,7 @@
 
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+#import "JSQMessagesCollectionViewCellOutgoingError.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
 
 #import "UIView+JSQMessages.h"
@@ -208,10 +209,12 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]]) {
         self.avatarViewSize = customAttributes.incomingAvatarViewSize;
-    }
-    else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
+    } else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
+        self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
+    } else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoingError class]]) {
         self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
     }
+
 }
 
 - (void)setHighlighted:(BOOL)highlighted

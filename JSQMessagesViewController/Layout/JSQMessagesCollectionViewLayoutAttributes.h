@@ -72,10 +72,10 @@
 @property (assign, nonatomic) CGSize incomingAvatarViewSize;
 
 /**
- *  The size of the `avatarImageView` of a `JSQMessagesCollectionViewCellOutgoing`.
+ *  The size of the `avatarImageView` of a `JSQMessagesCollectionViewCellOutgoingErro`.
  *  The size values should be greater than or equal to `0.0`.
  *
- *  @see `JSQMessagesCollectionViewCellOutgoing`.
+ *  @see `JSQMessagesCollectionViewCellOutgoingError`.
  */
 @property (assign, nonatomic) CGSize outgoingAvatarViewSize;
 
