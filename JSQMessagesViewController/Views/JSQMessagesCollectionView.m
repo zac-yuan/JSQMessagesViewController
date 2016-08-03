@@ -21,6 +21,7 @@
 #import "JSQMessagesCollectionViewFlowLayout.h"
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+#import "JSQMessagesCollectionViewCellOutgoingError.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "BBMessagesTypingIndicatorFooterView.h"
@@ -59,6 +60,9 @@
     
     [self registerNib:[JSQMessagesCollectionViewCellOutgoing nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier]];
+    
+    [self registerNib:[JSQMessagesCollectionViewCellOutgoingError nib]
+          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier]];
     
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier]];

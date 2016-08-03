@@ -80,7 +80,7 @@
  *  in the collectionView for text messages.
  *
  *  @discussion This cell identifier is used for outgoing text message data items.
- *  The default value is the string returned by `[JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier]`.
+ *  The default value is the string returned by `[JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier]`.
  *  This value must not be `nil`.
  *
  *  @see JSQMessagesCollectionViewCellOutgoing.
@@ -92,6 +92,7 @@
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
 @property (copy, nonatomic) NSString *outgoingCellIdentifier;
+@property (copy, nonatomic) NSString *outgoingCellIdentifierError;
 
 /**
  *  The collection view cell identifier to use for dequeuing outgoing message collection view cells
