@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A271f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,6 +20,9 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qv2-xA-HCs" userLabel="TypingIndicatorView" customClass="BBDotActivityIndicatorView">
                     <rect key="frame" x="26" y="6" width="34" height="34"/>
+                    <accessibility key="accessibilityConfiguration" label="chatBotLoadingView">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <constraints>
                         <constraint firstAttribute="width" constant="34" id="CBX-zp-D2O"/>
                         <constraint firstAttribute="height" constant="34" id="faO-xS-M8B"/>
@@ -28,15 +31,13 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="hDN-qe-rvS" secondAttribute="bottom" constant="6" id="CLb-BV-zFS"/>
-                <constraint firstAttribute="trailing" secondItem="hDN-qe-rvS" secondAttribute="trailing" constant="246" id="VBy-h9-g1F"/>
-                <constraint firstAttribute="trailing" secondItem="qv2-xA-HCs" secondAttribute="trailing" constant="260" id="Yfm-8j-8Zz"/>
+                <constraint firstItem="qv2-xA-HCs" firstAttribute="leading" secondItem="e9Z-EJ-LD5" secondAttribute="leading" constant="26" id="Ggd-z0-1Zx"/>
+                <constraint firstItem="hDN-qe-rvS" firstAttribute="leading" secondItem="e9Z-EJ-LD5" secondAttribute="leading" constant="6" id="OiH-Ev-RiR"/>
                 <constraint firstAttribute="bottom" secondItem="qv2-xA-HCs" secondAttribute="bottom" constant="6" id="lLJ-5w-IvA"/>
             </constraints>
             <connections>
                 <outlet property="bubbleImageView" destination="hDN-qe-rvS" id="rjD-sQ-Hjr"/>
-                <outlet property="bubbleImageViewRightHorizontalConstraint" destination="VBy-h9-g1F" id="Iy8-3O-QuY"/>
                 <outlet property="dotActivityIndicatorView" destination="qv2-xA-HCs" id="rem-yH-1Ng"/>
-                <outlet property="typingIndicatorImageViewRightHorizontalConstraint" destination="Yfm-8j-8Zz" id="rtc-e7-anR"/>
                 <outlet property="typingIndicatorView" destination="qv2-xA-HCs" id="l16-Ec-PoB"/>
             </connections>
             <point key="canvasLocation" x="-80" y="138"/>
