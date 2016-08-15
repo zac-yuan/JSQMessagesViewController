@@ -15,7 +15,7 @@
 }
 
 + (UIFont *)babylonRegularFont:(CGFloat)size {
-    return [UIFont fontWithName:@".SFUIText-Regular" size:size];
+    return [UIFont systemFontOfSize:size];
 }
 
 + (UIFont *)babylonMediumFont:(CGFloat)size {
