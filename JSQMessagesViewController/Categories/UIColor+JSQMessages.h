@@ -31,6 +31,7 @@
  *  @return A color object containing HSB values similar to the iOS 7 messages app blue bubble color.
  */
 + (UIColor *)jsq_messageBubbleBlueColor;
++ (UIColor *)jsq_messageBubbleDarkPurpleColor;
 
 /**
  *  @return A color object containing HSB values similar to the iOS 7 red color.
