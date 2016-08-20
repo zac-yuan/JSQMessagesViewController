@@ -115,6 +115,10 @@
      *  Note: this feature is mostly stable, but still experimental
      */
     self.collectionView.collectionViewLayout.springinessEnabled = [NSUserDefaults springinessSetting];
+
+    // Show left button
+    [self.inputToolbar.contentView showHideLeftButton:YES];
+    
 }
 
 

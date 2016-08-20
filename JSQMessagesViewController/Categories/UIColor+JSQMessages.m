@@ -40,6 +40,14 @@
                            alpha:1.0f];
 }
 
++ (UIColor *)jsq_messageBubbleDarkPurpleColor
+{
+    return [UIColor colorWithRed:144.0f/255
+                           green:19.0f/255
+                            blue:254.0f/255
+                           alpha:0.5f];
+}
+
 + (UIColor *)jsq_messageBubbleRedColor
 {
     return [UIColor colorWithHue:0.0f / 360.0f

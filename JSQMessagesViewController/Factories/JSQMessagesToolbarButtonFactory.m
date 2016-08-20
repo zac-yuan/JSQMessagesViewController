@@ -28,8 +28,8 @@
 + (UIButton *)defaultAccessoryButtonItem
 {
     UIImage *accessoryImage = [UIImage babylon_defaultAccessoryImage];
-    UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
-    UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor darkGrayColor]];
+    UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor jsq_messageBubblePurpleColor]];
+    UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor jsq_messageBubbleDarkPurpleColor]];
 
     UIButton *accessoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, accessoryImage.size.width, 32.0f)];
     [accessoryButton setImage:normalImage forState:UIControlStateNormal];
@@ -37,7 +37,7 @@
 
     accessoryButton.contentMode = UIViewContentModeScaleAspectFit;
     accessoryButton.backgroundColor = [UIColor clearColor];
-    accessoryButton.tintColor = [UIColor lightGrayColor];
+    accessoryButton.tintColor = [UIColor jsq_messageBubblePurpleColor];
     
     accessoryButton.accessibilityLabel = [NSBundle jsq_localizedStringForKey:@"accessory_button_accessibility_label"];
 
