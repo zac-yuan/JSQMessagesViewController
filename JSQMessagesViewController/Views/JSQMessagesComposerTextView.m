@@ -216,20 +216,40 @@
               NSParagraphStyleAttributeName : paragraphStyle };
 }
 
-#pragma mark - UIMenuController
+#pragma mark -- UIMenuController
 
-- (BOOL)canBecomeFirstResponder
-{
+- (BOOL)canBecomeFirstResponder {
     return [super canBecomeFirstResponder];
 }
 
-- (BOOL)becomeFirstResponder
-{
+- (BOOL)becomeFirstResponder {
     return [super becomeFirstResponder];
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    
     [UIMenuController sharedMenuController].menuItems = nil;
-    return [super canPerformAction:action withSender:sender];
+    if ([self.text length] == 0) {
+        if (action == @selector(paste:)) {
+            return YES;
+        }
+    } else  {
+        NSRange range = self.selectedRange;
+        if (range.length > 0) {
+            if (action == @selector(cut:) || action == @selector(copy:) ||
+                action == @selector(select:) || action == @selector(selectAll:) ||
+                action == @selector(paste:) || action ==@selector(delete:)) {
+                return YES;
+            }
+        } else {
+            if ( action == @selector(select:) || action == @selector(selectAll:) ||
+                action == @selector(paste:)) {
+                return YES;
+            }
+        }
+        
+    }
+    return NO;
 }
+
 @end
