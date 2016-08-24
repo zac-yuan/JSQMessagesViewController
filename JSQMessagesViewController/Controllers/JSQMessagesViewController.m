@@ -189,7 +189,7 @@ JSQMessagesKeyboardControllerDelegate>
     self.automaticallyScrollsToMostRecentMessage = YES;
 
     self.outgoingCellIdentifier = [JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier];
-    self.outgoingCellIdentifierError = [JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier];
+//    self.outgoingCellIdentifierError = [JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier];
     self.outgoingMediaCellIdentifier = [JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier];
 
     self.incomingCellIdentifier = [JSQMessagesCollectionViewCellIncoming cellReuseIdentifier];
@@ -538,14 +538,23 @@ JSQMessagesKeyboardControllerDelegate>
     return 1;
 }
 
+- (NSInteger) dataSourceRowCount {
+    return [self collectionView: self.collectionView numberOfItemsInSection: 0] ;
+}
+
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    NSLog(@"cellForItemAtIndexPath") ;
+
     id<JSQMessageData> messageItem = [collectionView.dataSource collectionView:collectionView messageDataForItemAtIndexPath:indexPath];
     NSParameterAssert(messageItem != nil);
 
-    BOOL isOutgoingMessage = [self isOutgoingMessage:messageItem];
-    BOOL isMediaMessage = [messageItem isMediaMessage];
-    BOOL isMixedMediaMessage = [messageItem isMixedMediaMessage];
+    BOOL isLastRow              = indexPath.row == [self dataSourceRowCount] -1 ;
+    BOOL isOutgoingMessage      = [self isOutgoingMessage:messageItem];
+    BOOL isMediaMessage         = [messageItem isMediaMessage];
+    BOOL isMixedMediaMessage    = [messageItem isMixedMediaMessage];
+    NSString * identSuffix      = isLastRow && self.errorMessage ? @"Error" : @"" ;
     
     NSString *cellIdentifier = nil;
     if (isMediaMessage || isMixedMediaMessage) {
@@ -554,6 +563,8 @@ JSQMessagesKeyboardControllerDelegate>
     else {
         cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
     }
+
+    cellIdentifier = [cellIdentifier stringByAppendingString: identSuffix] ;
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.delegate = collectionView;
