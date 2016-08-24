@@ -92,7 +92,8 @@
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
 @property (copy, nonatomic) NSString *outgoingCellIdentifier;
-@property (copy, nonatomic) NSString *outgoingCellIdentifierError;
+//@property (copy, nonatomic) NSString *outgoingCellIdentifierError;
+@property (nonatomic, strong) NSString * _Nullable errorMessage ;
 
 /**
  *  The collection view cell identifier to use for dequeuing outgoing message collection view cells
