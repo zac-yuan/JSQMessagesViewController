@@ -91,8 +91,7 @@
  *  completely overriding many delegate and data source methods for the collectionView, 
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
-@property (copy, nonatomic) NSString *outgoingCellIdentifier;
-//@property (copy, nonatomic) NSString *outgoingCellIdentifierError;
+@property (nonatomic, strong) NSString * _Nonnull outgoingCellIdentifier;
 @property (nonatomic, strong) NSString * _Nullable errorMessage ;
 
 /**
@@ -111,7 +110,7 @@
  *  completely overriding many delegate and data source methods for the collectionView,
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
-@property (copy, nonatomic) NSString *outgoingMediaCellIdentifier;
+@property (nonatomic, strong) NSString * _Nonnull outgoingMediaCellIdentifier;
 
 /**
  *  The collection view cell identifier to use for dequeuing incoming message collection view cells 
@@ -129,7 +128,7 @@
  *  completely overriding many delegate and data source methods for the collectionView, 
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
-@property (copy, nonatomic) NSString *incomingCellIdentifier;
+@property (nonatomic, strong) NSString * _Nonnull incomingCellIdentifier;
 
 /**
  *  The collection view cell identifier to use for dequeuing incoming message collection view cells 
@@ -147,7 +146,7 @@
  *  completely overriding many delegate and data source methods for the collectionView,
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
-@property (copy, nonatomic) NSString *incomingMediaCellIdentifier;
+@property (nonatomic, strong) NSString * _Nonnull incomingMediaCellIdentifier;
 
 /**
  *  Specifies whether or not the view controller should show the typing indicator for an incoming message.
@@ -186,7 +185,7 @@
  *  you should also override `messagesViewController` to return your
  *  view controller loaded from your custom nib.
  */
-+ (UINib *)nib;
++ (UINib * _Nullable) nib;
 
 /**
  *  Creates and returns a new `JSQMessagesViewController` object.
@@ -195,7 +194,7 @@
  *
  *  @return An initialized `JSQMessagesViewController` object if successful, `nil` otherwise.
  */
-+ (instancetype)messagesViewController;
++ (instancetype _Nonnull) messagesViewController;
 
 #pragma mark - Messages view controller
 

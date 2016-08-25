@@ -16,6 +16,8 @@
 //  Released under an MIT license: http://opensource.org/licenses/MIT
 //
 
+@import Foundation ;
+
 #import "JSQMessagesViewController.h"
 
 #import "JSQMessagesCollectionViewFlowLayoutInvalidationContext.h"
@@ -25,6 +27,7 @@
 #import "JSQMessageAvatarImageDataSource.h"
 
 #import "JSQMessagesCollectionViewCellIncoming.h"
+#import "JSQMessagesCollectionViewCellIncomingError.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewCellOutgoingError.h"
 
@@ -107,12 +110,27 @@ JSQMessagesKeyboardControllerDelegate>
     self.automaticallyScrollsToMostRecentMessage = YES;
 
     self.outgoingCellIdentifier = [JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier];
-//    self.outgoingCellIdentifierError = [JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier];
     self.outgoingMediaCellIdentifier = [JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier];
 
     self.incomingCellIdentifier = [JSQMessagesCollectionViewCellIncoming cellReuseIdentifier];
     self.incomingMediaCellIdentifier = [JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier];
 
+//    UICollectionView * collectionView = self.collectionView ;
+//
+//    void (^registerNibCell)(Class) = ^(Class c) {
+//        NSString * name = NSStringFromClass(c) ;
+//        NSBundle * bundle =  [NSBundle bundleForClass:c] ;
+//        UINib * nib = [UINib nibWithNibName:name bundle:bundle] ;
+//
+//        NSLog(@"name: %@, bundle: %@, nib: %@", name, bundle, nib) ;
+//        [collectionView registerNib:nib forCellWithReuseIdentifier:name] ;
+//    } ;
+//
+//    registerNibCell([JSQMessagesCollectionViewCellIncoming class]) ;
+//    registerNibCell([JSQMessagesCollectionViewCellOutgoing class]) ;
+//    registerNibCell([JSQMessagesCollectionViewCellIncomingError class]) ;
+//    registerNibCell([JSQMessagesCollectionViewCellOutgoingError class]) ;
+//
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
 
@@ -465,26 +483,34 @@ JSQMessagesKeyboardControllerDelegate>
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSLog(@"cellForItemAtIndexPath") ;
-
     id<JSQMessageData> messageItem = [collectionView.dataSource collectionView:collectionView messageDataForItemAtIndexPath:indexPath];
     NSParameterAssert(messageItem != nil);
 
+    /// check wether we need to deal with the `error cell`, and setup `identSuffix`
+    /// accordingly.
     BOOL isLastRow              = indexPath.row == [self dataSourceRowCount] -1 ;
+    NSString * identSuffix      = isLastRow && self.errorMessage ? @"Error" : @"" ;
+
+    NSLog(@"isLastRow %@ identSuffix: %@" , isLastRow ? @"YES" : @"NO", identSuffix) ;
+
     BOOL isOutgoingMessage      = [self isOutgoingMessage:messageItem];
     BOOL isMediaMessage         = [messageItem isMediaMessage];
     BOOL isMixedMediaMessage    = [messageItem isMixedMediaMessage];
-    NSString * identSuffix      = isLastRow && self.errorMessage ? @"Error" : @"" ;
-    
-    NSString *cellIdentifier = nil;
-    if (isMediaMessage || isMixedMediaMessage) {
-        cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
-    }
-    else {
-        cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
-    }
 
-    cellIdentifier = [cellIdentifier stringByAppendingString: identSuffix] ;
+    NSLog(@"out %@ media: %@, mixed: %@" , isOutgoingMessage ? @"YES" : @"NO", isMediaMessage ? @"YES" : @"NO", isMixedMediaMessage ? @"YES" : @"NO") ;
+
+    NSString * (^cell_id)() = ^NSString * () {
+        if (isMediaMessage || isMixedMediaMessage) {
+            return isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier ;
+        }
+        return isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier ;
+    } ;
+
+    NSLog(@"cell_id: %@" , cell_id()) ;
+    NSLog(@"cell_id: %@" , [cell_id() stringByAppendingString: identSuffix]) ;
+
+
+    NSString *cellIdentifier = [cell_id() stringByAppendingString: identSuffix];
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.delegate = collectionView;
