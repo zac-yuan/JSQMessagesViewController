@@ -22,6 +22,8 @@
  *  A `JSQMessagesCollectionViewCellIncomingError` object is a concrete instance
  *  of `JSQMessagesCollectionViewCell` that represents an incoming message data item.
  */
-@interface JSQMessagesCollectionViewCellIncomingError : JSQMessagesCollectionViewCell
+@interface JSQMessagesCollectionViewCellIncomingError : JSQMessagesCollectionViewCell <JSQMessagesCollectionViewErrorCell>
+
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
 
 @end

@@ -488,10 +488,10 @@ JSQMessagesKeyboardControllerDelegate>
 
     /// check wether we need to deal with the `error cell`, and setup `identSuffix`
     /// accordingly.
-    BOOL isLastRow              = indexPath.row == [self dataSourceRowCount] -1 ;
-    NSString * identSuffix      = isLastRow && self.errorMessage ? @"Error" : @"" ;
+    BOOL isErrorRow             = self.errorMessage && indexPath.row == [self dataSourceRowCount] -1 ;
+    NSString * identSuffix      = isErrorRow && self.errorMessage ? @"Error" : @"" ;
 
-    NSLog(@"isLastRow %@ identSuffix: %@" , isLastRow ? @"YES" : @"NO", identSuffix) ;
+    NSLog(@"isLastRow %@ identSuffix: %@" , isErrorRow ? @"YES" : @"NO", identSuffix) ;
 
     BOOL isOutgoingMessage      = [self isOutgoingMessage:messageItem];
     BOOL isMediaMessage         = [messageItem isMediaMessage];
@@ -506,8 +506,8 @@ JSQMessagesKeyboardControllerDelegate>
         return isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier ;
     } ;
 
-    NSLog(@"cell_id: %@" , cell_id()) ;
-    NSLog(@"cell_id: %@" , [cell_id() stringByAppendingString: identSuffix]) ;
+//    NSLog(@"cell_id: %@" , cell_id()) ;
+//    NSLog(@"cell_id: %@" , [cell_id() stringByAppendingString: identSuffix]) ;
 
 
     NSString *cellIdentifier = [cell_id() stringByAppendingString: identSuffix];
@@ -588,7 +588,32 @@ JSQMessagesKeyboardControllerDelegate>
     cell.layer.shouldRasterize = YES;
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
 
+    UIButton * (^retryButton)() = ^UIButton * () {
+        BOOL conforms = [cell conformsToProtocol: @protocol(JSQMessagesCollectionViewErrorCell)] ;
+        if (conforms) {
+            id<JSQMessagesCollectionViewErrorCell> errorCell = (id<JSQMessagesCollectionViewErrorCell>) cell ;
+            return [errorCell retryButton] ;
+        }
+        return nil ;
+    } ;
+
+    UIButton * retry = retryButton() ;
+    if (retry) {
+        NSSet<NSObject*> * targets = retry.allTargets ;
+        if (targets) {
+            if (!([targets containsObject:self])) {
+                [retry addTarget: self
+                          action: @selector(errorRetryAction:)
+                forControlEvents: UIControlEventTouchUpInside] ;
+            }
+        }
+    }
+
     return cell;
+}
+
+- (void) errorRetryAction: (UIButton *) sender {
+    NSLog(@"errorRetryAction") ;
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView

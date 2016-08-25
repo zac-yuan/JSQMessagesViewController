@@ -1,10 +1,6 @@
 
 #import "JSQMessagesCollectionViewCellOutgoingError.h"
 
-@interface JSQMessagesCollectionViewCellOutgoingError ()
-@property (weak, nonatomic) IBOutlet UIButton *retryButton;
-@end
-
 @implementation JSQMessagesCollectionViewCellOutgoingError
 
 #pragma mark - Overrides
