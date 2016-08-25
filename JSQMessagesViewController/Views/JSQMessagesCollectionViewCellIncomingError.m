@@ -18,7 +18,10 @@
 
 #import "JSQMessagesCollectionViewCellIncomingError.h"
 
+
 @implementation JSQMessagesCollectionViewCellIncomingError
+
+
 
 #pragma mark - Overrides
 

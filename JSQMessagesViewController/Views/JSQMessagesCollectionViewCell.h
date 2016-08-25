@@ -21,6 +21,13 @@
 #import "JSQMessagesLabel.h"
 #import "JSQMessagesCellTextView.h"
 
+@protocol JSQMessagesCollectionViewErrorCell <NSObject>
+
+- (UIButton *) retryButton ;
+
+@end
+
+
 @class JSQMessagesCollectionViewCell;
 
 /**
