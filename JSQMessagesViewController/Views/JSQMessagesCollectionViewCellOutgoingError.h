@@ -6,5 +6,8 @@
  *  of `JSQMessagesCollectionViewCell` that represents an outgoing message data item.
  */
 
-@interface JSQMessagesCollectionViewCellOutgoingError : JSQMessagesCollectionViewCell
+@interface JSQMessagesCollectionViewCellOutgoingError : JSQMessagesCollectionViewCell <JSQMessagesCollectionViewErrorCell>
+
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
+
 @end
