@@ -680,12 +680,10 @@ JSQMessagesKeyboardControllerDelegate>
     UIButton * retry = retryButton() ;
     if (retry) {
         NSSet<NSObject*> * targets = retry.allTargets ;
-        if (targets) {
-            if (!([targets containsObject:self])) {
-                [retry addTarget: self
-                          action: @selector(errorRetryAction:)
-                forControlEvents: UIControlEventTouchUpInside] ;
-            }
+        if (targets == nil || !([targets containsObject:self])) {
+            [retry addTarget: self
+                      action: @selector(errorRetryAction:)
+            forControlEvents: UIControlEventTouchUpInside] ;
         }
     }
 
