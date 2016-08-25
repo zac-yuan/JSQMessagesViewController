@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -97,8 +97,8 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA5-Wb-YGn" userLabel="Retry Button">
-                        <rect key="frame" x="4" y="106" width="22" height="22"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA5-Wb-YGn" userLabel="Retry Button">
+                        <rect key="frame" x="6" y="106" width="19" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="821-Qv-GC5"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="BEN-lQ-lfb"/>
@@ -106,6 +106,7 @@
                             <constraint firstAttribute="width" constant="22" id="S5F-6x-fTo"/>
                         </constraints>
                         <color key="tintColor" red="1" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" image="error"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -154,4 +155,7 @@
             <point key="canvasLocation" x="255" y="202"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="error" width="19" height="19"/>
+    </resources>
 </document>
