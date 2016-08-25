@@ -511,6 +511,7 @@ JSQMessagesKeyboardControllerDelegate>
 
 
     NSString *cellIdentifier = [cell_id() stringByAppendingString: identSuffix];
+    NSLog(@"cellIdentifier: %@" , cellIdentifier) ;
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.delegate = collectionView;
