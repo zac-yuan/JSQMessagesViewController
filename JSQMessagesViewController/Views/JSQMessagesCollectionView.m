@@ -20,6 +20,7 @@
 
 #import "JSQMessagesCollectionViewFlowLayout.h"
 #import "JSQMessagesCollectionViewCellIncoming.h"
+#import "JSQMessagesCollectionViewCellIncomingError.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewCellOutgoingError.h"
 
@@ -62,8 +63,11 @@
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier]];
     
     [self registerNib:[JSQMessagesCollectionViewCellOutgoingError nib]
-          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier]];
-    
+            forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoingError cellReuseIdentifier]];
+
+    [self registerNib:[JSQMessagesCollectionViewCellIncomingError nib]
+        forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncomingError cellReuseIdentifier]];
+
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier]];
     
