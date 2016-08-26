@@ -95,7 +95,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA5-Wb-YGn" userLabel="Retry Button">
                         <rect key="frame" x="6" y="106" width="19" height="22"/>
                         <color key="tintColor" red="1" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" image="error.png"/>
+                        <state key="normal" image="error"/>
                         <connections>
                             <action selector="retryButton:" destination="4lh-CK-yVn" eventType="touchUpInside" id="myY-aE-OX9"/>
                         </connections>
@@ -141,6 +141,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="error.png" width="19" height="19"/>
+        <image name="error" width="19" height="19"/>
     </resources>
 </document>
