@@ -94,7 +94,7 @@
                             <constraint firstAttribute="height" constant="22" id="J5u-M2-por"/>
                         </constraints>
                         <color key="tintColor" red="1" green="0.20784313725490194" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" image="error.png"/>
+                        <state key="normal" image="error"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -144,6 +144,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="error.png" width="19" height="19"/>
+        <image name="error" width="19" height="19"/>
     </resources>
 </document>
