@@ -676,6 +676,10 @@ JSQMessagesKeyboardControllerDelegate>
 
     UIButton * retry = retryButton() ;
     if (retry) {
+        UIImage * image = [UIImage imageNamed:@"error"] ;
+        if (image) {
+            [retry setImage:image forState:UIControlStateNormal] ;
+        }
         NSSet<NSObject*> * targets = retry.allTargets ;
         if (targets == nil || !([targets containsObject:self])) {
             [retry addTarget: self
