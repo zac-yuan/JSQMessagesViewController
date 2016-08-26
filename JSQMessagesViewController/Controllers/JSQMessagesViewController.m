@@ -506,10 +506,6 @@ JSQMessagesKeyboardControllerDelegate>
         return isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier ;
     } ;
 
-//    NSLog(@"cell_id: %@" , cell_id()) ;
-//    NSLog(@"cell_id: %@" , [cell_id() stringByAppendingString: identSuffix]) ;
-
-
     NSString *cellIdentifier = [cell_id() stringByAppendingString: identSuffix];
     NSLog(@"cellIdentifier: %@" , cellIdentifier) ;
 
