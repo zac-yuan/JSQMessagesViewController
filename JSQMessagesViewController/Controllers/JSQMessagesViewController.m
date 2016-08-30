@@ -197,22 +197,6 @@ JSQMessagesKeyboardControllerDelegate>
     self.incomingCellIdentifier = [JSQMessagesCollectionViewCellIncoming cellReuseIdentifier];
     self.incomingMediaCellIdentifier = [JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier];
 
-//    UICollectionView * collectionView = self.collectionView ;
-//
-//    void (^registerNibCell)(Class) = ^(Class c) {
-//        NSString * name = NSStringFromClass(c) ;
-//        NSBundle * bundle =  [NSBundle bundleForClass:c] ;
-//        UINib * nib = [UINib nibWithNibName:name bundle:bundle] ;
-//
-//        NSLog(@"name: %@, bundle: %@, nib: %@", name, bundle, nib) ;
-//        [collectionView registerNib:nib forCellWithReuseIdentifier:name] ;
-//    } ;
-//
-//    registerNibCell([JSQMessagesCollectionViewCellIncoming class]) ;
-//    registerNibCell([JSQMessagesCollectionViewCellOutgoing class]) ;
-//    registerNibCell([JSQMessagesCollectionViewCellIncomingError class]) ;
-//    registerNibCell([JSQMessagesCollectionViewCellOutgoingError class]) ;
-//
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
 
@@ -665,6 +649,10 @@ JSQMessagesKeyboardControllerDelegate>
     cell.layer.shouldRasterize = YES;
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
 
+#if 0
+
+    /// looks like ke whole cell is a tap target, so there's no need to
+    /// add one to the retyr button
     UIButton * (^retryButton)() = ^UIButton * () {
         BOOL conforms = [cell conformsToProtocol: @protocol(JSQMessagesCollectionViewErrorCell)] ;
         if (conforms) {
@@ -687,6 +675,8 @@ JSQMessagesKeyboardControllerDelegate>
             forControlEvents: UIControlEventTouchUpInside] ;
         }
     }
+
+#endif
 
     return cell;
 }
