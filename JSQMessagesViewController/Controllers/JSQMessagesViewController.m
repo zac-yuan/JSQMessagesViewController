@@ -569,7 +569,6 @@ JSQMessagesKeyboardControllerDelegate>
     cell.layer.shouldRasterize = YES;
     [self collectionView:collectionView accessibilityForCell:cell indexPath:indexPath message:messageItem];
 
-#if 0
 
     /// looks like ke whole cell is a tap target, so there's no need to
     /// add one to the retyr button
@@ -588,22 +587,25 @@ JSQMessagesKeyboardControllerDelegate>
         if (image) {
             [retry setImage:image forState:UIControlStateNormal] ;
         }
-        NSSet<NSObject*> * targets = retry.allTargets ;
+#if 0
+       NSSet<NSObject*> * targets = retry.allTargets ;
         if (targets == nil || !([targets containsObject:self])) {
             [retry addTarget: self
                       action: @selector(errorRetryAction:)
             forControlEvents: UIControlEventTouchUpInside] ;
         }
+#endif
     }
 
-#endif
 
     return cell;
 }
 
+#if 0
 - (void) errorRetryAction: (UIButton *) sender {
     NSLog(@"errorRetryAction") ;
 }
+#endif
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView
   accessibilityForCell:(JSQMessagesCollectionViewCell*)cell
