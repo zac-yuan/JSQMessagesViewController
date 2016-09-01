@@ -20,7 +20,7 @@
 
 #import "JSQMessagesMediaPlaceholderView.h"
 #import "JSQMessagesMediaViewBubbleImageMasker.h"
-
+#import "UIColor+JSQMessages.h"
 
 @interface JSQLocationMediaItem ()
 
@@ -106,7 +106,8 @@
                       return;
                   }
                   
-                  MKAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
+                  MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
+                  pin.pinTintColor = [UIColor jsq_messageBubblePurpleColor];
                   CGPoint coordinatePoint = [snapshot pointForCoordinate:location.coordinate];
                   UIImage *image = snapshot.image;
                   
