@@ -555,13 +555,9 @@ JSQMessagesKeyboardControllerDelegate>
     BOOL isErrorRow             = self.errorMessage && indexPath.row == [self dataSourceRowCount] -1 ;
     NSString * identSuffix      = isErrorRow && self.errorMessage ? @"Error" : @"" ;
 
-    NSLog(@"isLastRow %@ identSuffix: %@" , isErrorRow ? @"YES" : @"NO", identSuffix) ;
-
     BOOL isOutgoingMessage      = [self isOutgoingMessage:messageItem];
     BOOL isMediaMessage         = [messageItem isMediaMessage];
     BOOL isMixedMediaMessage    = [messageItem isMixedMediaMessage];
-
-    NSLog(@"out %@ media: %@, mixed: %@" , isOutgoingMessage ? @"YES" : @"NO", isMediaMessage ? @"YES" : @"NO", isMixedMediaMessage ? @"YES" : @"NO") ;
 
     NSString * (^cell_id)() = ^NSString * () {
         if (isMediaMessage || isMixedMediaMessage) {
@@ -571,7 +567,6 @@ JSQMessagesKeyboardControllerDelegate>
     } ;
 
     NSString *cellIdentifier = [cell_id() stringByAppendingString: identSuffix];
-    NSLog(@"cellIdentifier: %@" , cellIdentifier) ;
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.delegate = collectionView;
