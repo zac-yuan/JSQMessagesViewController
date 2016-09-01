@@ -139,6 +139,9 @@
     
     [self addPhotoMediaMessage];
     [self addAudioMediaMessage];
+    [self addLocationMediaMessageCompletion:^{
+        
+    }];
     
     /**
      *  Setting to load extra messages for testing/demo
