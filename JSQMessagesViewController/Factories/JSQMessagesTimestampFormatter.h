@@ -36,6 +36,7 @@
  *  The default value is a dictionary containing attributes that specify centered, light gray text and the bold system font at size `12.0f`.
  */
 @property (copy, nonatomic) NSDictionary *dateTextAttributes;
+@property (copy, nonatomic) NSDictionary *customTextAttributes;
 
 /**
  *  The text attributes to apply to the minute and hour componenents of the string representation of a given date. 
@@ -80,6 +81,7 @@
  * @see 'timestampForDate:'
  */
 - (NSAttributedString *)attributedCustomText:(NSString *)string;
+- (NSAttributedString *)attributedCustomErrorText:(NSString *)string;
 
 /**
  *  Returns a string representation of *only* the minute and hour components of the given date formatted in the current locale styled using `NSDateFormatterShortStyle`.
