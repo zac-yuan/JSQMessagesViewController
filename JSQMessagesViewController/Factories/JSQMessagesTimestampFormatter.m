@@ -60,6 +60,9 @@
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
         
+        _customTextAttributes = @{ NSFontAttributeName : [UIFont babylonMediumFont:12.0f],
+                                 NSForegroundColorAttributeName : [UIColor redColor] };
+
         _timeTextAttributes = @{ NSFontAttributeName : [UIFont babylonRegularFont:12.0f],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
@@ -107,6 +110,17 @@
     
     NSMutableAttributedString *customString = [[NSMutableAttributedString alloc] initWithString:string
                                                                                   attributes:self.dateTextAttributes];
+    
+    return [[NSAttributedString alloc] initWithAttributedString:customString];
+}
+
+- (NSAttributedString *)attributedCustomErrorText:(NSString *)string {
+    if (!string) {
+        return nil;
+    }
+    
+    NSMutableAttributedString *customString = [[NSMutableAttributedString alloc] initWithString:string
+                                                                                     attributes:self.customTextAttributes];
     
     return [[NSAttributedString alloc] initWithAttributedString:customString];
 }

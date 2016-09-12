@@ -12,4 +12,8 @@
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
 }
 
+- (IBAction)retryButtonAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self.delegate messagesCollectionViewCellDidTapMessageBubble:self];
+}
+
 @end
