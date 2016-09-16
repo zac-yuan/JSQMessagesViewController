@@ -37,6 +37,7 @@
  */
 @property (copy, nonatomic) NSDictionary *dateTextAttributes;
 @property (copy, nonatomic) NSDictionary *customTextAttributes;
+@property (copy, nonatomic) NSDictionary *customImageTextAttributes;
 
 /**
  *  The text attributes to apply to the minute and hour componenents of the string representation of a given date. 
@@ -80,6 +81,8 @@
  * It applies the attributes in dateTextAttributes.
  * @see 'timestampForDate:'
  */
+
+- (NSAttributedString *)attributedImageCustomString:(NSString *)string;
 - (NSAttributedString *)attributedCustomText:(NSString *)string;
 - (NSAttributedString *)attributedCustomErrorText:(NSString *)string;
 

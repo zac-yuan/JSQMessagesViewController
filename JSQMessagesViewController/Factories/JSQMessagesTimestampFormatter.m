@@ -62,6 +62,9 @@
         
         _customTextAttributes = @{ NSFontAttributeName : [UIFont babylonMediumFont:12.0f],
                                  NSForegroundColorAttributeName : [UIColor redColor] };
+        
+        _customImageTextAttributes = @{ NSFontAttributeName : [UIFont babylonMediumFont:12.0f],
+                                        NSForegroundColorAttributeName : color };
 
         _timeTextAttributes = @{ NSFontAttributeName : [UIFont babylonRegularFont:12.0f],
                                  NSForegroundColorAttributeName : color,
@@ -110,6 +113,17 @@
     
     NSMutableAttributedString *customString = [[NSMutableAttributedString alloc] initWithString:string
                                                                                   attributes:self.dateTextAttributes];
+    
+    return [[NSAttributedString alloc] initWithAttributedString:customString];
+}
+
+- (NSAttributedString *)attributedImageCustomString:(NSString *)string {
+    if (!string) {
+        return nil;
+    }
+    
+    NSMutableAttributedString *customString = [[NSMutableAttributedString alloc] initWithString:string
+                                                                                     attributes:self.customImageTextAttributes];
     
     return [[NSAttributedString alloc] initWithAttributedString:customString];
 }
