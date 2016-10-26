@@ -11,15 +11,15 @@
 @implementation UIFont (JSQMessages)
 
 + (UIFont *)babylonLightFont:(CGFloat)size {
-    return [UIFont fontWithName:@".SFUIText-Light" size:size];
+    return [UIFont systemFontOfSize:size];
 }
 
 + (UIFont *)babylonRegularFont:(CGFloat)size {
-    return [UIFont fontWithName:@".SFUIText-Regular" size:size];
+    return [UIFont systemFontOfSize:size];
 }
 
 + (UIFont *)babylonMediumFont:(CGFloat)size {
-    return [UIFont fontWithName:@".SFUIText-Medium" size:size];
+    return [UIFont systemFontOfSize:size];
 }
 
 @end
