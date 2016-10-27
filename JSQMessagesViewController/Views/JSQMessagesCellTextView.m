@@ -27,8 +27,8 @@
     self.textColor = [UIColor whiteColor];
     self.editable = NO;
     self.selectable = YES;
-    self.userInteractionEnabled = NO;
-    self.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.userInteractionEnabled = YES;
+    self.dataDetectorTypes = UIDataDetectorTypeAll;
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
     self.scrollEnabled = NO;
@@ -38,7 +38,7 @@
     self.contentOffset = CGPointZero;
     self.textContainerInset = UIEdgeInsetsZero;
     self.textContainer.lineFragmentPadding = 0;
-    self.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor],
+    self.linkTextAttributes = @{ NSForegroundColorAttributeName : [UIColor blackColor],
                                  NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
 }
 
