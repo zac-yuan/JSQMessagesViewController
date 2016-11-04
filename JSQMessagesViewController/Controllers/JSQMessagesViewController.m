@@ -509,6 +509,12 @@ JSQMessagesKeyboardControllerDelegate>
         cell.messageBubbleImageView.highlightedImage = [bubbleImageDataSource messageBubbleHighlightedImage];
     }
     else {
+        
+        id<JSQMessageBubbleImageDataSource> bubbleImageDataSource = [collectionView.dataSource collectionView:collectionView messageBubbleImageDataForItemAtIndexPath:indexPath];
+        cell.messageBubbleImageView.image = [bubbleImageDataSource messageBubbleImage];
+        cell.messageBubbleImageView.highlightedImage = [bubbleImageDataSource messageBubbleHighlightedImage];
+
+        
         id<JSQMessageMediaData> messageMedia = [messageItem media];
         cell.mediaView = [messageMedia mediaView] ?: [messageMedia mediaPlaceholderView];
         NSParameterAssert(cell.mediaView != nil);
