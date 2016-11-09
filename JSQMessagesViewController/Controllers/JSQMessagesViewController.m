@@ -477,6 +477,9 @@ JSQMessagesKeyboardControllerDelegate>
     BOOL isMixedMediaMessage    = [messageItem isMixedMediaMessage];
 
     NSString * (^cell_id)() = ^NSString * () {
+        if (isMixedMediaMessage) {
+            return @"incomingMixedMediaCellIdentifier";
+        }
         if (isMediaMessage || isMixedMediaMessage) {
             return isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier ;
         }
