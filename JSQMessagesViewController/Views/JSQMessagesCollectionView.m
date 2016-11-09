@@ -71,6 +71,9 @@
     [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier]];
     
+    [self registerNib:[JSQMessagesCollectionViewCellIncoming nib]
+forCellWithReuseIdentifier:@"incomingMixedMediaCellIdentifier"];
+    
     [self registerNib:[JSQMessagesCollectionViewCellOutgoing nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier]];
     
