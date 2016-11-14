@@ -348,10 +348,17 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 {
     _bottomAttachmentView = bottomAttachmentView;
     [bottomAttachmentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self clearBottomAttachmentView];
     [self.bottomAttachmentViewContainer addSubview:bottomAttachmentView];
     [self.bottomAttachmentViewContainer jsq_pinAllEdgesOfSubview:bottomAttachmentView];
     self.bottomAttachmentHeightConstraint.constant = bottomAttachmentView.bounds.size.height;
     [self.bottomAttachmentViewContainer layoutIfNeeded];
+}
+
+-(void)clearBottomAttachmentView {    
+    for (UIView *view in self.bottomAttachmentViewContainer.subviews) {
+        [view removeFromSuperview];
+    }
 }
 
 #pragma mark - Getters
