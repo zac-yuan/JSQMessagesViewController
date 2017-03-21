@@ -73,7 +73,9 @@ const CGFloat kBBMessagesTypingIndicatorFooterViewHeight = 46.0f;
     
     CGFloat bubbleMarginMinimumSpacing = 6.0f;
     CGFloat indicatorMarginMinimumSpacing = 24.0f;
-    
+
+    self.dotActivityIndicatorView.dotParms.defaultColor = ellipsisColor;
+
     JSQMessagesBubbleImageFactory *bubbleImageFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     
     if (shouldDisplayOnLeft) {
