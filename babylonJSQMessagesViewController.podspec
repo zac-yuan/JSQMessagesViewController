@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'babylonJSQMessagesViewController'
-	s.version = '7.3.4-Babylon-1'
+	s.version = '7.3.5-Babylon'
 	s.summary = 'An elegant messages UI library for iOS.'
 	s.homepage = 'http://jessesquires.github.io/JSQMessagesViewController'
 	s.license = 'MIT'
