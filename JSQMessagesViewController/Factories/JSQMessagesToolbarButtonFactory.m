@@ -28,8 +28,8 @@
 + (UIButton *)defaultAccessoryButtonItem
 {
     UIImage *accessoryImage = [UIImage babylon_defaultAccessoryImage];
-    UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor jsq_messageBubblePurpleColor]];
-    UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor jsq_messageBubbleDarkPurpleColor]];
+    UIImage *normalImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor lightGrayColor]];
+    UIImage *highlightedImage = [accessoryImage jsq_imageMaskedWithColor:[UIColor darkGrayColor]];
 
     UIButton *accessoryButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, accessoryImage.size.width, 32.0f)];
     [accessoryButton setImage:normalImage forState:UIControlStateNormal];
@@ -37,7 +37,7 @@
 
     accessoryButton.contentMode = UIViewContentModeScaleAspectFit;
     accessoryButton.backgroundColor = [UIColor clearColor];
-    accessoryButton.tintColor = [UIColor jsq_messageBubblePurpleColor];
+    accessoryButton.tintColor = [UIColor lightGrayColor];
     
     accessoryButton.accessibilityLabel = [NSBundle jsq_localizedStringForKey:@"accessory_button_accessibility_label"];
 
@@ -50,8 +50,8 @@
 
     UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectZero];
     [sendButton setTitle:sendTitle forState:UIControlStateNormal];
-    [sendButton setTitleColor:[UIColor jsq_messageBubblePurpleColor] forState:UIControlStateNormal];
-    [sendButton setTitleColor:[[UIColor jsq_messageBubblePurpleColor] jsq_colorByDarkeningColorWithValue:0.1f] forState:UIControlStateHighlighted];
+    [sendButton setTitleColor:[UIColor jsq_messageBubbleBlueColor] forState:UIControlStateNormal];
+    [sendButton setTitleColor:[[UIColor jsq_messageBubbleBlueColor] jsq_colorByDarkeningColorWithValue:0.1f] forState:UIControlStateHighlighted];
     [sendButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
 
     sendButton.titleLabel.font = [UIFont babylonMediumFont:17.0f];
@@ -59,7 +59,7 @@
     sendButton.titleLabel.minimumScaleFactor = 0.85f;
     sendButton.contentMode = UIViewContentModeCenter;
     sendButton.backgroundColor = [UIColor clearColor];
-    sendButton.tintColor = [UIColor jsq_messageBubblePurpleColor];
+    sendButton.tintColor = [UIColor jsq_messageBubbleBlueColor];
 
     CGFloat maxHeight = 32.0f;
 

@@ -59,7 +59,7 @@
 
 - (instancetype)init
 {
-    UIColor *tintColor = [UIColor jsq_messageBubblePurpleColor];
+    UIColor *tintColor = [UIColor jsq_messageBubbleBlueColor];
     AVAudioSessionCategoryOptions options = AVAudioSessionCategoryOptionDuckOthers
     | AVAudioSessionCategoryOptionDefaultToSpeaker
     | AVAudioSessionCategoryOptionAllowBluetooth;

@@ -37,8 +37,7 @@
     
     self.animationToValue = (self.animationToValue == 0) ? 1.0 : self.animationToValue;
     
-    self.defaultColor = ( self.defaultColor == nil ) ? [UIColor jsq_messageBubblePurpleColor] : self.defaultColor;
-
+    self.defaultColor = ( self.defaultColor == nil ) ? [UIColor jsq_messageBubbleBlueColor] : self.defaultColor;
 }
 
 @end

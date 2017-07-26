@@ -24,28 +24,18 @@
 
 + (UIColor *)jsq_messageBubbleGreenColor
 {
-    return [UIColor greenColor];
+    return [UIColor colorWithHue:130.0f / 360.0f
+                      saturation:0.68f
+                      brightness:0.84f
+                           alpha:1.0f];
 }
 
 + (UIColor *)jsq_messageBubbleBlueColor
 {
-    return [UIColor purpleColor];
-}
-
-+ (UIColor *)jsq_messageBubblePurpleColor
-{
-    return [UIColor colorWithRed:144.0f/255
-                           green:19.0f/255
-                            blue:254.0f/255
+    return [UIColor colorWithHue:210.0f / 360.0f
+                      saturation:0.94f
+                      brightness:1.0f
                            alpha:1.0f];
-}
-
-+ (UIColor *)jsq_messageBubbleDarkPurpleColor
-{
-    return [UIColor colorWithRed:144.0f/255
-                           green:19.0f/255
-                            blue:254.0f/255
-                           alpha:0.5f];
 }
 
 + (UIColor *)jsq_messageBubbleRedColor
