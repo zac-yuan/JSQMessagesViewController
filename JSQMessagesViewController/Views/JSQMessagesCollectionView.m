@@ -89,7 +89,7 @@ forCellWithReuseIdentifier:@"incomingMixedMediaCellIdentifier"];
     _typingIndicatorMessageBubbleColor = [UIColor jsq_messageBubbleLightGrayColor];
     _typingIndicatorEllipsisColor = [_typingIndicatorMessageBubbleColor jsq_colorByDarkeningColorWithValue:0.3f];
 
-    _loadEarlierMessagesHeaderTextColor = [UIColor jsq_messageBubblePurpleColor];
+    _loadEarlierMessagesHeaderTextColor = [UIColor jsq_messageBubbleBlueColor];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout

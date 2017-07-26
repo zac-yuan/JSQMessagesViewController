@@ -48,7 +48,7 @@ const CGFloat kBBMessagesTypingIndicatorFooterViewHeight = 46.0f;
     dotParms.animationDelay = 0.2;
     dotParms.animationDuration = 0.6;
     dotParms.animationFromValue = 0.5;
-    dotParms.defaultColor = [UIColor jsq_messageBubblePurpleColor];
+    dotParms.defaultColor = [UIColor jsq_messageBubbleBlueColor];
     dotParms.isDataValidationEnabled = YES;
     return dotParms;
 }

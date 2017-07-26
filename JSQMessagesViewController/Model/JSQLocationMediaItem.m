@@ -107,7 +107,7 @@
                   }
                   
                   MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
-                  pin.pinTintColor = [UIColor jsq_messageBubblePurpleColor];
+                  pin.pinTintColor = self.pinAnnotationTintColor;
                   CGPoint coordinatePoint = [snapshot pointForCoordinate:location.coordinate];
                   UIImage *image = snapshot.image;
                   
