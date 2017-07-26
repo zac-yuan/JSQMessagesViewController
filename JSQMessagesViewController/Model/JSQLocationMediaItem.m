@@ -107,6 +107,7 @@
                   }
                   
                   MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:nil reuseIdentifier:nil];
+                  pin.pinTintColor = self.pinAnnotationTintColor;
                   CGPoint coordinatePoint = [snapshot pointForCoordinate:location.coordinate];
                   UIImage *image = snapshot.image;
                   

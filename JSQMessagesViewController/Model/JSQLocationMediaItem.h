@@ -44,8 +44,6 @@ typedef void (^JSQLocationMediaItemCompletionBlock)(void);
  *  The coordinate of the location property.
  */
 @property (readonly, nonatomic) CLLocationCoordinate2D coordinate;
-@property (strong, nonatomic) NSString *searchType;
-@property (strong, nonatomic) NSString *placeId;
 
 /**
  *  Initializes and returns a location media item object having the given location.
@@ -85,4 +83,10 @@ typedef void (^JSQLocationMediaItemCompletionBlock)(void);
  */
 - (void)setLocation:(CLLocation *)location
              region:(MKCoordinateRegion)region withCompletionHandler:(JSQLocationMediaItemCompletionBlock)completion;
+
+/**
+ * Tint color for the pin annotiation in a map view. Default is nil.
+ */
+@property (strong, nonatomic) UIColor *pinAnnotationTintColor;
+
 @end
