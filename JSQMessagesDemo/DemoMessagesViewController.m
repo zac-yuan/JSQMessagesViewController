@@ -36,14 +36,12 @@
     [super viewDidLoad];
     
     self.title = @"JSQMessages";
-    
     /**
      *  You MUST set your senderId and display name
      */
     self.senderId = kJSQDemoAvatarIdSquires;
     self.senderDisplayName = kJSQDemoAvatarDisplayNameSquires;
-    
-    self.inputToolbar.contentView.textView.pasteDelegate = self;
+    self.inputToolbar.contentView.textView.jsq_pasteDelegate = self;
     
     /**
      *  Load up our fake data for the demo
