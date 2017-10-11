@@ -206,6 +206,10 @@ JSQMessagesKeyboardControllerDelegate>
 
     self.topContentAdditionalInset = 0.0f;
 
+    if (@available(iOS 11.0, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+
     [self jsq_updateCollectionViewInsets];
 
     // Don't set keyboardController if client creates custom content view via -loadToolbarContentView
