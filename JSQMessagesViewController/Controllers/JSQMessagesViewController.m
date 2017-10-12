@@ -325,6 +325,10 @@ JSQMessagesKeyboardControllerDelegate>
     [self.keyboardController endListeningForKeyboard];
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    [self jsq_updateCollectionViewInsets];
+}
 
 #pragma mark - View rotation
 
