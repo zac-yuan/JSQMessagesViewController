@@ -24,4 +24,8 @@
  */
 @interface JSQMessagesCollectionViewCellOutgoing : JSQMessagesCollectionViewCell
 
+
+@property (weak, nonatomic) IBOutlet UIButton * _Null_unspecified undoButton;
+@property (copy, nonatomic, nullable) void (^undoButtonTap)(void);
+
 @end

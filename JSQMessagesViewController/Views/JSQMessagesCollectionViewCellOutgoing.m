@@ -29,4 +29,10 @@
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
 }
 
+- (IBAction)undoButtonPressed:(id)sender {
+    if (self.undoButtonTap != nil) {
+        self.undoButtonTap();
+    }
+}
+
 @end
