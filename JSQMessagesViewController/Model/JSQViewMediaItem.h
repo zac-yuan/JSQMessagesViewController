@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UIView *media;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *title;
+@property (assign, nonatomic) BOOL shouldApplyMask;
 
 - (instancetype)initWithViewMedia:(UIView *)media;
 - (instancetype)initWithViewMedia:(UIView *)view andUrl:(NSString *)url;

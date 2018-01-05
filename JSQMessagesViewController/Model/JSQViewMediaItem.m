@@ -75,7 +75,10 @@
     
     if (self.cachedMediaContainer == nil) {
         UIView *view = _media;
-        [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:view isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        if (self.shouldApplyMask) {
+            [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:view
+                                                                        isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        }
         self.cachedMediaContainer = view;
     }
     
