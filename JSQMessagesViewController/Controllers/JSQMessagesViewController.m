@@ -496,6 +496,11 @@ JSQMessagesKeyboardControllerDelegate>
     return [messageSenderId isEqualToString:self.senderId];
 }
 
+- (BOOL)isCellMenuVisible
+{
+    return [self jsq_isMenuVisible];
+}
+
 #pragma mark - JSQMessages collection view data source
 
 - (id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath

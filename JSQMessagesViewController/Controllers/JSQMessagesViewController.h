@@ -173,6 +173,12 @@
  */
 @property (assign, nonatomic) CGFloat topContentAdditionalInset;
 
+/**
+ *  Specifies whether the tooltip menu for teh cell is visible or not
+ *
+ */
+@property (assign, nonatomic, readonly) BOOL isCellMenuVisible;
+
 #pragma mark - Class methods
 
 /**
