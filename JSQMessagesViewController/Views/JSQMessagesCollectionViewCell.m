@@ -26,6 +26,7 @@
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
 #import "UIFont+JSQMessages.h"
+#import <objc/message.h>
 
 static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
@@ -103,6 +104,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 + (void)registerMenuAction:(SEL)action
 {
     [jsqMessagesCollectionViewCellActions addObject:NSStringFromSelector(action)];
+    class_replaceMethod([JSQMessagesCollectionViewCell class], action, _objc_msgForward, "v@:@");
 }
 
 #pragma mark - Initialization
