@@ -1,28 +1,12 @@
 PODS:
-  - Alamofire (3.4.1)
-  - ios-foundation (0.1.5):
-    - Alamofire
-  - JSQSystemSoundPlayer (2.0.1)
+  - JSQSystemSoundPlayer (3.0.0)
 
 DEPENDENCIES:
-  - ios-foundation (from `git@github.com:Babylonpartners/ios-foundation.git`, branch `master`)
-  - JSQSystemSoundPlayer (~> 2.0)
-
-EXTERNAL SOURCES:
-  ios-foundation:
-    :branch: master
-    :git: git@github.com:Babylonpartners/ios-foundation.git
-
-CHECKOUT OPTIONS:
-  ios-foundation:
-    :commit: b5068370b48f3cc28cdd7276b70354630154230f
-    :git: git@github.com:Babylonpartners/ios-foundation.git
+  - JSQSystemSoundPlayer (~> 3.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  ios-foundation: e9782037c086c6c6662d239ed3975f20c7a41e29
-  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  JSQSystemSoundPlayer: d4878a52611c97c82eff097d0c7dd5afad73457b
 
-PODFILE CHECKSUM: 640b7df4af577899d1711c771cfa9edbb820b088
+PODFILE CHECKSUM: a74b56478a45c05599527ad637a50984f699be97
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.4.0

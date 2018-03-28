@@ -18,7 +18,7 @@
 
 
 // Import all the things
-#import "JSQMessages.h"
+@import JSQMessagesViewController;
 
 #import "DemoModelData.h"
 #import "NSUserDefaults+DemoSettings.h"

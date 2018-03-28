@@ -20,7 +20,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "JSQMessages.h"
+@import JSQMessagesViewController;
 
 /**
  *  This is for demo/testing purposes only. 

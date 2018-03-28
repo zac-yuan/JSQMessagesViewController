@@ -10,9 +10,9 @@
 
 #import <XCTest/XCTest.h>
 
-#import "JSQMessagesViewController.h"
 #import "DemoMessagesViewController.h"
 
+@import JSQMessagesViewController;
 
 @interface JSQMessagesViewController ()
 

@@ -18,7 +18,7 @@
 
 @import Foundation ;
 
-#import "JSQMessagesViewController.h"
+#import "JSQMessagesViewController_.h"
 
 #import "JSQMessagesCollectionViewFlowLayoutInvalidationContext.h"
 

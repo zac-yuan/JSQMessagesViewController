@@ -10,7 +10,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "JSQMessagesViewController.h"
+#import "JSQMessagesViewController_.h"
 #import "JSQMessagesInputToolbar.h"
 #import "DemoMessagesViewController.h"
 

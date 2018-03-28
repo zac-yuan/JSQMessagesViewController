@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_JSQMessagesTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_JSQMessagesTestsVersionString[];
+FOUNDATION_EXPORT double Pods_JSQMessagesViewControllerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_JSQMessagesViewControllerVersionString[];
 
